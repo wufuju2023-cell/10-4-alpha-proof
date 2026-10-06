@@ -1,0 +1,117 @@
+{
+  "schema_version": 3,
+  "status": "review_blockers_fixed_runtime_sizing_pending_real_smoke",
+  "frozen_on": "2026-10-05",
+  "execution_started": false,
+  "experiment_id": "fate_m_20x200_ce_vs_online_v2_7b_20261005",
+  "arm": "online_v2",
+  "pins": {
+    "comparison_repository": {
+      "url": "https://github.com/wufuju2023-cell/10-4-alpha-proof",
+      "commit": "e1b7ffe6feba8cbdb590d42836d750504aa86b94"
+    },
+    "model": {
+      "name": "REAL-Prover",
+      "revision": "fe76f68d9a88f342cb7b546307c20292fea9cced"
+    },
+    "dataset": {
+      "problems_sha256": "3f702d1e5add11721867735c369e5e4736dfe4e4ae28674220bc8bef6dc8152d",
+      "protocol_id": "fate-m-20-family-10-variant-fast-ab-v1",
+      "train_records_sha256": "b9e9c4abcf02693a85d5f794b766465f65ac2488ed15e96d6fd90aff452e6ab0",
+      "heldout_records_sha256": "a394465ef3e74666abea400496672ee97e838ddf4364c390d85362fb5d497c09",
+      "families": 20,
+      "selected_variants_per_family": 10,
+      "adaptation_variants": [1, 2, 3, 4, 5, 6, 7, 8],
+      "heldout_variants": [9, 10],
+      "adaptation_rows": 160,
+      "heldout_rows": 40
+    }
+  },
+  "wave": {
+    "unit": "one variant index across all 20 families",
+    "freeze_behavior_policy": true,
+    "minimum_independent_problems": 20,
+    "maximum_events_per_problem": 32,
+    "maximum_events_per_trajectory": 8,
+    "reject_mixed_policy_versions": true,
+    "persist_every_started_request": true,
+    "receipt_boundary": "immutable_search_to_verifier_to_proof_path_sha256_chain_with_behavior_and_base_identity",
+    "accepted_wave_consumption": "cross_process_locked_prepared_committed_checkpoint_receipt_transaction_with_cas",
+    "loss_weighting": "equal total mass per independent problem"
+  },
+  "advantage": {
+    "source": "same_state_search_q_minus_behavior_weighted_state_baseline",
+    "scale": "same_state_behavior_weighted_standard_deviation",
+    "clip": 5.0,
+    "single_action_or_constant_q": 0.0,
+    "terminal_failure_broadcast": false
+  },
+  "objective": {
+    "importance_ratio": "sequence_probability_ratio_product_of_action_token_ratios",
+    "clip_epsilon": 0.2,
+    "update_epochs_max": 2,
+    "behavior_kl": {
+      "definition": "sampled_prefix_token_mean_full_vocabulary_forward_kl_policy_to_frozen_behavior",
+      "beta_initial": 0.02,
+      "target": 0.01,
+      "hard_limit": 0.05,
+      "early_stop_multiplier": 2.0
+    },
+    "base_anchor_kl": {
+      "definition": "sampled_prefix_token_mean_full_vocabulary_forward_kl_policy_to_immutable_base",
+      "beta": 0.005,
+      "hard_limit": 0.1
+    },
+    "entropy_coefficient": 0.0,
+    "value_objective": "CE64_remaining_steps_on_strictly_verified_solution_paths",
+    "value_coefficient": 0.001,
+    "max_gradient_norm": 1.0,
+    "old_logprob_max_abs_error": 0.0005
+  },
+  "implementation_guards": {
+    "micro_batch_accumulation_implemented": true,
+    "reference_memory": "one_policy_dense_plus_one_transient_reference_dense_then_selected_action_contexts",
+    "single_backbone_peft": "locked_policy_behavior_base_views_with_exception_safe_restore_receipt_identity_binding_and_mandatory_live_hash_checks",
+    "transaction_recovery": "prepared_restores_before_checkpoint_committed_restores_hashed_post_checkpoint_and_receipt",
+    "sequence_ratio_numerics": "log_domain_branch_selection_with_nonzero_active_branch_gradient",
+    "value_weighting": "equal_total_mass_per_labeled_problem",
+    "learner_input": "tamper_evident_ValidatedRolloutWave_only"
+  },
+  "reward": {
+    "strict_verified_proof_or_disproof": 1.0,
+    "invalid_tactic_local_penalty": -0.1,
+    "timeout": 0.0,
+    "unresolved": 0.0,
+    "infrastructure_error": 0.0,
+    "positive_reward_requires_terminal_verified_receipt": true
+  },
+  "rollback": {
+    "state": [
+      "trainable_policy_parameters",
+      "optimizer",
+      "scheduler",
+      "python_rng",
+      "numpy_rng",
+      "torch_cpu_rng",
+      "torch_cuda_rng",
+      "optimizer_step_counter",
+      "adaptive_behavior_kl_beta"
+    ],
+    "gates": [
+      "old_logprob_behavior_match",
+      "finite_loss_gradient_parameters",
+      "behavior_kl_hard_limit",
+      "anchor_kl_hard_limit",
+      "fixed_canary"
+    ]
+  },
+  "runtime_parameters_pending_real_smoke": [
+    "learning_rate",
+    "micro_batch_size",
+    "gradient_accumulation",
+    "precision",
+    "generation_batch_size",
+    "search_width",
+    "token_limit"
+  ]
+}

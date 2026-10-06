@@ -1,0 +1,15 @@
+{
+  "schema_version": "fate.actor.formal_r16_wave.v1",
+  "policy_version": "formal-initial-r16-a32-seed20261004",
+  "behavior_adapter_alias": "formal-initial-r16-a32-seed20261004",
+  "generation": {
+    "temperature": 1.5,
+    "top_p": 0.9,
+    "max_new_tokens": 512,
+    "num_return_sequences": 64,
+    "rescore_micro_batch": 1
+  },
+  "prompt_template": "qwen",
+  "prompt_source": "pinned_formal_prefix_plus_verified_incoming_reap_root_state",
+  "retrieval": false
+}

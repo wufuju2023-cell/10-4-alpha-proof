@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "protocol_id": "fate-m-20-family-10-variant-fast-ab-v1",
+  "status": "PASS",
+  "source": {
+    "path_from_protocol": "../data/problems.jsonl",
+    "sha256": "3f702d1e5add11721867735c369e5e4736dfe4e4ae28674220bc8bef6dc8152d",
+    "rows": 4000
+  },
+  "protocol_sha256": "164dd388414b592a3fa083099840712b939334954cdf95e1281e0afc8479e0a0",
+  "counts": {
+    "selected": 200,
+    "train": 160,
+    "heldout": 40
+  },
+  "family_fate_ids": [
+    {
+      "family_index": 1,
+      "fate_id": 3
+    },
+    {
+      "family_index": 2,
+      "fate_id": 4
+    },
+    {
+      "family_index": 3,
+      "fate_id": 9
+    },
+    {
+      "family_index": 4,
+      "fate_id": 11
+    },
+    {
+      "family_index": 5,
+      "fate_id": 14
+    },
+    {
+      "family_index": 6,
+      "fate_id": 15
+    },
+    {
+      "family_index": 7,
+      "fate_id": 18
+    },
+    {
+      "family_index": 8,
+      "fate_id": 21
+    },
+    {
+      "family_index": 9,
+      "fate_id": 35
+    },
+    {
+      "family_index": 10,
+      "fate_id": 40
+    },
+    {
+      "family_index": 11,
+      "fate_id": 48
+    },
+    {
+      "family_index": 12,
+      "fate_id": 51
+    },
+    {
+      "family_index": 13,
+      "fate_id": 52
+    },
+    {
+      "family_index": 14,
+      "fate_id": 61
+    },
+    {
+      "family_index": 15,
+      "fate_id": 64
+    },
+    {
+      "family_index": 16,
+      "fate_id": 65
+    },
+    {
+      "family_index": 17,
+      "fate_id": 66
+    },
+    {
+      "family_index": 18,
+      "fate_id": 67
+    },
+    {
+      "family_index": 19,
+      "fate_id": 68
+    },
+    {
+      "family_index": 20,
+      "fate_id": 76
+    }
+  ],
+  "train_variant_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "heldout_variant_indices": [
+    9,
+    10
+  ],
+  "train_ids_sha256": "b962d62f1e1d928c789b91b0f962c38fc5954c31cbcc8c11b36dcc176eaf6af4",
+  "heldout_ids_sha256": "0f2fc73c32d49598680631c228f2fa00bf0aaae3325e020f967bc4f601b10ff3",
+  "artifacts": {
+    "manifest": {
+      "rows": 200,
+      "sha256": "d48d6fa70b125236702e49233c3b194bd924fe70a2f689c8af5dfc4754d0dd6d"
+    },
+    "train_records": {
+      "rows": 160,
+      "sha256": "b9e9c4abcf02693a85d5f794b766465f65ac2488ed15e96d6fd90aff452e6ab0"
+    },
+    "heldout_records": {
+      "rows": 40,
+      "sha256": "a394465ef3e74666abea400496672ee97e838ddf4364c390d85362fb5d497c09"
+    }
+  },
+  "invariants": {
+    "all_20_families_in_both_splits": true,
+    "ten_selected_variants_per_family": true,
+    "eight_train_variants_per_family": true,
+    "two_heldout_variants_per_family": true,
+    "train_heldout_disjoint": true,
+    "variant_then_family_order": true,
+    "source_record_hashes_verified": true
+  }
+}

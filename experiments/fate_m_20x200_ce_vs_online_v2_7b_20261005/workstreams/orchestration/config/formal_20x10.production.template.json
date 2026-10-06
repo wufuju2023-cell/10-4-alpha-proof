@@ -1,0 +1,52 @@
+{
+  "schema_version": "fate.formal_20x10.orchestrator.v1",
+  "status": "template_fill_then_freeze",
+  "experiment_root": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005",
+  "protocol": {
+    "path": "config/subset_20x10_protocol.frozen.json",
+    "sha256": "164dd388414b592a3fa083099840712b939334954cdf95e1281e0afc8479e0a0"
+  },
+  "datasets": {
+    "train": {
+      "path": "data/subset_20x10_train.jsonl",
+      "sha256": "b9e9c4abcf02693a85d5f794b766465f65ac2488ed15e96d6fd90aff452e6ab0"
+    },
+    "heldout": {
+      "path": "data/subset_20x10_heldout.jsonl",
+      "sha256": "a394465ef3e74666abea400496672ee97e838ddf4364c390d85362fb5d497c09"
+    }
+  },
+  "initial_checkpoint": {
+    "path": "assets/initial_lora_r16_a32_seed20261004/formal_initial_adapter_manifest.json",
+    "sha256": "<FILL_INITIAL_CHECKPOINT_MANIFEST_SHA256>"
+  },
+  "storage_guard": {
+    "observation_file": "runs/formal-20x10/control/storage_observation.json",
+    "expected_capacity_gib": 100,
+    "max_age_seconds": 45,
+    "warn_used_gib": 90,
+    "stop_used_gib": 95
+  },
+  "environment": {
+    "PYTHONUNBUFFERED": "1",
+    "TOKENIZERS_PARALLELISM": "false"
+  },
+  "recipes": {
+    "evaluation": {
+      "argv": ["<FILL_PRODUCTION_EVALUATION_COMMAND>", "--receipt", "{receipt}", "--checkpoint", "{input_checkpoint}", "--problems", "{heldout_records}", "--arm", "{arm}"],
+      "max_additional_gib": 0.25
+    },
+    "rollout": {
+      "argv": ["<FILL_FULL_FOUR_ATTEMPT_512_TOKEN_ROLLOUT_COMMAND>", "--receipt", "{receipt}", "--checkpoint", "{input_checkpoint}", "--problems", "{train_records}", "--wave", "{wave}", "--arm", "{arm}"],
+      "max_additional_gib": 0.25
+    },
+    "join": {
+      "argv": ["<FILL_WAVE_SIGN_JOIN_COMMAND_USING_EXISTING_COLLECT_AND_JOIN_MODULES>", "--receipt", "{receipt}", "--rollout-dir", "{rollout_dir}", "--output-dir", "{unit_dir}", "--wave", "{wave}", "--arm", "{arm}"],
+      "max_additional_gib": 0.1
+    },
+    "update": {
+      "argv": ["<FILL_ARM_UPDATE_ADAPTER_COMMAND>", "--receipt", "{receipt}", "--join-dir", "{join_dir}", "--output-dir", "{unit_dir}", "--wave", "{wave}", "--arm", "{arm}"],
+      "max_additional_gib": 0.6
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "fate-m.formal-actor-assets-audit.v1",
+  "status": "INITIAL_ADAPTER_FROZEN_RETRIEVAL_UNAVAILABLE",
+  "audited_on": "2026-10-05",
+  "base_model": {
+    "remote_path": "/mnt/workspace/models/REAL-Prover-fe76f68d",
+    "revision": "fe76f68d9a88f342cb7b546307c20292fea9cced"
+  },
+  "initial_adapter": {
+    "remote_path": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/assets/initial_lora_r16_a32_seed20261004",
+    "manifest_payload_sha256": "9496f7cacf0f3d552aeefde11471fed452c6f6555345387d141f902c7538f28d",
+    "adapter_model_sha256": "326e08d17a74eec08d52127c7e011462bf1d207266cf0ca9a3a84ddc0ddde2dd",
+    "adapter_config_sha256": "e3199444adcd863f95d1d98784114b6658ed1a90bcd9577777460a5ce25afdbe",
+    "trainable_state_sha256": "08115bfd89fc674b24238ea4aa7406d9e66fb8dd6daefc04826d1abbd6d1be66",
+    "trainable_parameter_count": 40370176,
+    "bytes_on_remote": 161539605,
+    "trained": false,
+    "seed": 20261004,
+    "lora": {
+      "r": 16,
+      "alpha": 32,
+      "dropout": 0.02,
+      "bias": "none",
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ]
+    },
+    "initial_function": "identical_to_base_in_eval_because_every_lora_B_tensor_is_exactly_zero",
+    "shared_use": "copy or load these exact bytes independently for both CE and Online-v2"
+  },
+  "retrieval": {
+    "requested_by_upstream_default_toml": true,
+    "available_on_instance": false,
+    "required_missing_assets": [
+      "FrenzyMath/LeanSearch-PS embedding model",
+      "intfloat/e5-mistral-7b-instruct tokenizer/model compatibility asset",
+      "FrenzyMath/LeanSearch-PS-faiss index",
+      "answer.json theorem metadata"
+    ],
+    "source_only_path": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/src/REAL-Prover-upstream/LeanSearch-PS-inference",
+    "decision": "freeze use_retrieval=false symmetrically before any arm update; do not download another 7B model while UI storage is 88.4/100G"
+  },
+  "incompatible_existing_adapters": {
+    "root": "/mnt/workspace/full_modelscope/runs/full_formal_3val/full_fp16_6144_mb1_ga8_gcon",
+    "reason": "trained for Qwen3-1.7B-Base, not REAL-Prover/Qwen2.5-Math-7B",
+    "must_not_use": true
+  },
+  "reap_runtime": {
+    "remote_olean": "/tmp/fate-m-reap428/runtime/.lake/build/lib/lean/ReapRuntime.olean",
+    "status_at_audit": "present",
+    "note": "ephemeral; earlier path without the runtime/ segment was a diagnostic path typo"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "fate.online_terminal_return_fix_validation.v1",
+  "source_join_archive_sha256": "3924d9605d8b6578717eee0c9dd49f1643b3fa1d0872001dbf2e08130f27df3c",
+  "source_receipts_modified": false,
+  "receipt_files": 20,
+  "problems": 20,
+  "states": 20,
+  "samples": 233,
+  "verifier_status_counts": {
+    "verified_proof": 49,
+    "invalid_tactic": 184
+  },
+  "effective_action_value_counts": {
+    "1.0": 49,
+    "-0.1": 184
+  },
+  "states_with_nonzero_advantage": 20,
+  "nonzero_advantages": 233,
+  "positive_advantages": 49,
+  "negative_advantages": 184,
+  "advantage_min": -1.170626039883227,
+  "advantage_max": 5.0,
+  "repaired_wave_sha256": "ab2cccc55ada03ea1e7298935b5760a9b4bd84b00a256607bd367689c31dcb36",
+  "derivation": "At the trusted builder boundary, strictly verified proof/disproof returns are +1, invalid_tactic returns are -0.1, timeout/infrastructure_error returns are 0, and only unresolved actions retain producer search Q.",
+  "fail_closed_gate": "OnlineV2Learner rejects a wave when every recomputed policy advantage is zero.",
+  "tests": {
+    "online_v2_arm": "79 passed",
+    "shared_actor_bridge": "17 passed"
+  }
+}

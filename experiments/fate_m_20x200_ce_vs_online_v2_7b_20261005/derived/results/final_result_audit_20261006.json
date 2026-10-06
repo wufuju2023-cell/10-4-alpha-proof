@@ -1,0 +1,4248 @@
+{
+  "state": "PASS",
+  "archive_sha256": "b3e9514f179d18c1ab2beb5cf2316a7d6c029c2de369e04e52607148c3aa52d1",
+  "independent_evaluations": {
+    "initial": {
+      "native_report_sha256": "11675ca2cc48ab4581a5c91f243ac1e0d5d6e23ddbd89b9e1e507472465dbc0f",
+      "metrics": {
+        "by_family": {
+          "1": {
+            "solve_rate": 0.0,
+            "solved": 0,
+            "tasks": 2
+          },
+          "10": {
+            "solve_rate": 0.5,
+            "solved": 1,
+            "tasks": 2
+          },
+          "11": {
+            "solve_rate": 0.5,
+            "solved": 1,
+            "tasks": 2
+          },
+          "12": {
+            "solve_rate": 0.5,
+            "solved": 1,
+            "tasks": 2
+          },
+          "13": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "14": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "15": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "16": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "17": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "18": {
+            "solve_rate": 0.0,
+            "solved": 0,
+            "tasks": 2
+          },
+          "19": {
+            "solve_rate": 0.5,
+            "solved": 1,
+            "tasks": 2
+          },
+          "2": {
+            "solve_rate": 0.0,
+            "solved": 0,
+            "tasks": 2
+          },
+          "20": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "3": {
+            "solve_rate": 0.5,
+            "solved": 1,
+            "tasks": 2
+          },
+          "4": {
+            "solve_rate": 0.5,
+            "solved": 1,
+            "tasks": 2
+          },
+          "5": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "6": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "7": {
+            "solve_rate": 0.0,
+            "solved": 0,
+            "tasks": 2
+          },
+          "8": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "9": {
+            "solve_rate": 0.0,
+            "solved": 0,
+            "tasks": 2
+          }
+        },
+        "by_variant": {
+          "v009": {
+            "solve_rate": 0.45,
+            "solved": 9,
+            "tasks": 20
+          },
+          "v010": {
+            "solve_rate": 0.75,
+            "solved": 15,
+            "tasks": 20
+          }
+        },
+        "generated_tokens": 726,
+        "generation_gpu_seconds": 70.199063,
+        "generation_wall_seconds": 70.199063,
+        "lean_tactic_executions": 106,
+        "lean_wall_seconds": 2747.409201,
+        "macro_family_solve_rate": 0.6,
+        "pass_at_1": 0.25,
+        "pass_at_2": 0.5,
+        "pass_at_3": 0.6,
+        "pass_at_4": 0.6,
+        "pass_at_definition": "fraction solved within the first k sequential paired-seed attempts",
+        "solve_rate": 0.6,
+        "solved_count": 24,
+        "started_attempts": 106,
+        "strict_lean_checks": 106,
+        "tasks": 40,
+        "timeout_attempts": 0,
+        "timeout_rate": 0.0,
+        "truncated_attempts": 0,
+        "truncation_rate": 0.0
+      },
+      "wall_seconds": 2839.949759,
+      "successful_lean_evidence_rechecked": 24,
+      "tasks": [
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 3.749587839999549,
+              "generation_wall_seconds": 3.749587839999549,
+              "lean_elapsed_seconds": 25.60266,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470015,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6960724660002597,
+              "generation_wall_seconds": 0.6960724660002597,
+              "lean_elapsed_seconds": 26.594512,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470016,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6888028879993726,
+              "generation_wall_seconds": 0.6888028879993726,
+              "lean_elapsed_seconds": 25.288359,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470017,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6904862520004826,
+              "generation_wall_seconds": 0.6904862520004826,
+              "lean_elapsed_seconds": 25.450402,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470018,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 1,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_003_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.42546383799981413,
+              "generation_wall_seconds": 0.42546383799981413,
+              "lean_elapsed_seconds": 26.050865,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470025,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.435140218000015,
+              "generation_wall_seconds": 0.435140218000015,
+              "lean_elapsed_seconds": 25.607496,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470026,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.42130004600039683,
+              "generation_wall_seconds": 0.42130004600039683,
+              "lean_elapsed_seconds": 25.562321,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470027,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4321602019999773,
+              "generation_wall_seconds": 0.4321602019999773,
+              "lean_elapsed_seconds": 26.108177,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470028,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 2,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_004_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4385942119997708,
+              "generation_wall_seconds": 0.4385942119997708,
+              "lean_elapsed_seconds": 25.539437,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470035,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.42975875199954316,
+              "generation_wall_seconds": 0.42975875199954316,
+              "lean_elapsed_seconds": 25.22001,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470036,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.433029957999679,
+              "generation_wall_seconds": 0.433029957999679,
+              "lean_elapsed_seconds": 25.805538,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470037,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43110763099957694,
+              "generation_wall_seconds": 0.43110763099957694,
+              "lean_elapsed_seconds": 25.899188,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470038,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 3,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_009_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 5,
+              "generation_gpu_seconds": 0.6190212290002819,
+              "generation_wall_seconds": 0.6190212290002819,
+              "lean_elapsed_seconds": 25.305626,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470045,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 22,
+              "generation_gpu_seconds": 1.2875554420006665,
+              "generation_wall_seconds": 1.2875554420006665,
+              "lean_elapsed_seconds": 26.079071,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470046,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.5627436169997964,
+              "generation_wall_seconds": 0.5627436169997964,
+              "lean_elapsed_seconds": 25.293312,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470047,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.5609190349996425,
+              "generation_wall_seconds": 0.5609190349996425,
+              "lean_elapsed_seconds": 25.606131,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470048,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 4,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_011_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 5,
+              "generation_gpu_seconds": 0.48135205800008407,
+              "generation_wall_seconds": 0.48135205800008407,
+              "lean_elapsed_seconds": 26.172565,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470055,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4314493539995965,
+              "generation_wall_seconds": 0.4314493539995965,
+              "lean_elapsed_seconds": 27.005554,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470056,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.3886373260002074,
+              "generation_wall_seconds": 0.3886373260002074,
+              "lean_elapsed_seconds": 26.013051,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470057,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 5,
+          "first_success_attempt": 3,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_014_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4379480580000745,
+              "generation_wall_seconds": 0.4379480580000745,
+              "lean_elapsed_seconds": 25.837132,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470065,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4228066569994553,
+              "generation_wall_seconds": 0.4228066569994553,
+              "lean_elapsed_seconds": 25.501285,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470066,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 7,
+              "generation_gpu_seconds": 0.549308633999317,
+              "generation_wall_seconds": 0.549308633999317,
+              "lean_elapsed_seconds": 25.615204,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470067,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 6,
+          "first_success_attempt": 3,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_015_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4332952459999433,
+              "generation_wall_seconds": 0.4332952459999433,
+              "lean_elapsed_seconds": 26.407343,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470075,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43388344300001336,
+              "generation_wall_seconds": 0.43388344300001336,
+              "lean_elapsed_seconds": 25.436734,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470076,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4234232190001421,
+              "generation_wall_seconds": 0.4234232190001421,
+              "lean_elapsed_seconds": 25.405723,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470077,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.42813710999871546,
+              "generation_wall_seconds": 0.42813710999871546,
+              "lean_elapsed_seconds": 25.838514,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470078,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 7,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_018_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 5,
+              "generation_gpu_seconds": 0.4694758120003826,
+              "generation_wall_seconds": 0.4694758120003826,
+              "lean_elapsed_seconds": 25.695501,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470085,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43544966999979806,
+              "generation_wall_seconds": 0.43544966999979806,
+              "lean_elapsed_seconds": 26.315725,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470086,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.3820155129997147,
+              "generation_wall_seconds": 0.3820155129997147,
+              "lean_elapsed_seconds": 26.888695,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470087,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 8,
+          "first_success_attempt": 3,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_021_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 13,
+              "generation_gpu_seconds": 0.7910462519994326,
+              "generation_wall_seconds": 0.7910462519994326,
+              "lean_elapsed_seconds": 25.541199,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470095,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 13,
+              "generation_gpu_seconds": 0.7954893829992216,
+              "generation_wall_seconds": 0.7954893829992216,
+              "lean_elapsed_seconds": 26.681315,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470096,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.42524994400082505,
+              "generation_wall_seconds": 0.42524994400082505,
+              "lean_elapsed_seconds": 26.448135,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470097,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 19,
+              "generation_gpu_seconds": 1.0545856389999244,
+              "generation_wall_seconds": 1.0545856389999244,
+              "lean_elapsed_seconds": 25.143164,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470098,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 9,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_035_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 32,
+              "generation_gpu_seconds": 1.5874264489993948,
+              "generation_wall_seconds": 1.5874264489993948,
+              "lean_elapsed_seconds": 25.383202,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470105,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 15,
+              "generation_gpu_seconds": 0.879098213999896,
+              "generation_wall_seconds": 0.879098213999896,
+              "lean_elapsed_seconds": 26.038061,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470106,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 47,
+              "generation_gpu_seconds": 2.2758979209993413,
+              "generation_wall_seconds": 2.2758979209993413,
+              "lean_elapsed_seconds": 27.026795,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470107,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 29,
+              "generation_gpu_seconds": 1.4578940680003143,
+              "generation_wall_seconds": 1.4578940680003143,
+              "lean_elapsed_seconds": 25.383608,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470108,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 10,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_040_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.42055662599887,
+              "generation_wall_seconds": 0.42055662599887,
+              "lean_elapsed_seconds": 25.865145,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470115,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 7,
+              "generation_gpu_seconds": 0.5446283430010226,
+              "generation_wall_seconds": 0.5446283430010226,
+              "lean_elapsed_seconds": 26.387647,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470116,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 5,
+              "generation_gpu_seconds": 0.4747783670009085,
+              "generation_wall_seconds": 0.4747783670009085,
+              "lean_elapsed_seconds": 26.098114,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470117,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.435617009001362,
+              "generation_wall_seconds": 0.435617009001362,
+              "lean_elapsed_seconds": 25.872857,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470118,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 11,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_048_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43184380999991845,
+              "generation_wall_seconds": 0.43184380999991845,
+              "lean_elapsed_seconds": 25.592982,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470125,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4327239800004463,
+              "generation_wall_seconds": 0.4327239800004463,
+              "lean_elapsed_seconds": 25.754696,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470126,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4228334849995008,
+              "generation_wall_seconds": 0.4228334849995008,
+              "lean_elapsed_seconds": 26.214402,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470127,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4253477330003079,
+              "generation_wall_seconds": 0.4253477330003079,
+              "lean_elapsed_seconds": 25.011018,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470128,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 12,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_051_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4290138649994333,
+              "generation_wall_seconds": 0.4290138649994333,
+              "lean_elapsed_seconds": 25.200341,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470135,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 17,
+              "generation_gpu_seconds": 0.9478797880001366,
+              "generation_wall_seconds": 0.9478797880001366,
+              "lean_elapsed_seconds": 25.767982,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470136,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 13,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_052_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.3801221430003352,
+              "generation_wall_seconds": 0.3801221430003352,
+              "lean_elapsed_seconds": 25.599949,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470145,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 14,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_061_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43438716899981955,
+              "generation_wall_seconds": 0.43438716899981955,
+              "lean_elapsed_seconds": 25.524505,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470155,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 15,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_064_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43322332600109803,
+              "generation_wall_seconds": 0.43322332600109803,
+              "lean_elapsed_seconds": 25.926735,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470165,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.3879512210005487,
+              "generation_wall_seconds": 0.3879512210005487,
+              "lean_elapsed_seconds": 25.492321,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470166,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 16,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_065_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 5,
+              "generation_gpu_seconds": 0.4672776530005649,
+              "generation_wall_seconds": 0.4672776530005649,
+              "lean_elapsed_seconds": 26.024763,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470175,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.4110871020002378,
+              "generation_wall_seconds": 0.4110871020002378,
+              "lean_elapsed_seconds": 26.244842,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470176,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 17,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_066_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43204789999981585,
+              "generation_wall_seconds": 0.43204789999981585,
+              "lean_elapsed_seconds": 26.031342,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470185,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43220784200093476,
+              "generation_wall_seconds": 0.43220784200093476,
+              "lean_elapsed_seconds": 25.528373,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470186,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4319756490003783,
+              "generation_wall_seconds": 0.4319756490003783,
+              "lean_elapsed_seconds": 25.505291,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470187,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4496047289994749,
+              "generation_wall_seconds": 0.4496047289994749,
+              "lean_elapsed_seconds": 25.607769,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470188,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 18,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_067_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4202362880005239,
+              "generation_wall_seconds": 0.4202362880005239,
+              "lean_elapsed_seconds": 26.95511,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470195,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 9,
+              "generation_gpu_seconds": 0.6340689480002766,
+              "generation_wall_seconds": 0.6340689480002766,
+              "lean_elapsed_seconds": 25.883321,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470196,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43641759599995567,
+              "generation_wall_seconds": 0.43641759599995567,
+              "lean_elapsed_seconds": 26.108573,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470197,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.42841772199972183,
+              "generation_wall_seconds": 0.42841772199972183,
+              "lean_elapsed_seconds": 26.157535,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470198,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 19,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_068_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.652315262999764,
+              "generation_wall_seconds": 0.652315262999764,
+              "lean_elapsed_seconds": 25.826789,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470205,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 20,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_076_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.7024213580007199,
+              "generation_wall_seconds": 0.7024213580007199,
+              "lean_elapsed_seconds": 26.446206,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471015,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.8031924509996315,
+              "generation_wall_seconds": 0.8031924509996315,
+              "lean_elapsed_seconds": 26.850216,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471016,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.718256594000195,
+              "generation_wall_seconds": 0.718256594000195,
+              "lean_elapsed_seconds": 26.146563,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471017,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.7020800359987334,
+              "generation_wall_seconds": 0.7020800359987334,
+              "lean_elapsed_seconds": 26.7612,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471018,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 1,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_003_v010",
+          "solved": false,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6845648960006656,
+              "generation_wall_seconds": 0.6845648960006656,
+              "lean_elapsed_seconds": 25.758715,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471025,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6858879479987081,
+              "generation_wall_seconds": 0.6858879479987081,
+              "lean_elapsed_seconds": 25.850701,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471026,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6907438990001538,
+              "generation_wall_seconds": 0.6907438990001538,
+              "lean_elapsed_seconds": 25.512543,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471027,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6849391520008794,
+              "generation_wall_seconds": 0.6849391520008794,
+              "lean_elapsed_seconds": 25.35431,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471028,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 2,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_004_v010",
+          "solved": false,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6943075589988439,
+              "generation_wall_seconds": 0.6943075589988439,
+              "lean_elapsed_seconds": 26.366757,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471035,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.6505039589992521,
+              "generation_wall_seconds": 0.6505039589992521,
+              "lean_elapsed_seconds": 26.265989,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471036,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 3,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_009_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 14,
+              "generation_gpu_seconds": 1.1302682799996546,
+              "generation_wall_seconds": 1.1302682799996546,
+              "lean_elapsed_seconds": 25.72276,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471045,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 26,
+              "generation_gpu_seconds": 1.6189165380001214,
+              "generation_wall_seconds": 1.6189165380001214,
+              "lean_elapsed_seconds": 26.873694,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471046,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 4,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_011_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4353407550006523,
+              "generation_wall_seconds": 0.4353407550006523,
+              "lean_elapsed_seconds": 25.162547,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471055,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 5,
+              "generation_gpu_seconds": 0.4735472200009099,
+              "generation_wall_seconds": 0.4735472200009099,
+              "lean_elapsed_seconds": 25.630565,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471056,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.3936454029990273,
+              "generation_wall_seconds": 0.3936454029990273,
+              "lean_elapsed_seconds": 26.333542,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471057,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 5,
+          "first_success_attempt": 3,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_014_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4439710610004113,
+              "generation_wall_seconds": 0.4439710610004113,
+              "lean_elapsed_seconds": 25.502702,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471065,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 6,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_015_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4387489729997469,
+              "generation_wall_seconds": 0.4387489729997469,
+              "lean_elapsed_seconds": 25.937787,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471075,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4320305550008925,
+              "generation_wall_seconds": 0.4320305550008925,
+              "lean_elapsed_seconds": 27.11669,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471076,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4354416440000932,
+              "generation_wall_seconds": 0.4354416440000932,
+              "lean_elapsed_seconds": 26.105898,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471077,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.45274630499989144,
+              "generation_wall_seconds": 0.45274630499989144,
+              "lean_elapsed_seconds": 25.955385,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471078,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 7,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_018_v010",
+          "solved": false,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43324694500006444,
+              "generation_wall_seconds": 0.43324694500006444,
+              "lean_elapsed_seconds": 26.087291,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471085,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43444035200082,
+              "generation_wall_seconds": 0.43444035200082,
+              "lean_elapsed_seconds": 25.877844,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471086,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 8,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_021_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 26,
+              "generation_gpu_seconds": 1.679564236999795,
+              "generation_wall_seconds": 1.679564236999795,
+              "lean_elapsed_seconds": 26.184722,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471095,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 12,
+              "generation_gpu_seconds": 1.0281082069996046,
+              "generation_wall_seconds": 1.0281082069996046,
+              "lean_elapsed_seconds": 26.3063,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471096,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 28,
+              "generation_gpu_seconds": 1.653928651001479,
+              "generation_wall_seconds": 1.653928651001479,
+              "lean_elapsed_seconds": 25.43446,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471097,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 11,
+              "generation_gpu_seconds": 1.0001868449999165,
+              "generation_wall_seconds": 1.0001868449999165,
+              "lean_elapsed_seconds": 25.617124,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471098,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 9,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_035_v010",
+          "solved": false,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 10,
+              "generation_gpu_seconds": 0.6809115249998285,
+              "generation_wall_seconds": 0.6809115249998285,
+              "lean_elapsed_seconds": 26.406003,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471105,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 10,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_040_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43619949000094493,
+              "generation_wall_seconds": 0.43619949000094493,
+              "lean_elapsed_seconds": 25.407812,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471115,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 7,
+              "generation_gpu_seconds": 0.5581481509998412,
+              "generation_wall_seconds": 0.5581481509998412,
+              "lean_elapsed_seconds": 25.550128,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471116,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 11,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_048_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.5576128360007715,
+              "generation_wall_seconds": 0.5576128360007715,
+              "lean_elapsed_seconds": 26.262391,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471125,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 12,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_051_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 17,
+              "generation_gpu_seconds": 1.0755091949995403,
+              "generation_wall_seconds": 1.0755091949995403,
+              "lean_elapsed_seconds": 26.149567,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471135,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 13,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_052_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.40715558900046744,
+              "generation_wall_seconds": 0.40715558900046744,
+              "lean_elapsed_seconds": 26.099556,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471145,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 14,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_061_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6932291379998787,
+              "generation_wall_seconds": 0.6932291379998787,
+              "lean_elapsed_seconds": 26.175161,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471155,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.6537166320013057,
+              "generation_wall_seconds": 0.6537166320013057,
+              "lean_elapsed_seconds": 25.8917,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471156,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 15,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_064_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6872783079998044,
+              "generation_wall_seconds": 0.6872783079998044,
+              "lean_elapsed_seconds": 26.188028,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471165,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 16,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_065_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4336066989999381,
+              "generation_wall_seconds": 0.4336066989999381,
+              "lean_elapsed_seconds": 26.352599,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471175,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4275177790004818,
+              "generation_wall_seconds": 0.4275177790004818,
+              "lean_elapsed_seconds": 25.510221,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471176,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 17,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_066_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6977895719992375,
+              "generation_wall_seconds": 0.6977895719992375,
+              "lean_elapsed_seconds": 25.603695,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471185,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 7,
+              "generation_gpu_seconds": 0.8122223379996285,
+              "generation_wall_seconds": 0.8122223379996285,
+              "lean_elapsed_seconds": 26.63146,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471186,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.7107972350004275,
+              "generation_wall_seconds": 0.7107972350004275,
+              "lean_elapsed_seconds": 25.605669,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471187,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.7002778269998089,
+              "generation_wall_seconds": 0.7002778269998089,
+              "lean_elapsed_seconds": 25.791653,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471188,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 18,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_067_v010",
+          "solved": false,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43564334100119595,
+              "generation_wall_seconds": 0.43564334100119595,
+              "lean_elapsed_seconds": 26.154139,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471195,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 19,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_068_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.7013158750014554,
+              "generation_wall_seconds": 0.7013158750014554,
+              "lean_elapsed_seconds": 25.989997,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471205,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 10,
+              "generation_gpu_seconds": 0.9469241709994094,
+              "generation_wall_seconds": 0.9469241709994094,
+              "lean_elapsed_seconds": 25.502899,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471206,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 20,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_076_v010",
+          "solved": true,
+          "variant_index": 10
+        }
+      ],
+      "settings_fingerprint": "e01db0d6a163faf19945bfd9aff55e2ba3560b76cb6aba1a17fdff515a065b9a"
+    },
+    "ce_final": {
+      "native_report_sha256": "e959d9d22c9d94921b1a56744cc334d33cd5697af495f4483654f740f80eef78",
+      "metrics": {
+        "by_family": {
+          "1": {
+            "solve_rate": 0.0,
+            "solved": 0,
+            "tasks": 2
+          },
+          "10": {
+            "solve_rate": 0.5,
+            "solved": 1,
+            "tasks": 2
+          },
+          "11": {
+            "solve_rate": 0.5,
+            "solved": 1,
+            "tasks": 2
+          },
+          "12": {
+            "solve_rate": 0.5,
+            "solved": 1,
+            "tasks": 2
+          },
+          "13": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "14": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "15": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "16": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "17": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "18": {
+            "solve_rate": 0.0,
+            "solved": 0,
+            "tasks": 2
+          },
+          "19": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "2": {
+            "solve_rate": 0.0,
+            "solved": 0,
+            "tasks": 2
+          },
+          "20": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "3": {
+            "solve_rate": 0.5,
+            "solved": 1,
+            "tasks": 2
+          },
+          "4": {
+            "solve_rate": 0.5,
+            "solved": 1,
+            "tasks": 2
+          },
+          "5": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "6": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "7": {
+            "solve_rate": 0.0,
+            "solved": 0,
+            "tasks": 2
+          },
+          "8": {
+            "solve_rate": 1.0,
+            "solved": 2,
+            "tasks": 2
+          },
+          "9": {
+            "solve_rate": 0.0,
+            "solved": 0,
+            "tasks": 2
+          }
+        },
+        "by_variant": {
+          "v009": {
+            "solve_rate": 0.5,
+            "solved": 10,
+            "tasks": 20
+          },
+          "v010": {
+            "solve_rate": 0.75,
+            "solved": 15,
+            "tasks": 20
+          }
+        },
+        "generated_tokens": 712,
+        "generation_gpu_seconds": 69.282521,
+        "generation_wall_seconds": 69.282521,
+        "lean_tactic_executions": 103,
+        "lean_wall_seconds": 2670.393829,
+        "macro_family_solve_rate": 0.625,
+        "pass_at_1": 0.275,
+        "pass_at_2": 0.525,
+        "pass_at_3": 0.625,
+        "pass_at_4": 0.625,
+        "pass_at_definition": "fraction solved within the first k sequential paired-seed attempts",
+        "solve_rate": 0.625,
+        "solved_count": 25,
+        "started_attempts": 103,
+        "strict_lean_checks": 103,
+        "tasks": 40,
+        "timeout_attempts": 0,
+        "timeout_rate": 0.0,
+        "truncated_attempts": 0,
+        "truncation_rate": 0.0
+      },
+      "wall_seconds": 2761.340682,
+      "successful_lean_evidence_rechecked": 25,
+      "tasks": [
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 3.7382056599999487,
+              "generation_wall_seconds": 3.7382056599999487,
+              "lean_elapsed_seconds": 31.12719,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470015,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6929138180003065,
+              "generation_wall_seconds": 0.6929138180003065,
+              "lean_elapsed_seconds": 25.208628,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470016,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6946199330013769,
+              "generation_wall_seconds": 0.6946199330013769,
+              "lean_elapsed_seconds": 26.127699,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470017,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6924510429998918,
+              "generation_wall_seconds": 0.6924510429998918,
+              "lean_elapsed_seconds": 25.633142,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470018,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 1,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_003_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43662847000086913,
+              "generation_wall_seconds": 0.43662847000086913,
+              "lean_elapsed_seconds": 25.928135,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470025,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.42615018299875373,
+              "generation_wall_seconds": 0.42615018299875373,
+              "lean_elapsed_seconds": 26.984178,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470026,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4242809289989964,
+              "generation_wall_seconds": 0.4242809289989964,
+              "lean_elapsed_seconds": 25.684157,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470027,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4253197359994374,
+              "generation_wall_seconds": 0.4253197359994374,
+              "lean_elapsed_seconds": 26.536502,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470028,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 2,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_004_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4394318040012877,
+              "generation_wall_seconds": 0.4394318040012877,
+              "lean_elapsed_seconds": 25.697378,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470035,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43278765300055966,
+              "generation_wall_seconds": 0.43278765300055966,
+              "lean_elapsed_seconds": 25.708591,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470036,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43208628600041266,
+              "generation_wall_seconds": 0.43208628600041266,
+              "lean_elapsed_seconds": 25.61847,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470037,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 5,
+              "generation_gpu_seconds": 0.47597289700024703,
+              "generation_wall_seconds": 0.47597289700024703,
+              "lean_elapsed_seconds": 26.219647,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470038,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 3,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_009_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 5,
+              "generation_gpu_seconds": 0.6151780279997183,
+              "generation_wall_seconds": 0.6151780279997183,
+              "lean_elapsed_seconds": 25.589868,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470045,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 22,
+              "generation_gpu_seconds": 1.3169408590001694,
+              "generation_wall_seconds": 1.3169408590001694,
+              "lean_elapsed_seconds": 25.63361,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470046,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.5648462850003853,
+              "generation_wall_seconds": 0.5648462850003853,
+              "lean_elapsed_seconds": 26.015312,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470047,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.5614220019997447,
+              "generation_wall_seconds": 0.5614220019997447,
+              "lean_elapsed_seconds": 26.102611,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470048,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 4,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_011_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 5,
+              "generation_gpu_seconds": 0.4897764889992686,
+              "generation_wall_seconds": 0.4897764889992686,
+              "lean_elapsed_seconds": 25.148919,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470055,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4280969630017353,
+              "generation_wall_seconds": 0.4280969630017353,
+              "lean_elapsed_seconds": 25.483031,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470056,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.3844163559988374,
+              "generation_wall_seconds": 0.3844163559988374,
+              "lean_elapsed_seconds": 25.531457,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470057,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 5,
+          "first_success_attempt": 3,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_014_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.426909367000917,
+              "generation_wall_seconds": 0.426909367000917,
+              "lean_elapsed_seconds": 25.61391,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470065,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4392538489992148,
+              "generation_wall_seconds": 0.4392538489992148,
+              "lean_elapsed_seconds": 25.669581,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470066,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 7,
+              "generation_gpu_seconds": 0.5490292150007008,
+              "generation_wall_seconds": 0.5490292150007008,
+              "lean_elapsed_seconds": 25.624754,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470067,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 6,
+          "first_success_attempt": 3,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_015_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.42697485300050175,
+              "generation_wall_seconds": 0.42697485300050175,
+              "lean_elapsed_seconds": 25.358518,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470075,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.42704146899995976,
+              "generation_wall_seconds": 0.42704146899995976,
+              "lean_elapsed_seconds": 25.89844,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470076,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.44006857099884655,
+              "generation_wall_seconds": 0.44006857099884655,
+              "lean_elapsed_seconds": 25.756963,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470077,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4297412889991392,
+              "generation_wall_seconds": 0.4297412889991392,
+              "lean_elapsed_seconds": 25.709571,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470078,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 7,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_018_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 5,
+              "generation_gpu_seconds": 0.46855381699970167,
+              "generation_wall_seconds": 0.46855381699970167,
+              "lean_elapsed_seconds": 26.563931,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470085,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4263839779996488,
+              "generation_wall_seconds": 0.4263839779996488,
+              "lean_elapsed_seconds": 26.345157,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470086,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.38853972099968814,
+              "generation_wall_seconds": 0.38853972099968814,
+              "lean_elapsed_seconds": 26.68063,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470087,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 8,
+          "first_success_attempt": 3,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_021_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 13,
+              "generation_gpu_seconds": 0.8176783409999189,
+              "generation_wall_seconds": 0.8176783409999189,
+              "lean_elapsed_seconds": 26.666375,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470095,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 14,
+              "generation_gpu_seconds": 0.8313846950004518,
+              "generation_wall_seconds": 0.8313846950004518,
+              "lean_elapsed_seconds": 25.794778,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470096,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4283189660000062,
+              "generation_wall_seconds": 0.4283189660000062,
+              "lean_elapsed_seconds": 25.706957,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470097,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 19,
+              "generation_gpu_seconds": 1.0383062060009252,
+              "generation_wall_seconds": 1.0383062060009252,
+              "lean_elapsed_seconds": 26.346748,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470098,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 9,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_035_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 32,
+              "generation_gpu_seconds": 1.5893675730003451,
+              "generation_wall_seconds": 1.5893675730003451,
+              "lean_elapsed_seconds": 26.990806,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470105,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 15,
+              "generation_gpu_seconds": 0.9947192260005977,
+              "generation_wall_seconds": 0.9947192260005977,
+              "lean_elapsed_seconds": 25.638577,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470106,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 47,
+              "generation_gpu_seconds": 2.172037399999681,
+              "generation_wall_seconds": 2.172037399999681,
+              "lean_elapsed_seconds": 26.041407,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470107,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 29,
+              "generation_gpu_seconds": 1.4666258420002123,
+              "generation_wall_seconds": 1.4666258420002123,
+              "lean_elapsed_seconds": 25.786864,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470108,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 10,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_040_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.44270090199825063,
+              "generation_wall_seconds": 0.44270090199825063,
+              "lean_elapsed_seconds": 25.55966,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470115,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 7,
+              "generation_gpu_seconds": 0.545151533000535,
+              "generation_wall_seconds": 0.545151533000535,
+              "lean_elapsed_seconds": 25.515269,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470116,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 5,
+              "generation_gpu_seconds": 0.4709384100005991,
+              "generation_wall_seconds": 0.4709384100005991,
+              "lean_elapsed_seconds": 25.409522,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470117,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.5303333829997428,
+              "generation_wall_seconds": 0.5303333829997428,
+              "lean_elapsed_seconds": 26.096309,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470118,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 11,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_048_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43525744899852725,
+              "generation_wall_seconds": 0.43525744899852725,
+              "lean_elapsed_seconds": 26.235594,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470125,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.42840621800132794,
+              "generation_wall_seconds": 0.42840621800132794,
+              "lean_elapsed_seconds": 26.837459,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470126,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.42721455699938815,
+              "generation_wall_seconds": 0.42721455699938815,
+              "lean_elapsed_seconds": 25.577841,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470127,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43022708399985277,
+              "generation_wall_seconds": 0.43022708399985277,
+              "lean_elapsed_seconds": 26.967073,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470128,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 12,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_051_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.439917632000288,
+              "generation_wall_seconds": 0.439917632000288,
+              "lean_elapsed_seconds": 25.624383,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470135,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 17,
+              "generation_gpu_seconds": 1.0518023029999313,
+              "generation_wall_seconds": 1.0518023029999313,
+              "lean_elapsed_seconds": 25.218143,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470136,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 13,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_052_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.3789899349994812,
+              "generation_wall_seconds": 0.3789899349994812,
+              "lean_elapsed_seconds": 25.691404,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470145,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 14,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_061_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4375021790001483,
+              "generation_wall_seconds": 0.4375021790001483,
+              "lean_elapsed_seconds": 25.96719,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470155,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 15,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_064_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4341972900001565,
+              "generation_wall_seconds": 0.4341972900001565,
+              "lean_elapsed_seconds": 25.160324,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470165,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.39700246500069625,
+              "generation_wall_seconds": 0.39700246500069625,
+              "lean_elapsed_seconds": 25.758568,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470166,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 16,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_065_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 5,
+              "generation_gpu_seconds": 0.4668968709993351,
+              "generation_wall_seconds": 0.4668968709993351,
+              "lean_elapsed_seconds": 25.299094,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470175,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.3846169339994958,
+              "generation_wall_seconds": 0.3846169339994958,
+              "lean_elapsed_seconds": 25.674486,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470176,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 17,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_066_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4449834089991782,
+              "generation_wall_seconds": 0.4449834089991782,
+              "lean_elapsed_seconds": 25.695846,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470185,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43797399399954884,
+              "generation_wall_seconds": 0.43797399399954884,
+              "lean_elapsed_seconds": 25.249426,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470186,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4379845059993386,
+              "generation_wall_seconds": 0.4379845059993386,
+              "lean_elapsed_seconds": 25.413731,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470187,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.5437141080001311,
+              "generation_wall_seconds": 0.5437141080001311,
+              "lean_elapsed_seconds": 25.756468,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20470188,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 18,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_067_v009",
+          "solved": false,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4347362949993112,
+              "generation_wall_seconds": 0.4347362949993112,
+              "lean_elapsed_seconds": 25.839322,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470195,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 19,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_068_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.6541314830010379,
+              "generation_wall_seconds": 0.6541314830010379,
+              "lean_elapsed_seconds": 25.42958,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20470205,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 20,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_076_v009",
+          "solved": true,
+          "variant_index": 9
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.7001116259998525,
+              "generation_wall_seconds": 0.7001116259998525,
+              "lean_elapsed_seconds": 25.593018,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471015,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.7000895020009921,
+              "generation_wall_seconds": 0.7000895020009921,
+              "lean_elapsed_seconds": 25.562087,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471016,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.7028798259998439,
+              "generation_wall_seconds": 0.7028798259998439,
+              "lean_elapsed_seconds": 25.63098,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471017,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.7098654040000838,
+              "generation_wall_seconds": 0.7098654040000838,
+              "lean_elapsed_seconds": 25.710129,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471018,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 1,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_003_v010",
+          "solved": false,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6817882730010751,
+              "generation_wall_seconds": 0.6817882730010751,
+              "lean_elapsed_seconds": 25.481788,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471025,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6895595540008799,
+              "generation_wall_seconds": 0.6895595540008799,
+              "lean_elapsed_seconds": 25.321418,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471026,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6901716480006144,
+              "generation_wall_seconds": 0.6901716480006144,
+              "lean_elapsed_seconds": 26.722532,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471027,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6966482259995246,
+              "generation_wall_seconds": 0.6966482259995246,
+              "lean_elapsed_seconds": 25.713213,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471028,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 2,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_004_v010",
+          "solved": false,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6982692860001407,
+              "generation_wall_seconds": 0.6982692860001407,
+              "lean_elapsed_seconds": 25.426325,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471035,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.6511473400005343,
+              "generation_wall_seconds": 0.6511473400005343,
+              "lean_elapsed_seconds": 25.765607,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471036,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 3,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_009_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 15,
+              "generation_gpu_seconds": 1.1738722180016339,
+              "generation_wall_seconds": 1.1738722180016339,
+              "lean_elapsed_seconds": 26.325062,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471045,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 26,
+              "generation_gpu_seconds": 1.6627949359990453,
+              "generation_wall_seconds": 1.6627949359990453,
+              "lean_elapsed_seconds": 25.352841,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471046,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 4,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_011_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.42860290899989195,
+              "generation_wall_seconds": 0.42860290899989195,
+              "lean_elapsed_seconds": 25.904462,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471055,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 5,
+              "generation_gpu_seconds": 0.4673842060001334,
+              "generation_wall_seconds": 0.4673842060001334,
+              "lean_elapsed_seconds": 25.659855,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471056,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.39713607399971806,
+              "generation_wall_seconds": 0.39713607399971806,
+              "lean_elapsed_seconds": 26.171582,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471057,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 5,
+          "first_success_attempt": 3,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_014_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4563012449998496,
+              "generation_wall_seconds": 0.4563012449998496,
+              "lean_elapsed_seconds": 25.992382,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471065,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 6,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_015_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4408506830004626,
+              "generation_wall_seconds": 0.4408506830004626,
+              "lean_elapsed_seconds": 26.077288,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471075,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4366037750005489,
+              "generation_wall_seconds": 0.4366037750005489,
+              "lean_elapsed_seconds": 25.825256,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471076,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4488958250003634,
+              "generation_wall_seconds": 0.4488958250003634,
+              "lean_elapsed_seconds": 26.371355,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471077,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4461781099998916,
+              "generation_wall_seconds": 0.4461781099998916,
+              "lean_elapsed_seconds": 26.457217,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471078,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 7,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_018_v010",
+          "solved": false,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.428185779001069,
+              "generation_wall_seconds": 0.428185779001069,
+              "lean_elapsed_seconds": 25.750816,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471085,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4374896509980317,
+              "generation_wall_seconds": 0.4374896509980317,
+              "lean_elapsed_seconds": 25.76653,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471086,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 8,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_021_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 26,
+              "generation_gpu_seconds": 1.6045545800006948,
+              "generation_wall_seconds": 1.6045545800006948,
+              "lean_elapsed_seconds": 26.042113,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471095,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 12,
+              "generation_gpu_seconds": 1.0489930420008022,
+              "generation_wall_seconds": 1.0489930420008022,
+              "lean_elapsed_seconds": 26.610268,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471096,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 28,
+              "generation_gpu_seconds": 1.6532510530014406,
+              "generation_wall_seconds": 1.6532510530014406,
+              "lean_elapsed_seconds": 26.019575,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471097,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 11,
+              "generation_gpu_seconds": 0.9956779499989352,
+              "generation_wall_seconds": 0.9956779499989352,
+              "lean_elapsed_seconds": 25.75038,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471098,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 9,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_035_v010",
+          "solved": false,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 10,
+              "generation_gpu_seconds": 0.6875999570002023,
+              "generation_wall_seconds": 0.6875999570002023,
+              "lean_elapsed_seconds": 25.435428,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471105,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 10,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_040_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4442847249993065,
+              "generation_wall_seconds": 0.4442847249993065,
+              "lean_elapsed_seconds": 26.180925,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471115,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 7,
+              "generation_gpu_seconds": 0.5640596009980072,
+              "generation_wall_seconds": 0.5640596009980072,
+              "lean_elapsed_seconds": 25.52238,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471116,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 11,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_048_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.5579451359990344,
+              "generation_wall_seconds": 0.5579451359990344,
+              "lean_elapsed_seconds": 25.886221,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471125,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 12,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_051_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 17,
+              "generation_gpu_seconds": 1.1175850690015068,
+              "generation_wall_seconds": 1.1175850690015068,
+              "lean_elapsed_seconds": 26.040531,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471135,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 13,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_052_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.40719009099848336,
+              "generation_wall_seconds": 0.40719009099848336,
+              "lean_elapsed_seconds": 26.427607,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471145,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 14,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_061_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.7055509669989988,
+              "generation_wall_seconds": 0.7055509669989988,
+              "lean_elapsed_seconds": 26.141925,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471155,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 3,
+              "generation_gpu_seconds": 0.6549725850018149,
+              "generation_wall_seconds": 0.6549725850018149,
+              "lean_elapsed_seconds": 26.189147,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471156,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 15,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_064_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.6934025789996667,
+              "generation_wall_seconds": 0.6934025789996667,
+              "lean_elapsed_seconds": 25.516664,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471165,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 16,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_065_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43242327000189107,
+              "generation_wall_seconds": 0.43242327000189107,
+              "lean_elapsed_seconds": 25.727015,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471175,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.4409820560031221,
+              "generation_wall_seconds": 0.4409820560031221,
+              "lean_elapsed_seconds": 26.378518,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471176,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 17,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_066_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.7066555730016262,
+              "generation_wall_seconds": 0.7066555730016262,
+              "lean_elapsed_seconds": 25.87981,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471185,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 7,
+              "generation_gpu_seconds": 0.8170396170025924,
+              "generation_wall_seconds": 0.8170396170025924,
+              "lean_elapsed_seconds": 26.205783,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471186,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 3,
+              "attempt_index_zero_based": 2,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.7015573509997921,
+              "generation_wall_seconds": 0.7015573509997921,
+              "lean_elapsed_seconds": 26.368387,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471187,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 4,
+              "attempt_index_zero_based": 3,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.7103326830001606,
+              "generation_wall_seconds": 0.7103326830001606,
+              "lean_elapsed_seconds": 26.039959,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471188,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            }
+          ],
+          "family_index": 18,
+          "first_success_attempt": null,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_067_v010",
+          "solved": false,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.43828217899863375,
+              "generation_wall_seconds": 0.43828217899863375,
+              "lean_elapsed_seconds": 25.268919,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471195,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 19,
+          "first_success_attempt": 1,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_068_v010",
+          "solved": true,
+          "variant_index": 10
+        },
+        {
+          "attempts": [
+            {
+              "attempt": 1,
+              "attempt_index_zero_based": 0,
+              "finish_reason": "stop",
+              "generated_tokens": 4,
+              "generation_gpu_seconds": 0.7111324040015461,
+              "generation_wall_seconds": 0.7111324040015461,
+              "lean_elapsed_seconds": 25.857039,
+              "lean_status": "invalid",
+              "lean_tactic_executions": 1,
+              "seed": 20471205,
+              "strict_lean_checks": 1,
+              "strict_success": false,
+              "truncated": false
+            },
+            {
+              "attempt": 2,
+              "attempt_index_zero_based": 1,
+              "finish_reason": "stop",
+              "generated_tokens": 10,
+              "generation_gpu_seconds": 0.957084189998568,
+              "generation_wall_seconds": 0.957084189998568,
+              "lean_elapsed_seconds": 26.174308,
+              "lean_status": "verified",
+              "lean_tactic_executions": 1,
+              "seed": 20471206,
+              "strict_lean_checks": 1,
+              "strict_success": true,
+              "truncated": false
+            }
+          ],
+          "family_index": 20,
+          "first_success_attempt": 2,
+          "schema_version": "fate.heldout_task_result.v1",
+          "session_id": "fate_m_076_v010",
+          "solved": true,
+          "variant_index": 10
+        }
+      ],
+      "settings_fingerprint": "e01db0d6a163faf19945bfd9aff55e2ba3560b76cb6aba1a17fdff515a065b9a"
+    }
+  },
+  "paired_gains": [
+    "fate_m_068_v009"
+  ],
+  "paired_losses": [],
+  "paired_seed_prefixes_match": true,
+  "online_provenance": "Exact rollback policy identity reuse of initial; zero new evaluation requests.",
+  "completion_limits": {
+    "original_adaptive_protocol_complete": false,
+    "both_accepted_updates": false
+  },
+  "benchmark_scope_audit": {
+    "heldout_tasks": 40,
+    "difficulty_tier_1": 40,
+    "transformation_direct_target": 40,
+    "all_have_curriculum_target_hypothesis": true,
+    "additional_success": "fate_m_068_v009",
+    "additional_success_proof": "exact curriculum_target",
+    "claim_limit": "Measures use of supplied target hypotheses in scaffolded same-family variants, not mathematical proof discovery."
+  }
+}

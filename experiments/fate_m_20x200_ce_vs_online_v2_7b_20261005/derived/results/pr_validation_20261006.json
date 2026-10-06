@@ -1,0 +1,53 @@
+{
+  "state": "PASS",
+  "recorded_at": "2026-10-05T20:52:14.907124+00:00",
+  "tests": {
+    "passed": 325,
+    "skipped": 2,
+    "groups": {
+      "root": 28,
+      "heldout_and_subset": 14,
+      "ce_arm": 62,
+      "online_v2_arm": 79,
+      "orchestration": 33,
+      "lean_integration": 59,
+      "shared_actor_bridge": 17,
+      "policy_service_bridge": 33
+    },
+    "execution": "Separate pytest processes per group; lean_integration PYTHONPATH points to its src. Two orchestration tests skip unavailable optional runtime.",
+    "collection_note": "Combined groups require distinct module imports and Online tests helper path; separate processes avoid duplicate test_bridge module names."
+  },
+  "new_report_scripts_python_compile": "PASS",
+  "real_remote_rollback_identity_audit": "PASS; source hashes and native receipt are in guarded_update_audit_20261006.json",
+  "staged_diff_check": "PASS",
+  "staged_secret_scan": {
+    "files": 236,
+    "hits": 0,
+    "patterns": [
+      "private key PEM",
+      "GitHub token",
+      "HuggingFace token",
+      "AWS key",
+      "OAuth callback token",
+      "Jupyter token URL"
+    ]
+  },
+  "large_file_check": {
+    "limit_bytes": 5242880,
+    "files_over_limit": 0
+  },
+  "heldout_status": "DONE: initial24/40, CE25/40; Online rejected and baseline identity reuse24/40",
+  "guarded_report_regression": {
+    "passed": 3,
+    "covers": [
+      "rejected update has no fabricated independent Online evaluation and zero new requests",
+      "policy mismatch prevents reuse despite PASS claim",
+      "39-task CE evidence cannot produce terminal report"
+    ],
+    "defect_fixed": "Path conversion before hashing string-valued audited receipt path",
+    "patched_report_sha256": "717425ed98dcfcf5d4be01c1458405b9c276f9aaf3da71ccb774ce8859a398ef",
+    "remote_patch_hash_verified": true
+  },
+  "final_evidence": "1475 members verified; 24+25 successful native Lean logs verified; matching frozen settings and shared seed prefixes",
+  "final_staged_files": 236
+}

@@ -1,0 +1,177 @@
+{
+  "source": {
+    "benchmark": "FATE-M",
+    "repository": "https://github.com/frenzymath/FATE",
+    "repository_commit": "bb646ecb9b68942ebf4bac31ccf4218a58ef9771",
+    "submodule_repository": "https://github.com/frenzymath/FATE-M",
+    "submodule_commit": "4eb33c8ccd0ff058b461cd763cc406509129743f",
+    "json_sha256": "39c13a39f82bb2f39fc42d0a0efb41c6b0ef16b8194c8c8e0ae281c5cf0276fb",
+    "lean_version": "4.28.0",
+    "mathlib_revision": "v4.28.0",
+    "license": "MIT"
+  },
+  "selected_fate_ids": [
+    3,
+    4,
+    9,
+    11,
+    14,
+    15,
+    18,
+    21,
+    35,
+    40,
+    48,
+    51,
+    52,
+    61,
+    64,
+    65,
+    66,
+    67,
+    68,
+    76
+  ],
+  "problems": [
+    {
+      "id": 3,
+      "informal_statement": "If $f:G\\to H$ and $g:H\\to K$ are surjective homomorphisms of groups, then the composition $g\\circ f:G\\to K$ is also a surjective homomorphism.",
+      "formal_statement": "import Mathlib\n\n/--\nIf $f:G\\to H$ and $g:H\\to K$ are surjective homomorphisms of groups, then the composition\n$g\\circ f:G\\to K$ is also a surjective homomorphism.\n-/\ntheorem comp_surjective_of_surjective {G H K : Type*} [Group G] [Group H] [Group K]\n    (f : G →* H) (g : H →* K) (hf : Function.Surjective f) (hg : Function.Surjective g) :\n    Function.Surjective (g.comp f) := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 4,
+      "informal_statement": "Let $\\phi: G \\rightarrow G^{\\prime}$ be a group homomorphism. Show that $ab\\in \\operatorname{Ker}\\phi$ if and only if $ba\\in \\operatorname{Ker}\\phi$.",
+      "formal_statement": "import Mathlib\n\n/--\nLet $\\phi: G \\rightarrow G^{\\prime}$ be a group homomorphism. Show that $ab\\in \\operatorname{Ker}\\phi$ if and only if $ba\\in \\operatorname{Ker}\\phi$.\n-/\ntheorem mul_mem_ker_comm {G G' : Type*} [Group G] [Group G'] (f : G →* G') {a b : G} :\n    (a * b ∈ f.ker)  ↔ (b * a ∈ f.ker) := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 9,
+      "informal_statement": "Set $f:G\\to H$ is a homomorphism between two groups. If $f(a)$ is not of finite order, then $a$ is also not of finite order.",
+      "formal_statement": "import Mathlib\n\n/--\nSet $f:G\\to H$ is a homomorphism between two groups.\nIf $f(a)$ is not of finite order, then $a$ is also not of finite order.\n-/\ntheorem orderOf_eq_zero_of_monoidHom {G H : Type*} [Group G] [Group H] {f : G →* H} {a : G}\n    (h : orderOf (f a) = 0) : orderOf a = 0 := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 11,
+      "informal_statement": "In any ring $R$ and $a,b,c\\in R$, $a(b-c)=a b-a c$ and $(b-c) a=b a-c a$.",
+      "formal_statement": "import Mathlib\n\n/--\nIn any ring $R$ and $a,b,c\\in R$, $a(b-c)=a b-a c$ and $(b-c) a=b a-c a$.\n-/\ntheorem mul_sub_and_sub_mul {R : Type*} [Ring R] (a b c : R) :\n    a * (b - c) = a * b - a * c ∧ (b - c) * a = b * a - c * a := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 14,
+      "informal_statement": "In an integral domain $R$, if $a\\in R$ and natural number $n\\in\\mathbb N$ satisfy $a^n=0$, then $a=0$.",
+      "formal_statement": "import Mathlib\n\n/--\nIn an integral domain $R$, if $a\\in R$ and natural number $n\\in\\mathbb N$ satisfy $a^n=0$,\nthen $a=0$.\n-/\ntheorem zero_of_pow_eq_zero {R : Type*} [Ring R] [IsDomain R] (a : R) (n : ℕ)\n    (eq : a ^ n = 0) : a = 0 := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 15,
+      "informal_statement": "Let $R$ be a ring with identity $1$ and $x$ be an element not equal to zero. If there exists $y \\in R$ s.t. $xy = 1$ and $z \\in R$ s.t. $zx = 1$, then $y=z$.",
+      "formal_statement": "import Mathlib\n\n/--\nLet $R$ be a ring with identity $1$ and $x$ be an element not equal to zero. If there exists\n$y \\in R$ s.t. $xy = 1$ and $z \\in R$ s.t. $zx = 1$, then $y=z$.\n-/\ntheorem left_right_inverse_eq {R : Type*} [Ring R] {x y z : R} (hx : x ≠ 0) (hy : x * y = 1)\n    (hz : z * x = 1) : y = z := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 18,
+      "informal_statement": "Let $R$ be a commutative ring with identity and $I_1$ and $I_2$ be two ideals of $R$. Assume that $I$ is an ideal containing $I_1$ and $I_2$, prove that $I$ contains $I_1+I_2$.",
+      "formal_statement": "import Mathlib\n\n/--\nLet $R$ be a commutative ring with identity and $I_1$ and $I_2$ be two ideals of $R$.\nAssume that $I$ is an ideal containing $I_1$ and $I_2$, prove that $I$ contains $I_1+I_2$.\n-/\ntheorem Ideal.add_le_of_le {R : Type*} [CommRing R] (I : Ideal R) (J : Ideal R) (K : Ideal R)\n    (h₁ : I ≤ K) (h₂ : J ≤ K) : I + J ≤ K := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 21,
+      "informal_statement": "In a field $F$, for $a\\in F^\\times, b\\in F$, the equation $ax+b=0$ has a unique solution.",
+      "formal_statement": "import Mathlib\n\n/--\nIn a field $F$, for $a\\in F^\\times, b\\in F$, the equation $ax+b=0$ has a unique solution.\n-/\ntheorem existUnique_linear_solution {F : Type*} [Field F] {a : Fˣ} {b : F} :\n    ∃! x, a * x + b = 0 := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 35,
+      "informal_statement": "Prove that the set of complex numbers fixed  conjugation is the set of real numbers",
+      "formal_statement": "import Mathlib\n\nopen ComplexConjugate\n\n/--\nProve that the set of complex numbers fixed conjugation is the set of real numbers\n-/\ntheorem conj_fixedPoint_eq : {z : ℂ | conj z = z} = {z : ℂ | ∃ (x : ℝ), z = x} := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 40,
+      "informal_statement": "Show that every integer $z$ is generated by 5 and 7.",
+      "formal_statement": "import Mathlib\n\n/--\nShow that every integer $z$ is generated by 5 and 7.\n-/\ntheorem int_eq_five_seven_span : ∀ z : ℤ, ∃ a b : ℤ, z = a * 5 + b * 7 := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 48,
+      "informal_statement": "Suppose that $G$ is a group and $a, b \\in G$ satisfy $a * b=b * a^{\\prime}$ where as usual, $a^{\\prime}$ is the inverse for $a$. Prove that $b * a=a^{\\prime} * b$.",
+      "formal_statement": "import Mathlib\n\n/--\nSuppose that $G$ is a group and $a, b \\in G$ satisfy $a * b=b * a^{\\prime}$ where as usual,\n$a^{\\prime}$ is the inverse for $a$. Prove that $b * a=a^{\\prime} * b$.\n-/\ntheorem relations_of_relations {G : Type*} [Group G] (a b : G) (h : a * b = b * a⁻¹) :\n    b * a = a⁻¹ * b := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 51,
+      "informal_statement": "Show that if $(a * b)^{2}=a^{2} * b^{2}$ for $a$ and $b$ in a group $G$, then $a * b=b * a$.",
+      "formal_statement": "import Mathlib\n\n/--\nShow that if $(a * b)^{2}=a^{2} * b^{2}$ for $a$ and $b$ in a group $G$, then $a * b=b * a$.\n-/\ntheorem mul_comm_of_relation {G : Type*} [Group G] (a b : G) (h : (a * b) ^ 2 = a ^ 2 * b ^ 2) :\n    a * b = b * a := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 52,
+      "informal_statement": "Let $G$ be a group and suppose that $a * b * c=e$ for $a, b, c \\in G$. Show that $b * c * a=e$ also.",
+      "formal_statement": "import Mathlib\n\n/--\nLet $G$ be a group and suppose that $a * b * c=e$ for $a, b, c \\in G$. Show that $b * c * a=e$ also.\n-/\ntheorem mul_mul_eq_one {G : Type*} [Group G] (a b c : G) (h : a * b * c = 1) : b * c * a = 1 := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 61,
+      "informal_statement": "Show that an intersection of normal subgroups of a group $G$ is again a normal subgroup of $G$.",
+      "formal_statement": "import Mathlib\n\n/--\nShow that an intersection of normal subgroups of a group $G$ is again a normal subgroup of $G$.\n-/\ntheorem Subgroup.inf_normal_of_normal {G : Type*} [Group G]\n    (M : Subgroup G) [hM : M.Normal] (N : Subgroup G) [hN: N.Normal] :\n    (M ⊓ N).Normal := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 64,
+      "informal_statement": "Suppose that $G$ is a group and $g, h \\in G$. Prove that $g x=h$ has a unique solution; likewise, prove that $x g=h$ has a unique solution.",
+      "formal_statement": "import Mathlib\n\n/--\nSuppose that $G$ is a group and $g, h \\in G$. Prove that $g x=h$ has a unique solution;\nlikewise, prove that $x g=h$ has a unique solution.\n-/\ntheorem existUnique_solution {G : Type*} [Group G] (g h : G) :\n    ∃! x, g * x = h ∧ ∃! x, x * g = h := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 65,
+      "informal_statement": "Prove that in a group, every element has exactly one inverse.",
+      "formal_statement": "import Mathlib\n\n/--\nProve that in a group, every element has exactly one inverse.\n-/\ntheorem existUnique_inverse {G : Type*} [Group G] {g : G} : ∃! (h : G), g * h = 1 ∧ h * g = 1 := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 66,
+      "informal_statement": "Let $G$ be a group, and $a, b, c \\in G$. Prove that the equation $a x c=b$ has a unique solution in $G$.",
+      "formal_statement": "import Mathlib\n\n/--\nLet $G$ be a group, and $a, b, c \\in G$.\nProve that the equation $a x c=b$ has a unique solution in $G$.\n-/\ntheorem existUnique_mul_eq {G : Type*} [Group G] (a b c : G) : ∃! x : G, a * x * b = c := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 67,
+      "informal_statement": "Suppose that $G$ and $H$ are groups with operations $\\circ$ and $*$ and suppose $g, k \\in G$ are inverses; that is, $g \\circ k=e_{G}$. If $\\varphi: G \\rightarrow H$ is a group isomorphism, prove that $\\varphi(g)$ and $\\varphi(k)$ are inverses in $H$.",
+      "formal_statement": "import Mathlib\n\n/--\nSuppose that $G$ and $H$ are groups with operations $\\circ$ and $*$ and suppose\n$g, k \\in G$ are inverses; that is, $g \\circ k=e_{G}$. If $\\varphi: G \\rightarrow H$ is a group\nisomorphism, prove that $\\varphi(g)$ and $\\varphi(k)$ are inverses in $H$.\n-/\ntheorem MonoidHom.map_inv_eq_inv_map {G H : Type*} [Group G] [Group H] (φ : G →* H)\n    (g k : G) (hgk : g = k⁻¹) : φ g = (φ k)⁻¹ := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 68,
+      "informal_statement": "Explain why the order of $g^{-1}$ is the same as $g$.",
+      "formal_statement": "import Mathlib\n\n/--\nShow that the order of $g^{-1}$ is the same as $g$.\n-/\ntheorem orderOf_inv_eq_orderOf {G : Type*} [Group G] (a : G) : orderOf a = orderOf (a⁻¹) := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    },
+    {
+      "id": 76,
+      "informal_statement": "If $H$ is a subgroup of $G$ and two cosets of $H$ share an element, then these two cosets are equal.",
+      "formal_statement": "import Mathlib\n\nopen Pointwise\n\n/--\nIf $H$ is a subgroup of $G$ and two cosets of $H$ share an element, then these two cosets are equal.\n-/\ntheorem cosets_eq_of_inter_ne_empty {G : Type*} [Group G] (H : Subgroup G) (a b : G) :\n    (a • (H : Set G)) ∩ (b • (H : Set G)) ≠ ∅ →\n    QuotientGroup.mk (s := H) a = QuotientGroup.mk (s := H) b  := by\n  sorry",
+      "source": "FATE-M",
+      "version": "v4.28.0"
+    }
+  ]
+}

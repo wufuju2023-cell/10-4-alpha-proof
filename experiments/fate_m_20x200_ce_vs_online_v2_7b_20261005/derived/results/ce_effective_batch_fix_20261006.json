@@ -1,0 +1,46 @@
+{
+  "schema_version": "fate-m.ce-effective-batch-fix.v1",
+  "status": "locally_validated",
+  "scope": "formal wave 001 shared 20-problem replay only; no heldout data",
+  "authoritative_join_evidence": {
+    "path": "build/online-signal-revalidation/remote/tmp/fate-m-formal-w001-join-v2/training-inputs/ce-receipts.jsonl",
+    "sha256": "0fe96d85953644150bde6e77e253cb6dff23bd92f7243b4dd89619ae7818266a",
+    "signed_receipts": 20,
+    "selected_path_transitions": 20,
+    "selected_path_length_histogram": {
+      "1": 20
+    },
+    "supervised_tactic_tokens": 137,
+    "raw_completion_tokens_including_stop_tokens": 157
+  },
+  "old_effective_update": {
+    "replay_sampling": "uniform_over_transitions",
+    "batch_size": 1,
+    "micro_batch_size": 1,
+    "optimizer_steps": 1,
+    "failure": "silently sampled one of twenty strict selected-path transitions"
+  },
+  "fixed_effective_update": {
+    "replay_sampling": "full_replay",
+    "batch_size": 20,
+    "micro_batch_size": 1,
+    "gradient_accumulation_micro_batches": 20,
+    "optimizer_steps": 1,
+    "policy_supervised_transitions": 20,
+    "policy_supervised_tactic_tokens": 137,
+    "value_bins": 64,
+    "value_coef": 0.001,
+    "config_sha256": "e4191e169cc7a7e705b7daace34e337d844b636bffc0bd0b777974953867586f",
+    "trainer_sha256": "6065b961b613813290c80386862d7d81f5589ce3b45323d19bfebbd7756ff2e3"
+  },
+  "fail_closed_guards": [
+    "manifest stats.transitions must be a positive integer equal to validated replay rows",
+    "full_replay train.batch_size must equal validated replay rows",
+    "unsupported replay sampling policies are rejected"
+  ],
+  "local_tests": {
+    "command": "python -m pytest workstreams/ce_arm/tests -q",
+    "result": "62 passed",
+    "elapsed_seconds": 10.33
+  }
+}

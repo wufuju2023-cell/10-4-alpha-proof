@@ -1,0 +1,380 @@
+diff --git a/Reap/Tactic/Generator.lean b/Reap/Tactic/Generator.lean
+index b2bd675..a525bba 100644
+--- a/Reap/Tactic/Generator.lean
++++ b/Reap/Tactic/Generator.lean
+@@ -15,6 +15,19 @@ structure TacticGenerator where
+   valueClient : OpenAIClient
+   premiseSelectionClient : PremiseSelectionClient
+ 
++/-- Executor-owned policy candidate.  Provenance is supplied by the controlled
++OpenAI service before Reap sees the response and survives exact-action dedup. -/
++structure PolicyCandidate where
++  generationRequestId : String
++  action : String
++  rawSampleIndices : Array Nat
++  sampleTacticTokenSpans : Array (Nat × Nat)
++  serviceCandidateSha256s : Array String
++  survivorSampleIndex : Nat
++  premises : Array PremiseSelectionResult := #[]
++  prior : Float
++deriving Inhabited
++
+ def OpenAIChatChoice.computeLogProbability (choice: OpenAIChatChoice) : Float :=
+   match choice.logprobs with
+   | none => 0.0
+@@ -37,6 +50,78 @@ end Array
+ 
+ namespace TacticGenerator
+ 
++deriving instance Inhabited for OpenAIChatCompletionTokenLogprob
++
++private structure ProvenanceChatChoice where
++  index : Nat
++  message : OpenAIMessage
++  logprobs : Option OpenAIChoiceLogprobs := none
++  raw_sample_index : Nat
++  service_candidate_sha256 : String
++deriving FromJson
++
++private structure ProvenanceChatResponse where
++  id : String
++  choices : Array ProvenanceChatChoice
++deriving FromJson
++
++private structure RawPolicyCandidate where
++  action : String
++  rawSampleIndex : Nat
++  tacticTokenSpan : Nat × Nat
++  serviceCandidateSha256 : String
++  prior : Float
++deriving Inhabited
++
++private def isLowerHexSha256 (value : String) : Bool :=
++  value.length == 64 && value.toList.all fun c =>
++    ('0' ≤ c && c ≤ '9') || ('a' ≤ c && c ≤ 'f')
++
++private def controlledPolicyResponse (client : OpenAIClient) (req : OpenAIChatRequest) :
++    IO ProvenanceChatResponse := do
++  Requests.post (client.baseUrl ++ "/chat/completions") req
++    (getOpenAIRequestHeaders client.apiKey)
++
++private def choiceLogProbability (choice : ProvenanceChatChoice) : Float :=
++  match choice.logprobs with
++  | none => 0.0
++  | some logprobs =>
++    match logprobs.content with
++    | none => 0.0
++    | some values => (values.map fun value => value.logprob).sum
++
++/-- Freeze the executor action and its exact token span. Ordinary responses are
++executed byte-for-byte, including leading whitespace. A single `<think>` prefix
++is removed only when the remaining suffix ends exactly at the response-content
++token boundary. No unanchored first-match search is permitted. -/
++private def actionAndExactTokenSpan (choice : ProvenanceChatChoice) : Option (String × Nat × Nat) := do
++  let logprobs ← choice.logprobs
++  let tokens := (← logprobs.content).toArray
++  let rawAction := choice.message.content
++  let mut rendered := ""
++  let mut rawStop : Option Nat := none
++  for (token, index) in tokens.zipIdx do
++    rendered := rendered ++ token.token
++    if rendered == rawAction && rawStop.isNone then rawStop := some (index + 1)
++  let stop ← rawStop
++  let trimmed := rawAction.trimAsciiStart.toString
++  if !trimmed.startsWith "<think>" then
++    return (rawAction, 0, stop)
++  let parts := trimmed.splitOn "</think>"
++  if parts.length != 2 then failure
++  let action := parts[1]!
++  if action.trimAscii.toString.isEmpty then failure
++  let mut starts : Array Nat := #[]
++  for start in List.range stop do
++    let suffix := (tokens.extract start stop).foldl (fun text token => text ++ token.token) ""
++    if suffix == action then starts := starts.push start
++  if starts.isEmpty then failure
++  -- Byte-level BPE may require several raw tokens to complete one UTF-8
++  -- character.  The policy service renders earlier partial-byte tokens as
++  -- empty strings; choose the earliest matching boundary so the action span
++  -- retains every contributing token and its log-probability.
++  return (action, starts[0]!, stop)
++
+ /-- Strip `<think>...</think>` prefix that some LLMs prepend to their responses. -/
+ def stripThinkingPrefix (s : String) : String :=
+   let s := s.trimAsciiStart.toString
+@@ -117,19 +202,57 @@ def mkChatRequest (opts : Options) (prompt : String) (n : Nat) : OpenAIChatReque
+ 
+ def generatePolicyFromPrompt (generator : TacticGenerator) (opts : Options)
+     (ppGoal : String) (relatedTheorems : Array PremiseSelectionResult) (prompt : String) :
+-    CoreM (Array (String × Float)) := do
+-  -- let mut results : Std.HashSet String := Std.HashSet.emptyWithCapacity
+-  let mut results : List (String × Float) := []
++    CoreM (Array PolicyCandidate) := do
+   let req := mkChatRequest opts prompt (reap.num_samples.get opts)
+-  let res ← withLogWallClockTime "tactic_gen" (fun result => json%{ goal: $ppGoal, ps: $relatedTheorems, result: $result }) <|
+-    retryCoreM? (generator.llmClient.generateChat req)
++  let res ← withLogWallClockTime "tactic_gen" (fun _ => json%{ goal: $ppGoal, ps: $relatedTheorems }) <|
++    retryCoreM? (controlledPolicyResponse generator.llmClient req)
+   if let some res := res then
+-    for result in (parseChatResponseOpenAI res) do
+-      results := results.insert result
+-    results := results.eraseDupsBy (fun x y => x.1 == y.1)
+-    return results.toArray
++    if res.id.isEmpty || res.choices.size != reap.num_samples.get opts then
++      throwError "Controlled policy response has missing request id or wrong choice count"
++    let mut raw : Array RawPolicyCandidate := #[]
++    for (choice, responseIndex) in res.choices.zipIdx do
++      unless choice.index == responseIndex && choice.raw_sample_index == responseIndex do
++        throwError "Controlled policy response choice/raw index drift"
++      let some (action, start, stop) := actionAndExactTokenSpan choice
++        | throwError "Policy response token stream cannot prove the exact action span"
++      unless isLowerHexSha256 choice.service_candidate_sha256 do
++        throwError "Controlled policy response has invalid service_candidate_sha256"
++      if action.trimAscii.toString.isEmpty then
++        throwError "Controlled policy response contains an empty action"
++      raw := raw.push {
++        action, rawSampleIndex := choice.raw_sample_index,
++        tacticTokenSpan := (start, stop),
++        serviceCandidateSha256 := choice.service_candidate_sha256,
++        prior := choiceLogProbability choice
++      }
++    -- Preserve the original List.insert + eraseDupsBy action ordering and
++    -- representative choice.  Only the provenance arrays are newly merged.
++    let mut tupleOrder : List Nat := []
++    for candidate in raw do
++      let duplicate := tupleOrder.any fun index =>
++        let previous := raw[index]!
++        previous.action == candidate.action && previous.prior == candidate.prior
++      if !duplicate then
++        tupleOrder := candidate.rawSampleIndex :: tupleOrder
++    let mut seenActions : Array String := #[]
++    let mut results : Array PolicyCandidate := #[]
++    for survivor in tupleOrder do
++      let representative := raw[survivor]!
++      if !seenActions.contains representative.action then
++        seenActions := seenActions.push representative.action
++        let matching := raw.filter fun candidate => candidate.action == representative.action
++        results := results.push {
++          generationRequestId := res.id
++          action := representative.action
++          rawSampleIndices := matching.map (·.rawSampleIndex)
++          sampleTacticTokenSpans := matching.map (·.tacticTokenSpan)
++          serviceCandidateSha256s := matching.map (·.serviceCandidateSha256)
++          survivorSampleIndex := survivor
++          prior := representative.prior
++        }
++    return results
+   else
+-    return #[]
++    throwError "Strict policy inference failed after 3 attempts; refusing empty candidates"
+ 
+ def generateValueFromPrompt (generator : TacticGenerator) (opts : Options)
+     (ppGoal : String) (relatedTheorems : Array PremiseSelectionResult) (prompt : String) :
+@@ -163,7 +286,7 @@ def Meta.ppProofState (mvarIds : List MVarId) : MetaM Format := do
+   return Std.Format.joinSep (← mvarIds.mapM (Meta.ppGoal)) "\n".toFormat
+ 
+ def generatePolicyValue (mvarIds : List MVarId) :
+-    MetaM <| Float × Array (String × Array PremiseSelectionResult × Float) := do
++    MetaM <| Float × Array PolicyCandidate := do
+   let opts ← getOptions
+   let generator ← getClient
+   let ppProofState := toString (← Meta.ppProofState mvarIds)
+@@ -175,4 +298,4 @@ def generatePolicyValue (mvarIds : List MVarId) :
+     generatePolicyFromPrompt generator opts ppProofState relatedTheorems prompt
+   let value ← valueTask.get
+   let tactics ← policyTask.get
+-  return (value, tactics.map fun (x, y) => (x, relatedTheorems, y))
++  return (value, tactics.map fun candidate => { candidate with premises := relatedTheorems })
+diff --git a/Reap/Tactic/TreeSearch.lean b/Reap/Tactic/TreeSearch.lean
+index c48b9e5..2ba8134 100644
+--- a/Reap/Tactic/TreeSearch.lean
++++ b/Reap/Tactic/TreeSearch.lean
+@@ -61,7 +61,7 @@ def unifyTypes (t₁ t₂ : Array Expr) : TacticM Bool := do
+       break
+   return ret
+ 
+-abbrev PolicyValueEval := List MVarId → MetaM (Float × Array (String × Array PremiseSelectionResult × Float))
++abbrev PolicyValueEval := List MVarId → MetaM (Float × Array PolicyCandidate)
+ 
+ structure MCTSProgress where
+   visitedNodes : Nat
+@@ -138,9 +138,13 @@ structure NodeData where
+   valueSum : Float
+   numVisit : Nat
+   numEvaluations : Nat
++  /-- Logical model-action parent. Focus nodes inherit this unchanged. -/
++  parentEventId : Option String := none
++  candidateDepth : Nat := 0
+ 
+ namespace NodeData
+-def fromState (toPlay := NodeKind.orNode) (partialGoal : Option MVarId := none) : TacticM NodeData := do
++def fromState (toPlay := NodeKind.orNode) (partialGoal : Option MVarId := none)
++    (parentEventId : Option String := none) (candidateDepth : Nat := 0) : TacticM NodeData := do
+   pure {
+     state := ← Tactic.saveState
+     key := ← stateKey
+@@ -150,6 +154,8 @@ def fromState (toPlay := NodeKind.orNode) (partialGoal : Option MVarId := none)
+     valueSum := 0.0
+     numVisit := 0
+     numEvaluations := 0
++    parentEventId
++    candidateDepth
+   }
+ 
+ def value (node : NodeData) : Float :=
+@@ -177,6 +183,7 @@ structure EdgeData where
+   numVisit : Nat := 0
+   isFocus : Bool := false
+   focusIndex : Nat := 0
++  canonicalEventId : Option String := none
+ deriving ToJson
+ 
+ abbrev NodeType := Node NodeData (EdgeData × NodeData)
+@@ -226,6 +233,7 @@ def pushFocusChildren (nodeIdx : Nat) (node : NodeData) : SearchM Unit := do
+     node.state.restore
+     setGoals [goal]
+     let childData ← NodeData.fromState (partialGoal := some goal)
++      (parentEventId := node.parentEventId) (candidateDepth := node.candidateDepth)
+     discard <| pushChildT nodeIdx {
+       tacticStr := s!"focus_goal {i}"
+       premise := #[]
+@@ -250,6 +258,26 @@ def updateDuplicateChild (nodeIdx childPos : Nat) (childData : NodeData) : Searc
+     let childRef ← getNode! childIdx
+     setAtT childIdx { childRef with data := { childRef.data with isSolved := childRef.data.isSolved || childData.isSolved } }
+ 
++private def statePayload : TacticM String := do
++  return toString (← TacticGenerator.Meta.ppProofState (← getUnsolvedGoals))
++
++private def candidateEventId (candidate : PolicyCandidate) (nodeIdx generation : Nat) : String :=
++  s!"candidate:{candidate.generationRequestId}:{nodeIdx}:{generation}:{candidate.survivorSampleIndex}"
++
++private def verifierStatus (result : EvalResult Unit) (terminal : Bool) : String :=
++  match result with
++  | .ok _ => if terminal then "verified_proof" else "unresolved"
++  | .error .tacticTimeout => "timeout"
++  | .error _ => "invalid_tactic"
++
++private def didExecute (result : EvalResult Unit) : Bool :=
++  match result with
++  | .error (.parseError _) | .error (.forbiddenTactic _) => false
++  | _ => true
++
++private def parserPhase (result : EvalResult Unit) : String :=
++  if didExecute result then "accepted" else "rejected"
++
+ def visitNode (ctx : ProofCheckContext) (evalPolicyValue : PolicyValueEval)
+     (ancestorKeys : Std.HashSet StateKey)
+     (nodeIdx : Nat) (node : NodeType)
+@@ -277,7 +305,29 @@ def visitNode (ctx : ProofCheckContext) (evalPolicyValue : PolicyValueEval)
+   let opts ← getOptions
+   let heartbeats := reap.heartbeats.get opts
+   let priorTemperature := reap.prior_temperature.get opts |>.toFloat
+-  for ((t, ps, prior), candidateIdx) in tactics.zipIdx do
++  for (candidate, candidateIdx) in tactics.zipIdx do
++    let t := candidate.action
++    let ps := candidate.premises
++    let prior := candidate.prior
++    let eventId := candidateEventId candidate nodeIdx node.data.numEvaluations
++    -- Observer replaces this transport-local placeholder with one stable
++    -- session/tree trajectory before hashing or persistence.
++    let trajectoryId := "pending-observer-trajectory"
++    node.data.state.restore
++    let beforeState ← statePayload
++    observe? observer? do
++      return json%{
++        kind: "canonical_candidate", step: $step, node_index: $nodeIdx,
++        generation_index: $(node.data.numEvaluations), candidate_index: $candidateIdx,
++        generation_request_id: $(candidate.generationRequestId), event_id: $eventId,
++        trajectory_id: $trajectoryId, state_id: $(s!"state:{nodeIdx}"),
++        state_before_payload: $beforeState, depth: $(node.data.candidateDepth),
++        parent_event_id: $(node.data.parentEventId), partial_goal: $(node.data.partialGoal.isSome), action: $t,
++        sample_indices: $(candidate.rawSampleIndices),
++        sample_tactic_token_spans: $(candidate.sampleTacticTokenSpans),
++        service_candidate_sha256s: $(candidate.serviceCandidateSha256s),
++        survivor_sample_index: $(candidate.survivorSampleIndex), action_value: $p'
++      }
+     observe? observer? do
+       node.data.state.restore
+       let goalState := toString (← TacticGenerator.Meta.ppProofState (← getUnsolvedGoals))
+@@ -298,12 +348,16 @@ def visitNode (ctx : ProofCheckContext) (evalPolicyValue : PolicyValueEval)
+           evalTacticStrNoFinalCheck (node.data.proofCheckContext ctx) t heartbeats
+       | none =>
+           evalTacticStr (node.data.proofCheckContext ctx) t heartbeats
++    let executed := didExecute result
++    let terminal := result.isOk && node.data.partialGoal.isNone && (← getUnsolvedGoals).isEmpty
++    let afterState ← if result.isOk then statePayload else pure beforeState
+     let mut observedChild : Option Nat := none
+     let mut disposition := if result.isOk then "ancestor_rejected" else "eval_rejected"
+     if result.isOk then
+       let probability := (prior / priorTemperature).exp
+       let childKind ← childKindAfterTactic
+       let childData ← NodeData.fromState childKind node.data.partialGoal
++        (parentEventId := some eventId) (candidateDepth := node.data.candidateDepth + 1)
+       if !ancestorKeys.contains childData.key then
+         let parentRef ← getNode! nodeIdx
+         let parent ← resolve parentRef
+@@ -323,6 +377,7 @@ def visitNode (ctx : ProofCheckContext) (evalPolicyValue : PolicyValueEval)
+             premise := ps
+             probability
+             value := 0.0
++            canonicalEventId := some eventId
+           } childData
+           observedChild := some childIdx
+           disposition := "created"
+@@ -336,6 +391,21 @@ def visitNode (ctx : ProofCheckContext) (evalPolicyValue : PolicyValueEval)
+         tactic: $t, eval_result: $result, child_index: $observedChild,
+         disposition: $disposition, partial_goal: $(node.data.partialGoal.isSome)
+       }
++    observe? observer? do
++      return json%{
++        kind: "canonical_candidate_result", step: $step, node_index: $nodeIdx,
++        generation_index: $(node.data.numEvaluations), candidate_index: $candidateIdx,
++        generation_request_id: $(candidate.generationRequestId), event_id: $eventId,
++        trajectory_id: $trajectoryId, state_id: $(s!"state:{nodeIdx}"),
++        state_before_payload: $beforeState, state_after_payload: $afterState,
++        parser_phase: $(parserPhase result), did_execute: $executed,
++        lean_tactic_executions: $(if executed then 1 else 0), eval_result: $result,
++        transition_applied: $(result.isOk), verifier_status: $(verifierStatus result terminal),
++        execution_disposition: $(if executed then "executed" else "parse_rejected"),
++        search_disposition: $disposition, terminal: $terminal,
++        depth: $(node.data.candidateDepth), parent_event_id: $(node.data.parentEventId),
++        partial_goal: $(node.data.partialGoal.isSome)
++      }
+   refreshNodeSolved nodeIdx
+   return p'
+ 
+@@ -624,6 +694,35 @@ partial def proofScriptForSolvedNode
+         bullets := bullets.push (renderBullet (← proofScriptForSolvedNode nodes childIdx))
+       return String.intercalate "\n" bullets.toList
+ 
++/-- Event identities for the exact solved edges selected by proof extraction.
++Focus edges are structural and therefore contribute no model-action event. -/
++partial def selectedEventIdsForSolvedNode
++    (nodes : Array (Node NodeData (EdgeData × Nat))) (nodeIdx : Nat) :
++    Except String (Array String) := do
++  let some node := nodes[nodeIdx]?
++    | throw s!"MCTS selected-path node index out of bounds: {nodeIdx}"
++  match node.data.toPlay with
++  | .orNode =>
++      match solvedOrChild? nodes node with
++      | some (edge, childIdx) =>
++          let some eventId := edge.canonicalEventId
++            | throw s!"Solved model edge at node {nodeIdx} lacks canonical event identity"
++          return #[eventId] ++ (← selectedEventIdsForSolvedNode nodes childIdx)
++      | none =>
++          if node.data.isSolved then return #[]
++          else throw s!"MCTS selected path could not find a solved OR child at node {nodeIdx}"
++  | .andNode =>
++      let children := solvedFocusChildren nodes node
++      if children.isEmpty then
++        if node.data.isSolved then return #[]
++        else throw s!"MCTS selected path could not find solved focus children at node {nodeIdx}"
++      if children.size != 1 then
++        throw s!"Canonical linear selected path cannot represent branching AND node {nodeIdx}"
++      let mut result := #[]
++      for (_, childIdx) in children do
++        result := result ++ (← selectedEventIdsForSolvedNode nodes childIdx)
++      return result
++
+ partial def replaySolvedNode (ctx : ProofCheckContext) (heartbeats : Nat)
+     (nodes : Array (Node NodeData (EdgeData × Nat))) (nodeIdx : Nat) : TacticM Unit := do
+   let some node := nodes[nodeIdx]? | throwError "MCTS proof replay node index out of bounds: {nodeIdx}"

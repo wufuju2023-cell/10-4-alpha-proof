@@ -1,0 +1,28 @@
+diff --git a/Reap/Training/RolloutSink.lean b/Reap/Training/RolloutSink.lean
+--- a/Reap/Training/RolloutSink.lean
++++ b/Reap/Training/RolloutSink.lean
+@@ -112,5 +112,24 @@ elab "reapTrainingMCTS" : tactic => do
+                       "replay_check_failed" (some script) (some message)
+                     throwError "REAP replay check failed: {message}"
+                 | .ok _ =>
++                    let selectedEventIds ←
++                      match Reap.TreeSearch.MCTS.selectedEventIdsForSolvedNode result.nodes 0 with
++                      | .ok ids => pure ids
++                      | .error err =>
++                          writeJson resultPath <| resultJson sessionId (now - start) false
++                            "selected_path_failed" (some script) (some err)
++                          throwError "REAP selected path extraction failed: {err}"
++                    if selectedEventIds.isEmpty then
++                      writeJson resultPath <| resultJson sessionId (now - start) false
++                        "selected_path_failed" (some script) (some "empty selected event path")
++                      throwError "REAP verified proof has an empty selected event path"
++                    if let some observer := observer? then
++                      observer <| json%{
++                        kind: "canonical_selected_path",
++                        selected_event_ids: $selectedEventIds,
++                        terminal_event_id: $(selectedEventIds.back!),
++                        proof_script: $script,
++                        outcome: "proof"
++                      }
+                     writeJson resultPath <| resultJson sessionId (now - start) true
+                       "solved" (some script) none

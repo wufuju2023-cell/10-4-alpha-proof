@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_execution",
+  "protocol_id": "fate-m-20-family-10-variant-fast-ab-adaptive-stop-v1",
+  "frozen_on": "2026-10-06",
+  "experiment_id": "fate_m_20x200_ce_vs_online_v2_7b_20261005",
+  "purpose": "A result-blind, wall-clock adaptive training stop for the single-GPU 4-6 hour execution envelope. It preserves paired CE-versus-Online-v2 exposure and reserves time for the complete fixed held-out evaluation.",
+  "base_protocol": {
+    "path": "subset_20x10_protocol.frozen.json",
+    "sha256": "164dd388414b592a3fa083099840712b939334954cdf95e1281e0afc8479e0a0",
+    "relationship": "execution-only addendum; selection, seeds, attempts, token limits, arms, verifier, metrics, and the 40-row held-out set remain unchanged",
+    "conflict_rule": "this addendum supersedes only base_protocol.stopping.arm, base_protocol.stopping.wall_clock, base_protocol.stopping.budget_exhaustion, and base_protocol.reporting.required_terminal_state"
+  },
+  "shared_clock": {
+    "starts_at": "the persisted timestamp immediately before the first shared_pre_update_baseline held-out generation request",
+    "hard_deadline_seconds_after_start": 21600,
+    "target_end_to_end_hours_range": [4.0, 6.0],
+    "clock_source": "CLOCK_MONOTONIC for decisions plus UTC timestamps for receipts",
+    "single_clock_for_both_arms": true
+  },
+  "paired_training": {
+    "wave_variant_indices_in_order": [1, 2, 3, 4, 5, 6, 7, 8],
+    "tasks_per_wave_per_arm": 20,
+    "minimum_completed_common_waves": 2,
+    "maximum_completed_common_waves": 8,
+    "minimum_training_tasks_per_arm": 40,
+    "maximum_training_tasks_per_arm": 160,
+    "submission_unit": "one CE wave and the Online-v2 wave with the same variant index form one indivisible paired wave",
+    "single_gpu_arm_order": "CE then Online-v2 for odd variant indices; Online-v2 then CE for even variant indices",
+    "barrier": "do not launch either arm of wave k+1 until both arms of wave k have committed terminal receipts and accepted checkpoints",
+    "failure_rule": "if one arm cannot complete a started wave, do not advance either arm; preserve diagnostics and mark the comparison INCOMPLETE",
+    "selected_checkpoint": "the latest checkpoint from the largest common completed wave count; never choose an earlier checkpoint using train or held-out results"
+  },
+  "heldout_evaluation": {
+    "rows": 40,
+    "variant_indices": [9, 10],
+    "fixed_checkpoints": [
+      "shared_pre_update_baseline",
+      "ce_latest_common_wave",
+      "online_v2_latest_common_wave"
+    ],
+    "baseline_timing": "complete and seal the shared pre-update baseline before training; expose only its elapsed time and cost counters to the stop controller, not outcomes",
+    "final_timing": "evaluate both locked latest-common-wave checkpoints after training stops",
+    "completion_rule": "all 40 rows must be attempted under the frozen four-attempt cap for every fixed checkpoint; aggregate outcomes cannot stop evaluation",
+    "heldout_for_stopping": false
+  },
+  "evaluation_reserve": {
+    "minimum_final_evaluation_seconds": 3600,
+    "baseline_multiplier_for_two_final_checkpoints": 2.5,
+    "finalization_seconds": 900,
+    "formula": "ceil(max(3600, 2.5 * shared_pre_update_baseline_wall_seconds)) + 900",
+    "inputs": [
+      "shared_pre_update_baseline_wall_seconds"
+    ],
+    "outcome_blind": true,
+    "latest_final_evaluation_start": "shared_deadline - evaluation_reserve_seconds"
+  },
+  "adaptive_stop": {
+    "decision_points": "only after both arms have completed and committed the same wave",
+    "mandatory_prefix": "complete paired waves v001 and v002 (40 training rows per arm) unless a hard failure or frozen resource cap makes the run INCOMPLETE",
+    "next_pair_prediction_seconds": "ceil(1.25 * max(completed_paired_wave_wall_seconds))",
+    "continue_rule_after_mandatory_prefix": "launch the next paired wave only when remaining_seconds_to_shared_deadline >= evaluation_reserve_seconds + next_pair_prediction_seconds",
+    "stop_rule_after_mandatory_prefix": "otherwise lock both latest-common-wave checkpoints and begin final held-out evaluation immediately",
+    "maximum_rule": "after eight common waves (160 training rows per arm), stop training and begin final held-out evaluation",
+    "allowed_decision_inputs": [
+      "monotonic timestamps",
+      "terminal receipt status",
+      "started request counts",
+      "generated token counts",
+      "Lean tactic execution counts",
+      "frozen storage and numerical safety guards"
+    ],
+    "forbidden_decision_inputs": [
+      "train success or reward",
+      "train loss",
+      "held-out success or reward",
+      "held-out aggregate or per-family metrics",
+      "arm identity or apparent lead",
+      "manual preference"
+    ],
+    "already_started_work": "finish, persist, and charge every request already started inside the current paired wave; never discard post-success or slower-arm work",
+    "resource_cap_rule": "if either arm hits a frozen primary cap, stop at the last common completed wave; DONE remains possible only when at least two common waves completed and all fixed held-out evaluations complete"
+  },
+  "terminal_state": {
+    "done": "both arms completed the same 2-8 wave prefix, the selected checkpoints are the latest common wave, and every fixed checkpoint completed all 40 held-out rows before the shared hard deadline",
+    "incomplete": "fewer than two common waves completed, the arms have unequal completed-wave prefixes, any required 40-row held-out evaluation is incomplete, or the shared hard deadline is reached before evidence finalization",
+    "winner_rule": "report a CE-versus-Online-v2 comparison only for DONE; never infer a winner from unequal or incomplete partial arms"
+  },
+  "required_receipt_fields": [
+    "protocol_id",
+    "base_protocol_sha256",
+    "run_started_at_utc",
+    "shared_deadline_at_utc",
+    "baseline_wall_seconds",
+    "evaluation_reserve_seconds",
+    "completed_common_waves",
+    "training_rows_per_arm",
+    "paired_wave_wall_seconds",
+    "stop_decision_reason",
+    "selected_checkpoint_by_arm",
+    "heldout_rows_completed_by_checkpoint",
+    "terminal_state"
+  ],
+  "execution_started": false
+}

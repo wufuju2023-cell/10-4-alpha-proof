@@ -1,0 +1,30 @@
+{
+  "schema_version": "fate.single_wave_execution_scope.v1",
+  "recorded_on": "2026-10-06",
+  "status": "execution_scope_record_not_retroactive_preregistration",
+  "reason": "User-directed remaining-instance deadline; scope handed off before either formal arm update and before post-update evaluation.",
+  "training": {
+    "common_waves": 1,
+    "variant_indices": [1],
+    "tasks_per_arm": 20,
+    "shared_initial_policy_rollout": true,
+    "same_join_manifest_for_both_arms": true,
+    "order": ["ce", "online_v2"],
+    "ce": {"batch_size": 20, "micro_batch_size": 1, "steps_per_wave": 1, "replay_sampling": "full_replay"},
+    "online_v2": {"micro_batch_size": 1, "epochs": 2, "gradient_checkpointing": true}
+  },
+  "evaluation": {
+    "checkpoints": ["initial", "ce_final", "online_final"],
+    "tasks_per_checkpoint": 40,
+    "families": 20,
+    "variant_indices": [9, 10],
+    "same_frozen_settings_and_paired_seeds": true,
+    "no_heldout_tuning_or_checkpoint_selection": true
+  },
+  "completion": {
+    "single_wave_scope": "Both accepted updates and all three complete 40-task strict Lean evaluations are required.",
+    "original_adaptive_protocol": "INCOMPLETE: one wave is below its mandatory two-wave / 40-task training minimum.",
+    "claim_limit": "Descriptive, one-seed, shared initial-rollout, single-wave update comparison on adjacent scaffolded within-family variants; not the planned 40-160-task adaptive experiment, independent online rollout campaign, unseen-family generalization, significance, or robustness evidence."
+  },
+  "resource_limits": {"persistent_storage_warning_gb": 90, "persistent_storage_stop_gb": 95}
+}

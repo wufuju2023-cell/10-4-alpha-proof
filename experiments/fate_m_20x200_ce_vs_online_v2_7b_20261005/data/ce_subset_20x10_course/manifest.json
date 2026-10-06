@@ -1,0 +1,38 @@
+{
+  "schema_version": 2,
+  "protocol_id": "fate-m-20-family-10-variant-fast-ab-v1",
+  "selection_receipt_sha256": "c0f707635cc48ef24330fc869d9df6c54c94c1ec4adb7dbb5bf7a7559b96e094",
+  "train_source_sha256": "b9e9c4abcf02693a85d5f794b766465f65ac2488ed15e96d6fd90aff452e6ab0",
+  "heldout_source_sha256": "a394465ef3e74666abea400496672ee97e838ddf4364c390d85362fb5d497c09",
+  "families": 20,
+  "selected_variants_per_family": 10,
+  "adaptation_range": [
+    1,
+    8
+  ],
+  "heldout_range": [
+    9,
+    10
+  ],
+  "adaptation_rows": 160,
+  "heldout_rows": 40,
+  "selected_rows": 200,
+  "files": {
+    "adaptation.jsonl": {
+      "rows": 160,
+      "sha256": "1a79c54dd69a75873b2dd3c30ccb2c0dd24577f4528bd7879d9927516c501d77"
+    },
+    "heldout.jsonl": {
+      "rows": 40,
+      "sha256": "87f0dfdf7bfd500327b4a63199d854e304a5f0035f42cf0b81ed7c70517a9c9d"
+    },
+    "course_index.jsonl": {
+      "rows": 200,
+      "sha256": "63078e21051c536fc07b49de0dbc8aea4d7f4332549bed1993d393364bfb75a4"
+    },
+    "waves.jsonl": {
+      "rows": 8,
+      "sha256": "d7dfdfa628b4a8f6a548b7fb0f1480e09abc24d54218ac4229c3153c162b6c30"
+    }
+  }
+}
