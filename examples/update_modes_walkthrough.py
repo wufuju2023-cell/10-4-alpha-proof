@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# 【源代码｜F-ex-walkthrough】examples/update_modes_walkthrough.py — 数值走查：价值目标 + 两种 policy 更新
 """数值小例子：价值目标回溯 + 两种 policy 更新（纯标准库，无任何依赖）。
 
 用法:

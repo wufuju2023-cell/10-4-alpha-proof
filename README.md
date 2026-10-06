@@ -44,7 +44,7 @@ alphaproof/                 # 共享核心（无 torch 亦可运行纯算法部�
 update_offline/             # 官方式离线专家迭代（CE）
 update_online/              # 本机式在线更新（batch 可配）
 curriculum/                 # 课程机制：依赖解锁 + 预算调度 + 三闸门 + 运行器
-examples/                   # 数值小例子（可跑的手工数字走查）
+examples/                   # 数值小例子（可跑的手工数字走查；Tag 规范见 examples/00-风格与编号规范.md）
 lean/patches/               # Reap 内核对齐补丁（τ / c_AND / unvisited / -40）
 tests/                      # pytest：价值目标、MCTS parity、两套 learner（torch 自动跳过）
 scripts/                    # 冒烟 / 云端脚本 / 密钥检查
