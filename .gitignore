@@ -15,3 +15,5 @@ checkpoints/
 *.tgz
 *.tar.gz
 .env
+
+.ipynb_checkpoints/

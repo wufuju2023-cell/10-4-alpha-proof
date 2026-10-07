@@ -1,0 +1,235 @@
+{
+  "theta_B": 0.03598,
+  "B": 64,
+  "delta": 0.1,
+  "verified": {
+    "empirical_freq": {
+      "n": 49,
+      "mean": 0.099,
+      "median": 0.031,
+      "p10": 0.016,
+      "p90": 0.25
+    },
+    "minus_log10_p_model": {
+      "n": 49,
+      "mean": 1.955,
+      "median": 1.855,
+      "p10": 0.652,
+      "p90": 3.192
+    },
+    "minus_log10_p_samp": {
+      "n": 49,
+      "mean": 2.333,
+      "median": 2.074,
+      "p10": 1.11,
+      "p90": 3.638
+    },
+    "in_window_empirical": 22,
+    "in_window_p_model": 16,
+    "in_window_p_samp": 15
+  },
+  "invalid": {
+    "empirical_freq": {
+      "n": 184,
+      "mean": 0.082,
+      "median": 0.016,
+      "p10": 0.016,
+      "p90": 0.25
+    },
+    "minus_log10_p_model": {
+      "n": 184,
+      "mean": 2.67,
+      "median": 2.318,
+      "p10": 0.471,
+      "p90": 4.586
+    },
+    "minus_log10_p_samp": {
+      "n": 184,
+      "mean": 3.174,
+      "median": 2.747,
+      "p10": 1.305,
+      "p90": 5.395
+    },
+    "in_window_empirical": 53,
+    "in_window_p_model": 27,
+    "in_window_p_samp": 19
+  },
+  "selected": [
+    {
+      "problem": "fate_m_003_v001",
+      "action": "exact curriculum_target",
+      "k": 9,
+      "p_emp": 0.1406,
+      "minus_log10_p_model": 1.44,
+      "minus_log10_p_samp": 1.84
+    },
+    {
+      "problem": "fate_m_004_v001",
+      "action": "exact curriculum_target",
+      "k": 6,
+      "p_emp": 0.0938,
+      "minus_log10_p_model": 1.71,
+      "minus_log10_p_samp": 1.63
+    },
+    {
+      "problem": "fate_m_009_v001",
+      "action": "simp only [curriculum_target, Nat.zero_add, zero_add]",
+      "k": 1,
+      "p_emp": 0.0156,
+      "minus_log10_p_model": 7.1,
+      "minus_log10_p_samp": 6.6
+    },
+    {
+      "problem": "fate_m_011_v001",
+      "action": "exact (curriculum_target : a * (b - c) = a * b - a * c ∧ (b - c) * a = b * a - c * a)",
+      "k": 1,
+      "p_emp": 0.0156,
+      "minus_log10_p_model": 4.24,
+      "minus_log10_p_samp": 4.77
+    },
+    {
+      "problem": "fate_m_014_v001",
+      "action": "simp only [curriculum_target, eq, zero_pow (Nat.succ_ne_zero n)]",
+      "k": 1,
+      "p_emp": 0.0156,
+      "minus_log10_p_model": 3.15,
+      "minus_log10_p_samp": 3.64
+    },
+    {
+      "problem": "fate_m_015_v001",
+      "action": "exact curriculum_target",
+      "k": 23,
+      "p_emp": 0.3594,
+      "minus_log10_p_model": 0.65,
+      "minus_log10_p_samp": 1.05
+    },
+    {
+      "problem": "fate_m_018_v001",
+      "action": "apply curriculum_target",
+      "k": 1,
+      "p_emp": 0.0156,
+      "minus_log10_p_model": 3.28,
+      "minus_log10_p_samp": 2.66
+    },
+    {
+      "problem": "fate_m_021_v001",
+      "action": "exact curriculum_target",
+      "k": 14,
+      "p_emp": 0.2188,
+      "minus_log10_p_model": 0.58,
+      "minus_log10_p_samp": 1.04
+    },
+    {
+      "problem": "fate_m_035_v001",
+      "action": "exact curriculum_target",
+      "k": 10,
+      "p_emp": 0.1562,
+      "minus_log10_p_model": 0.74,
+      "minus_log10_p_samp": 1.49
+    },
+    {
+      "problem": "fate_m_040_v001",
+      "action": "exact fun z ↦ by tauto",
+      "k": 1,
+      "p_emp": 0.0156,
+      "minus_log10_p_model": 2.77,
+      "minus_log10_p_samp": 3.52
+    },
+    {
+      "problem": "fate_m_048_v001",
+      "action": "exact curriculum_target",
+      "k": 13,
+      "p_emp": 0.2031,
+      "minus_log10_p_model": 0.95,
+      "minus_log10_p_samp": 1.35
+    },
+    {
+      "problem": "fate_m_051_v001",
+      "action": "apply curriculum_target",
+      "k": 2,
+      "p_emp": 0.0312,
+      "minus_log10_p_model": 2.18,
+      "minus_log10_p_samp": 2.28
+    },
+    {
+      "problem": "fate_m_052_v001",
+      "action": "simp only [curriculum_target]",
+      "k": 1,
+      "p_emp": 0.0156,
+      "minus_log10_p_model": 2.83,
+      "minus_log10_p_samp": 2.89
+    },
+    {
+      "problem": "fate_m_061_v001",
+      "action": "apply curriculum_target",
+      "k": 1,
+      "p_emp": 0.0156,
+      "minus_log10_p_model": 2.36,
+      "minus_log10_p_samp": 2.16
+    },
+    {
+      "problem": "fate_m_064_v001",
+      "action": "exact curriculum_target",
+      "k": 37,
+      "p_emp": 0.5781,
+      "minus_log10_p_model": 0.36,
+      "minus_log10_p_samp": 0.83
+    },
+    {
+      "problem": "fate_m_065_v001",
+      "action": "exact curriculum_target",
+      "k": 23,
+      "p_emp": 0.3594,
+      "minus_log10_p_model": 0.41,
+      "minus_log10_p_samp": 1.08
+    },
+    {
+      "problem": "fate_m_066_v001",
+      "action": "exact curriculum_target",
+      "k": 25,
+      "p_emp": 0.3906,
+      "minus_log10_p_model": 0.41,
+      "minus_log10_p_samp": 1.11
+    },
+    {
+      "problem": "fate_m_067_v001",
+      "action": "exact curriculum_target",
+      "k": 2,
+      "p_emp": 0.0312,
+      "minus_log10_p_model": 2.06,
+      "minus_log10_p_samp": 1.77
+    },
+    {
+      "problem": "fate_m_068_v001",
+      "action": "apply curriculum_target",
+      "k": 1,
+      "p_emp": 0.0156,
+      "minus_log10_p_model": 3.19,
+      "minus_log10_p_samp": 2.77
+    },
+    {
+      "problem": "fate_m_076_v001",
+      "action": "exact fun h ↦curriculum_target h",
+      "k": 1,
+      "p_emp": 0.0156,
+      "minus_log10_p_model": 2.77,
+      "minus_log10_p_samp": 3.54
+    }
+  ],
+  "transitions_jsonl": {
+    "n": 20,
+    "keys": [
+      "action",
+      "extra",
+      "kind",
+      "logprob_old",
+      "prompt",
+      "reward",
+      "solved",
+      "terminal_verified",
+      "value_target"
+    ],
+    "actions_matching_selected": 0,
+    "actions_total": 0
+  }
+}

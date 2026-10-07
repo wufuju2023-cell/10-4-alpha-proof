@@ -1,0 +1,852 @@
+{
+  "budget": {
+    "B": 64,
+    "delta": 0.1,
+    "theta_B": 0.036
+  },
+  "totals": {
+    "problems": 20,
+    "raw_samples": 1280,
+    "canonical": 233,
+    "executed": 170,
+    "verified_proof": 49,
+    "invalid_tactic": 184,
+    "selected_transitions": 20
+  },
+  "calibration_p_model_vs_freq": {
+    "[0,0.5)": {
+      "n": 22,
+      "mean_freq": 0.517,
+      "median_freq": 0.5078
+    },
+    "[0.5,1)": {
+      "n": 12,
+      "mean_freq": 0.2044,
+      "median_freq": 0.2109
+    },
+    "[1,2)": {
+      "n": 60,
+      "mean_freq": 0.0573,
+      "median_freq": 0.0469
+    },
+    "[2,4)": {
+      "n": 110,
+      "mean_freq": 0.0206,
+      "median_freq": 0.0156
+    },
+    "[4+)": {
+      "n": 29,
+      "mean_freq": 0.0162,
+      "median_freq": 0.0156
+    }
+  },
+  "verified": {
+    "freq": {
+      "mean": 0.0995,
+      "median": 0.0312,
+      "p90": 0.25
+    },
+    "minus_log10_p_model": {
+      "min": 0.36,
+      "median": 1.85,
+      "max": 7.1
+    },
+    "minus_log10_p_samp": {
+      "min": 0.83,
+      "median": 2.07,
+      "max": 6.6
+    },
+    "in_window_fraction": 0.449,
+    "k_hist": {
+      "1": 20,
+      "2": 7,
+      "3": 1,
+      "4": 1,
+      "5": 2,
+      "6": 2,
+      "8": 1,
+      "9": 1,
+      "10": 3,
+      "11": 2,
+      "12": 1,
+      "13": 1,
+      "14": 1,
+      "16": 1,
+      "17": 1,
+      "23": 2,
+      "25": 1,
+      "37": 1
+    }
+  },
+  "selected_transitions": [
+    {
+      "problem": "fate_m_003_v001",
+      "action": "exact curriculum_target",
+      "k": 9,
+      "freq": 0.1406,
+      "minus_log10_p_model": 1.44
+    },
+    {
+      "problem": "fate_m_004_v001",
+      "action": "exact curriculum_target",
+      "k": 6,
+      "freq": 0.0938,
+      "minus_log10_p_model": 1.71
+    },
+    {
+      "problem": "fate_m_009_v001",
+      "action": "simp only [curriculum_target, Nat.zero_add, zero_add]",
+      "k": 1,
+      "freq": 0.0156,
+      "minus_log10_p_model": 7.1
+    },
+    {
+      "problem": "fate_m_011_v001",
+      "action": "exact (curriculum_target : a * (b - c) = a * b - a * c ∧ (b - c) * a = b * a - c * a)",
+      "k": 1,
+      "freq": 0.0156,
+      "minus_log10_p_model": 4.24
+    },
+    {
+      "problem": "fate_m_014_v001",
+      "action": "simp only [curriculum_target, eq, zero_pow (Nat.succ_ne_zero n)]",
+      "k": 1,
+      "freq": 0.0156,
+      "minus_log10_p_model": 3.15
+    },
+    {
+      "problem": "fate_m_015_v001",
+      "action": "exact curriculum_target",
+      "k": 23,
+      "freq": 0.3594,
+      "minus_log10_p_model": 0.65
+    },
+    {
+      "problem": "fate_m_018_v001",
+      "action": "apply curriculum_target",
+      "k": 1,
+      "freq": 0.0156,
+      "minus_log10_p_model": 3.28
+    },
+    {
+      "problem": "fate_m_021_v001",
+      "action": "exact curriculum_target",
+      "k": 14,
+      "freq": 0.2188,
+      "minus_log10_p_model": 0.58
+    },
+    {
+      "problem": "fate_m_035_v001",
+      "action": "exact curriculum_target",
+      "k": 10,
+      "freq": 0.1562,
+      "minus_log10_p_model": 0.74
+    },
+    {
+      "problem": "fate_m_040_v001",
+      "action": "exact fun z ↦ by tauto",
+      "k": 1,
+      "freq": 0.0156,
+      "minus_log10_p_model": 2.77
+    },
+    {
+      "problem": "fate_m_048_v001",
+      "action": "exact curriculum_target",
+      "k": 13,
+      "freq": 0.2031,
+      "minus_log10_p_model": 0.95
+    },
+    {
+      "problem": "fate_m_051_v001",
+      "action": "apply curriculum_target",
+      "k": 2,
+      "freq": 0.0312,
+      "minus_log10_p_model": 2.18
+    },
+    {
+      "problem": "fate_m_052_v001",
+      "action": "simp only [curriculum_target]",
+      "k": 1,
+      "freq": 0.0156,
+      "minus_log10_p_model": 2.83
+    },
+    {
+      "problem": "fate_m_061_v001",
+      "action": "apply curriculum_target",
+      "k": 1,
+      "freq": 0.0156,
+      "minus_log10_p_model": 2.36
+    },
+    {
+      "problem": "fate_m_064_v001",
+      "action": "exact curriculum_target",
+      "k": 37,
+      "freq": 0.5781,
+      "minus_log10_p_model": 0.36
+    },
+    {
+      "problem": "fate_m_065_v001",
+      "action": "exact curriculum_target",
+      "k": 23,
+      "freq": 0.3594,
+      "minus_log10_p_model": 0.41
+    },
+    {
+      "problem": "fate_m_066_v001",
+      "action": "exact curriculum_target",
+      "k": 25,
+      "freq": 0.3906,
+      "minus_log10_p_model": 0.41
+    },
+    {
+      "problem": "fate_m_067_v001",
+      "action": "exact curriculum_target",
+      "k": 2,
+      "freq": 0.0312,
+      "minus_log10_p_model": 2.06
+    },
+    {
+      "problem": "fate_m_068_v001",
+      "action": "apply curriculum_target",
+      "k": 1,
+      "freq": 0.0156,
+      "minus_log10_p_model": 3.19
+    },
+    {
+      "problem": "fate_m_076_v001",
+      "action": "exact fun h ↦curriculum_target h",
+      "k": 1,
+      "freq": 0.0156,
+      "minus_log10_p_model": 2.77
+    }
+  ],
+  "problems": [
+    {
+      "problem": "fate_m_003_v001",
+      "n_canonical": 9,
+      "n_verified": 1,
+      "n_invalid": 8,
+      "k_verified_total": 9,
+      "k_all_total": 64,
+      "verified_k": [
+        9
+      ],
+      "verified_minus_log10_p_model": [
+        1.44
+      ],
+      "verified_minus_log10_p_emp": [
+        0.85
+      ],
+      "p_find_curve": {
+        "4": 0.4632,
+        "8": 0.7249,
+        "16": 0.9391,
+        "32": 0.999,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "exact curriculum_target"
+      ]
+    },
+    {
+      "problem": "fate_m_004_v001",
+      "n_canonical": 5,
+      "n_verified": 1,
+      "n_invalid": 4,
+      "k_verified_total": 6,
+      "k_all_total": 64,
+      "verified_k": [
+        6
+      ],
+      "verified_minus_log10_p_model": [
+        1.71
+      ],
+      "verified_minus_log10_p_emp": [
+        1.03
+      ],
+      "p_find_curve": {
+        "4": 0.3323,
+        "8": 0.5669,
+        "16": 0.8363,
+        "32": 0.9879,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "exact curriculum_target"
+      ]
+    },
+    {
+      "problem": "fate_m_009_v001",
+      "n_canonical": 13,
+      "n_verified": 4,
+      "n_invalid": 9,
+      "k_verified_total": 12,
+      "k_all_total": 64,
+      "verified_k": [
+        5,
+        4,
+        2,
+        1
+      ],
+      "verified_minus_log10_p_model": [
+        7.1,
+        1.9,
+        1.08,
+        4.96
+      ],
+      "verified_minus_log10_p_emp": [
+        1.81,
+        1.2,
+        1.11,
+        1.51
+      ],
+      "p_find_curve": {
+        "4": 0.5739,
+        "8": 0.83,
+        "16": 0.9788,
+        "32": 0.9999,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "simp only [curriculum_target, Nat.zero_add, zero_add]"
+      ]
+    },
+    {
+      "problem": "fate_m_011_v001",
+      "n_canonical": 28,
+      "n_verified": 3,
+      "n_invalid": 25,
+      "k_verified_total": 7,
+      "k_all_total": 64,
+      "verified_k": [
+        5,
+        1,
+        1
+      ],
+      "verified_minus_log10_p_model": [
+        4.24,
+        1.83,
+        1.93
+      ],
+      "verified_minus_log10_p_emp": [
+        1.81,
+        1.81,
+        1.11
+      ],
+      "p_find_curve": {
+        "4": 0.3783,
+        "8": 0.6267,
+        "16": 0.8815,
+        "32": 0.9946,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "exact (curriculum_target : a * (b - c) = a * b - a * c ∧ (b - c) * a = b * a - c * a)"
+      ]
+    },
+    {
+      "problem": "fate_m_014_v001",
+      "n_canonical": 16,
+      "n_verified": 5,
+      "n_invalid": 11,
+      "k_verified_total": 26,
+      "k_all_total": 64,
+      "verified_k": [
+        11,
+        10,
+        2,
+        2,
+        1
+      ],
+      "verified_minus_log10_p_model": [
+        3.15,
+        1.89,
+        1.8,
+        1.15,
+        1.12
+      ],
+      "verified_minus_log10_p_emp": [
+        1.81,
+        1.51,
+        1.51,
+        0.81,
+        0.76
+      ],
+      "p_find_curve": {
+        "4": 0.8838,
+        "8": 0.989,
+        "16": 1.0,
+        "32": 1.0,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "simp only [curriculum_target, eq, zero_pow (Nat.succ_ne_zero n)]"
+      ]
+    },
+    {
+      "problem": "fate_m_015_v001",
+      "n_canonical": 4,
+      "n_verified": 1,
+      "n_invalid": 3,
+      "k_verified_total": 23,
+      "k_all_total": 64,
+      "verified_k": [
+        23
+      ],
+      "verified_minus_log10_p_model": [
+        0.65
+      ],
+      "verified_minus_log10_p_emp": [
+        0.44
+      ],
+      "p_find_curve": {
+        "4": 0.8406,
+        "8": 0.9784,
+        "16": 0.9998,
+        "32": 1.0,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "exact curriculum_target"
+      ]
+    },
+    {
+      "problem": "fate_m_018_v001",
+      "n_canonical": 7,
+      "n_verified": 3,
+      "n_invalid": 4,
+      "k_verified_total": 12,
+      "k_all_total": 64,
+      "verified_k": [
+        10,
+        1,
+        1
+      ],
+      "verified_minus_log10_p_model": [
+        3.28,
+        1.97,
+        1.27
+      ],
+      "verified_minus_log10_p_emp": [
+        1.81,
+        1.81,
+        0.81
+      ],
+      "p_find_curve": {
+        "4": 0.5739,
+        "8": 0.83,
+        "16": 0.9788,
+        "32": 0.9999,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "apply curriculum_target"
+      ]
+    },
+    {
+      "problem": "fate_m_021_v001",
+      "n_canonical": 10,
+      "n_verified": 1,
+      "n_invalid": 9,
+      "k_verified_total": 14,
+      "k_all_total": 64,
+      "verified_k": [
+        14
+      ],
+      "verified_minus_log10_p_model": [
+        0.58
+      ],
+      "verified_minus_log10_p_emp": [
+        0.66
+      ],
+      "p_find_curve": {
+        "4": 0.6375,
+        "8": 0.8787,
+        "16": 0.9899,
+        "32": 1.0,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "exact curriculum_target"
+      ]
+    },
+    {
+      "problem": "fate_m_035_v001",
+      "n_canonical": 12,
+      "n_verified": 1,
+      "n_invalid": 11,
+      "k_verified_total": 10,
+      "k_all_total": 64,
+      "verified_k": [
+        10
+      ],
+      "verified_minus_log10_p_model": [
+        0.74
+      ],
+      "verified_minus_log10_p_emp": [
+        0.81
+      ],
+      "p_find_curve": {
+        "4": 0.5023,
+        "8": 0.7649,
+        "16": 0.9568,
+        "32": 0.9996,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "exact curriculum_target"
+      ]
+    },
+    {
+      "problem": "fate_m_040_v001",
+      "n_canonical": 22,
+      "n_verified": 9,
+      "n_invalid": 13,
+      "k_verified_total": 20,
+      "k_all_total": 64,
+      "verified_k": [
+        8,
+        3,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "verified_minus_log10_p_model": [
+        2.77,
+        2.57,
+        1.72,
+        3.33,
+        2.37,
+        1.85,
+        1.79,
+        0.76,
+        1.95
+      ],
+      "verified_minus_log10_p_emp": [
+        1.81,
+        1.81,
+        1.81,
+        1.81,
+        1.81,
+        1.33,
+        1.51,
+        0.9,
+        1.51
+      ],
+      "p_find_curve": {
+        "4": 0.7863,
+        "8": 0.96,
+        "16": 0.9991,
+        "32": 1.0,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "exact fun z ↦ by tauto"
+      ]
+    },
+    {
+      "problem": "fate_m_048_v001",
+      "n_canonical": 9,
+      "n_verified": 1,
+      "n_invalid": 8,
+      "k_verified_total": 13,
+      "k_all_total": 64,
+      "verified_k": [
+        13
+      ],
+      "verified_minus_log10_p_model": [
+        0.95
+      ],
+      "verified_minus_log10_p_emp": [
+        0.69
+      ],
+      "p_find_curve": {
+        "4": 0.6067,
+        "8": 0.8561,
+        "16": 0.9853,
+        "32": 1.0,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "exact curriculum_target"
+      ]
+    },
+    {
+      "problem": "fate_m_051_v001",
+      "n_canonical": 10,
+      "n_verified": 2,
+      "n_invalid": 8,
+      "k_verified_total": 18,
+      "k_all_total": 64,
+      "verified_k": [
+        16,
+        2
+      ],
+      "verified_minus_log10_p_model": [
+        2.18,
+        0.64
+      ],
+      "verified_minus_log10_p_emp": [
+        1.51,
+        0.6
+      ],
+      "p_find_curve": {
+        "4": 0.7432,
+        "8": 0.941,
+        "16": 0.998,
+        "32": 1.0,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "apply curriculum_target"
+      ]
+    },
+    {
+      "problem": "fate_m_052_v001",
+      "n_canonical": 15,
+      "n_verified": 4,
+      "n_invalid": 11,
+      "k_verified_total": 20,
+      "k_all_total": 64,
+      "verified_k": [
+        17,
+        1,
+        1,
+        1
+      ],
+      "verified_minus_log10_p_model": [
+        2.83,
+        1.72,
+        2.13,
+        0.76
+      ],
+      "verified_minus_log10_p_emp": [
+        1.81,
+        1.81,
+        1.81,
+        0.58
+      ],
+      "p_find_curve": {
+        "4": 0.7863,
+        "8": 0.96,
+        "16": 0.9991,
+        "32": 1.0,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "simp only [curriculum_target]"
+      ]
+    },
+    {
+      "problem": "fate_m_061_v001",
+      "n_canonical": 10,
+      "n_verified": 3,
+      "n_invalid": 7,
+      "k_verified_total": 19,
+      "k_all_total": 64,
+      "verified_k": [
+        12,
+        6,
+        1
+      ],
+      "verified_minus_log10_p_model": [
+        2.36,
+        1.93,
+        0.75
+      ],
+      "verified_minus_log10_p_emp": [
+        1.81,
+        1.03,
+        0.73
+      ],
+      "p_find_curve": {
+        "4": 0.7655,
+        "8": 0.9513,
+        "16": 0.9987,
+        "32": 1.0,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "apply curriculum_target"
+      ]
+    },
+    {
+      "problem": "fate_m_064_v001",
+      "n_canonical": 7,
+      "n_verified": 1,
+      "n_invalid": 6,
+      "k_verified_total": 37,
+      "k_all_total": 64,
+      "verified_k": [
+        37
+      ],
+      "verified_minus_log10_p_model": [
+        0.36
+      ],
+      "verified_minus_log10_p_emp": [
+        0.24
+      ],
+      "p_find_curve": {
+        "4": 0.9724,
+        "8": 0.9995,
+        "16": 1.0,
+        "32": 1.0,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "exact curriculum_target"
+      ]
+    },
+    {
+      "problem": "fate_m_065_v001",
+      "n_canonical": 8,
+      "n_verified": 1,
+      "n_invalid": 7,
+      "k_verified_total": 23,
+      "k_all_total": 64,
+      "verified_k": [
+        23
+      ],
+      "verified_minus_log10_p_model": [
+        0.41
+      ],
+      "verified_minus_log10_p_emp": [
+        0.44
+      ],
+      "p_find_curve": {
+        "4": 0.8406,
+        "8": 0.9784,
+        "16": 0.9998,
+        "32": 1.0,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "exact curriculum_target"
+      ]
+    },
+    {
+      "problem": "fate_m_066_v001",
+      "n_canonical": 9,
+      "n_verified": 1,
+      "n_invalid": 8,
+      "k_verified_total": 25,
+      "k_all_total": 64,
+      "verified_k": [
+        25
+      ],
+      "verified_minus_log10_p_model": [
+        0.41
+      ],
+      "verified_minus_log10_p_emp": [
+        0.41
+      ],
+      "p_find_curve": {
+        "4": 0.8705,
+        "8": 0.9861,
+        "16": 0.9999,
+        "32": 1.0,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "exact curriculum_target"
+      ]
+    },
+    {
+      "problem": "fate_m_067_v001",
+      "n_canonical": 4,
+      "n_verified": 1,
+      "n_invalid": 3,
+      "k_verified_total": 2,
+      "k_all_total": 64,
+      "verified_k": [
+        2
+      ],
+      "verified_minus_log10_p_model": [
+        2.06
+      ],
+      "verified_minus_log10_p_emp": [
+        1.51
+      ],
+      "p_find_curve": {
+        "4": 0.122,
+        "8": 0.2361,
+        "16": 0.4405,
+        "32": 0.754,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "exact curriculum_target"
+      ]
+    },
+    {
+      "problem": "fate_m_068_v001",
+      "n_canonical": 14,
+      "n_verified": 2,
+      "n_invalid": 12,
+      "k_verified_total": 12,
+      "k_all_total": 64,
+      "verified_k": [
+        11,
+        1
+      ],
+      "verified_minus_log10_p_model": [
+        3.19,
+        0.92
+      ],
+      "verified_minus_log10_p_emp": [
+        1.81,
+        0.76
+      ],
+      "p_find_curve": {
+        "4": 0.5739,
+        "8": 0.83,
+        "16": 0.9788,
+        "32": 0.9999,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "apply curriculum_target"
+      ]
+    },
+    {
+      "problem": "fate_m_076_v001",
+      "n_canonical": 21,
+      "n_verified": 4,
+      "n_invalid": 17,
+      "k_verified_total": 4,
+      "k_all_total": 64,
+      "verified_k": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "verified_minus_log10_p_model": [
+        2.77,
+        2.03,
+        1.81,
+        2.69
+      ],
+      "verified_minus_log10_p_emp": [
+        1.81,
+        1.81,
+        1.81,
+        1.81
+      ],
+      "p_find_curve": {
+        "4": 0.2325,
+        "8": 0.4219,
+        "16": 0.6938,
+        "32": 0.9434,
+        "64": 1.0
+      },
+      "receipt_selected_actions": [
+        "exact fun h ↦curriculum_target h"
+      ]
+    }
+  ]
+}
