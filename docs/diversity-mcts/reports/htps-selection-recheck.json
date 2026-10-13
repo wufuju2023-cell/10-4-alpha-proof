@@ -1,0 +1,854 @@
+{
+  "budget": 64,
+  "n_problems": 20,
+  "n_verified": 49,
+  "rules_aggregate": {
+    "first": {
+      "sum_k": 173,
+      "mean_k": 8.65,
+      "n_k1": 9,
+      "n_k_le2": 11,
+      "mean_rediscover": 0.8225518151038385,
+      "median_k": 2
+    },
+    "maxk": {
+      "sum_k": 258,
+      "mean_k": 12.9,
+      "n_k1": 1,
+      "n_k_le2": 2,
+      "mean_rediscover": 0.9745410144352686,
+      "median_k": 11
+    },
+    "mintok": {
+      "sum_k": 236,
+      "mean_k": 11.8,
+      "n_k1": 3,
+      "n_k_le2": 4,
+      "mean_rediscover": 0.9379613101589094,
+      "median_k": 11
+    },
+    "minchar": {
+      "sum_k": 219,
+      "mean_k": 10.95,
+      "n_k1": 4,
+      "n_k_le2": 5,
+      "mean_rediscover": 0.9191823593139954,
+      "median_k": 10
+    },
+    "RAND(期望)": {
+      "sum_k": 206.0888888888889,
+      "mean_k": 10.304444444444446,
+      "n_k1": 4.9222222222222225,
+      "n_k_le2": null,
+      "mean_rediscover": 0.8938783898271045,
+      "median_k": null
+    }
+  },
+  "rule_action_diff_counts": {
+    "first_vs_maxk": 9,
+    "first_vs_mintok": 10,
+    "first_vs_minchar": 9,
+    "maxk_vs_mintok": 4
+  },
+  "token_len_stats": {
+    "verified_mean_tok": 7.469387755102041,
+    "invalid_mean_tok": 6.195652173913044,
+    "spearman_toklen_vs_k": -0.5171360226433122
+  },
+  "selection_bias": {
+    "spearman_survivor_vs_k": -0.8029422859931831,
+    "first_mean_survivor_percentile": 1.0,
+    "maxk_mean_survivor_percentile": 0.14583333333333331
+  },
+  "per_problem": [
+    {
+      "problem": "fate_m_003_v001",
+      "n_verified": 1,
+      "picks": {
+        "first": {
+          "action": "exact curriculum_target",
+          "k": 9,
+          "tok_len": 3,
+          "seq": 25
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 9,
+          "tok_len": 3,
+          "seq": 25
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 9,
+          "tok_len": 3,
+          "seq": 25
+        },
+        "minchar": {
+          "action": "exact curriculum_target",
+          "k": 9,
+          "tok_len": 3,
+          "seq": 25
+        }
+      },
+      "rand_expect": {
+        "mean_k": 9.0,
+        "p_k1": 0.0,
+        "mean_rediscover": 0.999938667058654
+      },
+      "verified_k": [
+        9
+      ]
+    },
+    {
+      "problem": "fate_m_004_v001",
+      "n_verified": 1,
+      "picks": {
+        "first": {
+          "action": "exact curriculum_target",
+          "k": 6,
+          "tok_len": 3,
+          "seq": 9
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 6,
+          "tok_len": 3,
+          "seq": 9
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 6,
+          "tok_len": 3,
+          "seq": 9
+        },
+        "minchar": {
+          "action": "exact curriculum_target",
+          "k": 6,
+          "tok_len": 3,
+          "seq": 9
+        }
+      },
+      "rand_expect": {
+        "mean_k": 6.0,
+        "p_k1": 0.0,
+        "mean_rediscover": 0.9981639975641117
+      },
+      "verified_k": [
+        6
+      ]
+    },
+    {
+      "problem": "fate_m_009_v001",
+      "n_verified": 4,
+      "picks": {
+        "first": {
+          "action": "simp only [curriculum_target, Nat.zero_add, zero_add]",
+          "k": 1,
+          "tok_len": 14,
+          "seq": 1
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 5,
+          "tok_len": 3,
+          "seq": 21
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 5,
+          "tok_len": 3,
+          "seq": 21
+        },
+        "minchar": {
+          "action": "rw [curriculum_target]",
+          "k": 4,
+          "tok_len": 6,
+          "seq": 5
+        }
+      },
+      "rand_expect": {
+        "mean_k": 3.0,
+        "p_k1": 0.25,
+        "mean_rediscover": 0.87059278646319
+      },
+      "verified_k": [
+        5,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "problem": "fate_m_011_v001",
+      "n_verified": 3,
+      "picks": {
+        "first": {
+          "action": "exact (curriculum_target : a * (b - c) = a * b - a * c ∧ (b - c) * a = b * a - c * a)",
+          "k": 1,
+          "tok_len": 38,
+          "seq": 17
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 5,
+          "tok_len": 3,
+          "seq": 65
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 5,
+          "tok_len": 3,
+          "seq": 65
+        },
+        "minchar": {
+          "action": "exact curriculum_target",
+          "k": 5,
+          "tok_len": 3,
+          "seq": 65
+        }
+      },
+      "rand_expect": {
+        "mean_k": 2.3333333333333335,
+        "p_k1": 0.6666666666666666,
+        "mean_rediscover": 0.75484801681276
+      },
+      "verified_k": [
+        5,
+        1,
+        1
+      ]
+    },
+    {
+      "problem": "fate_m_014_v001",
+      "n_verified": 5,
+      "picks": {
+        "first": {
+          "action": "simp only [curriculum_target, eq, zero_pow (Nat.succ_ne_zero n)]",
+          "k": 1,
+          "tok_len": 19,
+          "seq": 1
+        },
+        "maxk": {
+          "action": "assumption",
+          "k": 11,
+          "tok_len": 2,
+          "seq": 61
+        },
+        "mintok": {
+          "action": "assumption",
+          "k": 11,
+          "tok_len": 2,
+          "seq": 61
+        },
+        "minchar": {
+          "action": "assumption",
+          "k": 11,
+          "tok_len": 2,
+          "seq": 61
+        }
+      },
+      "rand_expect": {
+        "mean_k": 5.2,
+        "p_k1": 0.2,
+        "mean_rediscover": 0.874564145567682
+      },
+      "verified_k": [
+        11,
+        10,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "problem": "fate_m_015_v001",
+      "n_verified": 1,
+      "picks": {
+        "first": {
+          "action": "exact curriculum_target",
+          "k": 23,
+          "tok_len": 3,
+          "seq": 9
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 23,
+          "tok_len": 3,
+          "seq": 9
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 23,
+          "tok_len": 3,
+          "seq": 9
+        },
+        "minchar": {
+          "action": "exact curriculum_target",
+          "k": 23,
+          "tok_len": 3,
+          "seq": 9
+        }
+      },
+      "rand_expect": {
+        "mean_k": 23.0,
+        "p_k1": 0.0,
+        "mean_rediscover": 0.9999999999995806
+      },
+      "verified_k": [
+        23
+      ]
+    },
+    {
+      "problem": "fate_m_018_v001",
+      "n_verified": 3,
+      "picks": {
+        "first": {
+          "action": "apply curriculum_target",
+          "k": 1,
+          "tok_len": 3,
+          "seq": 9
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 10,
+          "tok_len": 3,
+          "seq": 25
+        },
+        "mintok": {
+          "action": "assumption",
+          "k": 1,
+          "tok_len": 2,
+          "seq": 13
+        },
+        "minchar": {
+          "action": "assumption",
+          "k": 1,
+          "tok_len": 2,
+          "seq": 13
+        }
+      },
+      "rand_expect": {
+        "mean_k": 4.0,
+        "p_k1": 0.6666666666666666,
+        "mean_rediscover": 0.7566693327743904
+      },
+      "verified_k": [
+        10,
+        1,
+        1
+      ]
+    },
+    {
+      "problem": "fate_m_021_v001",
+      "n_verified": 1,
+      "picks": {
+        "first": {
+          "action": "exact curriculum_target",
+          "k": 14,
+          "tok_len": 3,
+          "seq": 29
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 14,
+          "tok_len": 3,
+          "seq": 29
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 14,
+          "tok_len": 3,
+          "seq": 29
+        },
+        "minchar": {
+          "action": "exact curriculum_target",
+          "k": 14,
+          "tok_len": 3,
+          "seq": 29
+        }
+      },
+      "rand_expect": {
+        "mean_k": 14.0,
+        "p_k1": 0.0,
+        "mean_rediscover": 0.9999998624178973
+      },
+      "verified_k": [
+        14
+      ]
+    },
+    {
+      "problem": "fate_m_035_v001",
+      "n_verified": 1,
+      "picks": {
+        "first": {
+          "action": "exact curriculum_target",
+          "k": 10,
+          "tok_len": 3,
+          "seq": 29
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 10,
+          "tok_len": 3,
+          "seq": 29
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 10,
+          "tok_len": 3,
+          "seq": 29
+        },
+        "minchar": {
+          "action": "exact curriculum_target",
+          "k": 10,
+          "tok_len": 3,
+          "seq": 29
+        }
+      },
+      "rand_expect": {
+        "mean_k": 10.0,
+        "p_k1": 0.0,
+        "mean_rediscover": 0.9999810468109862
+      },
+      "verified_k": [
+        10
+      ]
+    },
+    {
+      "problem": "fate_m_040_v001",
+      "n_verified": 9,
+      "picks": {
+        "first": {
+          "action": "exact fun z ↦ by tauto",
+          "k": 1,
+          "tok_len": 8,
+          "seq": 1
+        },
+        "maxk": {
+          "action": "exact fun z ↦ curriculum_target z",
+          "k": 8,
+          "tok_len": 8,
+          "seq": 73
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 1,
+          "tok_len": 3,
+          "seq": 5
+        },
+        "minchar": {
+          "action": "exact fun z ↦ by tauto",
+          "k": 1,
+          "tok_len": 8,
+          "seq": 1
+        }
+      },
+      "rand_expect": {
+        "mean_k": 2.2222222222222223,
+        "p_k1": 0.5555555555555556,
+        "mean_rediscover": 0.7629337684921152
+      },
+      "verified_k": [
+        8,
+        3,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "problem": "fate_m_048_v001",
+      "n_verified": 1,
+      "picks": {
+        "first": {
+          "action": "exact curriculum_target",
+          "k": 13,
+          "tok_len": 3,
+          "seq": 25
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 13,
+          "tok_len": 3,
+          "seq": 25
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 13,
+          "tok_len": 3,
+          "seq": 25
+        },
+        "minchar": {
+          "action": "exact curriculum_target",
+          "k": 13,
+          "tok_len": 3,
+          "seq": 25
+        }
+      },
+      "rand_expect": {
+        "mean_k": 13.0,
+        "p_k1": 0.0,
+        "mean_rediscover": 0.999999511378092
+      },
+      "verified_k": [
+        13
+      ]
+    },
+    {
+      "problem": "fate_m_051_v001",
+      "n_verified": 2,
+      "picks": {
+        "first": {
+          "action": "apply curriculum_target",
+          "k": 2,
+          "tok_len": 3,
+          "seq": 21
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 16,
+          "tok_len": 3,
+          "seq": 37
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 16,
+          "tok_len": 3,
+          "seq": 37
+        },
+        "minchar": {
+          "action": "exact curriculum_target",
+          "k": 16,
+          "tok_len": 3,
+          "seq": 37
+        }
+      },
+      "rand_expect": {
+        "mean_k": 9.0,
+        "p_k1": 0.0,
+        "mean_rediscover": 0.9344579787154176
+      },
+      "verified_k": [
+        16,
+        2
+      ]
+    },
+    {
+      "problem": "fate_m_052_v001",
+      "n_verified": 4,
+      "picks": {
+        "first": {
+          "action": "simp only [curriculum_target]",
+          "k": 1,
+          "tok_len": 7,
+          "seq": 1
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 17,
+          "tok_len": 3,
+          "seq": 57
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 17,
+          "tok_len": 3,
+          "seq": 57
+        },
+        "minchar": {
+          "action": "rw [curriculum_target]",
+          "k": 1,
+          "tok_len": 6,
+          "seq": 13
+        }
+      },
+      "rand_expect": {
+        "mean_k": 5.0,
+        "p_k1": 0.75,
+        "mean_rediscover": 0.7262601061614005
+      },
+      "verified_k": [
+        17,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "problem": "fate_m_061_v001",
+      "n_verified": 3,
+      "picks": {
+        "first": {
+          "action": "apply curriculum_target",
+          "k": 1,
+          "tok_len": 3,
+          "seq": 1
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 12,
+          "tok_len": 3,
+          "seq": 33
+        },
+        "mintok": {
+          "action": "assumption",
+          "k": 6,
+          "tok_len": 2,
+          "seq": 29
+        },
+        "minchar": {
+          "action": "assumption",
+          "k": 6,
+          "tok_len": 2,
+          "seq": 29
+        }
+      },
+      "rand_expect": {
+        "mean_k": 6.333333333333333,
+        "p_k1": 0.3333333333333333,
+        "mean_rediscover": 0.8777252600564452
+      },
+      "verified_k": [
+        12,
+        6,
+        1
+      ]
+    },
+    {
+      "problem": "fate_m_064_v001",
+      "n_verified": 1,
+      "picks": {
+        "first": {
+          "action": "exact curriculum_target",
+          "k": 37,
+          "tok_len": 3,
+          "seq": 25
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 37,
+          "tok_len": 3,
+          "seq": 25
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 37,
+          "tok_len": 3,
+          "seq": 25
+        },
+        "minchar": {
+          "action": "exact curriculum_target",
+          "k": 37,
+          "tok_len": 3,
+          "seq": 25
+        }
+      },
+      "rand_expect": {
+        "mean_k": 37.0,
+        "p_k1": 0.0,
+        "mean_rediscover": 1.0
+      },
+      "verified_k": [
+        37
+      ]
+    },
+    {
+      "problem": "fate_m_065_v001",
+      "n_verified": 1,
+      "picks": {
+        "first": {
+          "action": "exact curriculum_target",
+          "k": 23,
+          "tok_len": 3,
+          "seq": 17
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 23,
+          "tok_len": 3,
+          "seq": 17
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 23,
+          "tok_len": 3,
+          "seq": 17
+        },
+        "minchar": {
+          "action": "exact curriculum_target",
+          "k": 23,
+          "tok_len": 3,
+          "seq": 17
+        }
+      },
+      "rand_expect": {
+        "mean_k": 23.0,
+        "p_k1": 0.0,
+        "mean_rediscover": 0.9999999999995806
+      },
+      "verified_k": [
+        23
+      ]
+    },
+    {
+      "problem": "fate_m_066_v001",
+      "n_verified": 1,
+      "picks": {
+        "first": {
+          "action": "exact curriculum_target",
+          "k": 25,
+          "tok_len": 3,
+          "seq": 29
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 25,
+          "tok_len": 3,
+          "seq": 29
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 25,
+          "tok_len": 3,
+          "seq": 29
+        },
+        "minchar": {
+          "action": "exact curriculum_target",
+          "k": 25,
+          "tok_len": 3,
+          "seq": 29
+        }
+      },
+      "rand_expect": {
+        "mean_k": 25.0,
+        "p_k1": 0.0,
+        "mean_rediscover": 0.9999999999999829
+      },
+      "verified_k": [
+        25
+      ]
+    },
+    {
+      "problem": "fate_m_067_v001",
+      "n_verified": 1,
+      "picks": {
+        "first": {
+          "action": "exact curriculum_target",
+          "k": 2,
+          "tok_len": 3,
+          "seq": 9
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 2,
+          "tok_len": 3,
+          "seq": 9
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 2,
+          "tok_len": 3,
+          "seq": 9
+        },
+        "minchar": {
+          "action": "exact curriculum_target",
+          "k": 2,
+          "tok_len": 3,
+          "seq": 9
+        }
+      },
+      "rand_expect": {
+        "mean_k": 2.0,
+        "p_k1": 0.0,
+        "mean_rediscover": 0.868915967521525
+      },
+      "verified_k": [
+        2
+      ]
+    },
+    {
+      "problem": "fate_m_068_v001",
+      "n_verified": 2,
+      "picks": {
+        "first": {
+          "action": "apply curriculum_target",
+          "k": 1,
+          "tok_len": 3,
+          "seq": 13
+        },
+        "maxk": {
+          "action": "exact curriculum_target",
+          "k": 11,
+          "tok_len": 3,
+          "seq": 37
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 11,
+          "tok_len": 3,
+          "seq": 37
+        },
+        "minchar": {
+          "action": "exact curriculum_target",
+          "k": 11,
+          "tok_len": 3,
+          "seq": 37
+        }
+      },
+      "rand_expect": {
+        "mean_k": 6.0,
+        "p_k1": 0.5,
+        "mean_rediscover": 0.8175038729921869
+      },
+      "verified_k": [
+        11,
+        1
+      ]
+    },
+    {
+      "problem": "fate_m_076_v001",
+      "n_verified": 4,
+      "picks": {
+        "first": {
+          "action": "exact fun h ↦curriculum_target h",
+          "k": 1,
+          "tok_len": 9,
+          "seq": 17
+        },
+        "maxk": {
+          "action": "exact fun h ↦curriculum_target h",
+          "k": 1,
+          "tok_len": 9,
+          "seq": 17
+        },
+        "mintok": {
+          "action": "exact curriculum_target",
+          "k": 1,
+          "tok_len": 3,
+          "seq": 69
+        },
+        "minchar": {
+          "action": "exact curriculum_target",
+          "k": 1,
+          "tok_len": 3,
+          "seq": 69
+        }
+      },
+      "rand_expect": {
+        "mean_k": 1.0,
+        "p_k1": 1.0,
+        "mean_rediscover": 0.6350134757560926
+      },
+      "verified_k": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}

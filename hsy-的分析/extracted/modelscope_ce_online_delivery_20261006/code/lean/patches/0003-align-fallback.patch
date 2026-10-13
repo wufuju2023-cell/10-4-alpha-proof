@@ -1,0 +1,11 @@
+--- a/Reap/Tactic/Generator.lean
++++ b/Reap/Tactic/Generator.lean
+@@ -150,7 +150,7 @@
+     if strict then
+       throwError "Strict value inference failed after 3 attempts; refusing fallback sentinel"
+     else
+-      return -1000.0
++      return Float.ofInt (reap.no_legal_actions_value.get opts)
+ 
+ def Meta.ppProofState (mvarIds : List MVarId) : MetaM Format := do
+   return Std.Format.joinSep (← mvarIds.mapM (Meta.ppGoal)) "\n".toFormat

@@ -1,0 +1,6582 @@
+{
+  "openai_response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.0417749881744385,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.7048623561859131,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.014152987860143185,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0030314226169139147,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 1,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                95,
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.14276385307312,
+              "token": "_cur",
+              "token_id": 18956
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.2397138774394989,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                111,
+                98,
+                106
+              ],
+              "logprob": -2.073648452758789,
+              "token": "_obj",
+              "token_id": 7328
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.24013644456863403,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "_curry_obj",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 2,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                99,
+                117,
+                114,
+                114,
+                121
+              ],
+              "logprob": -3.5345358848571777,
+              "token": " curry",
+              "token_id": 54078
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.05026007816195488,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.004305854439735413,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 3,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                229,
+                174,
+                140,
+                230,
+                136,
+                144
+              ],
+              "logprob": -6.949365139007568,
+              "token": "完成",
+              "token_id": 60548
+            },
+            {
+              "bytes": [
+                67,
+                117,
+                114
+              ],
+              "logprob": -5.248097896575928,
+              "token": "Cur",
+              "token_id": 16704
+            },
+            {
+              "bytes": [
+                116,
+                97,
+                105,
+                110
+              ],
+              "logprob": -5.295139312744141,
+              "token": "tain",
+              "token_id": 22921
+            },
+            {
+              "bytes": [
+                230,
+                137,
+                128
+              ],
+              "logprob": -5.830541133880615,
+              "token": "所",
+              "token_id": 31838
+            },
+            {
+              "bytes": [
+                229,
+                190,
+                151,
+                229,
+                136,
+                176
+              ],
+              "logprob": -0.1267051100730896,
+              "token": "得到",
+              "token_id": 101051
+            },
+            {
+              "bytes": [
+                231,
+                154,
+                132
+              ],
+              "logprob": -0.05528191477060318,
+              "token": "的",
+              "token_id": 9370
+            },
+            {
+              "bytes": [
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -0.34178611636161804,
+              "token": "Function",
+              "token_id": 5152
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.06174921244382858,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -2.4676019165781327e-05,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -1.907330624817405e-05,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                32,
+                40
+              ],
+              "logprob": -0.44611936807632446,
+              "token": " (",
+              "token_id": 320
+            },
+            {
+              "bytes": [
+                103
+              ],
+              "logprob": -0.500290036201477,
+              "token": "g",
+              "token_id": 70
+            },
+            {
+              "bytes": [
+                46,
+                99,
+                111,
+                109,
+                112
+              ],
+              "logprob": -0.08015354722738266,
+              "token": ".comp",
+              "token_id": 39702
+            },
+            {
+              "bytes": [
+                32,
+                102
+              ],
+              "logprob": -3.313963316031732e-05,
+              "token": " f",
+              "token_id": 282
+            },
+            {
+              "bytes": [
+                41
+              ],
+              "logprob": -0.00036423723213374615,
+              "token": ")",
+              "token_id": 8
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.013852291740477085,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "完成Curtain所得到的Function.Surjective (g.comp f)",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 4,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                99,
+                117,
+                114,
+                114,
+                121
+              ],
+              "logprob": -3.517075300216675,
+              "token": " curry",
+              "token_id": 54078
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.03939317166805267,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.004080779850482941,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 5,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -2.8516757488250732,
+              "token": " Function",
+              "token_id": 5712
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.025954363867640495,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -0.00032574593205936253,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -9.059865078597795e-06,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                32,
+                97,
+                115,
+                115,
+                117,
+                109,
+                112,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -4.275623798370361,
+              "token": " assumption",
+              "token_id": 24335
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.006787222344428301,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " Function.Surjective assumption",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 6,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -1.8761659860610962,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.7833076119422913,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.01594119518995285,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0031773580703884363,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 7,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                46,
+                99,
+                117,
+                114
+              ],
+              "logprob": -4.17164945602417,
+              "token": ".cur",
+              "token_id": 24809
+            },
+            {
+              "bytes": [
+                114,
+                105,
+                99,
+                117,
+                108,
+                117,
+                109
+              ],
+              "logprob": -2.453756093978882,
+              "token": "riculum",
+              "token_id": 23136
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.0015156699810177088,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.001156376558355987,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": ".curriculum_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 8,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                99,
+                117,
+                114,
+                118,
+                97,
+                116,
+                117,
+                114,
+                101
+              ],
+              "logprob": -5.291774749755859,
+              "token": " curvature",
+              "token_id": 82133
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.00020323118951637298,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0010070496937260032,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " curvature_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 9,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                116,
+                97
+              ],
+              "logprob": -6.722169876098633,
+              "token": "ta",
+              "token_id": 2565
+            },
+            {
+              "bytes": [
+                117,
+                116,
+                111
+              ],
+              "logprob": 0.0,
+              "token": "uto",
+              "token_id": 1535
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0003513672563713044,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "tauto",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 10,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -2.98677134513855,
+              "token": " Function",
+              "token_id": 5712
+            },
+            {
+              "bytes": [
+                46,
+                84
+              ],
+              "logprob": -4.340819835662842,
+              "token": ".T",
+              "token_id": 836
+            },
+            {
+              "bytes": [
+                97,
+                99,
+                116,
+                105,
+                99
+              ],
+              "logprob": -0.10455697774887085,
+              "token": "actic",
+              "token_id": 23170
+            },
+            {
+              "bytes": [
+                46,
+                108,
+                101
+              ],
+              "logprob": -3.367621421813965,
+              "token": ".le",
+              "token_id": 30502
+            },
+            {
+              "bytes": [
+                95,
+                100,
+                101,
+                102
+              ],
+              "logprob": -1.04690420627594,
+              "token": "_def",
+              "token_id": 7844
+            },
+            {
+              "bytes": [
+                58
+              ],
+              "logprob": -3.2325949668884277,
+              "token": ":",
+              "token_id": 25
+            },
+            {
+              "bytes": [
+                32,
+                34
+              ],
+              "logprob": -2.0419228076934814,
+              "token": " \"",
+              "token_id": 330
+            },
+            {
+              "bytes": [
+                81,
+                117
+              ],
+              "logprob": -6.927125930786133,
+              "token": "Qu",
+              "token_id": 2183
+            },
+            {
+              "bytes": [
+                111,
+                116
+              ],
+              "logprob": -0.0002961912250611931,
+              "token": "ot",
+              "token_id": 354
+            },
+            {
+              "bytes": [
+                105,
+                101,
+                110,
+                116
+              ],
+              "logprob": -0.00014280254254117608,
+              "token": "ient",
+              "token_id": 1167
+            },
+            {
+              "bytes": [
+                71,
+                114,
+                111,
+                117,
+                112
+              ],
+              "logprob": -0.006444150116294622,
+              "token": "Group",
+              "token_id": 2808
+            },
+            {
+              "bytes": [
+                46,
+                104,
+                97,
+                115
+              ],
+              "logprob": -6.549807548522949,
+              "token": ".has",
+              "token_id": 6858
+            },
+            {
+              "bytes": [
+                32,
+                97
+              ],
+              "logprob": -2.0800583362579346,
+              "token": " a",
+              "token_id": 264
+            },
+            {
+              "bytes": [
+                32,
+                100,
+                101,
+                102,
+                105,
+                110,
+                105,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -2.9688544273376465,
+              "token": " definition",
+              "token_id": 7271
+            },
+            {
+              "bytes": [
+                34
+              ],
+              "logprob": -2.4203577041625977,
+              "token": "\"",
+              "token_id": 1
+            },
+            {
+              "bytes": [
+                32,
+                45
+              ],
+              "logprob": -0.7005440592765808,
+              "token": " -",
+              "token_id": 481
+            },
+            {
+              "bytes": [
+                47
+              ],
+              "logprob": -0.015077201649546623,
+              "token": "/",
+              "token_id": 14
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.04015099257230759,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " Function.Tactic.le_def: \"QuotientGroup.has a definition\" -/",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 11,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                34
+              ],
+              "logprob": -6.793133735656738,
+              "token": " \"",
+              "token_id": 330
+            },
+            {
+              "bytes": [
+                101,
+                120,
+                97,
+                99,
+                116
+              ],
+              "logprob": -3.876883029937744,
+              "token": "exact",
+              "token_id": 46385
+            },
+            {
+              "bytes": [
+                32,
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -3.1053225994110107,
+              "token": " Function",
+              "token_id": 5712
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.0015906551852822304,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -1.1682441254379228e-05,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -2.3841855067985307e-07,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                46,
+                111,
+                102
+              ],
+              "logprob": -1.4410680532455444,
+              "token": ".of",
+              "token_id": 10229
+            },
+            {
+              "bytes": [
+                95,
+                99,
+                111,
+                109,
+                112
+              ],
+              "logprob": -0.0004909025738015771,
+              "token": "_comp",
+              "token_id": 18177
+            },
+            {
+              "bytes": [
+                32,
+                104,
+                103
+              ],
+              "logprob": -2.4224517345428467,
+              "token": " hg",
+              "token_id": 73294
+            },
+            {
+              "bytes": [
+                32,
+                104,
+                102
+              ],
+              "logprob": -0.016072824597358704,
+              "token": " hf",
+              "token_id": 43242
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -1.2324316501617432,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " \"exact Function.Surjective.of_comp hg hf",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 12,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -3.013178825378418,
+              "token": " Function",
+              "token_id": 5712
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.027778541669249535,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -0.0003039374714717269,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -1.0013530300057027e-05,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -1.434751272201538,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " Function.Surjective",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 13,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                95,
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.091980457305908,
+              "token": "_cur",
+              "token_id": 18956
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.25986072421073914,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.2740270495414734,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.026427816599607468,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "_curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 14,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -2.9286046028137207,
+              "token": " Function",
+              "token_id": 5712
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.027002697810530663,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -0.00031811901135370135,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -9.417489309271332e-06,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                32,
+                40
+              ],
+              "logprob": -0.6708056330680847,
+              "token": " (",
+              "token_id": 320
+            },
+            {
+              "bytes": [
+                103
+              ],
+              "logprob": -0.03129621595144272,
+              "token": "g",
+              "token_id": 70
+            },
+            {
+              "bytes": [
+                46,
+                99,
+                111,
+                109,
+                112
+              ],
+              "logprob": -0.005739636719226837,
+              "token": ".comp",
+              "token_id": 39702
+            },
+            {
+              "bytes": [
+                32,
+                102
+              ],
+              "logprob": -1.966933996300213e-05,
+              "token": " f",
+              "token_id": 282
+            },
+            {
+              "bytes": [
+                41
+              ],
+              "logprob": -0.0006623457884415984,
+              "token": ")",
+              "token_id": 8
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.03142629936337471,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " Function.Surjective (g.comp f)",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 15,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -2.938417673110962,
+              "token": " Function",
+              "token_id": 5712
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.02590220980346203,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -0.000340284634148702,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -9.775113539944869e-06,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -1.3391963243484497,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " Function.Surjective",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 16,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -3.4928016662597656,
+              "token": "Function",
+              "token_id": 5152
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.03398597612977028,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -0.00018285033002030104,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -2.3007129129837267e-05,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                46,
+                116
+              ],
+              "logprob": -3.1787054538726807,
+              "token": ".t",
+              "token_id": 734
+            },
+            {
+              "bytes": [
+                101,
+                110,
+                100
+              ],
+              "logprob": -0.5451682806015015,
+              "token": "end",
+              "token_id": 408
+            },
+            {
+              "bytes": [
+                115,
+                116,
+                111
+              ],
+              "logprob": 0.0,
+              "token": "sto",
+              "token_id": 33052
+            },
+            {
+              "bytes": [
+                32,
+                40
+              ],
+              "logprob": -0.5463878512382507,
+              "token": " (",
+              "token_id": 320
+            },
+            {
+              "bytes": [
+                103
+              ],
+              "logprob": -0.00460753683000803,
+              "token": "g",
+              "token_id": 70
+            },
+            {
+              "bytes": [
+                46,
+                99,
+                111,
+                109,
+                112
+              ],
+              "logprob": -0.011227288283407688,
+              "token": ".comp",
+              "token_id": 39702
+            },
+            {
+              "bytes": [
+                32,
+                102
+              ],
+              "logprob": -2.8609820219571702e-05,
+              "token": " f",
+              "token_id": 282
+            },
+            {
+              "bytes": [
+                41
+              ],
+              "logprob": -0.00015519846056122333,
+              "token": ")",
+              "token_id": 8
+            },
+            {
+              "bytes": [
+                32,
+                40
+              ],
+              "logprob": -2.3875720500946045,
+              "token": " (",
+              "token_id": 320
+            },
+            {
+              "bytes": [
+                116,
+                111
+              ],
+              "logprob": -4.402961730957031,
+              "token": "to",
+              "token_id": 983
+            },
+            {
+              "bytes": [
+                79,
+                117,
+                116,
+                101,
+                114
+              ],
+              "logprob": -3.9803926944732666,
+              "token": "Outer",
+              "token_id": 51322
+            },
+            {
+              "bytes": [
+                77,
+                101,
+                97,
+                115,
+                117,
+                114,
+                101
+              ],
+              "logprob": -0.06717873364686966,
+              "token": "Measure",
+              "token_id": 32236
+            },
+            {
+              "bytes": [
+                32,
+                40
+              ],
+              "logprob": -0.8280735611915588,
+              "token": " (",
+              "token_id": 320
+            },
+            {
+              "bytes": [
+                71
+              ],
+              "logprob": -1.109262466430664,
+              "token": "G",
+              "token_id": 38
+            },
+            {
+              "bytes": [
+                41,
+                41
+              ],
+              "logprob": -0.17525678873062134,
+              "token": "))",
+              "token_id": 593
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.07773233950138092,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "Function.Surjective.tendsto (g.comp f) (toOuterMeasure (G))",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 17,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                99,
+                117,
+                114,
+                114,
+                121
+              ],
+              "logprob": -3.530705451965332,
+              "token": " curry",
+              "token_id": 54078
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.04400726035237312,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.003843659767881036,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 18,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                95,
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.0919277667999268,
+              "token": "_cur",
+              "token_id": 18956
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.24393196403980255,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                111,
+                98,
+                106
+              ],
+              "logprob": -1.914367914199829,
+              "token": "_obj",
+              "token_id": 7328
+            },
+            {
+              "bytes": [
+                46
+              ],
+              "logprob": -6.946255207061768,
+              "token": ".",
+              "token_id": 13
+            },
+            {
+              "bytes": [
+                49
+              ],
+              "logprob": -1.5103390216827393,
+              "token": "1",
+              "token_id": 16
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.02617643028497696,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "_curry_obj.1",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 19,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -1.901774287223816,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                105,
+                99,
+                117,
+                108,
+                117,
+                109
+              ],
+              "logprob": -1.5490243434906006,
+              "token": "riculum",
+              "token_id": 23136
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.0009623902151361108,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0017409659922122955,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curriculum_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 20,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                95,
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.1135263442993164,
+              "token": "_cur",
+              "token_id": 18956
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.24758465588092804,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                110,
+                117,
+                109
+              ],
+              "logprob": -5.811530590057373,
+              "token": "_num",
+              "token_id": 4273
+            },
+            {
+              "bytes": [
+                32,
+                91
+              ],
+              "logprob": -1.903558373451233,
+              "token": " [",
+              "token_id": 508
+            },
+            {
+              "bytes": [
+                99,
+                97,
+                114,
+                100
+              ],
+              "logprob": -2.856001377105713,
+              "token": "card",
+              "token_id": 4951
+            },
+            {
+              "bytes": [
+                105,
+                110,
+                97,
+                108
+              ],
+              "logprob": -3.3880300521850586,
+              "token": "inal",
+              "token_id": 977
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.01700768992304802,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                93
+              ],
+              "logprob": -0.943778395652771,
+              "token": "]",
+              "token_id": 60
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.004554493818432093,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "_curry_num [cardinal_target]",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 21,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -3.3667967319488525,
+              "token": "Function",
+              "token_id": 5152
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.030157536268234253,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -0.00016652150952722877,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -2.1815063519170508e-05,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                97,
+                115,
+                115
+              ],
+              "logprob": -2.6916565895080566,
+              "token": "ass",
+              "token_id": 395
+            },
+            {
+              "bytes": [
+                117,
+                109,
+                112,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -0.0022425521165132523,
+              "token": "umption",
+              "token_id": 60574
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.852538526058197,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "Function.Surjectiveassumption",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 22,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -1.770518183708191,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.7447700500488281,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.020084230229258537,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0034448110964149237,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 23,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -2.835999011993408,
+              "token": " Function",
+              "token_id": 5712
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.02791592665016651,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -0.0002873722987715155,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -9.536697689327411e-06,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                10
+              ],
+              "logprob": -5.31711483001709,
+              "token": "\n",
+              "token_id": 198
+            },
+            {
+              "bytes": [
+                32,
+                32,
+                32
+              ],
+              "logprob": -0.8058056235313416,
+              "token": "   ",
+              "token_id": 262
+            },
+            {
+              "bytes": [
+                32,
+                84
+              ],
+              "logprob": -0.2707582712173462,
+              "token": " T",
+              "token_id": 350
+            },
+            {
+              "bytes": [
+                101,
+                110,
+                100
+              ],
+              "logprob": -0.0031137815676629543,
+              "token": "end",
+              "token_id": 408
+            },
+            {
+              "bytes": [
+                115,
+                116,
+                111
+              ],
+              "logprob": -3.0040289857424796e-05,
+              "token": "sto",
+              "token_id": 33052
+            },
+            {
+              "bytes": [
+                59,
+                10
+              ],
+              "logprob": -4.917484760284424,
+              "token": ";\n",
+              "token_id": 280
+            },
+            {
+              "bytes": [
+                32,
+                32,
+                32
+              ],
+              "logprob": -0.009575155563652515,
+              "token": "   ",
+              "token_id": 262
+            },
+            {
+              "bytes": [
+                32,
+                45,
+                45
+              ],
+              "logprob": -1.7560464143753052,
+              "token": " --",
+              "token_id": 1177
+            },
+            {
+              "bytes": [
+                32,
+                87,
+                101
+              ],
+              "logprob": -3.3815224170684814,
+              "token": " We",
+              "token_id": 1205
+            },
+            {
+              "bytes": [
+                32,
+                104,
+                97,
+                118,
+                101
+              ],
+              "logprob": -0.8802907466888428,
+              "token": " have",
+              "token_id": 614
+            },
+            {
+              "bytes": [
+                32,
+                116,
+                111
+              ],
+              "logprob": -4.074027061462402,
+              "token": " to",
+              "token_id": 311
+            },
+            {
+              "bytes": [
+                32,
+                112,
+                114,
+                111,
+                118,
+                101
+              ],
+              "logprob": -0.9765852689743042,
+              "token": " prove",
+              "token_id": 12118
+            },
+            {
+              "bytes": [
+                32,
+                116,
+                104,
+                97,
+                116
+              ],
+              "logprob": -0.13585969805717468,
+              "token": " that",
+              "token_id": 429
+            },
+            {
+              "bytes": [
+                32,
+                116,
+                104,
+                101
+              ],
+              "logprob": -0.1023230254650116,
+              "token": " the",
+              "token_id": 279
+            },
+            {
+              "bytes": [
+                32,
+                115,
+                101,
+                113,
+                117,
+                101,
+                110,
+                99,
+                101
+              ],
+              "logprob": -5.004477500915527,
+              "token": " sequence",
+              "token_id": 8500
+            },
+            {
+              "bytes": [
+                32,
+                103,
+                101,
+                110,
+                101,
+                114,
+                97,
+                116,
+                101,
+                100
+              ],
+              "logprob": -0.46424227952957153,
+              "token": " generated",
+              "token_id": 7907
+            },
+            {
+              "bytes": [
+                32,
+                98,
+                121
+              ],
+              "logprob": -0.0028776212129741907,
+              "token": " by",
+              "token_id": 553
+            },
+            {
+              "bytes": [
+                32,
+                36
+              ],
+              "logprob": -1.7673048973083496,
+              "token": " $",
+              "token_id": 400
+            },
+            {
+              "bytes": [
+                103
+              ],
+              "logprob": -0.18877744674682617,
+              "token": "g",
+              "token_id": 70
+            },
+            {
+              "bytes": [
+                36
+              ],
+              "logprob": -0.6250905394554138,
+              "token": "$",
+              "token_id": 3
+            },
+            {
+              "bytes": [
+                32,
+                105,
+                115
+              ],
+              "logprob": -0.5907125473022461,
+              "token": " is",
+              "token_id": 374
+            },
+            {
+              "bytes": [
+                32,
+                112,
+                111,
+                115,
+                105,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -0.6279627680778503,
+              "token": " positive",
+              "token_id": 6785
+            },
+            {
+              "bytes": [
+                46,
+                10
+              ],
+              "logprob": -0.2475609928369522,
+              "token": ".\n",
+              "token_id": 624
+            },
+            {
+              "bytes": [
+                32,
+                32,
+                32
+              ],
+              "logprob": -0.0009480987209826708,
+              "token": "   ",
+              "token_id": 262
+            },
+            {
+              "bytes": [
+                32,
+                45,
+                45
+              ],
+              "logprob": -0.1186596006155014,
+              "token": " --",
+              "token_id": 1177
+            },
+            {
+              "bytes": [
+                32,
+                83,
+                105,
+                110,
+                99,
+                101
+              ],
+              "logprob": -1.577152132987976,
+              "token": " Since",
+              "token_id": 8704
+            },
+            {
+              "bytes": [
+                32,
+                119,
+                101
+              ],
+              "logprob": -1.5836046934127808,
+              "token": " we",
+              "token_id": 582
+            },
+            {
+              "bytes": [
+                32,
+                97,
+                115,
+                115,
+                117,
+                109,
+                101
+              ],
+              "logprob": -2.289924144744873,
+              "token": " assume",
+              "token_id": 9658
+            },
+            {
+              "bytes": [
+                32,
+                116,
+                104,
+                97,
+                116
+              ],
+              "logprob": -0.001447225920855999,
+              "token": " that",
+              "token_id": 429
+            },
+            {
+              "bytes": [
+                32,
+                36
+              ],
+              "logprob": -0.0032701611053198576,
+              "token": " $",
+              "token_id": 400
+            },
+            {
+              "bytes": [
+                110
+              ],
+              "logprob": -4.544825553894043,
+              "token": "n",
+              "token_id": 77
+            },
+            {
+              "bytes": [
+                36
+              ],
+              "logprob": -0.08094245940446854,
+              "token": "$",
+              "token_id": 3
+            },
+            {
+              "bytes": [
+                32,
+                105,
+                115
+              ],
+              "logprob": -0.11651882529258728,
+              "token": " is",
+              "token_id": 374
+            },
+            {
+              "bytes": [
+                32,
+                112,
+                111,
+                115,
+                105,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -0.0008987916517071426,
+              "token": " positive",
+              "token_id": 6785
+            },
+            {
+              "bytes": [
+                44
+              ],
+              "logprob": -0.01833619363605976,
+              "token": ",",
+              "token_id": 11
+            },
+            {
+              "bytes": [
+                32,
+                119,
+                101
+              ],
+              "logprob": -0.0216979943215847,
+              "token": " we",
+              "token_id": 582
+            },
+            {
+              "bytes": [
+                32,
+                106,
+                117,
+                115,
+                116
+              ],
+              "logprob": -1.474858283996582,
+              "token": " just",
+              "token_id": 1101
+            },
+            {
+              "bytes": [
+                32,
+                110,
+                101,
+                101,
+                100
+              ],
+              "logprob": -0.03421156108379364,
+              "token": " need",
+              "token_id": 1184
+            },
+            {
+              "bytes": [
+                32,
+                116,
+                111
+              ],
+              "logprob": -0.002590873511508107,
+              "token": " to",
+              "token_id": 311
+            },
+            {
+              "bytes": [
+                32,
+                115,
+                104,
+                111,
+                119
+              ],
+              "logprob": -0.7639310956001282,
+              "token": " show",
+              "token_id": 1473
+            },
+            {
+              "bytes": [
+                32,
+                116,
+                104,
+                97,
+                116
+              ],
+              "logprob": -0.0022521864157170057,
+              "token": " that",
+              "token_id": 429
+            },
+            {
+              "bytes": [
+                32,
+                36
+              ],
+              "logprob": -0.01702140085399151,
+              "token": " $",
+              "token_id": 400
+            },
+            {
+              "bytes": [
+                103
+              ],
+              "logprob": -1.6862527132034302,
+              "token": "g",
+              "token_id": 70
+            },
+            {
+              "bytes": [
+                36
+              ],
+              "logprob": -1.0173391103744507,
+              "token": "$",
+              "token_id": 3
+            },
+            {
+              "bytes": [
+                32,
+                105,
+                115
+              ],
+              "logprob": -0.14892247319221497,
+              "token": " is",
+              "token_id": 374
+            },
+            {
+              "bytes": [
+                32,
+                112,
+                111,
+                115,
+                105,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -0.005554006434977055,
+              "token": " positive",
+              "token_id": 6785
+            },
+            {
+              "bytes": [
+                46,
+                10
+              ],
+              "logprob": -0.01184831466525793,
+              "token": ".\n",
+              "token_id": 624
+            },
+            {
+              "bytes": [
+                32,
+                32,
+                32
+              ],
+              "logprob": -0.00015162272029556334,
+              "token": "   ",
+              "token_id": 262
+            },
+            {
+              "bytes": [
+                32,
+                45,
+                45
+              ],
+              "logprob": -0.035599566996097565,
+              "token": " --",
+              "token_id": 1177
+            },
+            {
+              "bytes": [
+                32,
+                66,
+                121
+              ],
+              "logprob": -1.970113754272461,
+              "token": " By",
+              "token_id": 3216
+            },
+            {
+              "bytes": [
+                32,
+                97,
+                115,
+                115,
+                117,
+                109,
+                112,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -0.6152188181877136,
+              "token": " assumption",
+              "token_id": 24335
+            },
+            {
+              "bytes": [
+                44
+              ],
+              "logprob": -0.003920132759958506,
+              "token": ",",
+              "token_id": 11
+            },
+            {
+              "bytes": [
+                32,
+                36
+              ],
+              "logprob": -0.3359045386314392,
+              "token": " $",
+              "token_id": 400
+            },
+            {
+              "bytes": [
+                103
+              ],
+              "logprob": -1.7203073501586914,
+              "token": "g",
+              "token_id": 70
+            },
+            {
+              "bytes": [
+                36
+              ],
+              "logprob": -0.0001674750237725675,
+              "token": "$",
+              "token_id": 3
+            },
+            {
+              "bytes": [
+                32,
+                105,
+                115
+              ],
+              "logprob": -0.002368385437875986,
+              "token": " is",
+              "token_id": 374
+            },
+            {
+              "bytes": [
+                32,
+                112,
+                111,
+                115,
+                105,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -0.00021753329201601446,
+              "token": " positive",
+              "token_id": 6785
+            },
+            {
+              "bytes": [
+                46,
+                10
+              ],
+              "logprob": -1.2419955730438232,
+              "token": ".\n",
+              "token_id": 624
+            },
+            {
+              "bytes": [
+                32,
+                32,
+                32
+              ],
+              "logprob": -0.00025555206229910254,
+              "token": "   ",
+              "token_id": 262
+            },
+            {
+              "bytes": [
+                32,
+                97,
+                115,
+                115,
+                117,
+                109,
+                112,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -0.7600746154785156,
+              "token": " assumption",
+              "token_id": 24335
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.06757313013076782,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " Function.Surjective\n    Tendsto;\n    -- We have to prove that the sequence generated by $g$ is positive.\n    -- Since we assume that $n$ is positive, we just need to show that $g$ is positive.\n    -- By assumption, $g$ is positive.\n    assumption",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 24,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.0417749881744385,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                105,
+                99,
+                117,
+                108,
+                117,
+                109
+              ],
+              "logprob": -1.517362356185913,
+              "token": "riculum",
+              "token_id": 23136
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.0007465674425475299,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0012440093560144305,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curriculum_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 25,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -2.9655065536499023,
+              "token": " Function",
+              "token_id": 5712
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.027932273223996162,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -0.0002818902430590242,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -9.059865078597795e-06,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                32,
+                63
+              ],
+              "logprob": -4.824195384979248,
+              "token": " ?",
+              "token_id": 937
+            },
+            {
+              "bytes": [
+                95
+              ],
+              "logprob": -0.01581389270722866,
+              "token": "_",
+              "token_id": 62
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.01477337721735239,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " Function.Surjective ?_",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 26,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -1.8961387872695923,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.7074225544929504,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.01958286389708519,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0034704715944826603,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 27,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                67,
+                117,
+                114
+              ],
+              "logprob": -3.227461814880371,
+              "token": "Cur",
+              "token_id": 16704
+            },
+            {
+              "bytes": [
+                114,
+                105,
+                99,
+                117,
+                108,
+                117,
+                109
+              ],
+              "logprob": -1.624488353729248,
+              "token": "riculum",
+              "token_id": 23136
+            },
+            {
+              "bytes": [
+                32,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -4.842077255249023,
+              "token": " target",
+              "token_id": 2169
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.29730334877967834,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "Curriculum target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 28,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                95,
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.202301502227783,
+              "token": "_cur",
+              "token_id": 18956
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.23048633337020874,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                110,
+                117,
+                109
+              ],
+              "logprob": -5.894213676452637,
+              "token": "_num",
+              "token_id": 4273
+            },
+            {
+              "bytes": [
+                32,
+                32,
+                32
+              ],
+              "logprob": -6.562877655029297,
+              "token": "   ",
+              "token_id": 262
+            },
+            {
+              "bytes": [
+                32,
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -2.2831716537475586,
+              "token": " Function",
+              "token_id": 5712
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.015159279108047485,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -2.5272052880609408e-05,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -1.549719627291779e-06,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                32,
+                32,
+                32,
+                32,
+                32,
+                32
+              ],
+              "logprob": -5.704195499420166,
+              "token": "      ",
+              "token_id": 981
+            },
+            {
+              "bytes": [
+                32,
+                40
+              ],
+              "logprob": -0.01664196141064167,
+              "token": " (",
+              "token_id": 320
+            },
+            {
+              "bytes": [
+                103
+              ],
+              "logprob": -0.05990136042237282,
+              "token": "g",
+              "token_id": 70
+            },
+            {
+              "bytes": [
+                46,
+                99,
+                111,
+                109,
+                112
+              ],
+              "logprob": -0.0024983640760183334,
+              "token": ".comp",
+              "token_id": 39702
+            },
+            {
+              "bytes": [
+                32,
+                102
+              ],
+              "logprob": -4.43448698206339e-05,
+              "token": " f",
+              "token_id": 282
+            },
+            {
+              "bytes": [
+                41
+              ],
+              "logprob": -0.0004929280839860439,
+              "token": ")",
+              "token_id": 8
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.07585392147302628,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "_curry_num    Function.Surjective       (g.comp f)",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 29,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                95,
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.107828140258789,
+              "token": "_cur",
+              "token_id": 18956
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.2485993653535843,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.30389663577079773,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.02645544894039631,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "_curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 30,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                99,
+                117,
+                114,
+                114,
+                121
+              ],
+              "logprob": -3.4829156398773193,
+              "token": " curry",
+              "token_id": 54078
+            },
+            {
+              "bytes": [
+                32,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116,
+                115
+              ],
+              "logprob": -7.043774604797363,
+              "token": " targets",
+              "token_id": 11550
+            },
+            {
+              "bytes": [
+                32,
+                111,
+                110,
+                101
+              ],
+              "logprob": -6.389721870422363,
+              "token": " one",
+              "token_id": 825
+            },
+            {
+              "bytes": [
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -7.020365238189697,
+              "token": "Function",
+              "token_id": 5152
+            },
+            {
+              "bytes": [
+                46,
+                111,
+                117,
+                116
+              ],
+              "logprob": -5.243008136749268,
+              "token": ".out",
+              "token_id": 2532
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.22787828743457794,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " curry targets oneFunction.out",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 31,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                95,
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.1643972396850586,
+              "token": "_cur",
+              "token_id": 18956
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.2559031546115875,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.17443908751010895,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.022293664515018463,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "_curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 32,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.085056781768799,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.7143215537071228,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.014790172688663006,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.003005275735631585,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 33,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -1.8801218271255493,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                105,
+                99,
+                117,
+                108,
+                117,
+                109
+              ],
+              "logprob": -1.4828875064849854,
+              "token": "riculum",
+              "token_id": 23136
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.0007871867273934186,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.001493054092861712,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curriculum_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 34,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                67,
+                117,
+                114
+              ],
+              "logprob": -3.230072259902954,
+              "token": "Cur",
+              "token_id": 16704
+            },
+            {
+              "bytes": [
+                97,
+                98,
+                105,
+                108,
+                105,
+                116,
+                121
+              ],
+              "logprob": -6.6268110275268555,
+              "token": "ability",
+              "token_id": 2897
+            },
+            {
+              "bytes": [
+                84,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.2207583338022232,
+              "token": "Target",
+              "token_id": 6397
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.4968639016151428,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "CurabilityTarget",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 35,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -1.9961618185043335,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.7530040144920349,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.01460092794150114,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0033080638386309147,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 36,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -1.9170562028884888,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.7158976197242737,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.017283888533711433,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.003162741893902421,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 37,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -1.8850173950195312,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.7832711935043335,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.018823327496647835,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.003539371071383357,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 38,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                68,
+                65
+              ],
+              "logprob": -6.491994857788086,
+              "token": "DA",
+              "token_id": 6352
+            },
+            {
+              "bytes": [
+                10,
+                10
+              ],
+              "logprob": -5.416285514831543,
+              "token": "\n\n",
+              "token_id": 271
+            },
+            {
+              "bytes": [
+                105,
+                110,
+                116,
+                114,
+                111
+              ],
+              "logprob": -6.557111740112305,
+              "token": "intro",
+              "token_id": 36442
+            },
+            {
+              "bytes": [
+                32,
+                101
+              ],
+              "logprob": -5.184274196624756,
+              "token": " e",
+              "token_id": 384
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0011813812889158726,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "DA\n\nintro e",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 39,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                95,
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.1511077880859375,
+              "token": "_cur",
+              "token_id": 18956
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.21062956750392914,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.166384756565094,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.021141763776540756,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "_curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 40,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.0417749881744385,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.7048623561859131,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.014152987860143185,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0030314226169139147,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 41,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -1.963468313217163,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.7820303440093994,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.016000913456082344,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0035657414700835943,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 42,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -3.011413097381592,
+              "token": " Function",
+              "token_id": 5712
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.03004799224436283,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -0.00033933130907826126,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -9.417489309271332e-06,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                32,
+                40
+              ],
+              "logprob": -0.8344913125038147,
+              "token": " (",
+              "token_id": 320
+            },
+            {
+              "bytes": [
+                103
+              ],
+              "logprob": -0.029303427785634995,
+              "token": "g",
+              "token_id": 70
+            },
+            {
+              "bytes": [
+                46,
+                99,
+                111,
+                109,
+                112
+              ],
+              "logprob": -0.006156172137707472,
+              "token": ".comp",
+              "token_id": 39702
+            },
+            {
+              "bytes": [
+                32,
+                102
+              ],
+              "logprob": -2.2053478460293263e-05,
+              "token": " f",
+              "token_id": 282
+            },
+            {
+              "bytes": [
+                41
+              ],
+              "logprob": -0.0006951061659492552,
+              "token": ")",
+              "token_id": 8
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.031577736139297485,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " Function.Surjective (g.comp f)",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 43,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                67,
+                117,
+                114
+              ],
+              "logprob": -3.2545764446258545,
+              "token": "Cur",
+              "token_id": 16704
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.3174609839916229,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.40898922085762024,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                58,
+                61
+              ],
+              "logprob": -5.353350639343262,
+              "token": ":=",
+              "token_id": 14209
+            },
+            {
+              "bytes": [
+                10,
+                10
+              ],
+              "logprob": -5.328369140625,
+              "token": "\n\n",
+              "token_id": 271
+            },
+            {
+              "bytes": [
+                101,
+                120,
+                97,
+                99,
+                116
+              ],
+              "logprob": -0.9630339741706848,
+              "token": "exact",
+              "token_id": 46385
+            },
+            {
+              "bytes": [
+                32,
+                84
+              ],
+              "logprob": -6.167405128479004,
+              "token": " T",
+              "token_id": 350
+            },
+            {
+              "bytes": [
+                101,
+                110,
+                100
+              ],
+              "logprob": -0.028052132576704025,
+              "token": "end",
+              "token_id": 408
+            },
+            {
+              "bytes": [
+                115,
+                116,
+                111
+              ],
+              "logprob": -1.2516897186287679e-05,
+              "token": "sto",
+              "token_id": 33052
+            },
+            {
+              "bytes": [
+                95,
+                99,
+                117,
+                114
+              ],
+              "logprob": -3.361586093902588,
+              "token": "_cur",
+              "token_id": 18956
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.00023588736075907946,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                109,
+                107
+              ],
+              "logprob": -1.9020302295684814,
+              "token": "_mk",
+              "token_id": 64861
+            },
+            {
+              "bytes": [
+                32,
+                95
+              ],
+              "logprob": -0.5297287702560425,
+              "token": " _",
+              "token_id": 716
+            },
+            {
+              "bytes": [
+                32,
+                95
+              ],
+              "logprob": -0.016339197754859924,
+              "token": " _",
+              "token_id": 716
+            },
+            {
+              "bytes": [
+                32,
+                95
+              ],
+              "logprob": -1.2542738914489746,
+              "token": " _",
+              "token_id": 716
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.23887617886066437,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "Curry_target:=\n\nexact Tendsto_curry_mk _ _ _",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 44,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -1.946860432624817,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.7543529868125916,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.015919022262096405,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0031457485165446997,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 45,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                239,
+                191,
+                189
+              ],
+              "logprob": -6.141742706298828,
+              "token": "�",
+              "token_id": 229
+            },
+            {
+              "bytes": [
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -1.4285186529159546,
+              "token": "Function",
+              "token_id": 5152
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.049033503979444504,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -4.386805812828243e-05,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -3.504691630951129e-05,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                46,
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.9763076305389404,
+              "token": ".cur",
+              "token_id": 24809
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.004180265124887228,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                111,
+                116,
+                97,
+                108
+              ],
+              "logprob": -6.605625152587891,
+              "token": "_total",
+              "token_id": 10784
+            },
+            {
+              "bytes": [
+                32,
+                40
+              ],
+              "logprob": -2.518371105194092,
+              "token": " (",
+              "token_id": 320
+            },
+            {
+              "bytes": [
+                71
+              ],
+              "logprob": -3.9141836166381836,
+              "token": "G",
+              "token_id": 38
+            },
+            {
+              "bytes": [
+                32,
+                58,
+                61
+              ],
+              "logprob": -0.005645047873258591,
+              "token": " :=",
+              "token_id": 1669
+            },
+            {
+              "bytes": [
+                32,
+                75
+              ],
+              "logprob": -0.5044664740562439,
+              "token": " K",
+              "token_id": 730
+            },
+            {
+              "bytes": [
+                41
+              ],
+              "logprob": -0.0003451704978942871,
+              "token": ")",
+              "token_id": 8
+            },
+            {
+              "bytes": [
+                32,
+                40
+              ],
+              "logprob": -0.07837481051683426,
+              "token": " (",
+              "token_id": 320
+            },
+            {
+              "bytes": [
+                72
+              ],
+              "logprob": -0.04545772448182106,
+              "token": "H",
+              "token_id": 39
+            },
+            {
+              "bytes": [
+                32,
+                58,
+                61
+              ],
+              "logprob": -0.00014828535495325923,
+              "token": " :=",
+              "token_id": 1669
+            },
+            {
+              "bytes": [
+                32,
+                75
+              ],
+              "logprob": -0.964291512966156,
+              "token": " K",
+              "token_id": 730
+            },
+            {
+              "bytes": [
+                41
+              ],
+              "logprob": -0.00042977635166607797,
+              "token": ")",
+              "token_id": 8
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -5.279193878173828,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "�Function.Surjective.curry_total (G := K) (H := K)",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 46,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                95,
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.1312737464904785,
+              "token": "_cur",
+              "token_id": 18956
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.22328364849090576,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.17026399075984955,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.02287418767809868,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "_curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 47,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -1.9943958520889282,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.7161973118782043,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.0144519517198205,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.003203144297003746,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 48,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                46,
+                99,
+                117,
+                114
+              ],
+              "logprob": -4.354274749755859,
+              "token": ".cur",
+              "token_id": 24809
+            },
+            {
+              "bytes": [
+                114,
+                105,
+                99,
+                117,
+                108,
+                117,
+                109
+              ],
+              "logprob": -2.4537618160247803,
+              "token": "riculum",
+              "token_id": 23136
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.0014881737297400832,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0010289618512615561,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": ".curriculum_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 49,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -2.940920114517212,
+              "token": " Function",
+              "token_id": 5712
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.02939985692501068,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -0.0003448130446486175,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -1.0013530300057027e-05,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                46,
+                99,
+                117,
+                114
+              ],
+              "logprob": -4.102457523345947,
+              "token": ".cur",
+              "token_id": 24809
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.00016473367577418685,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.7716186046600342,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                32,
+                63
+              ],
+              "logprob": -4.305767059326172,
+              "token": " ?",
+              "token_id": 937
+            },
+            {
+              "bytes": [
+                95
+              ],
+              "logprob": -0.012320248410105705,
+              "token": "_",
+              "token_id": 62
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.04703802615404129,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " Function.Surjective.curry_target ?_",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 50,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -2.98677134513855,
+              "token": " Function",
+              "token_id": 5712
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.028319966048002243,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -0.0003384971059858799,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -1.0490362910786644e-05,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                32,
+                40
+              ],
+              "logprob": -0.7692550420761108,
+              "token": " (",
+              "token_id": 320
+            },
+            {
+              "bytes": [
+                103
+              ],
+              "logprob": -0.02940182201564312,
+              "token": "g",
+              "token_id": 70
+            },
+            {
+              "bytes": [
+                46,
+                99,
+                111,
+                109,
+                112
+              ],
+              "logprob": -0.006147878244519234,
+              "token": ".comp",
+              "token_id": 39702
+            },
+            {
+              "bytes": [
+                32,
+                102
+              ],
+              "logprob": -2.002696055569686e-05,
+              "token": " f",
+              "token_id": 282
+            },
+            {
+              "bytes": [
+                41
+              ],
+              "logprob": -0.0006949870148673654,
+              "token": ")",
+              "token_id": 8
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.030391966924071312,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " Function.Surjective (g.comp f)",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 51,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -2.8556337356567383,
+              "token": " Function",
+              "token_id": 5712
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.027982350438833237,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -0.00034707720624282956,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -9.059865078597795e-06,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                32,
+                40
+              ],
+              "logprob": -0.771661102771759,
+              "token": " (",
+              "token_id": 320
+            },
+            {
+              "bytes": [
+                103
+              ],
+              "logprob": -0.03205200284719467,
+              "token": "g",
+              "token_id": 70
+            },
+            {
+              "bytes": [
+                46,
+                99,
+                111,
+                109,
+                112
+              ],
+              "logprob": -0.006075604353100061,
+              "token": ".comp",
+              "token_id": 39702
+            },
+            {
+              "bytes": [
+                32,
+                102
+              ],
+              "logprob": -2.1815063519170508e-05,
+              "token": " f",
+              "token_id": 282
+            },
+            {
+              "bytes": [
+                41
+              ],
+              "logprob": -0.0007335832924582064,
+              "token": ")",
+              "token_id": 8
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.030704842880368233,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " Function.Surjective (g.comp f)",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 52,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                194,
+                183
+              ],
+              "logprob": -7.138178825378418,
+              "token": "·",
+              "token_id": 13935
+            },
+            {
+              "bytes": [
+                32,
+                101,
+                120,
+                97,
+                99,
+                116
+              ],
+              "logprob": -0.21584029495716095,
+              "token": " exact",
+              "token_id": 4734
+            },
+            {
+              "bytes": [
+                32,
+                84
+              ],
+              "logprob": -4.551283836364746,
+              "token": " T",
+              "token_id": 350
+            },
+            {
+              "bytes": [
+                101,
+                110,
+                100
+              ],
+              "logprob": -0.003106175921857357,
+              "token": "end",
+              "token_id": 408
+            },
+            {
+              "bytes": [
+                115,
+                116,
+                111
+              ],
+              "logprob": -1.2755313036905136e-05,
+              "token": "sto",
+              "token_id": 33052
+            },
+            {
+              "bytes": [
+                46,
+                115
+              ],
+              "logprob": -0.35196971893310547,
+              "token": ".s",
+              "token_id": 514
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -0.00011288483074167743,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -1.7881377516459906e-06,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                32,
+                40
+              ],
+              "logprob": -0.009781879372894764,
+              "token": " (",
+              "token_id": 320
+            },
+            {
+              "bytes": [
+                99,
+                111,
+                109,
+                112
+              ],
+              "logprob": -5.762676239013672,
+              "token": "comp",
+              "token_id": 5689
+            },
+            {
+              "bytes": [
+                32,
+                72
+              ],
+              "logprob": -6.323391914367676,
+              "token": " H",
+              "token_id": 472
+            },
+            {
+              "bytes": [
+                32,
+                75
+              ],
+              "logprob": -1.5512535572052002,
+              "token": " K",
+              "token_id": 730
+            },
+            {
+              "bytes": [
+                32,
+                40
+              ],
+              "logprob": -1.9345471858978271,
+              "token": " (",
+              "token_id": 320
+            },
+            {
+              "bytes": [
+                103
+              ],
+              "logprob": -0.024858424440026283,
+              "token": "g",
+              "token_id": 70
+            },
+            {
+              "bytes": [
+                46,
+                99,
+                111,
+                109,
+                112
+              ],
+              "logprob": -0.016694368794560432,
+              "token": ".comp",
+              "token_id": 39702
+            },
+            {
+              "bytes": [
+                32,
+                102
+              ],
+              "logprob": -9.512449469184503e-05,
+              "token": " f",
+              "token_id": 282
+            },
+            {
+              "bytes": [
+                41,
+                41
+              ],
+              "logprob": -0.202911376953125,
+              "token": "))",
+              "token_id": 593
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.8442289233207703,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "· exact Tendsto.surjective (comp H K (g.comp f))",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 53,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                95,
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.091980457305908,
+              "token": "_cur",
+              "token_id": 18956
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.25986072421073914,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                111,
+                98,
+                106
+              ],
+              "logprob": -1.7115271091461182,
+              "token": "_obj",
+              "token_id": 7328
+            },
+            {
+              "bytes": [
+                58
+              ],
+              "logprob": -5.41286563873291,
+              "token": ":",
+              "token_id": 25
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.6543614864349365,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "_curry_obj:",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 54,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                99,
+                117,
+                114,
+                114,
+                121
+              ],
+              "logprob": -3.5536046028137207,
+              "token": " curry",
+              "token_id": 54078
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.050766471773386,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.004125299397855997,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 55,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                95,
+                99,
+                117,
+                114
+              ],
+              "logprob": -2.188417673110962,
+              "token": "_cur",
+              "token_id": 18956
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.2521975338459015,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.1745426207780838,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.020593635737895966,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "_curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 56,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                99,
+                117,
+                114,
+                118,
+                97,
+                116,
+                117,
+                114,
+                101
+              ],
+              "logprob": -5.291774749755859,
+              "token": " curvature",
+              "token_id": 82133
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.00020323118951637298,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0010070496937260032,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " curvature_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 57,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -2.922214984893799,
+              "token": " Function",
+              "token_id": 5712
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.027218494564294815,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -0.0003295593778602779,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -9.417489309271332e-06,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                46
+              ],
+              "logprob": -5.094116687774658,
+              "token": ".",
+              "token_id": 13
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -1.3618775606155396,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " Function.Surjective.",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 58,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                67,
+                117,
+                114
+              ],
+              "logprob": -3.276125907897949,
+              "token": "Cur",
+              "token_id": 16704
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.3014376163482666,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -4.194205284118652,
+              "token": "target",
+              "token_id": 5657
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -2.514504909515381,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "Currytarget",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 59,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                32,
+                99,
+                97,
+                114,
+                100,
+                105,
+                110,
+                97,
+                108
+              ],
+              "logprob": -6.46903657913208,
+              "token": " cardinal",
+              "token_id": 55880
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.003365568583831191,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                32,
+                45,
+                45
+              ],
+              "logprob": -3.211820602416992,
+              "token": " --",
+              "token_id": 1177
+            },
+            {
+              "bytes": [
+                32,
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -1.02125883102417,
+              "token": " Function",
+              "token_id": 5712
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.0015504256589338183,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -1.3113013892507297e-06,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -2.0265558760002023e-06,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                32,
+                40
+              ],
+              "logprob": -0.049900077283382416,
+              "token": " (",
+              "token_id": 320
+            },
+            {
+              "bytes": [
+                103
+              ],
+              "logprob": -1.1563751697540283,
+              "token": "g",
+              "token_id": 70
+            },
+            {
+              "bytes": [
+                46,
+                99,
+                111,
+                109,
+                112
+              ],
+              "logprob": -0.010933609679341316,
+              "token": ".comp",
+              "token_id": 39702
+            },
+            {
+              "bytes": [
+                32,
+                102
+              ],
+              "logprob": -7.045020902296528e-05,
+              "token": " f",
+              "token_id": 282
+            },
+            {
+              "bytes": [
+                41
+              ],
+              "logprob": -0.001142564113251865,
+              "token": ")",
+              "token_id": 8
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.009160040877759457,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": " cardinal_target -- Function.Surjective (g.comp f)",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 60,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                67,
+                117,
+                114
+              ],
+              "logprob": -3.2482924461364746,
+              "token": "Cur",
+              "token_id": 16704
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.29644712805747986,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.3734794557094574,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.6486611366271973,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "Curry_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 61,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                70,
+                117,
+                110,
+                99,
+                116,
+                105,
+                111,
+                110
+              ],
+              "logprob": -3.438157558441162,
+              "token": "Function",
+              "token_id": 5152
+            },
+            {
+              "bytes": [
+                46,
+                83
+              ],
+              "logprob": -0.0313304141163826,
+              "token": ".S",
+              "token_id": 808
+            },
+            {
+              "bytes": [
+                117,
+                114
+              ],
+              "logprob": -0.00018559164891485125,
+              "token": "ur",
+              "token_id": 324
+            },
+            {
+              "bytes": [
+                106,
+                101,
+                99,
+                116,
+                105,
+                118,
+                101
+              ],
+              "logprob": -2.002696055569686e-05,
+              "token": "jective",
+              "token_id": 50491
+            },
+            {
+              "bytes": [
+                111,
+                102
+              ],
+              "logprob": -4.6350860595703125,
+              "token": "of",
+              "token_id": 1055
+            },
+            {
+              "bytes": [
+                101,
+                120,
+                97,
+                99,
+                116
+              ],
+              "logprob": -4.851124286651611,
+              "token": "exact",
+              "token_id": 46385
+            },
+            {
+              "bytes": [
+                116,
+                97
+              ],
+              "logprob": -1.8759801387786865,
+              "token": "ta",
+              "token_id": 2565
+            },
+            {
+              "bytes": [
+                117,
+                116,
+                111
+              ],
+              "logprob": -0.001295918715186417,
+              "token": "uto",
+              "token_id": 1535
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.02038002386689186,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "Function.Surjectiveofexacttauto",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 62,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                99,
+                117,
+                114
+              ],
+              "logprob": -1.9414920806884766,
+              "token": "cur",
+              "token_id": 2352
+            },
+            {
+              "bytes": [
+                114,
+                111,
+                109,
+                97,
+                116,
+                105,
+                99
+              ],
+              "logprob": -6.733072280883789,
+              "token": "romatic",
+              "token_id": 98766
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.001072784885764122,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.0036516194231808186,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "curromatic_target",
+          "role": "assistant"
+        }
+      },
+      {
+        "finish_reason": "stop",
+        "index": 63,
+        "logprobs": {
+          "content": [
+            {
+              "bytes": [
+                67,
+                117,
+                114
+              ],
+              "logprob": -3.2683653831481934,
+              "token": "Cur",
+              "token_id": 16704
+            },
+            {
+              "bytes": [
+                114,
+                121
+              ],
+              "logprob": -0.3039492666721344,
+              "token": "ry",
+              "token_id": 884
+            },
+            {
+              "bytes": [
+                95,
+                116,
+                97,
+                114,
+                103,
+                101,
+                116
+              ],
+              "logprob": -0.37751010060310364,
+              "token": "_target",
+              "token_id": 11123
+            },
+            {
+              "bytes": [
+                60,
+                124,
+                101,
+                110,
+                100,
+                111,
+                102,
+                116,
+                101,
+                120,
+                116,
+                124,
+                62
+              ],
+              "logprob": -0.6216611862182617,
+              "token": "<|endoftext|>",
+              "token_id": 151643
+            }
+          ]
+        },
+        "message": {
+          "content": "Curry_target",
+          "role": "assistant"
+        }
+      }
+    ]
+  },
+  "source_receipt_sha256": "bf20bf55fbb11fd102f9800fd55952739f88e7cc0888b59fd340b0fc738bc97e"
+}

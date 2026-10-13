@@ -1,0 +1,103 @@
+{
+  "state": "PASS",
+  "archive_sha256": "b3e9514f179d18c1ab2beb5cf2316a7d6c029c2de369e04e52607148c3aa52d1",
+  "archive_bytes": 1735390,
+  "verified_members": 1475,
+  "snapshot": false,
+  "retained_remote_checkpoint_inventory": [
+    {
+      "bytes": 330789113,
+      "path": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/runs/formal-20x10-corrected/ce-learner/checkpoints/wave_001_step_000001_global_00000001/trainer_state.pt",
+      "retained_remote": true,
+      "sha256": "13e90184b7eb2e96beb930cdad06b6cf37cc26e5d10e511de6a12aa042d45a14"
+    },
+    {
+      "bytes": 3739451,
+      "path": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/runs/formal-20x10-corrected/ce-learner/checkpoints/wave_001_step_000001_global_00000001/value_head.pt",
+      "retained_remote": true,
+      "sha256": "5b14cb8065b80254764ef5d9f994c1dae661d4b6f8c689f1e5e31249c3c87807"
+    },
+    {
+      "bytes": 161533192,
+      "path": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/runs/formal-20x10-corrected/ce-learner/checkpoints/wave_001_step_000001_global_00000001/adapter/adapter_model.safetensors",
+      "retained_remote": true,
+      "sha256": "e5d82e25bc7bbb1e1237b50314f8169f444101555bd7b5b1ad2f5a7a756b1af5"
+    },
+    {
+      "bytes": 53149,
+      "path": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/runs/formal-20x10-corrected/wave_001/online-v2/update/checkpoint/training_state.pt",
+      "retained_remote": true,
+      "sha256": "2aa6ce057eb309005601de7202c8d7d3990c01520b24ac13ad99048185b72378"
+    },
+    {
+      "bytes": 3739451,
+      "path": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/runs/formal-20x10-corrected/wave_001/online-v2/update/checkpoint/value_head.pt",
+      "retained_remote": true,
+      "sha256": "0dbfd19201acb71af882fccc0de1cfd54adf4e0c80eff4aaf07d9b31c2fcfc2b"
+    },
+    {
+      "bytes": 161533192,
+      "path": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/runs/formal-20x10-corrected/wave_001/online-v2/update/checkpoint/adapter/online_v2_policy/adapter_model.safetensors",
+      "retained_remote": true,
+      "sha256": "326e08d17a74eec08d52127c7e011462bf1d207266cf0ca9a3a84ddc0ddde2dd"
+    },
+    {
+      "bytes": 165384595,
+      "path": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/runs/formal-20x10-corrected/wave_001/online-v2/update/wave_ledger.json.artifacts/be6734dc3ba1f478384c/74216915213c44ec910451fd41f44adf/before.pt",
+      "retained_remote": true,
+      "sha256": "ca68504aefe20ca2b74c02b49924ddfd3b13283f67cf65eb8fae5c90da083ab1"
+    }
+  ],
+  "extracted_members": {
+    "derived/results/corrected_terminal_comparison/comparison.json": {
+      "bytes": 7329,
+      "member": "remote/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/derived/results/corrected_terminal_comparison/comparison.json",
+      "sha256": "9c055030987b917289616ff06472c54ed7acae134cabba6a3749d6ebb381bd95"
+    },
+    "derived/results/corrected_terminal_comparison/comparison.md": {
+      "bytes": 849,
+      "member": "remote/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/derived/results/corrected_terminal_comparison/comparison.md",
+      "sha256": "25f754cd487fe981b89ad1ba36822e7aee8b6d7de3b7472a29b8483be3d93fbe"
+    },
+    "runs/formal-20x10-corrected/control/online_rollback_identity_audit.json": {
+      "bytes": 2639,
+      "member": "remote/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/runs/formal-20x10-corrected/control/online_rollback_identity_audit.json",
+      "sha256": "9a5fe86ab7b3bf86c83e11ec7fbe15d992ab31ed085a4edb246fcd22ccd152c7"
+    },
+    "runs/formal-20x10-corrected/control/report_path_fix.json": {
+      "bytes": 298,
+      "member": "remote/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/runs/formal-20x10-corrected/control/report_path_fix.json",
+      "sha256": "15e328d1b15db4ecfc5aa05285734ead73b38ca7a3bf1a6e3f9cf4d3e59bcac4"
+    },
+    "runs/formal-20x10-corrected/control/retired_legacy_controllers.json": {
+      "bytes": 582,
+      "member": "remote/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/runs/formal-20x10-corrected/control/retired_legacy_controllers.json",
+      "sha256": "4db268bf48f48edd8aa16ca202f00b782e69a650f9656cefbeffe6974b2f47be"
+    },
+    "runs/formal-20x10-corrected/control/terminal_outcome_DONE.json": {
+      "bytes": 426,
+      "member": "remote/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/runs/formal-20x10-corrected/control/terminal_outcome_DONE.json",
+      "sha256": "70ae7a472811d85a7d07388ca446944e718db42273bc7263a99f0efeca8052bc"
+    },
+    "runs/formal-20x10-corrected/heldout-eval/ce_final/DONE.json": {
+      "bytes": 244,
+      "member": "remote/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/runs/formal-20x10-corrected/heldout-eval/ce_final/DONE.json",
+      "sha256": "fd92ebbb8b88d92ddedc3d7979cc693317f13945666756e1695e7f8397ce57bc"
+    },
+    "runs/formal-20x10-corrected/heldout-eval/ce_final/report.json": {
+      "bytes": 65863,
+      "member": "remote/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/runs/formal-20x10-corrected/heldout-eval/ce_final/report.json",
+      "sha256": "e959d9d22c9d94921b1a56744cc334d33cd5697af495f4483654f740f80eef78"
+    },
+    "runs/formal-20x10/heldout-eval/initial/DONE.json": {
+      "bytes": 241,
+      "member": "remote/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/runs/formal-20x10/heldout-eval/initial/DONE.json",
+      "sha256": "39bd00c1a1275742870cc04bd6554946fd5f917d059958f4618d098aa1def19b"
+    },
+    "runs/formal-20x10/heldout-eval/initial/report.json": {
+      "bytes": 67379,
+      "member": "remote/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/runs/formal-20x10/heldout-eval/initial/report.json",
+      "sha256": "11675ca2cc48ab4581a5c91f243ac1e0d5d6e23ddbd89b9e1e507472465dbc0f"
+    }
+  }
+}

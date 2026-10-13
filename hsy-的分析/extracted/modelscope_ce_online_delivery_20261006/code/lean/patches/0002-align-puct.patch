@@ -1,0 +1,50 @@
+--- a/Reap/Tactic/TreeSearch.lean
++++ b/Reap/Tactic/TreeSearch.lean
+@@ -101,6 +101,8 @@
+   priorTemperature : Float
+   progressiveSamplingC : Float
+   progressiveSamplingAlpha : Float
++  cAnd : Float
++  unvisitedPenalty : Float
+ 
+ def scaledNatToFloat (n : Nat) : Float :=
+   n.toFloat / 1000.0
+@@ -114,6 +116,8 @@
+   priorTemperature := reap.prior_temperature.get opts |>.toFloat
+   progressiveSamplingC := scaledNatToFloat <| reap.progressive_sampling_c.get opts
+   progressiveSamplingAlpha := scaledNatToFloat <| reap.progressive_sampling_alpha.get opts
++  cAnd := reap.c_and.get opts |>.toFloat
++  unvisitedPenalty := reap.unvisited_penalty.get opts |>.toFloat
+ }
+ 
+ end SearchHyperparameters
+@@ -354,18 +358,27 @@
+   let N := node.data.numVisit.toFloat
+   let c := params.cInit + Float.log ((N + params.cBase + 1) / params.cBase)
+   let totalMass := (node.children.map fun (e, _) => e.probability).sum
++  let parentValue :=
++    if node.data.numVisit > 0 then
++      node.data.valueSum / node.data.numVisit.toFloat
++    else
++      0.0
+   node.children.map fun (e, n) =>
+     let valueScore :=
+       if n.numVisit > 0 then
+         let value := n.value - edgeStepCost e
+         params.visitDiscount.pow (-1.0 - value)
+       else
+-        0.0
++        -- AlphaProof: V(s,a) = V_net(s) - c_pen for unvisited children (Table 3: 32).
++        params.visitDiscount.pow (-1.0 - (parentValue - params.unvisitedPenalty))
+     let Q := match node.data.toPlay with
+       | .orNode => valueScore
+       | .andNode => if n.isSolved then -Float.inf else 1 - valueScore
+     let p := e.probability / totalMass
+-    let U := c * p * N.sqrt / (e.numVisit.toFloat + 1)
++    let andMultiplier := match node.data.toPlay with
++      | .andNode => params.cAnd
++      | .orNode => 1.0
++    let U := andMultiplier * c * p * N.sqrt / (e.numVisit.toFloat + 1)
+     let score := Q + U
+     (score, { c := c, Q := Q, U := U })
+ 

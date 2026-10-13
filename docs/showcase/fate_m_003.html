@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>fate_m_003 · MCTS 搜索轨迹（attempt_01）</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: #f5f6f8;
+  color: #1f2937;
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans CJK SC",
+               "Source Han Sans SC", "PingFang SC", "Hiragino Sans GB",
+               "Microsoft YaHei", sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.page { max-width: 1240px; margin: 0 auto; padding: 24px 20px 48px; }
+h1 { font-size: 24px; margin: 0 0 4px; }
+h2 { font-size: 18px; margin: 0 0 10px; }
+h3 { font-size: 14px; margin: 14px 0 6px; color: #374151; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.dim { color: #6b7280; }
+.err { color: #b91c1c; }
+.card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px;
+        padding: 16px 18px; margin: 14px 0; }
+.hero { padding: 6px 2px 0; }
+.sub { color: #6b7280; font-size: 13px; margin: 0 0 4px; }
+.job-title { margin: 0 0 8px; font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 2px; align-items: center; }
+.chip { background: #eef2f7; border: 1px solid #dbe2ea; border-radius: 999px;
+        padding: 2px 10px; font-size: 12.5px; }
+.chip b { color: #475569; font-weight: 600; margin-right: 4px; }
+pre { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px;
+      padding: 10px 12px; overflow: auto; font-size: 13px; margin: 8px 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+                   "Noto Sans Mono CJK SC", monospace; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+                   "Noto Sans Mono CJK SC", monospace; font-size: 12.5px; }
+ol.script li { margin: 2px 0; }
+.canvas-wrap { overflow: auto; border: 1px dashed #d1d5db; border-radius: 10px;
+               background: #fbfcfe; }
+.canvas-wrap[data-zoom="fit"] .tree-svg { max-width: 100%; height: auto; display: block; }
+.canvas-wrap[data-zoom="full"] .tree-svg { max-width: none; display: block; }
+svg text { font-family: inherit; }
+.node { cursor: pointer; }
+.node.hl .box { stroke: #e11d48 !important; stroke-width: 3.4 !important; }
+.edge.hl path { stroke: #e11d48 !important; stroke-width: 3.4 !important; }
+.edge.hl .label rect { stroke: #e11d48; }
+.legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12.5px;
+          color: #475569; margin: 4px 0 10px; align-items: center; }
+.sw { display: inline-block; width: 14px; height: 14px; border-radius: 4px;
+      border: 2px solid #888; margin-right: 4px; vertical-align: -2px; }
+.toolbar { display: flex; gap: 8px; align-items: center; margin: 4px 0 8px;
+           flex-wrap: wrap; }
+.toolbar button { border: 1px solid #d1d5db; background: #fff; border-radius: 8px;
+                  padding: 3px 10px; font-size: 12.5px; cursor: pointer; }
+.toolbar button.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+.warn-banner { background: #fef3c7; border: 1px solid #fcd34d; color: #92400e;
+               border-radius: 8px; padding: 6px 10px; font-size: 13px; }
+table.attempts { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.attempts th, table.attempts td { border-bottom: 1px solid #eef1f4;
+                                       padding: 6px 8px; text-align: left;
+                                       vertical-align: top; }
+table.attempts th { background: #f8fafc; font-weight: 600; color: #334155; }
+table.attempts tr[data-node] { cursor: pointer; }
+table.attempts tr[data-node]:hover { background: #fff7ed; }
+table.kv { border-collapse: collapse; font-size: 13px; width: 100%; }
+table.kv td { border-bottom: 1px solid #eef1f4; padding: 4px 8px; vertical-align: top; }
+table.kv td.k { color: #475569; white-space: nowrap; width: 220px; }
+.badge { display: inline-block; border-radius: 6px; padding: 0 7px; font-size: 12px;
+         line-height: 19px; border: 1px solid transparent; }
+.badge.ok { background: #e9f8ee; color: #166534; border-color: #bbf7d0; }
+.badge.warn { background: #fef9c3; color: #854d0e; border-color: #fde68a; }
+.badge.info { background: #e0f2fe; color: #075985; border-color: #bae6fd; }
+.badge.bad { background: #fee2e2; color: #991b1b; border-color: #fecaca; }
+.badge.other { background: #f1f5f9; color: #475569; border-color: #e2e8f0; }
+.detail-box { margin-top: 10px; background: #f8fafc; border: 1px solid #e2e8f0;
+              border-radius: 8px; padding: 10px 12px; font-size: 12.5px;
+              white-space: pre-wrap; word-break: break-word; min-height: 60px;
+              font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+                           "Noto Sans Mono CJK SC", monospace; }
+details.raw summary { cursor: pointer; color: #334155; font-weight: 600; }
+details.card.raw summary { font-size: 15px; }
+footer { color: #6b7280; font-size: 12.5px; margin-top: 20px; text-align: center; }
+</style>
+</head>
+<body>
+<main class="page">
+<header class="hero">
+<h1>fate_m_003 · MCTS 搜索轨迹（attempt_01）</h1>
+<p class="sub">搜索树静态导出 · 节点=状态 · 边=战术 · 单文件离线可看（无外部引用）</p>
+<div class="chips"><span class="chip"><b>schema</b> alphaproof.search_tree_export.v1</span><span class="chip"><b>节点</b> 2</span><span class="chip"><b>边</b> 1</span><span class="chip"><b>attempts</b> 9</span><span class="chip"><b>root</b> G : Type u_1 H : Type u_2 K : Type u_3 …</span></div>
+</header>
+<section class="card" id="job">
+<h2>题目 / Job</h2>
+<details class="raw"><summary>job 其他字段</summary><table class="kv"><tr><td class="k">budget</td><td>{&quot;max_nodes&quot;: 64, &quot;max_steps&quot;: 1, &quot;max_attempts&quot;: 4}</td></tr><tr><td class="k">config</td><td>{&quot;max_nodes&quot;: 64, &quot;max_steps&quot;: 1, &quot;num_return_sequences&quot;: 64, &quot;temperature&quot;: 1.5, &quot;top_p&quot;: 0.9, &quot;max_new_tokens&quot;: 512}</td></tr><tr><td class="k">config_hash</td><td>866d1e121b7d8f5f10832541f8f2e2793edfeb6fe82b9eb030597cdcf0593bb1</td></tr><tr><td class="k">created_at</td><td>2026-10-09T14:12:21+08:00</td></tr><tr><td class="k">evidence</td><td>{&quot;observer&quot;: {&quot;path&quot;: &quot;/home/a/e2-work/training/remote/tmp/fate-m-formal-w001-shared-rollout-v2/fate_m_003_v001/attempts/attempt_01/observer.jsonl&quot;, &quot;sha256&quot;: …</td></tr><tr><td class="k">evidence_root</td><td>/home/a/e2-work/training/remote/tmp/fate-m-formal-w001-shared-rollout-v2/fate_m_003_v001</td></tr><tr><td class="k">evidence_session_id</td><td>fate_m_003_v001</td></tr><tr><td class="k">kind</td><td>migrated</td></tr><tr><td class="k">note</td><td>证据树被剪枝：仅最优路径（raw_tree 为 session checkpoint 原样）</td></tr><tr><td class="k">policy_version</td><td>shared-wave-001-input</td></tr><tr><td class="k">problem_file</td><td>/mnt/gloway/projects/10-4-alpha-proof/hsy-的分析/extracted/fate_m_lean_curriculum_20x200_20261004/lean/problems/P01_FATE_M_003/v001.lean</td></tr><tr><td class="k">problem_id</td><td>fate_m_003</td></tr><tr><td class="k">schema</td><td>lmc.job.v1</td></tr><tr><td class="k">search_id</td><td>attempt_01</td></tr><tr><td class="k">transitions_source</td><td>ce-replay/transitions.jsonl</td></tr><tr><td class="k">tree_pruned</td><td>True</td></tr><tr><td class="k">versions</td><td>{&quot;lean&quot;: &quot;v4.28.0-rc1&quot;, &quot;mathlib&quot;: &quot;5352afccd6866369be9de43f5b7ec47203555f44&quot;, &quot;reap&quot;: &quot;0090d73c&quot;, &quot;patchset_hash&quot;: &quot;8de43999e8893c18624fa77f0005ceed373305e3ab…</td></tr><tr><td class="k">wave_id</td><td>wave_001_fate_m_v001</td></tr><tr><td class="k">wave_index</td><td>1</td></tr></table></details>
+</section>
+<section class="card" id="result">
+<h2>结果摘要</h2>
+<div class="chips"><span class="chip"><b>solved</b> 是 ✓</span><span class="chip"><b>simulations</b> 1</span><span class="chip"><b>nodes_created</b> 2</span><span class="chip"><b>elapsed_s</b> 42.953100577999976</span></div>
+<h3>最优证明脚本（result.json）</h3><ol class="script"><li><code>exact curriculum_target</code></li></ol>
+<details class="raw"><summary>result.json 其他字段</summary><table class="kv"><tr><td class="k">applies</td><td>1</td></tr><tr><td class="k">evidence</td><td>{&quot;observer&quot;: {&quot;path&quot;: &quot;/home/a/e2-work/training/remote/tmp/fate-m-formal-w001-shared-rollout-v2/fate_m_003_v001/attempts/attempt_01/observer.jsonl&quot;, &quot;sha256&quot;: …</td></tr><tr><td class="k">evidence_session_id</td><td>fate_m_003_v001</td></tr><tr><td class="k">note</td><td>证据树被剪枝：仅最优路径（raw_tree 为 session checkpoint 原样）</td></tr><tr><td class="k">policy_version</td><td>shared-wave-001-input</td></tr><tr><td class="k">problem_id</td><td>fate_m_003</td></tr><tr><td class="k">schema</td><td>lmc.result.v1</td></tr><tr><td class="k">search_id</td><td>attempt_01</td></tr><tr><td class="k">status</td><td>solved</td></tr><tr><td class="k">strict_state</td><td>PASS</td></tr><tr><td class="k">tree_pruned</td><td>True</td></tr><tr><td class="k">updated_at</td><td>2026-10-09T14:12:21+08:00</td></tr><tr><td class="k">versions</td><td>{&quot;lean&quot;: &quot;v4.28.0-rc1&quot;, &quot;mathlib&quot;: &quot;5352afccd6866369be9de43f5b7ec47203555f44&quot;, &quot;reap&quot;: &quot;0090d73c&quot;, &quot;patchset_hash&quot;: &quot;8de43999e8893c18624fa77f0005ceed373305e3ab…</td></tr><tr><td class="k">wave_id</td><td>wave_001_fate_m_v001</td></tr></table></details>
+</section>
+<section class="card" id="tree">
+<h2>搜索树（节点 = 状态 · 边 = 战术）</h2>
+<div class="legend"><span><i class="sw" style="background:#eef6ff;border-color:#3b82f6"></i>OR 节点</span><span><i class="sw" style="background:#f6f0ff;border-color:#8b5cf6"></i>AND 节点</span><span><i class="sw" style="background:#e9f8ee;border-color:#2f9e4f"></i>已解 / 终端</span><span><i class="sw" style="background:#fff;border-color:#d97706"></i>最优路径（★ / 橙边）</span><span><i class="sw" style="background:#f3f4f6;border-color:#9ca3af;border-style:dashed"></i>未访问</span><span><i class="sw" style="background:#fff;border-color:#a855f7;border-style:dashed"></i>focus 伪边</span></div>
+<div class="toolbar"><button type="button" data-zoom-btn="fit" class="active">适应窗口</button><button type="button" data-zoom-btn="full">原始大小</button><span class="dim">悬停节点高亮到根路径；点击查看完整状态</span></div>
+<div class="canvas-wrap" data-zoom="fit">
+<svg class="tree-svg" width="316" height="364" viewBox="0 0 316 364" role="img" aria-label="MCTS 搜索树">
+<defs><marker id="arr-norm" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 8 4 L 0 8 z" fill="#94a3b8"></path></marker><marker id="arr-opt" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 8 4 L 0 8 z" fill="#d97706"></path></marker><marker id="arr-focus" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 8 4 L 0 8 z" fill="#a855f7"></path></marker></defs>
+<g class="edge optimal" data-p="0" data-c="1"><path d="M 158.0 124.0 C 158.0 176.2, 158.0 184.8, 158.0 237.0" fill="none" stroke="#d97706" stroke-width="2.8" marker-end="url(#arr-opt)" stroke-linecap="round"></path><title>边 0→1 · action=exact curriculum_target · p=0.936 · N=0 · Q=0.00 · cost=1.0</title><g class="label"><rect x="77.5" y="163.0" width="160.9" height="38.0" rx="6" fill="#ffffff" fill-opacity="0.94" stroke="#e2e8f0" stroke-width="1"></rect><text x="158.0" y="180.0" text-anchor="middle" font-size="11.5" fill="#334155">exact curriculum_target</text><text x="158.0" y="194.0" text-anchor="middle" font-size="10.5" fill="#64748b">p=0.936 · N=0 · Q=0.00</text></g></g>
+<g class="node or solved optimal" id="node-0" data-node="0" data-parent="" data-toplay="OR" data-n="1" data-v="0.00" data-ev="1" data-key="" data-action="" data-prior="—" data-optimal="1" data-solved="1" transform="translate(36.0, 36.0)"><rect class="box" x="0" y="0" width="244" height="88" rx="10" fill="#e9f8ee" stroke="#d97706" stroke-width="3.0"></rect><text x="10" y="21" font-size="11" font-weight="700" fill="#2563eb">OR</text><text x="234" y="21" text-anchor="end" font-size="11" fill="#b45309">★ 最优</text><text x="10" y="46" font-size="12.5" fill="#1f2937">G : Type u_1 H : Type u_2 K :</text><text x="10" y="64" font-size="12.5" fill="#1f2937">Type u_3 inst✝² : Group G ins…</text><text x="10" y="79" font-size="11" fill="#64748b">N=1 · V=0.00 · ev=1</text><title>节点 #0 [OR] solved=是 optimal=是 terminal=否
+N=1 · V=0.00 · ev=1 · net=— · value_target=—
+state_key: None
+
+G : Type u_1
+H : Type u_2
+K : Type u_3
+inst✝² : Group G
+inst✝¹ : Group H
+inst✝ : Group K
+f : G →* H
+g : H →* K
+hf : Function.Surjective ⇑f
+hg : Function.Surjective ⇑g
+curriculum_target : Function.Surjective ⇑(g.comp f)
+⊢ Function.Surjective ⇑(g.comp f)</title></g>
+<g class="node or solved terminal optimal" id="node-1" data-node="1" data-parent="0" data-toplay="OR" data-n="0" data-v="—" data-ev="0" data-key="" data-action="exact curriculum_target" data-prior="0.936" data-optimal="1" data-solved="1" transform="translate(36.0, 240.0)"><rect class="box" x="0" y="0" width="244" height="88" rx="10" fill="#e9f8ee" stroke="#d97706" stroke-width="3.0"></rect><text x="10" y="21" font-size="11" font-weight="700" fill="#2563eb">OR</text><text x="234" y="21" text-anchor="end" font-size="11" fill="#b45309">★ 最优</text><text x="10" y="46" font-size="12.5" fill="#1f2937"></text><text x="10" y="64" font-size="12.5" fill="#1f2937"></text><text x="10" y="79" font-size="11" fill="#64748b">N=0 · V=— · ev=0</text><title>节点 #1 [OR] solved=是 optimal=是 terminal=是
+N=0 · V=— · ev=0 · net=— · value_target=—
+state_key: None
+入边战术: exact curriculum_target（prior=0.936）
+
+</title></g>
+</svg>
+</div>
+<div class="detail-box" id="detail">点击节点查看完整状态（state_repr）与统计；悬停可高亮祖先路径。</div>
+</section>
+<section class="card" id="attempts">
+<h2>尝试记录（attempts，共 9 条）</h2>
+<div class="chips"><span class="badge ok">accepted 1</span> <span class="badge bad">env_rejected 8</span> </div>
+<table class="attempts"><thead><tr><th>seq</th><th>节点</th><th>战术 action</th><th>类型 kind</th><th>ok</th><th>说明 / 错误</th></tr></thead><tbody><tr data-node="0"><td>4</td><td><a href="#node-0" data-jump="0">#0</a> <span class="dim" title="G : Type u_1
+H : Type u_2
+K : Type u_3
+inst✝² : Group G
+inst✝¹ : Group H
+inst✝ : Group K
+f : G →* H
+g : H →* K
+hf : Function.Surjective ⇑f
+hg : Function.Surjective ⇑g
+curriculum_target : Function.Surjective ⇑(g.comp f)
+⊢ Function.Surjective ⇑(g.comp f)">G : Type u_1 H : Type u_2 K : Typ…</span></td><td><code>exact current_target</code></td><td><span class="badge bad">env_rejected</span></td><td>✗</td><td><span class="err">Unknown identifier `current_target`</span></td></tr><tr data-node="0"><td>8</td><td><a href="#node-0" data-jump="0">#0</a> <span class="dim" title="G : Type u_1
+H : Type u_2
+K : Type u_3
+inst✝² : Group G
+inst✝¹ : Group H
+inst✝ : Group K
+f : G →* H
+g : H →* K
+hf : Function.Surjective ⇑f
+hg : Function.Surjective ⇑g
+curriculum_target : Function.Surjective ⇑(g.comp f)
+⊢ Function.Surjective ⇑(g.comp f)">G : Type u_1 H : Type u_2 K : Typ…</span></td><td><code>exact_curriculum_target</code></td><td><span class="badge bad">env_rejected</span></td><td>✗</td><td><span class="err">{&#x27;parseError&#x27;: {&#x27;message&#x27;: &#x27;&lt;input&gt;:1:1: unknown tactic&#x27;}}</span></td></tr><tr data-node="0"><td>12</td><td><a href="#node-0" data-jump="0">#0</a> <span class="dim" title="G : Type u_1
+H : Type u_2
+K : Type u_3
+inst✝² : Group G
+inst✝¹ : Group H
+inst✝ : Group K
+f : G →* H
+g : H →* K
+hf : Function.Surjective ⇑f
+hg : Function.Surjective ⇑g
+curriculum_target : Function.Surjective ⇑(g.comp f)
+⊢ Function.Surjective ⇑(g.comp f)">G : Type u_1 H : Type u_2 K : Typ…</span></td><td><code>exact curvature_target</code></td><td><span class="badge bad">env_rejected</span></td><td>✗</td><td><span class="err">Unknown identifier `curvature_target`</span></td></tr><tr data-node="0"><td>16</td><td><a href="#node-0" data-jump="0">#0</a> <span class="dim" title="G : Type u_1
+H : Type u_2
+K : Type u_3
+inst✝² : Group G
+inst✝¹ : Group H
+inst✝ : Group K
+f : G →* H
+g : H →* K
+hf : Function.Surjective ⇑f
+hg : Function.Surjective ⇑g
+curriculum_target : Function.Surjective ⇑(g.comp f)
+⊢ Function.Surjective ⇑(g.comp f)">G : Type u_1 H : Type u_2 K : Typ…</span></td><td><code>exact�</code></td><td><span class="badge bad">env_rejected</span></td><td>✗</td><td><span class="err">{&#x27;parseError&#x27;: {&#x27;message&#x27;: &#x27;&lt;input&gt;:1:5: expected token&#x27;}}</span></td></tr><tr data-node="0"><td>20</td><td><a href="#node-0" data-jump="0">#0</a> <span class="dim" title="G : Type u_1
+H : Type u_2
+K : Type u_3
+inst✝² : Group G
+inst✝¹ : Group H
+inst✝ : Group K
+f : G →* H
+g : H →* K
+hf : Function.Surjective ⇑f
+hg : Function.Surjective ⇑g
+curriculum_target : Function.Surjective ⇑(g.comp f)
+⊢ Function.Surjective ⇑(g.comp f)">G : Type u_1 H : Type u_2 K : Typ…</span></td><td><code>exactcuriosity_target</code></td><td><span class="badge bad">env_rejected</span></td><td>✗</td><td><span class="err">{&#x27;parseError&#x27;: {&#x27;message&#x27;: &#x27;&lt;input&gt;:1:1: unknown tactic&#x27;}}</span></td></tr><tr data-node="0"><td>24</td><td><a href="#node-0" data-jump="0">#0</a> <span class="dim" title="G : Type u_1
+H : Type u_2
+K : Type u_3
+inst✝² : Group G
+inst✝¹ : Group H
+inst✝ : Group K
+f : G →* H
+g : H →* K
+hf : Function.Surjective ⇑f
+hg : Function.Surjective ⇑g
+curriculum_target : Function.Surjective ⇑(g.comp f)
+⊢ Function.Surjective ⇑(g.comp f)">G : Type u_1 H : Type u_2 K : Typ…</span></td><td><code>exact hurwitz_surjective_comp hf hg</code></td><td><span class="badge bad">env_rejected</span></td><td>✗</td><td><span class="err">Unknown identifier `hurwitz_surjective_comp`</span></td></tr><tr data-node="0"><td>28</td><td><a href="#node-0" data-jump="0">#0</a> <span class="dim" title="G : Type u_1
+H : Type u_2
+K : Type u_3
+inst✝² : Group G
+inst✝¹ : Group H
+inst✝ : Group K
+f : G →* H
+g : H →* K
+hf : Function.Surjective ⇑f
+hg : Function.Surjective ⇑g
+curriculum_target : Function.Surjective ⇑(g.comp f)
+⊢ Function.Surjective ⇑(g.comp f)">G : Type u_1 H : Type u_2 K : Typ…</span></td><td><code>exact curriculum_target</code></td><td><span class="badge ok">accepted</span></td><td>✓</td><td><span class="dim">—</span></td></tr><tr data-node="0"><td>32</td><td><a href="#node-0" data-jump="0">#0</a> <span class="dim" title="G : Type u_1
+H : Type u_2
+K : Type u_3
+inst✝² : Group G
+inst✝¹ : Group H
+inst✝ : Group K
+f : G →* H
+g : H →* K
+hf : Function.Surjective ⇑f
+hg : Function.Surjective ⇑g
+curriculum_target : Function.Surjective ⇑(g.comp f)
+⊢ Function.Surjective ⇑(g.comp f)">G : Type u_1 H : Type u_2 K : Typ…</span></td><td><code>exact cardinal_target</code></td><td><span class="badge bad">env_rejected</span></td><td>✗</td><td><span class="err">Unknown identifier `cardinal_target`</span></td></tr><tr data-node="0"><td>36</td><td><a href="#node-0" data-jump="0">#0</a> <span class="dim" title="G : Type u_1
+H : Type u_2
+K : Type u_3
+inst✝² : Group G
+inst✝¹ : Group H
+inst✝ : Group K
+f : G →* H
+g : H →* K
+hf : Function.Surjective ⇑f
+hg : Function.Surjective ⇑g
+curriculum_target : Function.Surjective ⇑(g.comp f)
+⊢ Function.Surjective ⇑(g.comp f)">G : Type u_1 H : Type u_2 K : Typ…</span></td><td><code>exact curry_target</code></td><td><span class="badge bad">env_rejected</span></td><td>✗</td><td><span class="err">Unknown identifier `curry_target`</span></td></tr></tbody></table>
+</section>
+<details class="card raw" id="meta">
+<summary>搜索配置 / 元数据</summary>
+<table class="kv"><tr><td class="k">schema</td><td>alphaproof.search_tree_export.v1</td></tr><tr><td class="k">root_state_key</td><td>G : Type u_1
+H : Type u_2
+K : Type u_3
+inst✝² : Group G
+inst✝¹ : Group H
+inst✝ : Group K
+f : G →* H
+g : H →* K
+hf : Func</td></tr><tr><td class="k">counts.nodes（文件）</td><td>2</td></tr><tr><td class="k">counts.edges（文件）</td><td>1</td></tr><tr><td class="k">counts.attempts（文件）</td><td>9</td></tr><tr><td class="k">页面统计</td><td>节点 2 · 边 1 · attempts 9</td></tr><tr><td class="k">显示上限</td><td>2 / 2</td></tr></table>
+</details>
+<footer>由 tools/showcase_render.py 生成 · schema alphaproof.search_tree_export.v1 · 单文件离线 HTML（无外部引用）</footer>
+</main>
+<script>
+(function () {
+  "use strict";
+  var nodes = {};
+  var edges = {};
+  document.querySelectorAll("g.node").forEach(function (g) {
+    nodes[String(g.dataset.node)] = g;
+  });
+  document.querySelectorAll("g.edge").forEach(function (g) {
+    edges[String(g.dataset.p) + "|" + String(g.dataset.c)] = g;
+  });
+  function clearHL() {
+    document.querySelectorAll(".hl").forEach(function (el) { el.classList.remove("hl"); });
+  }
+  function highlight(id) {
+    clearHL();
+    var cur = String(id);
+    var guard = 0;
+    while (nodes[cur] && guard < 100000) {
+      nodes[cur].classList.add("hl");
+      var p = nodes[cur].dataset.parent;
+      if (p === undefined || p === null || p === "" || p === "None") { break; }
+      var e = edges[String(p) + "|" + cur];
+      if (e) { e.classList.add("hl"); }
+      cur = String(p);
+      guard += 1;
+    }
+  }
+  function showDetail(g) {
+    var box = document.getElementById("detail");
+    if (!box) { return; }
+    var t = g.querySelector("title");
+    var lines = [];
+    lines.push("节点 #" + g.dataset.node + " · " + g.dataset.toplay +
+               (g.dataset.optimal === "1" ? " · ★ 最优路径" : "") +
+               (g.dataset.solved === "1" ? " · 已解" : ""));
+    lines.push("N(访问)=" + g.dataset.n + "  V(价值)=" + g.dataset.v +
+               "  ev(评估)=" + g.dataset.ev);
+    lines.push("state_key: " + g.dataset.key);
+    if (g.dataset.action) {
+      lines.push("入边战术: " + g.dataset.action + "  (prior=" + g.dataset.prior + ")");
+    }
+    lines.push("");
+    lines.push(t ? t.textContent : "");
+    box.textContent = lines.join("\n");
+  }
+  document.querySelectorAll("g.node").forEach(function (g) {
+    g.addEventListener("mouseenter", function () { highlight(g.dataset.node); });
+    g.addEventListener("mouseleave", clearHL);
+    g.addEventListener("click", function () { highlight(g.dataset.node); showDetail(g); });
+  });
+  document.querySelectorAll("tr[data-node]").forEach(function (row) {
+    row.addEventListener("mouseenter", function () { highlight(row.dataset.node); });
+    row.addEventListener("mouseleave", clearHL);
+    row.addEventListener("click", function () {
+      var g = nodes[String(row.dataset.node)];
+      if (!g) { return; }
+      highlight(row.dataset.node);
+      showDetail(g);
+      g.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  });
+  document.querySelectorAll("[data-jump]").forEach(function (a) {
+    a.addEventListener("click", function (ev) {
+      ev.preventDefault();
+      var g = nodes[String(a.dataset.jump)];
+      if (!g) { return; }
+      highlight(a.dataset.jump);
+      showDetail(g);
+      g.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  });
+  document.querySelectorAll("[data-zoom-btn]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var wrap = document.querySelector(".canvas-wrap");
+      if (wrap) { wrap.dataset.zoom = btn.dataset.zoomBtn; }
+      document.querySelectorAll("[data-zoom-btn]").forEach(function (b) {
+        b.classList.toggle("active", b === btn);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

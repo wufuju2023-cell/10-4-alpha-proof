@@ -1,0 +1,56 @@
+{
+  "schema_version": "reap.curriculum.v1",
+  "name": "pell",
+  "source": "reap-new-update-model/v1-result/20260828-real7b-pell-success（手写课程，真实成功）",
+  "lessons": [
+    {
+      "lesson_id": "pell-01-invariant",
+      "name": "CourseInvariant：变换保持 Pell 方程",
+      "statement_ref": "…/inputs/original-target/student/StudentDeclarations.lean#CodexMathFive.Pell.CourseInvariant",
+      "depends_on": [],
+      "tags": ["pell", "algebra"]
+    },
+    {
+      "lesson_id": "pell-02-positive-growth",
+      "name": "CoursePositiveGrowth：正数时两坐标严格增长",
+      "statement_ref": "…/StudentDeclarations.lean#CodexMathFive.Pell.CoursePositiveGrowth",
+      "depends_on": ["pell-01-invariant"],
+      "tags": ["pell", "order"]
+    },
+    {
+      "lesson_id": "pell-03-iterates",
+      "name": "CourseIterates：迭代序列的界与方程",
+      "statement_ref": "…/StudentDeclarations.lean#CodexMathFive.Pell.CourseIterates",
+      "depends_on": ["pell-01-invariant", "pell-02-positive-growth"],
+      "tags": ["pell", "induction"]
+    },
+    {
+      "lesson_id": "pell-04-recurrence",
+      "name": "CourseRecurrence：一般递推序列的不变量",
+      "statement_ref": "…/StudentDeclarations.lean#CodexMathFive.Pell.CourseRecurrence",
+      "depends_on": ["pell-01-invariant", "pell-02-positive-growth"],
+      "tags": ["pell", "induction"]
+    },
+    {
+      "lesson_id": "pell-05-sequence-exists",
+      "name": "CourseSequenceExists：构造递推序列",
+      "statement_ref": "…/StudentDeclarations.lean#CodexMathFive.Pell.CourseSequenceExists",
+      "depends_on": ["pell-04-recurrence"],
+      "tags": ["pell", "construction"]
+    },
+    {
+      "lesson_id": "pell-06-unbounded-from-recurrence",
+      "name": "CourseUnboundedFromRecurrence：从递推得到任意大见证",
+      "statement_ref": "…/StudentDeclarations.lean#CodexMathFive.Pell.CourseUnboundedFromRecurrence",
+      "depends_on": ["pell-03-iterates", "pell-05-sequence-exists"],
+      "tags": ["pell", "exists"]
+    },
+    {
+      "lesson_id": "pell-07-indexed-witness",
+      "name": "CourseIndexedWitness：索引见证汇聚为原 Target",
+      "statement_ref": "…/StudentDeclarations.lean#CodexMathFive.Pell.CourseIndexedWitness",
+      "depends_on": ["pell-03-iterates", "pell-06-unbounded-from-recurrence"],
+      "tags": ["pell", "final"]
+    }
+  ]
+}

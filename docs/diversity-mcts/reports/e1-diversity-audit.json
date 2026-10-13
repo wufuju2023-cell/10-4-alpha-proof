@@ -1,0 +1,445 @@
+{
+  "n_problems": 20,
+  "budget": 64,
+  "note": "degraded historical approximation (single wave, T=1.5, tier-1)",
+  "aggregate": {
+    "d_sem_hist": {
+      "mean": 0.18203125,
+      "min": 0.0625,
+      "max": 0.4375
+    },
+    "d_raw": {
+      "mean": 0.18203125,
+      "min": 0.0625,
+      "max": 0.4375
+    },
+    "d_fam_hist": {
+      "mean": 0.456457708957709,
+      "min": 0.045454545454545456,
+      "max": 0.7
+    },
+    "top1_share": {
+      "mean": 0.5296875,
+      "min": 0.21875,
+      "max": 0.9375
+    },
+    "entropy_bits": {
+      "mean": 2.1737031914986096,
+      "min": 0.4310400666170139,
+      "max": 4.001060009501607
+    },
+    "exec_rate": {
+      "mean": 0.7173693667443668,
+      "min": 0.4,
+      "max": 0.9545454545454546
+    },
+    "verify_rate": {
+      "mean": 0.2074760656010656,
+      "min": 0.08333333333333333,
+      "max": 0.42857142857142855
+    }
+  },
+  "totals": {
+    "raw": 1280,
+    "canonical": 233,
+    "verified": 49
+  },
+  "per_problem": [
+    {
+      "problem": "fate_m_003_v001",
+      "n_canonical": 9,
+      "d_sem_hist": 0.140625,
+      "d_raw": 0.140625,
+      "n_heads": 4,
+      "d_fam_hist": 0.4444444444444444,
+      "top1_share": 0.6875,
+      "entropy_bits": 1.644620058859033,
+      "exec_rate": 0.6666666666666666,
+      "verify_rate": 0.1111111111111111,
+      "n_verified": 1,
+      "head_hist": {
+        "exact": 6,
+        "exact_curriculum_target": 1,
+        "exact�": 1,
+        "exactcuriosity_target": 1
+      }
+    },
+    {
+      "problem": "fate_m_004_v001",
+      "n_canonical": 5,
+      "d_sem_hist": 0.078125,
+      "d_raw": 0.078125,
+      "n_heads": 2,
+      "d_fam_hist": 0.4,
+      "top1_share": 0.8125,
+      "entropy_bits": 1.02050737734645,
+      "exec_rate": 0.8,
+      "verify_rate": 0.2,
+      "n_verified": 1,
+      "head_hist": {
+        "exact": 4,
+        "exact_curry_target": 1
+      }
+    },
+    {
+      "problem": "fate_m_009_v001",
+      "n_canonical": 13,
+      "d_sem_hist": 0.203125,
+      "d_raw": 0.203125,
+      "n_heads": 7,
+      "d_fam_hist": 0.5384615384615384,
+      "top1_share": 0.515625,
+      "entropy_bits": 2.5929872677452677,
+      "exec_rate": 0.7692307692307693,
+      "verify_rate": 0.3076923076923077,
+      "n_verified": 4,
+      "head_hist": {
+        "exact": 5,
+        "simp": 2,
+        "rw": 2,
+        "apply": 1,
+        "exactcurry_target": 1,
+        "exactCurry_target": 1,
+        "exactcurriculum_target": 1
+      }
+    },
+    {
+      "problem": "fate_m_011_v001",
+      "n_canonical": 28,
+      "d_sem_hist": 0.4375,
+      "d_raw": 0.4375,
+      "n_heads": 8,
+      "d_fam_hist": 0.2857142857142857,
+      "top1_share": 0.21875,
+      "entropy_bits": 4.001060009501607,
+      "exec_rate": 0.7142857142857143,
+      "verify_rate": 0.10714285714285714,
+      "n_verified": 3,
+      "head_hist": {
+        "exact": 20,
+        "exact�": 2,
+        "exact_curry_target": 1,
+        "exactCurriculum_target": 1,
+        "exactcurry_target": 1,
+        "exactcurriculum_target": 1,
+        "exact�_": 1,
+        "exact.curry_target": 1
+      }
+    },
+    {
+      "problem": "fate_m_014_v001",
+      "n_canonical": 16,
+      "d_sem_hist": 0.25,
+      "d_raw": 0.25,
+      "n_heads": 8,
+      "d_fam_hist": 0.5,
+      "top1_share": 0.390625,
+      "entropy_bits": 2.9161026015898126,
+      "exec_rate": 0.6875,
+      "verify_rate": 0.3125,
+      "n_verified": 5,
+      "head_hist": {
+        "simp": 7,
+        "exact": 3,
+        "exactCurriculum_target": 1,
+        "exactCurry_target": 1,
+        "exactcurriculum_target": 1,
+        "exactcurry_target": 1,
+        "exact_curry_target": 1,
+        "assumption": 1
+      }
+    },
+    {
+      "problem": "fate_m_015_v001",
+      "n_canonical": 4,
+      "d_sem_hist": 0.0625,
+      "d_raw": 0.0625,
+      "n_heads": 2,
+      "d_fam_hist": 0.5,
+      "top1_share": 0.5625,
+      "entropy_bits": 1.3412621087307102,
+      "exec_rate": 0.75,
+      "verify_rate": 0.25,
+      "n_verified": 1,
+      "head_hist": {
+        "exact": 3,
+        "exact_curry_target": 1
+      }
+    },
+    {
+      "problem": "fate_m_018_v001",
+      "n_canonical": 7,
+      "d_sem_hist": 0.109375,
+      "d_raw": 0.109375,
+      "n_heads": 4,
+      "d_fam_hist": 0.5714285714285714,
+      "top1_share": 0.75,
+      "entropy_bits": 1.2609768596329824,
+      "exec_rate": 0.8571428571428571,
+      "verify_rate": 0.42857142857142855,
+      "n_verified": 3,
+      "head_hist": {
+        "exact": 3,
+        "apply": 2,
+        "exact_curry_target": 1,
+        "assumption": 1
+      }
+    },
+    {
+      "problem": "fate_m_021_v001",
+      "n_canonical": 10,
+      "d_sem_hist": 0.15625,
+      "d_raw": 0.15625,
+      "n_heads": 7,
+      "d_fam_hist": 0.7,
+      "top1_share": 0.546875,
+      "entropy_bits": 2.0884742264655123,
+      "exec_rate": 0.4,
+      "verify_rate": 0.1,
+      "n_verified": 1,
+      "head_hist": {
+        "exact": 4,
+        "exact�": 1,
+        "exact�_021_v001": 1,
+        "exactCurry_target": 1,
+        "exact_curriculum_target": 1,
+        "exactCurriculum_target": 1,
+        "exact_curry_target": 1
+      }
+    },
+    {
+      "problem": "fate_m_035_v001",
+      "n_canonical": 12,
+      "d_sem_hist": 0.1875,
+      "d_raw": 0.1875,
+      "n_heads": 5,
+      "d_fam_hist": 0.4166666666666667,
+      "top1_share": 0.34375,
+      "entropy_bits": 2.889447148113303,
+      "exec_rate": 0.6666666666666666,
+      "verify_rate": 0.08333333333333333,
+      "n_verified": 1,
+      "head_hist": {
+        "exact": 8,
+        "exactCurriculum_target": 1,
+        "exactCurry_target": 1,
+        "exact_curry_target": 1,
+        "exactcurriculum_target": 1
+      }
+    },
+    {
+      "problem": "fate_m_040_v001",
+      "n_canonical": 22,
+      "d_sem_hist": 0.34375,
+      "d_raw": 0.34375,
+      "n_heads": 1,
+      "d_fam_hist": 0.045454545454545456,
+      "top1_share": 0.25,
+      "entropy_bits": 3.726159571322962,
+      "exec_rate": 0.9545454545454546,
+      "verify_rate": 0.4090909090909091,
+      "n_verified": 9,
+      "head_hist": {
+        "exact": 22
+      }
+    },
+    {
+      "problem": "fate_m_048_v001",
+      "n_canonical": 9,
+      "d_sem_hist": 0.140625,
+      "d_raw": 0.140625,
+      "n_heads": 5,
+      "d_fam_hist": 0.5555555555555556,
+      "top1_share": 0.59375,
+      "entropy_bits": 1.9330961039241574,
+      "exec_rate": 0.6666666666666666,
+      "verify_rate": 0.1111111111111111,
+      "n_verified": 1,
+      "head_hist": {
+        "exact": 5,
+        "exactCurry_target": 1,
+        "apply": 1,
+        "exactcurry_target": 1,
+        "exactCurriculum_target": 1
+      }
+    },
+    {
+      "problem": "fate_m_051_v001",
+      "n_canonical": 10,
+      "d_sem_hist": 0.15625,
+      "d_raw": 0.15625,
+      "n_heads": 4,
+      "d_fam_hist": 0.4,
+      "top1_share": 0.515625,
+      "entropy_bits": 2.137189164984493,
+      "exec_rate": 0.8,
+      "verify_rate": 0.2,
+      "n_verified": 2,
+      "head_hist": {
+        "exact": 5,
+        "apply": 3,
+        "applyCurriculum_target": 1,
+        "exactCurriculum_target": 1
+      }
+    },
+    {
+      "problem": "fate_m_052_v001",
+      "n_canonical": 15,
+      "d_sem_hist": 0.234375,
+      "d_raw": 0.234375,
+      "n_heads": 9,
+      "d_fam_hist": 0.6,
+      "top1_share": 0.5,
+      "entropy_bits": 2.3399725655715744,
+      "exec_rate": 0.6666666666666666,
+      "verify_rate": 0.26666666666666666,
+      "n_verified": 4,
+      "head_hist": {
+        "exact": 6,
+        "simp": 2,
+        "rw": 1,
+        "exactCurry_target": 1,
+        "apply": 1,
+        "exactcurriculum_target": 1,
+        "applyCurryTarget": 1,
+        "exactCurriculum_target": 1,
+        "exact_curry_target": 1
+      }
+    },
+    {
+      "problem": "fate_m_061_v001",
+      "n_canonical": 10,
+      "d_sem_hist": 0.15625,
+      "d_raw": 0.15625,
+      "n_heads": 6,
+      "d_fam_hist": 0.6,
+      "top1_share": 0.5,
+      "entropy_bits": 2.247174852072124,
+      "exec_rate": 0.7,
+      "verify_rate": 0.3,
+      "n_verified": 3,
+      "head_hist": {
+        "exact": 4,
+        "apply": 2,
+        "exact_curry_target": 1,
+        "exactcur": 1,
+        "applyCurry_target": 1,
+        "assumption": 1
+      }
+    },
+    {
+      "problem": "fate_m_064_v001",
+      "n_canonical": 7,
+      "d_sem_hist": 0.109375,
+      "d_raw": 0.109375,
+      "n_heads": 4,
+      "d_fam_hist": 0.5714285714285714,
+      "top1_share": 0.578125,
+      "entropy_bits": 1.5633871261221584,
+      "exec_rate": 0.5714285714285714,
+      "verify_rate": 0.14285714285714285,
+      "n_verified": 1,
+      "head_hist": {
+        "exact": 4,
+        "exactCurriculum_target": 1,
+        "exactCurry_target": 1,
+        "exact_curriculum_target": 1
+      }
+    },
+    {
+      "problem": "fate_m_065_v001",
+      "n_canonical": 8,
+      "d_sem_hist": 0.125,
+      "d_raw": 0.125,
+      "n_heads": 4,
+      "d_fam_hist": 0.5,
+      "top1_share": 0.5,
+      "entropy_bits": 1.780594922042011,
+      "exec_rate": 0.625,
+      "verify_rate": 0.125,
+      "n_verified": 1,
+      "head_hist": {
+        "exact": 5,
+        "exact�": 1,
+        "exact_curriculum_target": 1,
+        "exact_curry_target": 1
+      }
+    },
+    {
+      "problem": "fate_m_066_v001",
+      "n_canonical": 9,
+      "d_sem_hist": 0.140625,
+      "d_raw": 0.140625,
+      "n_heads": 3,
+      "d_fam_hist": 0.3333333333333333,
+      "top1_share": 0.421875,
+      "entropy_bits": 1.9376852764514265,
+      "exec_rate": 0.7777777777777778,
+      "verify_rate": 0.1111111111111111,
+      "n_verified": 1,
+      "head_hist": {
+        "exact": 7,
+        "exact_curry_target": 1,
+        "exactCurry_target": 1
+      }
+    },
+    {
+      "problem": "fate_m_067_v001",
+      "n_canonical": 4,
+      "d_sem_hist": 0.0625,
+      "d_raw": 0.0625,
+      "n_heads": 2,
+      "d_fam_hist": 0.5,
+      "top1_share": 0.9375,
+      "entropy_bits": 0.4310400666170139,
+      "exec_rate": 0.75,
+      "verify_rate": 0.25,
+      "n_verified": 1,
+      "head_hist": {
+        "exact": 3,
+        "exact_curry_target": 1
+      }
+    },
+    {
+      "problem": "fate_m_068_v001",
+      "n_canonical": 14,
+      "d_sem_hist": 0.21875,
+      "d_raw": 0.21875,
+      "n_heads": 6,
+      "d_fam_hist": 0.42857142857142855,
+      "top1_share": 0.515625,
+      "entropy_bits": 2.491894472752512,
+      "exec_rate": 0.7142857142857143,
+      "verify_rate": 0.14285714285714285,
+      "n_verified": 2,
+      "head_hist": {
+        "exact": 7,
+        "apply": 3,
+        "apply_curry_target": 1,
+        "exactCurriculum_target": 1,
+        "exact�": 1,
+        "exactCurry_target": 1
+      }
+    },
+    {
+      "problem": "fate_m_076_v001",
+      "n_canonical": 21,
+      "d_sem_hist": 0.328125,
+      "d_raw": 0.328125,
+      "n_heads": 5,
+      "d_fam_hist": 0.23809523809523808,
+      "top1_share": 0.453125,
+      "entropy_bits": 3.1304320501270846,
+      "exec_rate": 0.8095238095238095,
+      "verify_rate": 0.19047619047619047,
+      "n_verified": 4,
+      "head_hist": {
+        "exact": 17,
+        "apply": 1,
+        "exactCurriculum_target": 1,
+        "apply_curry_target": 1,
+        "exact_curry_target": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "fate.policy_service.representative_smoke_plan.v1",
+  "status": "task_set_and_budget_frozen_prompt_state_pins_pending",
+  "source": {
+    "problems_relative_path": "../../../data/problems.jsonl",
+    "problems_sha256": "3f702d1e5add11721867735c369e5e4736dfe4e4ae28674220bc8bef6dc8152d",
+    "required_record_count": 4000
+  },
+  "tasks": [
+    {"session_id": "fate_m_003_v001", "family_index": 1, "variant_index": 1, "formal_statement_sha256": "e8d1ca283a8b4f54d481460cc2ff321834ec2c13fdf14ba9510b678b5a5d18f9"},
+    {"session_id": "fate_m_076_v001", "family_index": 20, "variant_index": 1, "formal_statement_sha256": "2a8bc2a670fceef45d9fedfbd03d908dd9ed9399a4602319d629cacf8664c7e7"},
+    {"session_id": "fate_m_003_v040", "family_index": 1, "variant_index": 40, "formal_statement_sha256": "7ebac8bc59d584e3acf03f6536203b4248e414a2c6bf54593e60d0fb7547dea2"},
+    {"session_id": "fate_m_076_v040", "family_index": 20, "variant_index": 40, "formal_statement_sha256": "bfe5f1ad8a88f4ca2b6031b30413afcdf93bd0e1d4631dcc469df10d361d71b0"},
+    {"session_id": "fate_m_003_v080", "family_index": 1, "variant_index": 80, "formal_statement_sha256": "753aaca0629877bc363a2ff171266a8b48af25fcd1fa942175fa2cfee22af08d"},
+    {"session_id": "fate_m_076_v080", "family_index": 20, "variant_index": 80, "formal_statement_sha256": "56602f4939ce9d29222493516be261aa92d026c283d9e1fe2bc7ee6031a0dd1d"},
+    {"session_id": "fate_m_003_v120", "family_index": 1, "variant_index": 120, "formal_statement_sha256": "3bf966113dfaca8fe56490d85f7aee61f9c910d319c67d5c98404f67ae761180"},
+    {"session_id": "fate_m_076_v120", "family_index": 20, "variant_index": 120, "formal_statement_sha256": "a371975b9f81eb9ce60ed30469de55fbecb0de54dfed884c948172e8b5e4d0ab"},
+    {"session_id": "fate_m_003_v160", "family_index": 1, "variant_index": 160, "formal_statement_sha256": "094b9dced5e4181403f55672514308e74a9efc887f07bb0b6d97a89872da979a"},
+    {"session_id": "fate_m_076_v160", "family_index": 20, "variant_index": 160, "formal_statement_sha256": "d6ef3df974550f0f669b722bc39bc0a7cc48416b6ac71205440a30d69edb4649"},
+    {"session_id": "fate_m_003_v175", "family_index": 1, "variant_index": 175, "formal_statement_sha256": "95471ca041ebdd4ad8c207fe5e6c0dc38f7ab253a8b6ff0f6b7bcd63c349ddce"},
+    {"session_id": "fate_m_076_v175", "family_index": 20, "variant_index": 175, "formal_statement_sha256": "b96d22559e75c89cdeab82a47024d361d31e83f4d72c597ae6bc65a1eecb246f"}
+  ],
+  "protocol": {
+    "generation": {"temperature": 1.5, "top_p": 0.9, "max_tokens": 256, "n": 64, "logprobs": true},
+    "search": {"max_steps": 1, "max_goals": 64, "num_premises": 0},
+    "execution": {
+      "session_concurrency": 1,
+      "model_load_count": 1,
+      "formal_r16_adapter_load_count": 1,
+      "per_session_timeout_seconds": 600,
+      "total_timeout_seconds": 5400,
+      "heartbeat_interval_seconds": 20,
+      "output_must_be_below": "/tmp",
+      "training": false,
+      "integration_bundle": false
+    },
+    "planned_cost_ceiling": {
+      "policy_requests": 12,
+      "returned_candidates": 768,
+      "generated_tokens": 196608
+    }
+  },
+  "prompt_contract": {
+    "incoming_prompt_owner": "pinned Reap TacticGenerator.mkPrompt at point of use",
+    "actor_prompt_transform": "pinned PromptManage.build_local_incontext_prompt_str(formal_prefix, parsed_actual_root_state, related_theorems=None, template='qwen')",
+    "synthetic_root_state_forbidden": true,
+    "per_session_root_state_sha256_required_before_gpu_launch": true,
+    "root_state_pins": null
+  },
+  "evidence_contract": {
+    "isolated_session_directories": true,
+    "one_committed_policy_receipt_per_session": true,
+    "one_persisted_value_request_per_session": true,
+    "observer_and_result_per_session": true,
+    "progress_jsonl_fsync_each_event": true,
+    "aggregate_costs_derived_only_from_validated_committed_receipts": true,
+    "uncommitted_or_partial_request_cost_must_be_reported_unknown": true
+  }
+}

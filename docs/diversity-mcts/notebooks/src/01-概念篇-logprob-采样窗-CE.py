@@ -8,7 +8,8 @@
 # 2. 理解"交叉熵（CE）"到底在优化什么，以及它和"轨迹选择"的关系；
 # 3. 亲手跑几段最小模拟，把抽象概念落到可执行代码上。
 #
-# **本笔记本完全自包含**（只需要 Python + numpy + matplotlib），不读任何项目数据。
+# **本笔记本基本自包含**（只需要 Python + numpy + matplotlib）：唯一例外是 §2.3 末尾的"可选实测"单元，
+# 它仅在 E2 证据数据存在时运行（缺失时自动跳过）。
 # 真实数据上的完整复现见 `02-实战篇`，更深的口径与选择规则分析见 `03-深挖篇`。
 #
 # > 术语约定：文中"候选/战术/tactic"都指模型对某个证明状态生成的一段 Lean 战术文本；
@@ -49,6 +50,7 @@ print("环境就绪。numpy:", np.__version__, "/ matplotlib:", matplotlib.__ver
 # | `k / 64` | **经验频率**：64 次采样里实际命中几次 | `canonical.sample_indices` 的长度 |
 #
 # E2 的核心结论之一就是：`p_model` 在尾部与 `k/64` 严重对不上，所以分析以经验频率为准。
+# （这两个字段的区别与本批数据的实测见 §2.2。）
 
 # %% [markdown]
 # ### 1.2 为什么要取对数
@@ -140,6 +142,208 @@ print("换成 -log10      :", round(-log_sum / math.log(10), 4))
 #    "这条文本的真实单次采样概率"——E2 第 4 节用真实数据证实了尾部偏差巨大。
 #
 # 结论先记住：**把记录 logprob 当相对参考可以，当绝对概率不行**。
+
+# %% [markdown]
+# ### 2.2 深入：`p_model` 和 `p_samp` 到底差在哪？
+#
+# 一句话：**同一个模型，两个不同的分布**。
+#
+# ```text
+# p_model ≈ π_θ(文本)     —— 模型的原始分布（temperature=1、无截断）
+# p_samp  ≈ q(文本)       —— 实际采样分布（temperature=1.5、top_p=0.9 等变换之后）
+# ```
+#
+# - `old` 是 PPO 的惯例命名：`old_logprobs` = 产生这条数据的**行为策略（old policy）**下的
+#   log 概率，训练时会与"新策略"对比；
+# - `sampling` = 采样器实际执行抽样时所用分布的口径。
+#
+# 为什么两个分布不同？两个效应方向常常相反：
+#
+# 1. **温度 T=1.5 ⇒ 压平分布**：最高概率的 token 概率下降、尾部 token 概率上升；
+# 2. **top_p=0.9 ⇒ 截断 + 重归一化**：只保留"累计概率 ≥ 0.9 的最小 token 集合"，
+#    集合内按比例放大（保留者上升、集合外归零）。
+#
+# 所以逐 token 看，`samp` 相对 `old` 可能更负、也可能更正——取决于该 token 处两个效应谁占上风。
+# 下面用玩具分布把整个过程跑一遍：
+
+# %%
+import numpy as np
+
+logits = np.array([3.0, 1.5, 0.5, -1.0, -3.0])
+names  = ["t0", "t1", "t2", "t3", "t4"]
+
+def softmax_T(z, T=1.0):
+    z = np.asarray(z, dtype=float) / T
+    z = z - z.max()
+    e = np.exp(z)
+    return e / e.sum()
+
+def top_p_filter(q, p=0.9):
+    """截断到累计概率 >= p 的最小集合，并在集合内重归一化。"""
+    order = np.argsort(-q)
+    cum = np.cumsum(q[order])
+    k = int(np.searchsorted(cum, p, side="left")) + 1
+    qq = np.zeros_like(q)
+    keep = order[:k]
+    qq[keep] = q[keep] / q[keep].sum()
+    return qq
+
+p1    = softmax_T(logits, 1.0)
+p15   = softmax_T(logits, 1.5)
+p15tp = top_p_filter(p15, 0.9)
+
+print(f"{'token':>6} {'T=1':>9} {'T=1.5':>9} {'T=1.5 + top_p=0.9':>18}")
+for i, n in enumerate(names):
+    print(f"{n:>6} {p1[i]:>9.4f} {p15[i]:>9.4f} {p15tp[i]:>18.4f}")
+print()
+print(f"温度让 t0 的概率从 {p1[0]:.3f} 降到 {p15[0]:.3f}，同时把 t3/t4 的尾巴抬起来；")
+print("top-p 再把保留集合内按比例放大（t3/t4 落选 → 归零）。")
+print("真实采样中每一步的语核都不同：只要某 token 在其那一步的语核内，路径就可能被抽到。")
+
+# %% [markdown]
+# **本批证据（20 题 / 233 条 canonical 候选）的实测**：
+#
+# - 两个字段高度相关：`Pearson(Σold, Σsamp) ≈ 0.966`；
+# - 但系统性不同：平均 `Δ = Σsamp − Σold ≈ −1.1` nat（各量级区间的均值在 −0.8 ～ −1.9 之间，都为负；
+#   个体可正可负）；
+# - `samp` 数组里 `0.0` 占约 **53%**（`old` 只有约 6.5%）——`0.0` 并不等于"概率为 1"，
+#   更像记录/归一化的产物；
+# - 两个方向相反的真实例子：
+#   - `exact curry_target`（高频模态）：Σold = −0.201，Σsamp = −2.147（采样口径更"悲观"）；
+#   - fate_m_009 的 `simp only [...]`（稀有）：Σold = −16.34，Σsamp = −15.20（采样口径更"乐观"）。
+#
+# **工程结论**（也是 E2 / 03 的做法）：
+#
+# 1. 管线内部把 `Σold` 当搜索先验用（`observer.jsonl` 的 `raw_logprob` 就是它，02 笔记本有交叉验证）；
+# 2. 两个记录值在**尾部**都不能当"单次采样概率"用：f009 的战术 `p_model = 8e-8`，
+#    却在 64 次采样里真实出现了 1 次（按记录值，期望出现次数约 5e-6）；
+# 3. 因此窗口分析 / 稀有性判断以**经验频率 `k/64`** 为准，记录 logprob 只做相对排序；
+# 4. `raw_completion_sampling_logprobs` 的确切语义（`0.0` 的含义、整体 −1.1 nat 偏移）尚未闭环，
+#    需要服务侧确认——这是记录在案的开放问题。（这个 −1.1 nat 的拆解见 §2.3。）
+
+# %% [markdown]
+# ### 2.3 拆解："−1.1 nat" 从哪来（可选实测）
+#
+# §2.2 说两个字段平均差 Δ ≈ −1.1 nat。这个数字可以被拆成三块看：
+#
+# ```text
+# Δ(c) = Σsamp(c) − Σold(c) = Σₜ δₜ      （逐 token 差之和；δₜ = samp_t − old_t）
+# ```
+#
+# **① 长度效应**：`Δ ≈ −0.18 − 0.123 × token数`（Pearson(Δ, 长度) = −0.63）。
+# 每多一个 token 平均多 −0.12 nat——"整条序列的差"大部分是逐 token 差的累加。
+#
+# **② 逐 token 模式**（1739 个 token 的实测）：
+#
+# | old 区间 | n | samp=0 占比 | 平均 δₜ |
+# |---|---:|---:|---:|
+# | < −5（极稀有） | 74 | 0% | **+0.185（被抬高）** |
+# | −5 ~ −1 | 256 | 0% | −0.107 |
+# | −1 ~ −0.1 | 224 | 0% | −0.818 |
+# | −0.1 ~ −0.01 | 253 | 10.3% | −0.217 |
+# | ≥ −0.01（p ≳ 0.99） | 932 | **96.7%** | −0.005 |
+#
+# 两个线索：
+#
+# - **置零约定**：old 接近 0（概率 ≳ 0.99）时 samp 多为 `0.0`（记录约定，不是"概率为 1"）；
+# - **压缩 + 下移**：非零对回归 `samp ≈ −0.535 + 0.869·old`——斜率 < 1 表示尾部被抬高，
+#   截距为负表示整体下移，交叉点约在 old ≈ −4.1。
+#
+# **③ 工作示例**（`exact curry_target`，Δ = −1.95）：
+#
+# | token | old | samp | δₜ |
+# |---|---:|---:|---:|
+# | `exact` | −0.009 | 0.0 | +0.009 |
+# | ` curry` | −0.192 | −2.147 | **−1.955** |
+# | `_target` | ~0 | 0.0 | ~0 |
+# | EOS | ~0 | 0.0 | ~0 |
+#
+# 下面的单元把上面的数字在你的机器上重算一遍（需要 E2 数据；没有就自动跳过）：
+
+# %%
+# ===== 可选实测：Δ = Σsamp − Σold 的拆解（需要 E2 数据，缺失时自动跳过）=====
+import glob as _glob
+import json as _json
+import math as _math
+import os as _os
+import statistics as _st
+from pathlib import Path as _Path
+
+_E2 = _Path(_os.environ.get("E2_WORK", "~/e2-work")).expanduser()
+_TRAIN = _E2 / "training/remote/tmp/fate-m-formal-w001-shared-rollout-v2"
+
+def _pearson(x, y):
+    n = len(x)
+    mx, my = _st.fmean(x), _st.fmean(y)
+    cov = sum((a - mx) * (b - my) for a, b in zip(x, y)) / n
+    sx = _math.sqrt(sum((a - mx) ** 2 for a in x) / n)
+    sy = _math.sqrt(sum((b - my) ** 2 for b in y) / n)
+    return cov / (sx * sy)
+
+def _ols(x, y):
+    """最小二乘 y ≈ a + b·x，返回 (b, a)。"""
+    mx, my = _st.fmean(x), _st.fmean(y)
+    b = sum((a - mx) * (c - my) for a, c in zip(x, y)) / sum((a - mx) ** 2 for a in x)
+    return b, my - b * mx
+
+if not _TRAIN.is_dir():
+    print("（E2 数据未就绪：本单元跳过。跑一次 02-实战篇的第一个单元即可自动解压，或用 E2_WORK 指定目录。）")
+else:
+    rows = []
+    for p in sorted(d.name for d in _TRAIN.iterdir() if d.name.startswith("fate_m_")):
+        req = sorted(_glob.glob(str(_TRAIN / p / "actor_receipts" / "*" / "policy_requests" / "*.json")))[0]
+        cands = _json.loads(_Path(req).read_text())["candidates"]
+        canon = {}
+        for line in (_TRAIN / p / "observer.jsonl").read_text().splitlines():
+            ev = _json.loads(line)
+            if ev.get("kind") == "canonical_candidate":
+                canon[ev["candidate_index"]] = ev
+        for ev in canon.values():
+            rc = cands[ev["survivor_sample_index"]]
+            old = rc["raw_completion_old_logprobs"]
+            samp = rc["raw_completion_sampling_logprobs"]
+            rows.append({"action": ev["action"], "old": old, "samp": samp,
+                         "so": sum(old), "ss": sum(samp), "n": len(old)})
+
+    D  = [r["ss"] - r["so"] for r in rows]
+    so = [r["so"] for r in rows]
+    ss = [r["ss"] for r in rows]
+    ns = [r["n"] for r in rows]
+    print(f"候选数：{len(rows)}")
+    print(f"Δ：mean={_st.fmean(D):.3f}  median={_st.median(D):.3f}  "
+          f"min={min(D):.2f}  max={max(D):.2f}  Δ>0 比例={sum(1 for d in D if d > 0)/len(D):.1%}")
+    b, a = _ols(so, ss)
+    print(f"Pearson(Σold, Σsamp) = {_pearson(so, ss):.4f}；回归 Σsamp ≈ {a:.3f} + {b:.4f}·Σold")
+    b2, a2 = _ols(ns, D)
+    print(f"Pearson(Δ, token数) = {_pearson(ns, D):.4f}；回归 Δ ≈ {a2:.3f} + {b2:.4f}·token数")
+    print()
+
+    pairs = [(o, s) for r in rows for o, s in zip(r["old"], r["samp"])]
+    print(f"逐 token（共 {len(pairs)} 个）：")
+    print(f"{'old 区间':>18} {'n':>5} {'samp=0 占比':>11} {'平均 δ':>9}")
+    for lo, hi in [(-99, -5), (-5, -1), (-1, -0.1), (-0.1, -0.01), (-0.01, 1e-9)]:
+        sel = [(o, s) for o, s in pairs if lo <= o < hi]
+        if not sel:
+            continue
+        z = sum(1 for o, s in sel if s == 0.0) / len(sel)
+        d = _st.fmean([s - o for o, s in sel])
+        label = f"[{lo}, {hi})"
+        print(f"{label:>18} {len(sel):>5} {z:>10.1%} {d:>9.3f}")
+    nz = [(o, s) for o, s in pairs if s != 0.0]
+    b3, a3 = _ols([o for o, _ in nz], [s for _, s in nz])
+    print(f"非零对回归：samp ≈ {a3:.3f} + {b3:.4f}·old（n={len(nz)}）")
+    print()
+
+    ex = next((r for r in rows if r["action"] == "exact curry_target"), None)
+    if ex:
+        print(f"工作示例 {ex['action']!r}：Σold={ex['so']:.3f}  Σsamp={ex['ss']:.3f}  Δ={ex['ss']-ex['so']:+.3f}")
+        for t, (o, s) in enumerate(zip(ex["old"], ex["samp"])):
+            print(f"  token#{t:>2}  old={o:>8.4f}  samp={s:>8.4f}  δ={s-o:+.4f}")
+
+# %% [markdown]
+# 读法：Δ 的负均值不是"模型高估了概率"的结论，而是"两个记录口径系统性不同"的经验描述：
+# 逐 token 压缩（`samp ≈ −0.535 + 0.869·old`）+ 近零置零 + 长度累积，共同造成整条序列的 −1.1 nat。
+# 排序几乎一致（相关 ≈ 0.97），但**绝对阈值不可互换**——这正是窗口分析用经验频率 `k/64` 的原因。
 
 # %% [markdown]
 # ---

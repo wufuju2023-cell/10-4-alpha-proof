@@ -1,0 +1,98 @@
+{
+  "schema_version": 2,
+  "status": "template",
+  "run_scope": "subset_20x10_formal",
+  "arm": "official_search_path_ce",
+  "source_pin": {
+    "target_repository": "https://github.com/wufuju2023-cell/10-4-alpha-proof",
+    "target_commit": "e1b7ffe6feba8cbdb590d42836d750504aa86b94",
+    "target_repo_root": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/src/10-4-alpha-proof",
+    "realprover_upstream_commit": "3e5987dc1009a7addc935bcd7b4ae777738a0848"
+  },
+  "model": {
+    "base_path": "/mnt/workspace/models/REAL-Prover-fe76f68d",
+    "base_revision": "fe76f68d9a88f342cb7b546307c20292fea9cced",
+    "value_head_path": "/mnt/workspace/new_value_head/heads-79efd240/train205628-full-v3/value-head.pt",
+    "initial_adapter": {
+      "path": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/assets/initial_lora_r16_a32_seed20261004",
+      "manifest_payload_sha256": "9496f7cacf0f3d552aeefde11471fed452c6f6555345387d141f902c7538f28d",
+      "adapter_model_sha256": "326e08d17a74eec08d52127c7e011462bf1d207266cf0ca9a3a84ddc0ddde2dd",
+      "adapter_config_sha256": "e3199444adcd863f95d1d98784114b6658ed1a90bcd9577777460a5ce25afdbe",
+      "trainable_state_sha256": "08115bfd89fc674b24238ea4aa7406d9e66fb8dd6daefc04826d1abbd6d1be66"
+    },
+    "hidden_size": 3584,
+    "value_bins": 64
+  },
+  "locks": {
+    "asset_lock": {"path": null, "sha256": null},
+    "course_manifest": {"path": null, "sha256": null},
+    "shared_actor_config": {"path": null, "sha256": null, "receipt_identity_sha256": null},
+    "shared_budget_config": {"path": null, "sha256": null},
+    "tokenizer_lock": {"path": null, "sha256": null, "receipt_identity_sha256": null},
+    "trusted_verifier_lock": {"path": null, "sha256": null, "verifier_id": null}
+  },
+  "dataset": {
+    "protocol_id": "fate-m-20-family-10-variant-fast-ab-v1",
+    "train_records_sha256": "b9e9c4abcf02693a85d5f794b766465f65ac2488ed15e96d6fd90aff452e6ab0",
+    "heldout_records_sha256": "a394465ef3e74666abea400496672ee97e838ddf4364c390d85362fb5d497c09",
+    "train_variants": [1, 2, 3, 4, 5, 6, 7, 8],
+    "heldout_variants": [9, 10],
+    "train_rows": 160,
+    "heldout_rows": 40,
+    "wave_policy": "one_variant_index_x_20_families"
+  },
+  "actor_contract": {
+    "must_match_online_arm": true,
+    "receipt_schema": "canonical_search_receipt_v2",
+    "use_retrieval": false,
+    "generation": {
+      "temperature": 1.5,
+      "top_p": 0.9,
+      "max_new_tokens": 512,
+      "num_samples": 64
+    },
+    "search": {
+      "implementation": "REAL-Prover_BestFirstSearch",
+      "max_nodes": 1024,
+      "max_steps": 128,
+      "lean_tactic_timeout_seconds": 30
+    }
+  },
+  "replay": {
+    "include_verified_proofs": true,
+    "include_disproofs": false,
+    "include_timeouts": false,
+    "include_infrastructure_errors": false,
+    "sft_mix": 0.0,
+    "sampling": "full_replay",
+    "capacity_transitions": 10240,
+    "distance_overflow_policy": "reject"
+  },
+  "train": {
+    "seed": 20261005,
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "max_length": 1024,
+    "batch_size": 20,
+    "micro_batch_size": 1,
+    "steps_per_wave": 1,
+    "policy_lr": 0.0001,
+    "value_lr": 0.0003,
+    "value_coef": 0.001,
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "disproof_weight": 1.0,
+    "gradient_checkpointing": true,
+    "deterministic_algorithms": true,
+    "checkpoint_every_steps": 1,
+    "lora": {
+      "r": 16,
+      "alpha": 32,
+      "dropout": 0.02,
+      "target_modules": [
+        "q_proj", "k_proj", "v_proj", "o_proj",
+        "gate_proj", "up_proj", "down_proj"
+      ]
+    }
+  }
+}

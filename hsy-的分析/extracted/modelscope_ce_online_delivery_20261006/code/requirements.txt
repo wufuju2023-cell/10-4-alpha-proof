@@ -1,0 +1,7 @@
+# 核心测试只需要标准库 + pytest。
+# torch/PEFT/transformers 仅在“真实模型”与云端冒烟时需要（可选安装）。
+pytest>=7.0
+# torch            # 云端已装（ROCm 2.12）；本地 CPU 冒烟可选
+# peft>=0.10
+# transformers>=4.40
+# safetensors

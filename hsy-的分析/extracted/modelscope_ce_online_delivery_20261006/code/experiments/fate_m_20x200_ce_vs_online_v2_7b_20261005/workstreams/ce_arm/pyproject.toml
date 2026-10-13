@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fate-m-ce-arm"
+version = "0.1.0"
+description = "Verified search-path CE arm for the FATE-M 20x200 comparison"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+fate-m-ce-data = "ce_arm.cli:main"
+fate-m-ce-train = "ce_arm.train:main"
+fate-m-ce-smoke = "ce_arm.smoke:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

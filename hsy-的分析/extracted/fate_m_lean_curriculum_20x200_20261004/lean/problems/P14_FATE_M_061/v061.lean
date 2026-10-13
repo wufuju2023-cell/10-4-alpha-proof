@@ -1,0 +1,12 @@
+import Mathlib
+
+namespace FateCurriculum
+
+/-- FATE-M #61, curriculum variant 61/200; tier 2: packed_target. -/
+theorem fate_m_061_v061 {G : Type*} [Group G]
+    (M : Subgroup G) [hM : M.Normal] (N : Subgroup G) [hN: N.Normal]
+    (curriculum_pack : (((206101 : Nat) = 206101) ∧ (((206102 : Nat) = 206102) ∧ (((206103 : Nat) = 206103) ∧ (((206104 : Nat) = 206104) ∧ (((206105 : Nat) = 206105) ∧ (((206106 : Nat) = 206106) ∧ (((206107 : Nat) = 206107) ∧ (((206108 : Nat) = 206108) ∧ (((206109 : Nat) = 206109) ∧ (((206110 : Nat) = 206110) ∧ (((206111 : Nat) = 206111) ∧ (((206112 : Nat) = 206112) ∧ (((206113 : Nat) = 206113) ∧ (((206114 : Nat) = 206114) ∧ (((206115 : Nat) = 206115) ∧ (((206116 : Nat) = 206116) ∧ (((206117 : Nat) = 206117) ∧ (((206118 : Nat) = 206118) ∧ (((206119 : Nat) = 206119) ∧ (((206120 : Nat) = 206120) ∧ (((206121 : Nat) = 206121) ∧ ((M ⊓ N).Normal))))))))))))))))))))))) :
+    ((M ⊓ N).Normal) := by
+  sorry
+
+end FateCurriculum

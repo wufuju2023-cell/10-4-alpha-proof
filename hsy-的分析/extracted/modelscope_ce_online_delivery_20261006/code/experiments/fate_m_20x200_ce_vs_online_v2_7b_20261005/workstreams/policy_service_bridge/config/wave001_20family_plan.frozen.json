@@ -1,0 +1,57 @@
+{
+  "schema_version": "fate.policy_service.representative_smoke_plan.v1",
+  "status": "frozen_wave001_one_step_bridge",
+  "expected_session_count": 20,
+  "source": {
+    "problems_relative_path": "../../../data/problems.jsonl",
+    "problems_sha256": "3f702d1e5add11721867735c369e5e4736dfe4e4ae28674220bc8bef6dc8152d",
+    "required_record_count": 4000
+  },
+  "tasks": [
+    {"session_id":"fate_m_003_v001","family_index":1,"variant_index":1,"formal_statement_sha256":"e8d1ca283a8b4f54d481460cc2ff321834ec2c13fdf14ba9510b678b5a5d18f9"},
+    {"session_id":"fate_m_004_v001","family_index":2,"variant_index":1,"formal_statement_sha256":"def402df6f3bbaa7ba73d513506a278732b0ed9df3d0e5cbbf5a66a3f2239105"},
+    {"session_id":"fate_m_009_v001","family_index":3,"variant_index":1,"formal_statement_sha256":"5a21639ae368c55b7ec5bfb53623def1591a3244e0d2665affa2e061a50a8304"},
+    {"session_id":"fate_m_011_v001","family_index":4,"variant_index":1,"formal_statement_sha256":"8dd54d527b4074e9386f2ae071fe9738eccbe7e63d321e106bf519567e763e48"},
+    {"session_id":"fate_m_014_v001","family_index":5,"variant_index":1,"formal_statement_sha256":"dbac51bfa9e7872798eaedeab443b3ace61e626ae93eff939ed785c8791a3421"},
+    {"session_id":"fate_m_015_v001","family_index":6,"variant_index":1,"formal_statement_sha256":"e186f7a633f42fc2171a8f92c7e29df70a29232f12456ac6147acb7e0899417d"},
+    {"session_id":"fate_m_018_v001","family_index":7,"variant_index":1,"formal_statement_sha256":"4fa3f9edab4787a3803f0c8537d5890be13a21a65ae4ea3768b59b50319480c4"},
+    {"session_id":"fate_m_021_v001","family_index":8,"variant_index":1,"formal_statement_sha256":"a35c50f95f2f986ea49c141bcb04c88e0aed0cbb0a4a42af2b5fc10c7b2e7cc6"},
+    {"session_id":"fate_m_035_v001","family_index":9,"variant_index":1,"formal_statement_sha256":"f12f0c60fda61f91c7999e92dccd2ec7c8bdecda4a03aaa035f1a5955241604e"},
+    {"session_id":"fate_m_040_v001","family_index":10,"variant_index":1,"formal_statement_sha256":"6aa33100bfd40b14be76be6612d844827ae5484484375f8a452d699079f1f3d9"},
+    {"session_id":"fate_m_048_v001","family_index":11,"variant_index":1,"formal_statement_sha256":"a4bacdfb98898bfbfef337fb91be2685dbe6e65968dd7bfc741da2917b6dc48d"},
+    {"session_id":"fate_m_051_v001","family_index":12,"variant_index":1,"formal_statement_sha256":"323774039ddac1d5c77446a0893a0b6c5b1d5115703d00392b77d077bde33c05"},
+    {"session_id":"fate_m_052_v001","family_index":13,"variant_index":1,"formal_statement_sha256":"e0be1e58a5c7f54e32b6abbe0466aafb709b05839cb64ee23753859270120dfd"},
+    {"session_id":"fate_m_061_v001","family_index":14,"variant_index":1,"formal_statement_sha256":"332ca37bfd8802a1b7f988363c0f389dcd17b9b3ea6134f7de6c92c1f42d31d3"},
+    {"session_id":"fate_m_064_v001","family_index":15,"variant_index":1,"formal_statement_sha256":"2723b0437c82b7f467e2cb3092fd1e2bc84d3c0edc6e5ad54e053c6e1a2790e8"},
+    {"session_id":"fate_m_065_v001","family_index":16,"variant_index":1,"formal_statement_sha256":"40a71e883a0ff31c6f6dede8e604405a3b26b6fe0d056b83bd428a6afa5344b3"},
+    {"session_id":"fate_m_066_v001","family_index":17,"variant_index":1,"formal_statement_sha256":"d8eb14823a3cdf7c00acd3261ebf81762ff37a2834e408b6f1d87f23aa8737a2"},
+    {"session_id":"fate_m_067_v001","family_index":18,"variant_index":1,"formal_statement_sha256":"04e02aa0f12fe42fd7a9f37aa0d564adc4f14eb9794a0764d3849a87fa53281e"},
+    {"session_id":"fate_m_068_v001","family_index":19,"variant_index":1,"formal_statement_sha256":"3a98c754537f5ae5f3029746ac3ae46e5f7a2855a4f3a6a2c78816c4243f3982"},
+    {"session_id":"fate_m_076_v001","family_index":20,"variant_index":1,"formal_statement_sha256":"2a8bc2a670fceef45d9fedfbd03d908dd9ed9399a4602319d629cacf8664c7e7"}
+  ],
+  "protocol": {
+    "generation": {"temperature": 1.5, "top_p": 0.9, "max_tokens": 256, "n": 64, "logprobs": true, "rescore_micro_batch": 1},
+    "search": {"max_steps": 1, "max_goals": 64, "num_premises": 0},
+    "execution": {
+      "session_concurrency": 1,
+      "model_load_count": 1,
+      "formal_r16_adapter_load_count": 1,
+      "per_session_timeout_seconds": 900,
+      "heartbeat_interval_seconds": 20,
+      "training": false
+    },
+    "planned_cost_ceiling": {
+      "policy_requests": 20,
+      "returned_candidates": 1280,
+      "generated_tokens": 327680
+    }
+  },
+  "identity_contract": {
+    "formal_seed": 20261005,
+    "policy_version": "formal-initial-r16-a32-seed20261004",
+    "behavior_adapter_alias": "formal-initial-r16-a32-seed20261004",
+    "actor_config_path": "../../../workstreams/ce_arm/config/shared_actor.wave001.fixed.json",
+    "actor_config_must_be_identical_for_all_sessions": true
+  },
+  "scope_note": "This is the 20-family one-step bridge/update gate. It is not the frozen protocol's full BestFirstSearch wave; the canonical join remains single-policy-request until multi-state envelopes are implemented."
+}

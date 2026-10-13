@@ -1,0 +1,12 @@
+import Mathlib
+
+namespace FateCurriculum
+
+/-- FATE-M #3, curriculum variant 65/200; tier 2: packed_target. -/
+theorem fate_m_003_v065 {G H K : Type*} [Group G] [Group H] [Group K]
+    (f : G →* H) (g : H →* K) (hf : Function.Surjective f) (hg : Function.Surjective g)
+    (curriculum_pack : (((206501 : Nat) = 206501) ∧ (((206502 : Nat) = 206502) ∧ (((206503 : Nat) = 206503) ∧ (((206504 : Nat) = 206504) ∧ (((206505 : Nat) = 206505) ∧ (((206506 : Nat) = 206506) ∧ (((206507 : Nat) = 206507) ∧ (((206508 : Nat) = 206508) ∧ (((206509 : Nat) = 206509) ∧ (((206510 : Nat) = 206510) ∧ (((206511 : Nat) = 206511) ∧ (((206512 : Nat) = 206512) ∧ (((206513 : Nat) = 206513) ∧ (((206514 : Nat) = 206514) ∧ (((206515 : Nat) = 206515) ∧ (((206516 : Nat) = 206516) ∧ (((206517 : Nat) = 206517) ∧ (((206518 : Nat) = 206518) ∧ (((206519 : Nat) = 206519) ∧ (((206520 : Nat) = 206520) ∧ (((206521 : Nat) = 206521) ∧ (((206522 : Nat) = 206522) ∧ (((206523 : Nat) = 206523) ∧ (((206524 : Nat) = 206524) ∧ (((206525 : Nat) = 206525) ∧ (Function.Surjective (g.comp f)))))))))))))))))))))))))))) :
+    (Function.Surjective (g.comp f)) := by
+  sorry
+
+end FateCurriculum

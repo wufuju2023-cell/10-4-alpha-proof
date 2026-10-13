@@ -1,0 +1,4 @@
+# Use the ROCm image's preinstalled torch; do not replace it with a PyPI CUDA wheel.
+transformers==5.15.1
+peft==0.20.0
+cryptography==43.0.0

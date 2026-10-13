@@ -1,0 +1,53 @@
+{
+  "schema_version": "fate.lean_runtime_path_resolution.v1",
+  "verified_at": "2026-10-05",
+  "remote_state": {
+    "status": "pathfix5_resolved_lake_path_blocked_on_external_cache_download",
+    "superseded_error": "prepare_runtime.sh: line 41: lake: command not found",
+    "completed": {
+      "reap_build_jobs": 198,
+      "lake_update_dependencies_restored": [
+        "LeanSearchClient",
+        "importGraph",
+        "proofwidgets",
+        "aesop",
+        "Qq",
+        "batteries",
+        "Cli",
+        "openAI_client",
+        "requests"
+      ],
+      "entered_mathlib_post_update_hooks": true
+    },
+    "current_blocker": {
+      "stage": "lake exe cache get",
+      "asset": "official leantar 0.1.16",
+      "release": "digama0/leangz GitHub release",
+      "error": "curl: (56) unexpected EOF"
+    },
+    "runtime_location": "/tmp",
+    "persistent_storage_used_percent": 88.6,
+    "remote_actions_during_fix": 0
+  },
+  "resolution_order": [
+    "LAKE_BIN",
+    "LEAN_BIN_DIR/lake",
+    "<experiment-root>/runtime/toolchains/lean-4.28.0-linux/bin/lake"
+  ],
+  "implicit_path_fallback": false,
+  "failure_exit_code": 127,
+  "verification": {
+    "shell_syntax": "pass",
+    "resolver_shell_test": "pass",
+    "targeted_unittest": "2 passed",
+    "complete_unittest_discovery": "48 passed"
+  },
+  "sha256": {
+    "scripts/prepare_runtime.sh": "eeb510fbbc30560474203736f7fcd2f78c98bc98898b0b9ee1020825bd522264",
+    "scripts/lib/resolve_lean_tools.sh": "89771b9b6c905c49cb69edeeaddb15ee534d592947bdd366f3b5f1cc59d166e6",
+    "src/fate_reap/runtime_provenance.py": "65a7428cdc5da0235d0b9dad2764399a58f505768c67e150da0436ef32541bb1",
+    "tests/test_resolve_lean_tools.sh": "551b9f90a3b543e90db4266db381b1256d1c2cc1b6b949d6724ff8efc22ad692",
+    "tests/test_prepare_runtime.py": "56e3cc3725b3a4efa281ee32be0f16d29dbf827318e13465c3cf12370e7f3485",
+    "docs/remote_runtime_status_20261005.md": "ec2e88a7209c59aab5ab4540b8bee33cd6aaba86cd3984bc621132d6a6d614cb"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "fate.actor.formal_r16_e2e_smoke.v1",
+  "session_id": "fate_m_003_v001",
+  "adapter_name": "fate_m_003_v001",
+  "generation": {
+    "temperature": 1.5,
+    "top_p": 0.9,
+    "max_new_tokens": 256,
+    "num_return_sequences": 64
+  },
+  "prompt_template": "qwen",
+  "prompt_source": "pinned_formal_prefix_plus_verified_incoming_reap_root_state",
+  "retrieval": false
+}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pell（mock 搜索）· MCTS 轨迹展示</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: #f5f6f8;
+  color: #1f2937;
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans CJK SC",
+               "Source Han Sans SC", "PingFang SC", "Hiragino Sans GB",
+               "Microsoft YaHei", sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.page { max-width: 1240px; margin: 0 auto; padding: 24px 20px 48px; }
+h1 { font-size: 24px; margin: 0 0 4px; }
+h2 { font-size: 18px; margin: 0 0 10px; }
+h3 { font-size: 14px; margin: 14px 0 6px; color: #374151; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.dim { color: #6b7280; }
+.err { color: #b91c1c; }
+.card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px;
+        padding: 16px 18px; margin: 14px 0; }
+.hero { padding: 6px 2px 0; }
+.sub { color: #6b7280; font-size: 13px; margin: 0 0 4px; }
+.job-title { margin: 0 0 8px; font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 2px; align-items: center; }
+.chip { background: #eef2f7; border: 1px solid #dbe2ea; border-radius: 999px;
+        padding: 2px 10px; font-size: 12.5px; }
+.chip b { color: #475569; font-weight: 600; margin-right: 4px; }
+pre { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px;
+      padding: 10px 12px; overflow: auto; font-size: 13px; margin: 8px 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+                   "Noto Sans Mono CJK SC", monospace; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+                   "Noto Sans Mono CJK SC", monospace; font-size: 12.5px; }
+ol.script li { margin: 2px 0; }
+.canvas-wrap { overflow: auto; border: 1px dashed #d1d5db; border-radius: 10px;
+               background: #fbfcfe; }
+.canvas-wrap[data-zoom="fit"] .tree-svg { max-width: 100%; height: auto; display: block; }
+.canvas-wrap[data-zoom="full"] .tree-svg { max-width: none; display: block; }
+svg text { font-family: inherit; }
+.node { cursor: pointer; }
+.node.hl .box { stroke: #e11d48 !important; stroke-width: 3.4 !important; }
+.edge.hl path { stroke: #e11d48 !important; stroke-width: 3.4 !important; }
+.edge.hl .label rect { stroke: #e11d48; }
+.legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12.5px;
+          color: #475569; margin: 4px 0 10px; align-items: center; }
+.sw { display: inline-block; width: 14px; height: 14px; border-radius: 4px;
+      border: 2px solid #888; margin-right: 4px; vertical-align: -2px; }
+.toolbar { display: flex; gap: 8px; align-items: center; margin: 4px 0 8px;
+           flex-wrap: wrap; }
+.toolbar button { border: 1px solid #d1d5db; background: #fff; border-radius: 8px;
+                  padding: 3px 10px; font-size: 12.5px; cursor: pointer; }
+.toolbar button.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+.warn-banner { background: #fef3c7; border: 1px solid #fcd34d; color: #92400e;
+               border-radius: 8px; padding: 6px 10px; font-size: 13px; }
+table.attempts { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.attempts th, table.attempts td { border-bottom: 1px solid #eef1f4;
+                                       padding: 6px 8px; text-align: left;
+                                       vertical-align: top; }
+table.attempts th { background: #f8fafc; font-weight: 600; color: #334155; }
+table.attempts tr[data-node] { cursor: pointer; }
+table.attempts tr[data-node]:hover { background: #fff7ed; }
+table.kv { border-collapse: collapse; font-size: 13px; width: 100%; }
+table.kv td { border-bottom: 1px solid #eef1f4; padding: 4px 8px; vertical-align: top; }
+table.kv td.k { color: #475569; white-space: nowrap; width: 220px; }
+.badge { display: inline-block; border-radius: 6px; padding: 0 7px; font-size: 12px;
+         line-height: 19px; border: 1px solid transparent; }
+.badge.ok { background: #e9f8ee; color: #166534; border-color: #bbf7d0; }
+.badge.warn { background: #fef9c3; color: #854d0e; border-color: #fde68a; }
+.badge.info { background: #e0f2fe; color: #075985; border-color: #bae6fd; }
+.badge.bad { background: #fee2e2; color: #991b1b; border-color: #fecaca; }
+.badge.other { background: #f1f5f9; color: #475569; border-color: #e2e8f0; }
+.detail-box { margin-top: 10px; background: #f8fafc; border: 1px solid #e2e8f0;
+              border-radius: 8px; padding: 10px 12px; font-size: 12.5px;
+              white-space: pre-wrap; word-break: break-word; min-height: 60px;
+              font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+                           "Noto Sans Mono CJK SC", monospace; }
+details.raw summary { cursor: pointer; color: #334155; font-weight: 600; }
+details.card.raw summary { font-size: 15px; }
+footer { color: #6b7280; font-size: 12.5px; margin-top: 20px; text-align: center; }
+</style>
+</head>
+<body>
+<main class="page">
+<header class="hero">
+<h1>Pell（mock 搜索）· MCTS 轨迹展示</h1>
+<p class="sub">搜索树静态导出 · 节点=状态 · 边=战术 · 单文件离线可看（无外部引用）</p>
+<div class="chips"><span class="chip"><b>schema</b> alphaproof.search_tree_export.v1</span><span class="chip"><b>节点</b> 7</span><span class="chip"><b>边</b> 6</span><span class="chip"><b>attempts</b> 9</span><span class="chip"><b>root</b> pell.root</span></div>
+</header>
+<section class="card" id="job">
+<h2>题目 / Job</h2>
+<p class="job-title">Pell（mock 搜索）</p>
+<pre>def Target : Prop :=
+  ∀ B : ℕ, ∃ x y : ℕ, B &lt; x ∧ B &lt; y ∧ x ^ 2 = 2 * y ^ 2 + 1</pre>
+<details class="raw"><summary>job 其他字段</summary><table class="kv"><tr><td class="k">env</td><td>alphaproof.env.pell_mock</td></tr><tr><td class="k">notes</td><td>确定性 mock：intro → refine ⟨17,12,…⟩ → 两支 norm_num；含 sorry/aesop/ring/omega 等无效战术噪声。</td></tr></table></details>
+</section>
+<section class="card" id="result">
+<h2>结果摘要</h2>
+<div class="chips"><span class="chip"><b>solved</b> 是 ✓</span><span class="chip"><b>simulations</b> 8</span><span class="chip"><b>nodes_created</b> 7</span></div>
+<h3>最优证明脚本（result.json）</h3><ol class="script"><li><code>intro B</code></li><li><code>refine &lt;17, 12, ?_, ?_&gt;</code></li><li><code>norm_num</code></li><li><code>norm_num</code></li></ol>
+</section>
+<section class="card" id="tree">
+<h2>搜索树（节点 = 状态 · 边 = 战术）</h2>
+<div class="legend"><span><i class="sw" style="background:#eef6ff;border-color:#3b82f6"></i>OR 节点</span><span><i class="sw" style="background:#f6f0ff;border-color:#8b5cf6"></i>AND 节点</span><span><i class="sw" style="background:#e9f8ee;border-color:#2f9e4f"></i>已解 / 终端</span><span><i class="sw" style="background:#fff;border-color:#d97706"></i>最优路径（★ / 橙边）</span><span><i class="sw" style="background:#f3f4f6;border-color:#9ca3af;border-style:dashed"></i>未访问</span><span><i class="sw" style="background:#fff;border-color:#a855f7;border-style:dashed"></i>focus 伪边</span></div>
+<div class="toolbar"><button type="button" data-zoom-btn="fit" class="active">适应窗口</button><button type="button" data-zoom-btn="full">原始大小</button><span class="dim">悬停节点高亮到根路径；点击查看完整状态</span></div>
+<div class="canvas-wrap" data-zoom="fit">
+<svg class="tree-svg" width="608" height="976" viewBox="0 0 608 976" role="img" aria-label="MCTS 搜索树">
+<defs><marker id="arr-norm" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 8 4 L 0 8 z" fill="#94a3b8"></path></marker><marker id="arr-opt" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 8 4 L 0 8 z" fill="#d97706"></path></marker><marker id="arr-focus" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 8 4 L 0 8 z" fill="#a855f7"></path></marker></defs>
+<g class="edge optimal" data-p="0" data-c="1"><path d="M 304.0 124.0 C 304.0 176.2, 304.0 184.8, 304.0 237.0" fill="none" stroke="#d97706" stroke-width="2.8" marker-end="url(#arr-opt)" stroke-linecap="round"></path><title>边 0→1 · action=intro B · p=1.000 · N=7 · Q=-2.86 · cost=1.0</title><g class="label"><rect x="227.0" y="163.0" width="154.0" height="38.0" rx="6" fill="#ffffff" fill-opacity="0.94" stroke="#e2e8f0" stroke-width="1"></rect><text x="304.0" y="180.0" text-anchor="middle" font-size="11.5" fill="#334155">intro B</text><text x="304.0" y="194.0" text-anchor="middle" font-size="10.5" fill="#64748b">p=1.000 · N=7 · Q=-2.86</text></g></g>
+<g class="edge optimal" data-p="1" data-c="2"><path d="M 304.0 328.0 C 304.0 380.2, 304.0 388.8, 304.0 441.0" fill="none" stroke="#d97706" stroke-width="2.8" marker-end="url(#arr-opt)" stroke-linecap="round"></path><title>边 1→2 · action=refine &lt;17, 12, ?_, ?_&gt; · p=0.999 · N=6 · Q=-1.67 · cost=1.0</title><g class="label"><rect x="223.6" y="367.0" width="160.9" height="38.0" rx="6" fill="#ffffff" fill-opacity="0.94" stroke="#e2e8f0" stroke-width="1"></rect><text x="304.0" y="384.0" text-anchor="middle" font-size="11.5" fill="#334155">refine &lt;17, 12, ?_, ?_&gt;</text><text x="304.0" y="398.0" text-anchor="middle" font-size="10.5" fill="#64748b">p=0.999 · N=6 · Q=-1.67</text></g></g>
+<g class="edge focus optimal" data-p="2" data-c="3"><path d="M 304.0 532.0 C 304.0 584.2, 158.0 592.8, 158.0 645.0" fill="none" stroke="#d97706" stroke-width="5" stroke-opacity="0.55" stroke-linecap="round"></path><path d="M 304.0 532.0 C 304.0 584.2, 158.0 592.8, 158.0 645.0" fill="none" stroke="#a855f7" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arr-focus)" stroke-linecap="round"></path><title>边 2→3 · action=focus_goal 0 · p=0.500 · N=3 · Q=-1.00</title><g class="label"><rect x="154.0" y="571.0" width="154.0" height="38.0" rx="6" fill="#ffffff" fill-opacity="0.94" stroke="#e2e8f0" stroke-width="1"></rect><text x="231.0" y="588.0" text-anchor="middle" font-size="11.5" fill="#334155">focus_goal 0</text><text x="231.0" y="602.0" text-anchor="middle" font-size="10.5" fill="#64748b">p=0.500 · N=3 · Q=-1.00</text></g></g>
+<g class="edge optimal" data-p="3" data-c="4"><path d="M 158.0 736.0 C 158.0 788.2, 158.0 796.8, 158.0 849.0" fill="none" stroke="#d97706" stroke-width="2.8" marker-end="url(#arr-opt)" stroke-linecap="round"></path><title>边 3→4 · action=norm_num · p=1.000 · N=2 · Q=-1.00 · cost=1.0</title><g class="label"><rect x="81.0" y="775.0" width="154.0" height="38.0" rx="6" fill="#ffffff" fill-opacity="0.94" stroke="#e2e8f0" stroke-width="1"></rect><text x="158.0" y="792.0" text-anchor="middle" font-size="11.5" fill="#334155">norm_num</text><text x="158.0" y="806.0" text-anchor="middle" font-size="10.5" fill="#64748b">p=1.000 · N=2 · Q=-1.00</text></g></g>
+<g class="edge focus optimal" data-p="2" data-c="5"><path d="M 304.0 532.0 C 304.0 584.2, 450.0 592.8, 450.0 645.0" fill="none" stroke="#d97706" stroke-width="5" stroke-opacity="0.55" stroke-linecap="round"></path><path d="M 304.0 532.0 C 304.0 584.2, 450.0 592.8, 450.0 645.0" fill="none" stroke="#a855f7" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arr-focus)" stroke-linecap="round"></path><title>边 2→5 · action=focus_goal 1 · p=0.500 · N=3 · Q=-1.00</title><g class="label"><rect x="300.0" y="571.0" width="154.0" height="38.0" rx="6" fill="#ffffff" fill-opacity="0.94" stroke="#e2e8f0" stroke-width="1"></rect><text x="377.0" y="588.0" text-anchor="middle" font-size="11.5" fill="#334155">focus_goal 1</text><text x="377.0" y="602.0" text-anchor="middle" font-size="10.5" fill="#64748b">p=0.500 · N=3 · Q=-1.00</text></g></g>
+<g class="edge optimal" data-p="5" data-c="6"><path d="M 450.0 736.0 C 450.0 788.2, 450.0 796.8, 450.0 849.0" fill="none" stroke="#d97706" stroke-width="2.8" marker-end="url(#arr-opt)" stroke-linecap="round"></path><title>边 5→6 · action=norm_num · p=1.000 · N=2 · Q=-1.00 · cost=1.0</title><g class="label"><rect x="373.0" y="775.0" width="154.0" height="38.0" rx="6" fill="#ffffff" fill-opacity="0.94" stroke="#e2e8f0" stroke-width="1"></rect><text x="450.0" y="792.0" text-anchor="middle" font-size="11.5" fill="#334155">norm_num</text><text x="450.0" y="806.0" text-anchor="middle" font-size="10.5" fill="#64748b">p=1.000 · N=2 · Q=-1.00</text></g></g>
+<g class="node or solved optimal" id="node-0" data-node="0" data-parent="" data-toplay="OR" data-n="8" data-v="-3.00" data-ev="1" data-key="pell.root" data-action="" data-prior="—" data-optimal="1" data-solved="1" transform="translate(182.0, 36.0)"><rect class="box" x="0" y="0" width="244" height="88" rx="10" fill="#e9f8ee" stroke="#d97706" stroke-width="3.0"></rect><text x="10" y="21" font-size="11" font-weight="700" fill="#2563eb">OR</text><text x="234" y="21" text-anchor="end" font-size="11" fill="#b45309">★ 最优</text><text x="10" y="46" font-size="12.5" fill="#1f2937">|- CodexMathFive.Pell.Target</text><text x="10" y="64" font-size="12.5" fill="#1f2937"></text><text x="10" y="79" font-size="11" fill="#64748b">N=8 · V=-3.00 · ev=1</text><title>节点 #0 [OR] solved=是 optimal=是 terminal=否
+N=8 · V=-3.00 · ev=1 · net=-4.00 · value_target=—
+state_key: pell.root
+
+|- CodexMathFive.Pell.Target</title></g>
+<g class="node or solved optimal" id="node-1" data-node="1" data-parent="0" data-toplay="OR" data-n="7" data-v="-1.86" data-ev="1" data-key="pell.B" data-action="intro B" data-prior="1.000" data-optimal="1" data-solved="1" transform="translate(182.0, 240.0)"><rect class="box" x="0" y="0" width="244" height="88" rx="10" fill="#e9f8ee" stroke="#d97706" stroke-width="3.0"></rect><text x="10" y="21" font-size="11" font-weight="700" fill="#2563eb">OR</text><text x="234" y="21" text-anchor="end" font-size="11" fill="#b45309">★ 最优</text><text x="10" y="46" font-size="12.5" fill="#1f2937">B : Nat |- exists x y : Nat,</text><text x="10" y="64" font-size="12.5" fill="#1f2937">B &lt; x /\ B &lt; y /\ x^2 = 2*y^2 …</text><text x="10" y="79" font-size="11" fill="#64748b">N=7 · V=-1.86 · ev=1</text><title>节点 #1 [OR] solved=是 optimal=是 terminal=否
+N=7 · V=-1.86 · ev=1 · net=-3.00 · value_target=—
+state_key: pell.B
+入边战术: intro B（prior=1.000）
+
+B : Nat |- exists x y : Nat, B &lt; x /\ B &lt; y /\ x^2 = 2*y^2 + 1</title></g>
+<g class="node and solved optimal" id="node-2" data-node="2" data-parent="1" data-toplay="AND" data-n="6" data-v="-1.00" data-ev="0" data-key="pell.AND" data-action="refine &lt;17, 12, ?_, ?_&gt;" data-prior="0.999" data-optimal="1" data-solved="1" transform="translate(182.0, 444.0)"><rect class="box" x="0" y="0" width="244" height="88" rx="10" fill="#e9f8ee" stroke="#d97706" stroke-width="3.0"></rect><text x="10" y="21" font-size="11" font-weight="700" fill="#7c3aed">AND</text><text x="234" y="21" text-anchor="end" font-size="11" fill="#b45309">★ 最优</text><text x="10" y="46" font-size="12.5" fill="#1f2937">|- (17^2 = 2*12^2 + 1) /\ (B</text><text x="10" y="64" font-size="12.5" fill="#1f2937">&lt; 17 /\ B &lt; 12)</text><text x="10" y="79" font-size="11" fill="#64748b">N=6 · V=-1.00 · ev=0</text><title>节点 #2 [AND] solved=是 optimal=是 terminal=否
+N=6 · V=-1.00 · ev=0 · net=0.00 · value_target=—
+state_key: pell.AND
+入边战术: refine &lt;17, 12, ?_, ?_&gt;（prior=0.999）
+
+|- (17^2 = 2*12^2 + 1) /\ (B &lt; 17 /\ B &lt; 12)</title></g>
+<g class="node or solved optimal" id="node-3" data-node="3" data-parent="2" data-toplay="OR" data-n="3" data-v="-1.00" data-ev="1" data-key="pell.eq" data-action="focus_goal 0" data-prior="0.500" data-optimal="1" data-solved="1" transform="translate(36.0, 648.0)"><rect class="box" x="0" y="0" width="244" height="88" rx="10" fill="#e9f8ee" stroke="#d97706" stroke-width="3.0"></rect><text x="10" y="21" font-size="11" font-weight="700" fill="#2563eb">OR</text><text x="234" y="21" text-anchor="end" font-size="11" fill="#b45309">★ 最优</text><text x="10" y="46" font-size="12.5" fill="#1f2937">|- 17^2 = 2*12^2 + 1</text><text x="10" y="64" font-size="12.5" fill="#1f2937"></text><text x="10" y="79" font-size="11" fill="#64748b">N=3 · V=-1.00 · ev=1</text><title>节点 #3 [OR] solved=是 optimal=是 terminal=否
+N=3 · V=-1.00 · ev=1 · net=-1.00 · value_target=—
+state_key: pell.eq
+入边战术: focus_goal 0（prior=0.500）
+
+|- 17^2 = 2*12^2 + 1</title></g>
+<g class="node or solved terminal optimal" id="node-4" data-node="4" data-parent="3" data-toplay="OR" data-n="0" data-v="—" data-ev="0" data-key="pell.closed" data-action="norm_num" data-prior="1.000" data-optimal="1" data-solved="1" transform="translate(36.0, 852.0)"><rect class="box" x="0" y="0" width="244" height="88" rx="10" fill="#e9f8ee" stroke="#d97706" stroke-width="3.0"></rect><text x="10" y="21" font-size="11" font-weight="700" fill="#2563eb">OR</text><text x="234" y="21" text-anchor="end" font-size="11" fill="#b45309">★ 最优</text><text x="10" y="46" font-size="12.5" fill="#1f2937">no goals</text><text x="10" y="64" font-size="12.5" fill="#1f2937"></text><text x="10" y="79" font-size="11" fill="#64748b">N=0 · V=— · ev=0</text><title>节点 #4 [OR] solved=是 optimal=是 terminal=是
+N=0 · V=0.00 · ev=0 · net=0.00 · value_target=—
+state_key: pell.closed
+入边战术: norm_num（prior=1.000）
+
+no goals</title></g>
+<g class="node or solved optimal" id="node-5" data-node="5" data-parent="2" data-toplay="OR" data-n="3" data-v="-1.00" data-ev="1" data-key="pell.bounds" data-action="focus_goal 1" data-prior="0.500" data-optimal="1" data-solved="1" transform="translate(328.0, 648.0)"><rect class="box" x="0" y="0" width="244" height="88" rx="10" fill="#e9f8ee" stroke="#d97706" stroke-width="3.0"></rect><text x="10" y="21" font-size="11" font-weight="700" fill="#2563eb">OR</text><text x="234" y="21" text-anchor="end" font-size="11" fill="#b45309">★ 最优</text><text x="10" y="46" font-size="12.5" fill="#1f2937">|- B &lt; 17 /\ B &lt; 12</text><text x="10" y="64" font-size="12.5" fill="#1f2937"></text><text x="10" y="79" font-size="11" fill="#64748b">N=3 · V=-1.00 · ev=1</text><title>节点 #5 [OR] solved=是 optimal=是 terminal=否
+N=3 · V=-1.00 · ev=1 · net=-1.00 · value_target=—
+state_key: pell.bounds
+入边战术: focus_goal 1（prior=0.500）
+
+|- B &lt; 17 /\ B &lt; 12</title></g>
+<g class="node or solved terminal optimal" id="node-6" data-node="6" data-parent="5" data-toplay="OR" data-n="0" data-v="—" data-ev="0" data-key="pell.closed" data-action="norm_num" data-prior="1.000" data-optimal="1" data-solved="1" transform="translate(328.0, 852.0)"><rect class="box" x="0" y="0" width="244" height="88" rx="10" fill="#e9f8ee" stroke="#d97706" stroke-width="3.0"></rect><text x="10" y="21" font-size="11" font-weight="700" fill="#2563eb">OR</text><text x="234" y="21" text-anchor="end" font-size="11" fill="#b45309">★ 最优</text><text x="10" y="46" font-size="12.5" fill="#1f2937">no goals</text><text x="10" y="64" font-size="12.5" fill="#1f2937"></text><text x="10" y="79" font-size="11" fill="#64748b">N=0 · V=— · ev=0</text><title>节点 #6 [OR] solved=是 optimal=是 terminal=是
+N=0 · V=0.00 · ev=0 · net=0.00 · value_target=—
+state_key: pell.closed
+入边战术: norm_num（prior=1.000）
+
+no goals</title></g>
+</svg>
+</div>
+<div class="detail-box" id="detail">点击节点查看完整状态（state_repr）与统计；悬停可高亮祖先路径。</div>
+</section>
+<section class="card" id="attempts">
+<h2>尝试记录（attempts，共 9 条）</h2>
+<div class="chips"><span class="badge ok">accepted 4</span> <span class="badge bad">env_rejected 5</span> </div>
+<table class="attempts"><thead><tr><th>seq</th><th>节点</th><th>战术 action</th><th>类型 kind</th><th>ok</th><th>说明 / 错误</th></tr></thead><tbody><tr data-node="0"><td>0</td><td><a href="#node-0" data-jump="0">#0</a> <span class="dim" title="|- CodexMathFive.Pell.Target">|- CodexMathFive.Pell.Target</span></td><td><code>intro B</code></td><td><span class="badge ok">accepted</span></td><td>✓</td><td><span class="dim">—</span></td></tr><tr data-node="0"><td>1</td><td><a href="#node-0" data-jump="0">#0</a> <span class="dim" title="|- CodexMathFive.Pell.Target">|- CodexMathFive.Pell.Target</span></td><td><code>sorry</code></td><td><span class="badge bad">env_rejected</span></td><td>✗</td><td><span class="err">forbidden tactic</span></td></tr><tr data-node="0"><td>2</td><td><a href="#node-0" data-jump="0">#0</a> <span class="dim" title="|- CodexMathFive.Pell.Target">|- CodexMathFive.Pell.Target</span></td><td><code>exact pell_target</code></td><td><span class="badge bad">env_rejected</span></td><td>✗</td><td><span class="err">not applicable: exact pell_target</span></td></tr><tr data-node="1"><td>3</td><td><a href="#node-1" data-jump="1">#1</a> <span class="dim" title="B : Nat |- exists x y : Nat, B &lt; x /\ B &lt; y /\ x^2 = 2*y^2 + 1">B : Nat |- exists x y : Nat, B &lt; …</span></td><td><code>refine &lt;17, 12, ?_, ?_&gt;</code></td><td><span class="badge ok">accepted</span></td><td>✓</td><td><span class="dim">—</span></td></tr><tr data-node="1"><td>4</td><td><a href="#node-1" data-jump="1">#1</a> <span class="dim" title="B : Nat |- exists x y : Nat, B &lt; x /\ B &lt; y /\ x^2 = 2*y^2 + 1">B : Nat |- exists x y : Nat, B &lt; …</span></td><td><code>aesop</code></td><td><span class="badge bad">env_rejected</span></td><td>✗</td><td><span class="err">not applicable: aesop</span></td></tr><tr data-node="3"><td>5</td><td><a href="#node-3" data-jump="3">#3</a> <span class="dim" title="|- 17^2 = 2*12^2 + 1">|- 17^2 = 2*12^2 + 1</span></td><td><code>norm_num</code></td><td><span class="badge ok">accepted</span></td><td>✓</td><td><span class="dim">—</span></td></tr><tr data-node="3"><td>6</td><td><a href="#node-3" data-jump="3">#3</a> <span class="dim" title="|- 17^2 = 2*12^2 + 1">|- 17^2 = 2*12^2 + 1</span></td><td><code>ring</code></td><td><span class="badge bad">env_rejected</span></td><td>✗</td><td><span class="err">not applicable: ring</span></td></tr><tr data-node="5"><td>7</td><td><a href="#node-5" data-jump="5">#5</a> <span class="dim" title="|- B &lt; 17 /\ B &lt; 12">|- B &lt; 17 /\ B &lt; 12</span></td><td><code>norm_num</code></td><td><span class="badge ok">accepted</span></td><td>✓</td><td><span class="dim">—</span></td></tr><tr data-node="5"><td>8</td><td><a href="#node-5" data-jump="5">#5</a> <span class="dim" title="|- B &lt; 17 /\ B &lt; 12">|- B &lt; 17 /\ B &lt; 12</span></td><td><code>omega</code></td><td><span class="badge bad">env_rejected</span></td><td>✗</td><td><span class="err">not applicable: omega</span></td></tr></tbody></table>
+</section>
+<details class="card raw" id="meta">
+<summary>搜索配置 / 元数据</summary>
+<table class="kv"><tr><td class="k">schema</td><td>alphaproof.search_tree_export.v1</td></tr><tr><td class="k">root_state_key</td><td>pell.root</td></tr><tr><td class="k">counts.nodes（文件）</td><td>7</td></tr><tr><td class="k">counts.edges（文件）</td><td>6</td></tr><tr><td class="k">counts.attempts（文件）</td><td>9</td></tr><tr><td class="k">页面统计</td><td>节点 7 · 边 6 · attempts 9</td></tr><tr><td class="k">显示上限</td><td>7 / 7</td></tr></table>
+<h3>config</h3>
+<table class="kv"><tr><td class="k">c_and</td><td>64.0</td></tr><tr><td class="k">c_base</td><td>3200.0</td></tr><tr><td class="k">c_init</td><td>0.001</td></tr><tr><td class="k">max_nodes</td><td>64</td></tr><tr><td class="k">max_steps</td><td>64</td></tr><tr><td class="k">no_legal_actions_value</td><td>-40.0</td></tr><tr><td class="k">num_samples</td><td>6</td></tr><tr><td class="k">optimal_child_policy</td><td>first</td></tr><tr><td class="k">prior_temperature</td><td>200.0</td></tr><tr><td class="k">ps_alpha</td><td>0.6</td></tr><tr><td class="k">ps_c</td><td>0.01</td></tr><tr><td class="k">unvisited_penalty</td><td>32.0</td></tr><tr><td class="k">visit_discount</td><td>0.99</td></tr></table>
+</details>
+<footer>由 tools/showcase_render.py 生成 · schema alphaproof.search_tree_export.v1 · 单文件离线 HTML（无外部引用）</footer>
+</main>
+<script>
+(function () {
+  "use strict";
+  var nodes = {};
+  var edges = {};
+  document.querySelectorAll("g.node").forEach(function (g) {
+    nodes[String(g.dataset.node)] = g;
+  });
+  document.querySelectorAll("g.edge").forEach(function (g) {
+    edges[String(g.dataset.p) + "|" + String(g.dataset.c)] = g;
+  });
+  function clearHL() {
+    document.querySelectorAll(".hl").forEach(function (el) { el.classList.remove("hl"); });
+  }
+  function highlight(id) {
+    clearHL();
+    var cur = String(id);
+    var guard = 0;
+    while (nodes[cur] && guard < 100000) {
+      nodes[cur].classList.add("hl");
+      var p = nodes[cur].dataset.parent;
+      if (p === undefined || p === null || p === "" || p === "None") { break; }
+      var e = edges[String(p) + "|" + cur];
+      if (e) { e.classList.add("hl"); }
+      cur = String(p);
+      guard += 1;
+    }
+  }
+  function showDetail(g) {
+    var box = document.getElementById("detail");
+    if (!box) { return; }
+    var t = g.querySelector("title");
+    var lines = [];
+    lines.push("节点 #" + g.dataset.node + " · " + g.dataset.toplay +
+               (g.dataset.optimal === "1" ? " · ★ 最优路径" : "") +
+               (g.dataset.solved === "1" ? " · 已解" : ""));
+    lines.push("N(访问)=" + g.dataset.n + "  V(价值)=" + g.dataset.v +
+               "  ev(评估)=" + g.dataset.ev);
+    lines.push("state_key: " + g.dataset.key);
+    if (g.dataset.action) {
+      lines.push("入边战术: " + g.dataset.action + "  (prior=" + g.dataset.prior + ")");
+    }
+    lines.push("");
+    lines.push(t ? t.textContent : "");
+    box.textContent = lines.join("\n");
+  }
+  document.querySelectorAll("g.node").forEach(function (g) {
+    g.addEventListener("mouseenter", function () { highlight(g.dataset.node); });
+    g.addEventListener("mouseleave", clearHL);
+    g.addEventListener("click", function () { highlight(g.dataset.node); showDetail(g); });
+  });
+  document.querySelectorAll("tr[data-node]").forEach(function (row) {
+    row.addEventListener("mouseenter", function () { highlight(row.dataset.node); });
+    row.addEventListener("mouseleave", clearHL);
+    row.addEventListener("click", function () {
+      var g = nodes[String(row.dataset.node)];
+      if (!g) { return; }
+      highlight(row.dataset.node);
+      showDetail(g);
+      g.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  });
+  document.querySelectorAll("[data-jump]").forEach(function (a) {
+    a.addEventListener("click", function (ev) {
+      ev.preventDefault();
+      var g = nodes[String(a.dataset.jump)];
+      if (!g) { return; }
+      highlight(a.dataset.jump);
+      showDetail(g);
+      g.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  });
+  document.querySelectorAll("[data-zoom-btn]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var wrap = document.querySelector(".canvas-wrap");
+      if (wrap) { wrap.dataset.zoom = btn.dataset.zoomBtn; }
+      document.querySelectorAll("[data-zoom-btn]").forEach(function (b) {
+        b.classList.toggle("active", b === btn);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

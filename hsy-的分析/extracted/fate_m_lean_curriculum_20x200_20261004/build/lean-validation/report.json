@@ -1,0 +1,132 @@
+{
+  "checked_at_utc": "2026-10-04T14:34:27.246259+00:00",
+  "command": "lake env lean <family-file>",
+  "parallel_workers": 4,
+  "family_files": 20,
+  "theorems": 4000,
+  "passed": 20,
+  "failed": 0,
+  "elapsed_seconds": 322.11,
+  "results": [
+    {
+      "file": "lean/families/P01_FATE_M_003.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 59.531,
+      "log": "build/lean-validation/P01_FATE_M_003.log"
+    },
+    {
+      "file": "lean/families/P02_FATE_M_004.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 76.828,
+      "log": "build/lean-validation/P02_FATE_M_004.log"
+    },
+    {
+      "file": "lean/families/P03_FATE_M_009.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 59.875,
+      "log": "build/lean-validation/P03_FATE_M_009.log"
+    },
+    {
+      "file": "lean/families/P04_FATE_M_011.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 64.906,
+      "log": "build/lean-validation/P04_FATE_M_011.log"
+    },
+    {
+      "file": "lean/families/P05_FATE_M_014.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 48.422,
+      "log": "build/lean-validation/P05_FATE_M_014.log"
+    },
+    {
+      "file": "lean/families/P06_FATE_M_015.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 47.984,
+      "log": "build/lean-validation/P06_FATE_M_015.log"
+    },
+    {
+      "file": "lean/families/P07_FATE_M_018.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 44.515,
+      "log": "build/lean-validation/P07_FATE_M_018.log"
+    },
+    {
+      "file": "lean/families/P08_FATE_M_021.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 61.734,
+      "log": "build/lean-validation/P08_FATE_M_021.log"
+    },
+    {
+      "file": "lean/families/P09_FATE_M_035.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 46.484,
+      "log": "build/lean-validation/P09_FATE_M_035.log"
+    },
+    {
+      "file": "lean/families/P10_FATE_M_040.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 46.094,
+      "log": "build/lean-validation/P10_FATE_M_040.log"
+    },
+    {
+      "file": "lean/families/P11_FATE_M_048.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 66.422,
+      "log": "build/lean-validation/P11_FATE_M_048.log"
+    },
+    {
+      "file": "lean/families/P12_FATE_M_051.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 65.735,
+      "log": "build/lean-validation/P12_FATE_M_051.log"
+    },
+    {
+      "file": "lean/families/P13_FATE_M_052.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 66.734,
+      "log": "build/lean-validation/P13_FATE_M_052.log"
+    },
+    {
+      "file": "lean/families/P14_FATE_M_061.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 44.329,
+      "log": "build/lean-validation/P14_FATE_M_061.log"
+    },
+    {
+      "file": "lean/families/P15_FATE_M_064.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 59.016,
+      "log": "build/lean-validation/P15_FATE_M_064.log"
+    },
+    {
+      "file": "lean/families/P16_FATE_M_065.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 60.359,
+      "log": "build/lean-validation/P16_FATE_M_065.log"
+    },
+    {
+      "file": "lean/families/P17_FATE_M_066.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 58.953,
+      "log": "build/lean-validation/P17_FATE_M_066.log"
+    },
+    {
+      "file": "lean/families/P18_FATE_M_067.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 52.594,
+      "log": "build/lean-validation/P18_FATE_M_067.log"
+    },
+    {
+      "file": "lean/families/P19_FATE_M_068.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 46.562,
+      "log": "build/lean-validation/P19_FATE_M_068.log"
+    },
+    {
+      "file": "lean/families/P20_FATE_M_076.lean",
+      "exit_code": 0,
+      "elapsed_seconds": 63.047,
+      "log": "build/lean-validation/P20_FATE_M_076.log"
+    }
+  ]
+}

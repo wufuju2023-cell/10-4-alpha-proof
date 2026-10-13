@@ -5,7 +5,9 @@
 - G3：先验在打分时按 totalMass 归一（等价 Lean `computePUCTScores` / 官方 `prior_sum()`）；
 - D6：AND 节点探索项乘 c_AND=64；未访问子节点 Q 用 V(s)-c_pen（c_pen=32）；
 - D2：无合法动作/失败兜底 -40 由上层（env/网络侧）使用，本文件提供配置；
-- D1：τ 默认 200，运行时可改。
+- D1：τ 默认 200，运行时可改；
+- E5：`SearchConfig.optimal_child_policy` 选择规则旋钮（first/most_visited/shortest_action）；
+  每次尝试记录在 `self.attempts`，供 `data/tree_export.py` 导出完整树与失败信息。
 """
 
 from __future__ import annotations
@@ -52,6 +54,8 @@ class MCTS:
         self.value = value
         self.config = config or SearchConfig()
         self._nodes_created = 0
+        # 每次尝试（node, tactic）的记录，供 tree_export 导出（E5 前置件）
+        self.attempts: list[dict] = []
 
     # ------------------------------------------------------------------ #
     # 对外主循环（官方 run_mcts：选择 → 扩展 → 回传，直到证明或预算耗尽）
@@ -95,7 +99,7 @@ class MCTS:
 
         root.refresh_solved_up()
         if root.solved:
-            self._mark_optimal(root)
+            self._mark_optimal(root, cfg.optimal_child_policy)
         script = self._collect_script(root) if root.solved else []
         return SearchResult(root=root, solved=root.solved,
                             nodes_created=self._nodes_created, simulations=sims,
@@ -163,20 +167,27 @@ class MCTS:
             if not isinstance(action, str) or not action.strip():
                 continue
             prior = math.exp(float(logprob) / cfg.prior_temperature)
+            attempt = {"node": node, "action": action, "prior": prior, "seq": len(self.attempts)}
 
             # 去重 1：同战术 → 先验累加（官方 expand_node）
             if action in node.children:
                 node.edges[action].prior += prior
+                attempt.update(kind="dedup_action", ok=True)
+                self.attempts.append(attempt)
                 continue
 
             result = self.env.apply(node.state_key, action)
             if not result.ok:
+                attempt.update(kind="env_rejected", ok=False, error=str(result.error))
+                self.attempts.append(attempt)
                 continue
 
             # 去重 2：同状态 key → 合并（Lean: e.tacticStr == t || c.key == childData.key）
             dup = next((k for k, c in node.children.items() if c.state_key == result.next_state), None)
             if dup is not None:
                 node.edges[dup].prior += prior
+                attempt.update(kind="dedup_state", ok=True, child_state_key=result.next_state)
+                self.attempts.append(attempt)
                 continue
 
             closed = bool(result.closed) or result.num_goals == 0
@@ -188,6 +199,8 @@ class MCTS:
             )
             node.add_child(action, child, prior)
             self._nodes_created += 1
+            attempt.update(kind="accepted", ok=True, child_state_key=child.state_key)
+            self.attempts.append(attempt)
 
             # AND 节点：立刻挂 focus 伪子节点（先验 1/k，边代价 0）
             if child.to_play == AND:
@@ -226,22 +239,38 @@ class MCTS:
     # ------------------------------------------------------------------ #
     # 解路径 / 脚本
     # ------------------------------------------------------------------ #
+    # 选择规则（E5 试验旋钮；默认 "first" = 历史行为/官方对齐）：
+    # - "first"          ：按子节点插入顺序取第一个已解出子节点（原行为）
+    # - "most_visited"   ：取访问次数最多的已解出子节点（MCTS 自然口径）
+    # - "shortest_action"：取战术文本最短的已解出子节点（tie：访问多者优先）
     @staticmethod
-    def _mark_optimal(node: Node) -> None:
+    def _pick_optimal_child(node: Node, policy: str) -> Optional[str]:
+        candidates = [(a, c) for a, c in node.children.items() if c.solved]
+        if not candidates:
+            return None
+        if policy == "most_visited":
+            return max(candidates, key=lambda ac: ac[1].num_visit)[0]
+        if policy == "shortest_action":
+            return min(candidates, key=lambda ac: (len(ac[0].split()), -ac[1].num_visit))[0]
+        return candidates[0][0]
+
+    @staticmethod
+    def _mark_optimal(node: Node, policy: str = "first") -> None:
         node.is_optimal = True
         if node.terminal:
             return
         if node.to_play == OR:
-            for child in node.children.values():
-                if child.solved:
-                    child.is_optimal = True
-                    MCTS._mark_optimal(child)
-                    return
+            action = MCTS._pick_optimal_child(node, policy)
+            if action is None:
+                return
+            child = node.children[action]
+            child.is_optimal = True
+            MCTS._mark_optimal(child, policy)
         else:
             for child in node.children.values():
                 if child.solved:
                     child.is_optimal = True
-                    MCTS._mark_optimal(child)
+                    MCTS._mark_optimal(child, policy)
 
     @staticmethod
     def _collect_script(node: Node) -> List[str]:

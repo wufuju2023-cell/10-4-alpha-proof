@@ -1,0 +1,71 @@
+{
+  "schema_version": "fate.online_v2.real_one_update.v1",
+  "status": "template_fill_then_freeze",
+  "mode": "smoke",
+  "pins": {
+    "receipts": [
+      {
+        "path": "/tmp/NEW-JOIN/online-v2-receipts.json",
+        "sha256": "FILL_JOIN_FILE_SHA256",
+        "source_receipt_sha256": "FILL_SIGNED_CANONICAL_RECEIPT_SHA256",
+        "source_receipt_path": "/tmp/NEW-JOIN/strict-replay/receipt.json",
+        "source_receipt_file_sha256": "FILL_SIGNED_RECEIPT_FILE_SHA256"
+      }
+    ],
+    "model": {
+      "path": "/mnt/workspace/models/REAL-Prover-fe76f68d",
+      "revision": "fe76f68d9a88f342cb7b546307c20292fea9cced",
+      "model_lock_sha256": "5e5e74723b6284656214f0308668fa81792041009107d04e3d0a3ee54d4f0f15",
+      "base_version": "REAL-Prover-fe76f68d",
+      "base_sha256": "7ffcbbcea4831ce54254a3514dd792d449587a397bcc3303165cdb611275ff84",
+      "policy_version": "formal-initial-r16-a32-seed20261004"
+    },
+    "adapter": {
+      "path": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/assets/initial_lora_r16_a32_seed20261004",
+      "adapter_model_sha256": "326e08d17a74eec08d52127c7e011462bf1d207266cf0ca9a3a84ddc0ddde2dd",
+      "adapter_config_sha256": "e3199444adcd863f95d1d98784114b6658ed1a90bcd9577777460a5ce25afdbe",
+      "behavior_sha256": "FILL_FROM_NEW_SIGNED_RECEIPT",
+      "behavior_adapter_name": "fate_m_003_v001",
+      "policy_adapter_name": "online_v2_policy"
+    },
+    "value_head": {
+      "path": "/mnt/workspace/new_value_head/heads-79efd240/train205628-full-v3/value-head.pt",
+      "sha256": "FILL_VALUE_HEAD_SHA256"
+    },
+    "target_repo": {
+      "path": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/src/10-4-alpha-proof",
+      "commit": "e1b7ffe6feba8cbdb590d42836d750504aa86b94",
+      "value_head_source_sha256": "FILL_VALUE_HEAD_SOURCE_SHA256"
+    },
+    "tokenizer_lock_sha256": "5a9e4baca675e7576edd6ca1cff11ff6d0dd3bacf1d38a08494fe006bccb5a60"
+  },
+  "runtime_versions": {
+    "torch": "2.12.0+git6bbd260",
+    "transformers": "5.15.1",
+    "peft": "0.20.0"
+  },
+  "train": {
+    "seed": 20261004,
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "learning_rate": 0.0001,
+    "value_learning_rate": 0.0003,
+    "weight_decay": 0.0,
+    "micro_batch_size": 1,
+    "update_epochs": 1,
+    "min_independent_problems": 1,
+    "clip_epsilon": 0.2,
+    "behavior_kl_beta": 0.02,
+    "anchor_kl_beta": 0.005,
+    "target_behavior_kl": 0.01,
+    "hard_behavior_kl_limit": 0.05,
+    "hard_anchor_kl_limit": 0.1,
+    "early_stop_kl_multiplier": 2.0,
+    "entropy_coef": 0.0,
+    "value_coef": 0.001,
+    "max_grad_norm": 1.0,
+    "old_logprob_tolerance": 0.0005,
+    "pad_token_id": 151643,
+    "gradient_checkpointing": true
+  }
+}

@@ -29,6 +29,10 @@ class SearchConfig:
     max_nodes: int = 64
     max_steps: int = 64
 
+    # --- E5 试验旋钮（默认 "first" 保持历史/官方行为）---
+    # first | most_visited | shortest_action
+    optimal_child_policy: str = "first"
+
     def to_dict(self) -> dict:
         return asdict(self)
 

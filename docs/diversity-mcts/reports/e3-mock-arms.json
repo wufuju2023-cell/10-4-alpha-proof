@@ -1,0 +1,44 @@
+{
+  "note": "mock harness only (E3 plumbing); NOT experiment evidence",
+  "config": {
+    "instances": 300,
+    "depth": 4,
+    "budget": 32,
+    "seed": 0,
+    "tactics": [
+      "step",
+      "side",
+      "bad_a",
+      "bad_b"
+    ]
+  },
+  "arms": {
+    "sampling": {
+      "instances": 300,
+      "solved": 103,
+      "solve_rate": 0.3433333333333333,
+      "mean_applies_solved": 17.37864077669903,
+      "p50_applies_solved": 17,
+      "p90_applies_solved": 28,
+      "mean_applies_all": 26.98
+    },
+    "mcts_value": {
+      "instances": 300,
+      "solved": 300,
+      "solve_rate": 1.0,
+      "mean_applies_solved": 16.0,
+      "p50_applies_solved": 16.0,
+      "p90_applies_solved": 16,
+      "mean_applies_all": 16.0
+    },
+    "mcts_novalue": {
+      "instances": 300,
+      "solved": 300,
+      "solve_rate": 1.0,
+      "mean_applies_solved": 16.0,
+      "p50_applies_solved": 16.0,
+      "p90_applies_solved": 16,
+      "mean_applies_all": 16.0
+    }
+  }
+}

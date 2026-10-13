@@ -1,0 +1,29 @@
+--- a/Reap/Options.lean
++++ b/Reap/Options.lean
+@@ -84,8 +84,8 @@
+     descr := "MCTS value discount multiplier, scaled by 1000. γ in the AlphaProof paper." }
+ 
+ register_option reap.prior_temperature : Nat :=
+-  { defValue := 50
+-    descr := "MCTS prior temperature exponent. τ in the AlphaProof paper." }
++  { defValue := 200
++    descr := "MCTS prior temperature exponent. τ in the AlphaProof paper (official Table 3 = 200; legacy local value was 50)." }
+ 
+ register_option reap.progressive_sampling_c : Nat :=
+   { defValue := 10
+@@ -94,3 +94,15 @@
+ register_option reap.progressive_sampling_alpha : Nat :=
+   { defValue := 600
+     descr := "MCTS progressive sampling alpha parameter, scaled by 1000." }
++
++register_option reap.c_and : Nat :=
++  { defValue := 64
++    descr := "MCTS AND-node exploration multiplier c_AND (AlphaProof Table 3)." }
++
++register_option reap.unvisited_penalty : Nat :=
++  { defValue := 32
++    descr := "MCTS unvisited children value penalty c_pen (AlphaProof Table 3)." }
++
++register_option reap.no_legal_actions_value : Int :=
++  { defValue := -40
++    descr := "Fallback value when no legal action exists or the value service fails (pseudocode: -40)." }

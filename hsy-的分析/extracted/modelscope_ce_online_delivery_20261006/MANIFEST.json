@@ -1,0 +1,1274 @@
+{
+  "code_commit": "e12330ad4f3d6c3dddf5101e3808ab14beea5ead",
+  "evidence_verification": [
+    {
+      "name": "corrected_final_evidence_20261006.zip",
+      "sha256": "b3e9514f179d18c1ab2beb5cf2316a7d6c029c2de369e04e52607148c3aa52d1",
+      "verified_index_members": 1475
+    },
+    {
+      "name": "join_v2_evidence_20261006.zip",
+      "sha256": "3924d9605d8b6578717eee0c9dd49f1643b3fa1d0872001dbf2e08130f27df3c",
+      "verified_index_members": 44
+    },
+    {
+      "name": "training_initial_evidence_20261006.zip",
+      "sha256": "c7909584eea2b643ea49aa8b21b512d9e19df61101bed391c997439e292bce73",
+      "verified_index_members": 1316
+    }
+  ],
+  "files": {
+    "DELIVERY.txt": {
+      "bytes": 2743,
+      "sha256": "176928f971026ae037aaf640e74cf45a1202d2d5cc38c3b879fb42d140e3c9c8"
+    },
+    "code/.gitignore": {
+      "bytes": 161,
+      "sha256": "22ee0e539ad92998e32e54d26558a12171ece759be970b446363bf8c158a0bd8"
+    },
+    "code/README.md": {
+      "bytes": 8266,
+      "sha256": "6437878944d7612af23e73c2074f9cd8aa9307c28037a70b211a329978eeb18c"
+    },
+    "code/alphaproof/__init__.py": {
+      "bytes": 297,
+      "sha256": "1a15cafb4307380b71834b5b0039fc0f268ebe71c7650fc2af20ad28a9bd956a"
+    },
+    "code/alphaproof/config.py": {
+      "bytes": 3162,
+      "sha256": "f5657d448b5da13a944e4a396838c319c7a7bcb8525a801caa2dd34cac06c178"
+    },
+    "code/alphaproof/data/__init__.py": {
+      "bytes": 86,
+      "sha256": "21a64a634b5d57a8dace7af68c6090028e8b54c1519f1434115734d275a69869"
+    },
+    "code/alphaproof/data/events.py": {
+      "bytes": 2137,
+      "sha256": "99c039ef9624988efeae7664d028618b626f5d7d766730b208de55209cb9775a"
+    },
+    "code/alphaproof/env/__init__.py": {
+      "bytes": 245,
+      "sha256": "42d2bfbbc6d17c31b261bdd9042683f2cd0426511317b98ecb635dd09d77b6e1"
+    },
+    "code/alphaproof/env/base.py": {
+      "bytes": 1122,
+      "sha256": "bd06dcb4031ef66d3aa2ccbd0b48d0a048824f7a44eff721f2a4e92f54b504b0"
+    },
+    "code/alphaproof/env/pell_mock.py": {
+      "bytes": 3924,
+      "sha256": "251737f402a11000d7100a61db89bf1bbb17f19467914f29ccf78c81e789ecf1"
+    },
+    "code/alphaproof/mcts/__init__.py": {
+      "bytes": 192,
+      "sha256": "b9408ce32b85b4c1421e28f7968ebdc442c6752342ed64fdac8180e92d814208"
+    },
+    "code/alphaproof/mcts/search.py": {
+      "bytes": 10894,
+      "sha256": "701be8e5e221d911f742c90c61e3eb230d330d82eb0e03db1e306e3d2ea9f160"
+    },
+    "code/alphaproof/mcts/tree.py": {
+      "bytes": 2923,
+      "sha256": "649d408056e61daeae5a2d8d85254dd9b005a74323a0ae933cc9310cd6baccda"
+    },
+    "code/alphaproof/net/__init__.py": {
+      "bytes": 188,
+      "sha256": "caf0d68359a34ee9e7414a59b6a184f24a1204a55c49aea1af9338187ace863b"
+    },
+    "code/alphaproof/net/policy_value.py": {
+      "bytes": 1854,
+      "sha256": "c29bd5740d896cefe3ccd74153416a8b5253bc40792047e87078e4cb2429067b"
+    },
+    "code/alphaproof/net/value_head.py": {
+      "bytes": 4958,
+      "sha256": "c073613223e1fb915ee6f5f322d9747340205a6c52fda76e0016eb3f9f142383"
+    },
+    "code/alphaproof/pipeline.py": {
+      "bytes": 3149,
+      "sha256": "25f10132d2573e68c5d4d422cce1aa803e04d71a951db17103cc3674088d9e82"
+    },
+    "code/alphaproof/targets/__init__.py": {
+      "bytes": 264,
+      "sha256": "2ee9c41e29019e8a49b86dc48b599d6161f3f2381d8c3b65b66aa9f4b4ad7d1a"
+    },
+    "code/alphaproof/targets/value_targets.py": {
+      "bytes": 3262,
+      "sha256": "0e277ca6074423948df26f703926c86226f917052c1ae64f646b78978ae2216a"
+    },
+    "code/alphaproof/tiny.py": {
+      "bytes": 3499,
+      "sha256": "2e42bc7307c20eb739bdeb7deb09cf11d8788fd5d5d3414af11fc3ac95caae65"
+    },
+    "code/assets/pell/README.md": {
+      "bytes": 1121,
+      "sha256": "11892ede970d6a89ede74b23a673e8fa7fb2848371591b64e063f7fc27b992da"
+    },
+    "code/assets/pell/target.lean": {
+      "bytes": 816,
+      "sha256": "4ec35f23ad2be6489b60ffc7e98b929e75d25c4b5fb0d32a4417c8f006c2492f"
+    },
+    "code/curriculum/README.md": {
+      "bytes": 3469,
+      "sha256": "fa824be9133f351a3fe0c1fbde3a769640539419f1afe8995d69f65c568f4268"
+    },
+    "code/curriculum/__init__.py": {
+      "bytes": 1194,
+      "sha256": "fb4033f8c1bbb08dd8ad66cc06a92e4763e1086cf56629e7d664c16c9ee7fce3"
+    },
+    "code/curriculum/gates.py": {
+      "bytes": 2629,
+      "sha256": "942d6d3a0aae94c613df22cf32f3afa5c492f5ec2457c2d340a5d3104cb2d2d3"
+    },
+    "code/curriculum/models.py": {
+      "bytes": 3952,
+      "sha256": "5feb28acd69013938631e658ccb40789af424015d2cfeb8733f12dc4699c1bee"
+    },
+    "code/curriculum/pell_course.json": {
+      "bytes": 2454,
+      "sha256": "9ba176d44175af1a3d154ca678bb0d1795cfdb65acee8b728d5aeda55be44a71"
+    },
+    "code/curriculum/runner.py": {
+      "bytes": 3441,
+      "sha256": "b811749ef0498ed4445829723455dab8401af12feee55f78e8d6758ec338ea0a"
+    },
+    "code/curriculum/scheduler.py": {
+      "bytes": 7146,
+      "sha256": "6731d32b81b969c9bd4c617276decb9e614f52392ebc7e2ecaf559d3699f52f0"
+    },
+    "code/docs/alignment.md": {
+      "bytes": 5291,
+      "sha256": "f0f4910f4cc8c5f485fe7a8c33eb1f40a452fb05fea95e95fc30e9dbbb7c661d"
+    },
+    "code/docs/real_lean_next.md": {
+      "bytes": 3349,
+      "sha256": "c80a7812f0b7b4c43bce8dda6d55c749268176a880fa7c526ba384597f9d9c70"
+    },
+    "code/docs/status.md": {
+      "bytes": 4634,
+      "sha256": "9988f43e2709f560b8050a151398bfd6e56de559f172b98031b2f6f3c5ab0151"
+    },
+    "code/examples/README.md": {
+      "bytes": 2240,
+      "sha256": "0e1149acf4f04c33f418b8cd4687ac859b4d65f430ab2e8d6c14224ba46bb293"
+    },
+    "code/examples/update_modes_walkthrough.ipynb": {
+      "bytes": 45401,
+      "sha256": "e693658511f8382e73cdf37d0a7a4ec3df7603854d42bf1eaff75cdaafe290bc"
+    },
+    "code/examples/update_modes_walkthrough.py": {
+      "bytes": 12567,
+      "sha256": "5727c3145e421e159ec10ecf217e60b93b27faeb9a7a7ad74d55e6b5f8631885"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/.gitattributes": {
+      "bytes": 34,
+      "sha256": "82fcd34e8270b37581ef1c435747491528beaceb64270d221dc9b8a31dd59c30"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/.gitignore": {
+      "bytes": 104,
+      "sha256": "f3ca1f29f84ca41fb96ddd054666e1ac8bc3a169a8c4a1756bf5413cd583ca41"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/README.md": {
+      "bytes": 9866,
+      "sha256": "efc47bccf2d23b3ffd7c2ad184bd7d789a767780fad815f6e090354206baf0a3"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/config/adaptive_stop_protocol.frozen.json": {
+      "bytes": 6323,
+      "sha256": "846726c62096426b22bdd5f7804b50cea5f5f97d0c9051c6c013e98b297f6805"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/config/single_wave_execution_scope.json": {
+      "bytes": 1674,
+      "sha256": "df187443f9a494fbc3831accda80df6ff7f40f23a558ac07ef78d9505b4210d2"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/config/subset_20x10_protocol.frozen.json": {
+      "bytes": 6852,
+      "sha256": "e7670d3e285415ffb039cdb4b9f63b2d90cd0c6d2a4d0374bcdc05d3fb55928f"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/README.md": {
+      "bytes": 1441,
+      "sha256": "aa046cf7d3b8e5861997a3eab1a5538dfadba7a9c4e1eb037e3219229fa0013f"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/build_balanced_subset.py": {
+      "bytes": 13776,
+      "sha256": "d45d38d93a1f7320c54762f47f497b0ab50a2ab44c112102e5e9fcda3141daf4"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/ce_subset_20x10_course/adaptation.jsonl": {
+      "bytes": 116944,
+      "sha256": "d2c007d7b8ac6299ce78249c40a5b8dae3605cdcad1f41f9c27c1c8eee9bd2dd"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/ce_subset_20x10_course/course_index.jsonl": {
+      "bytes": 157700,
+      "sha256": "095ea358ae60238e33daf55ac776bb37fce0196d2423d5e238406520950c0e18"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/ce_subset_20x10_course/heldout.jsonl": {
+      "bytes": 40756,
+      "sha256": "737d117427d470a2c9af95c9e7f1566754ee84411e70e8de493abc8399cc2bf7"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/ce_subset_20x10_course/manifest.json": {
+      "bytes": 1167,
+      "sha256": "8f402778b76d6fd235afb50f71cc5338fc7e657556c2c32814ef75544cbd6bcf"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/ce_subset_20x10_course/waves.jsonl": {
+      "bytes": 4224,
+      "sha256": "06f99638821c5dc06c670271952ccb98cc5f1157d07e60dba0ef6183bae897c2"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/ce_subset_20x10_course/waves/wave_001.jsonl": {
+      "bytes": 10558,
+      "sha256": "fcf80e31281338c91bdeee06fc81c17fc6ca4bca6096ba83c273afdcd99f6823"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/ce_subset_20x10_course/waves/wave_002.jsonl": {
+      "bytes": 11718,
+      "sha256": "d106261f4984823a031f8c97f3ec51ff189a668eb49d9c0172141ebc6d29757d"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/ce_subset_20x10_course/waves/wave_003.jsonl": {
+      "bytes": 12878,
+      "sha256": "b60ac8c99fab4afbe8582c0bd31c7df1c4209a9ccc51c5787a5a29fc1be3adc1"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/ce_subset_20x10_course/waves/wave_004.jsonl": {
+      "bytes": 14038,
+      "sha256": "180214fcb85f9afe8b753ca1535a64f174e1f35d07e7aa07c686b214393bd988"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/ce_subset_20x10_course/waves/wave_005.jsonl": {
+      "bytes": 15198,
+      "sha256": "47f89951173d2c6936c5b134da4fcaeedf7982818f2d2dd80902d036997e08a2"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/ce_subset_20x10_course/waves/wave_006.jsonl": {
+      "bytes": 16358,
+      "sha256": "ce4142c09f582cf1ae7532123f11b927ce287d47d729ede249893ab39fd7c9b1"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/ce_subset_20x10_course/waves/wave_007.jsonl": {
+      "bytes": 17518,
+      "sha256": "132823f8970547cf601003e4476a925081f2e81ba3e51325dfdca1a7ed220f15"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/ce_subset_20x10_course/waves/wave_008.jsonl": {
+      "bytes": 18678,
+      "sha256": "999894991e95b085b41f50448425c0b12807a599bbf1248f89d1c904f8b81330"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/problems.jsonl.gz": {
+      "bytes": 836371,
+      "sha256": "bc9322c5e72d09837a932f5c5db4dad1c8bb3fa31737baae54cffbbdc81b2e8a"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/provenance/data/originals.json": {
+      "bytes": 11823,
+      "sha256": "06d04fdf1b2bfe076719929403bce00ca5e79efcb433d69686909e49c15d6ba1"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/provenance/docs/FATE-M-LICENSE.txt": {
+      "bytes": 1088,
+      "sha256": "513d63f4e0d87ab5287382a0a2ed107fa064e6225b9b2c205f1c597ecc862124"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/provenance/scripts/fetch_selected_originals.py": {
+      "bytes": 1740,
+      "sha256": "e7e1aacce9b2f8f36de5b5d1850a5e8aa3323e0bfa27c5f894f5ca3ed1c98557"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/provenance/scripts/generate_variants.py": {
+      "bytes": 10620,
+      "sha256": "c4b0790cc3357067e4291285dd9da7314f7ad7a0339edd4112204c7d502baf5a"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/provenance/scripts/validate_dataset.py": {
+      "bytes": 3562,
+      "sha256": "685a9731c4efa985e5558d9b451beee93f583abe2debb6b5cc521368a5f0fd91"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/subset_20x10_heldout.jsonl": {
+      "bytes": 56024,
+      "sha256": "6730a8eca9506ce0b2a9a82c1c4e9cdac59c5bc9baa9c99995ec5c91c1c12d84"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/subset_20x10_manifest.jsonl": {
+      "bytes": 50466,
+      "sha256": "1d31f93f4d3a844d3d6dea70599a8b659819f2d3802ffac13a4167e9f2659b28"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/subset_20x10_selection_receipt.json": {
+      "bytes": 2826,
+      "sha256": "67b6c2f5ba15e99940ed6d8d76a861d4b3126d81f6e3033829f085ce279fea46"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/data/subset_20x10_train.jsonl": {
+      "bytes": 177376,
+      "sha256": "706e1ebedf5da4e2b4e7b277377212b1d044298b0710449dc1e0ea23ed8ecf2d"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/derived/results/ce_effective_batch_fix_20261006.json": {
+      "bytes": 1809,
+      "sha256": "81c3675259518881222db4d49df1fcfd313e9479728004a7c1009150ec4a0d4d"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/derived/results/corrected_terminal_comparison/comparison.json": {
+      "bytes": 7515,
+      "sha256": "baa795c6a48a2180a9a88d2e05b71e656ea8d0876c9d4d004969b80bbeb54373"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/derived/results/corrected_terminal_comparison/comparison.md": {
+      "bytes": 860,
+      "sha256": "88f204a6110853addddc4461ca5ca8fc65ffc9e40364d19fec5a87070001a516"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/derived/results/delivery_summary_20261006.txt": {
+      "bytes": 2743,
+      "sha256": "176928f971026ae037aaf640e74cf45a1202d2d5cc38c3b879fb42d140e3c9c8"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/derived/results/final_evidence_verification_20261006.json": {
+      "bytes": 6128,
+      "sha256": "cd7dad7cedaf37993e5f6e9c15099f3988b41acee63b89f94cde0383e6172603"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/derived/results/final_result_audit_20261006.json": {
+      "bytes": 154978,
+      "sha256": "28190438b5c8c896c25cb14eeed275b521119fd0439b7ab9ad67da5f16448d18"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/derived/results/guarded_update_audit_20261006.json": {
+      "bytes": 8135,
+      "sha256": "73a53b139152e4ee82628b9e89bc5c5969c4c531253c713cc5810eeeccfeeacc"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/derived/results/material_sources_20261006.json": {
+      "bytes": 2625,
+      "sha256": "f1dcaf726e35c59ab2a3cd9248375c452ffb4390015e1ce5f023fe61106bd08f"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/derived/results/online_terminal_return_fix_validation.json": {
+      "bytes": 1185,
+      "sha256": "83276d84e422e420a9e38e5313bd1472dee5c2b42fd43e1444db7f7f2f35b6fa"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/derived/results/online_zero_advantage_diagnosis.md": {
+      "bytes": 1782,
+      "sha256": "832147b56a83b29ca7135dc6c3db6b5eb91e22d09acd5af4ca1e5a2280f91663"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/derived/results/pr_validation_20261006.json": {
+      "bytes": 2061,
+      "sha256": "e3b66e64841aac9c0163c945f55d4426c43af3e38fa3968067e5b8fede30a334"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/derived/results/terminal_report_20261006.md": {
+      "bytes": 3907,
+      "sha256": "66d544c758ee650db48f55139462da2a4594f94053a45a4316ae0146009a869e"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/audit_online_rollback.py": {
+      "bytes": 7270,
+      "sha256": "e018762dea5db3fdcec684b2de65b75dafe0a7eb3eaa9a8170c0656a8e7a1651"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/bootstrap_formal_verifier.sh": {
+      "bytes": 9410,
+      "sha256": "cca8b44ff0f01af79f20785f6e87e09ba4827f4048210ccffbb96385c0d2d4f8"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/bootstrap_lean428.sh": {
+      "bytes": 2466,
+      "sha256": "5b4e42a4df6a74daeced81027a1c6d95b73fce157b7f088cbbd6a0baff278a4b"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/build_delivery_bundle.py": {
+      "bytes": 5261,
+      "sha256": "ae35e0ed76cc8c32d39947448d027b99512a08cd569c68c04a3bd037a257b048"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/collect_corrected_evidence.py": {
+      "bytes": 4021,
+      "sha256": "978e66e7f25a005520394ebe8b20d53ce0da94c7cb96dc845254c5507cad1323"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/evaluate_heldout_checkpoint.py": {
+      "bytes": 35889,
+      "sha256": "7bfca8350f346f9552d2b0ea42decf30b4c7e0b04e75513bbcc2456bc3819314"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/extract_tar_zst.py": {
+      "bytes": 1912,
+      "sha256": "64b4a115fe0b98c095d030150960e0ec03765dc9f4d52cbe201a4770d1c95269"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/launch_formal_wave001.sh": {
+      "bytes": 2608,
+      "sha256": "cd0dee301fe54c596d473c430b675cd85f8882f5ab8dee2696d3271ae9486970"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/launch_formal_wave001_join.sh": {
+      "bytes": 2285,
+      "sha256": "ed658f21ad38c03596b319ec298bd7deef73ad58af27a0a4bd8a1404ede7d9d4"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/launch_heldout_capture.sh": {
+      "bytes": 1910,
+      "sha256": "38bcc7a4bd63e366ed73747fcb48875f3fb5322c06d490dcc405bf04db7627de"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/launch_heldout_eval.sh": {
+      "bytes": 2241,
+      "sha256": "cca3a15020ffae575def7e1ed87b091662c475522bd1fadc020ff2328c5f8d34"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/materialize_problems_jsonl.py": {
+      "bytes": 2260,
+      "sha256": "22d0523bfc22b2de8e03865d1de6648e5b53e75b605759e36a6f0d06700f2705"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/prepare_ce_formal_config.sh": {
+      "bytes": 3568,
+      "sha256": "22017ea4c7d6feca78f7ffa8b1d0c044677dbd92e2c1029cf673f71ebf799dc6"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/prepare_heldout_prompt_plan.py": {
+      "bytes": 3713,
+      "sha256": "68b5bac789fde7805edc2c440e6d0dd782e87194ad390d38066dbc2b41354a7c"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/prune_reproducible_qwen17_cache.sh": {
+      "bytes": 5842,
+      "sha256": "960d92aad702a48ff031819b2b14d83fb68e9b58daabe28209c9b06b558f3b15"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/resume_lean_archive.sh": {
+      "bytes": 3491,
+      "sha256": "ba10d4e51b0780d02cc8a69c98ae8ff931a3148a6d3618fdff968c6cb3683b54"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/run_corrected_single_wave_comparison.sh": {
+      "bytes": 5010,
+      "sha256": "566d3aeda6a1e129aec2ca064521114a8a92b0d0594a846da6565bf4dc3dd84c"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/run_formal_comparison_chain.sh": {
+      "bytes": 3188,
+      "sha256": "1414f8a2460488b4a04b55516836cce7a0579e7ff1bd0d7ed535e0092030d4cc"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/run_guarded_terminal_report.sh": {
+      "bytes": 854,
+      "sha256": "5b4ff80cb7eb1cdff562402010e8d2742f20bcb85ba1f6e37303d59e2d0ee436"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/run_wave001_bridge.sh": {
+      "bytes": 2745,
+      "sha256": "b2adaa92ddd944debb159bbd699d05df20cbe16f0c1666c8de8e25e9db08c703"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/run_with_heartbeat.sh": {
+      "bytes": 1543,
+      "sha256": "61a120a4c8b1cd15160d03e60b469df6d9ffde0b3fb83ac9b0d44a526bb0248f"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/smoke_real_prover_7b.py": {
+      "bytes": 8444,
+      "sha256": "106f81df669d45123cdc734ac420c0e3859712e7fdff90c6e247669a1f0bf945"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/summarize_guarded_terminal_outcome.py": {
+      "bytes": 5586,
+      "sha256": "3be3597750eff8c0a266e5262bd970b02c507301cb46a72c8aa6ce60c278c229"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/summarize_heldout_comparison.py": {
+      "bytes": 8792,
+      "sha256": "b00527f8894a707d0b655406eb1af927f02293d279864b1a5ba4f9cac72861ea"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/scripts/wait_runtime_lake.sh": {
+      "bytes": 524,
+      "sha256": "0fda08ac59774661dcce85b1375016caa29d535a1723454c6bc3234baa51b74f"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/tests/README.md": {
+      "bytes": 741,
+      "sha256": "48247113aa1120479dce2188dc11c1bddddfdf725982bccc3a86607e3b8f83d2"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/tests/test_balanced_subset_protocol.py": {
+      "bytes": 6066,
+      "sha256": "9c80fac854eb217a262c54ac15e250c051686de5a230d1e4547bcf099dca7021"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/tests/test_guarded_terminal_outcome.py": {
+      "bytes": 5306,
+      "sha256": "1f6e97594feb0cf2017c45f6eead47b98d281d1bf04fd28610bc5da414023e40"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/tests/test_heldout_evaluation.py": {
+      "bytes": 5970,
+      "sha256": "dc40c47dfe6eae79f79e8349788a587c34cf03ea1c08bd07bac175ef56e8e6b3"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/LOCAL_READINESS.md": {
+      "bytes": 5320,
+      "sha256": "a9465915dd3eb6f6cd51aaf78db177c1a2ddfc4a29f9b6d9c6df26754a49f7e6"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/README.md": {
+      "bytes": 14618,
+      "sha256": "233ac334ab5386d1de76c71f7ea29d78caabd30e66c9013c3dc391d7a99af666"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/config/ce_arm.real_7b_one_update.template.json": {
+      "bytes": 3737,
+      "sha256": "9d3dde0ed0d5a438a8e91f7d9f360997d88ace0509d77cf9d42b3e037ad1b2e8"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/config/ce_arm.subset_20x10.formal.json": {
+      "bytes": 5272,
+      "sha256": "82b78af3980adac53bb651f2c8b054b84abf87b411ffa56de7e2429241cf6d2f"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/config/ce_arm.subset_20x10.formal.template.json": {
+      "bytes": 3709,
+      "sha256": "dcbd7910786b343f2024b32e9912144bc99a2417726a89bd6c03650499646bb2"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/config/shared_actor.real_7b_smoke.json": {
+      "bytes": 403,
+      "sha256": "5522fffb96791556a6e53bdaa44ac2402341a57690196331b627cd3a8bb8a7f8"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/config/shared_actor.wave001.fixed.json": {
+      "bytes": 483,
+      "sha256": "73c67487a9fe910b829c540bb525a80e41abdf3335f6a51fffe725c43828eff0"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/docs/asset_lock.md": {
+      "bytes": 2789,
+      "sha256": "6a27d84469d6d67de3d31567efd2fa1bd8c46175ef9b68a24aedf80494305f30"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/docs/receipt_v2.md": {
+      "bytes": 5120,
+      "sha256": "72cf13501d6fd364f41cc624c79ffc045e4851d80ec371dd685c9b82f14dfbd9"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/pyproject.toml": {
+      "bytes": 557,
+      "sha256": "da252efe0c683b30e078f85b20bc0d72d4c18145212b6f858fdfe2a6a415aea9"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/requirements-runtime.txt": {
+      "bytes": 144,
+      "sha256": "5935a0af755f9647a831b248e14896b381b11101153d557fea840551cb497c50"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/src/ce_arm/__init__.py": {
+      "bytes": 364,
+      "sha256": "c6836295ed0694b1d93921ad1489825b0abbe32b176f6f052e6e030051763886"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/src/ce_arm/budgets.py": {
+      "bytes": 5008,
+      "sha256": "b78a3e889bde6926a6faf081830ba3541917f876d10c0b8e390630138d2ddb72"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/src/ce_arm/cli.py": {
+      "bytes": 12361,
+      "sha256": "ba6b62d4e933ae6bd2c88772ec4ab9511ef86577de1438dec8a2255002c26c81"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/src/ce_arm/course.py": {
+      "bytes": 10959,
+      "sha256": "6ee16f4c6ee99fe62605944ce8fda04e1f6671e62025206cfb80fbb626e62284"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/src/ce_arm/formal.py": {
+      "bytes": 3903,
+      "sha256": "9132b7f0bd89088b2d0efa49b36381ba97567b11023745d6cdf142933fb06028"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/src/ce_arm/locks.py": {
+      "bytes": 5104,
+      "sha256": "43ba095ec6c147b75008d6a5e39cf22de7a28fad80f744f11e11156d30f3f3d3"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/src/ce_arm/replay.py": {
+      "bytes": 26443,
+      "sha256": "49939f6010db7b3926648f08386718738935744c8e54850cb0988e0322745e65"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/src/ce_arm/smoke.py": {
+      "bytes": 7024,
+      "sha256": "f4f8258fd1d329f5bf453e8eaae3d4c51aa37038a579617999216cb43ccd8c1d"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/src/ce_arm/train.py": {
+      "bytes": 78779,
+      "sha256": "8788c6ba18fd3f4a4f635b3e82b8631416c9c91495e02fab1daea052b5eb1907"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/tests/test_budgets.py": {
+      "bytes": 2633,
+      "sha256": "c3c749c081e4b3cf311d6ed12e0912ff52f58c5424aca38094630558504c017e"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/tests/test_course.py": {
+      "bytes": 3888,
+      "sha256": "17711d7f2ff098c04649be7134de954d567e2543bed9a0a302af48f965cb9fb8"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/tests/test_replay.py": {
+      "bytes": 22357,
+      "sha256": "e4a53a5c180d4f171cb445292c1434af1b2bba87c06327ff1258274cd5f0c26b"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/tests/test_smoke.py": {
+      "bytes": 5858,
+      "sha256": "49e9ec15934b26e47773fa178b169b4fc98bb39901890dffa8cdb907a7243ddf"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/tests/test_train_encoding.py": {
+      "bytes": 31657,
+      "sha256": "3e2ef69388d7663c5eb466b9867cb9275033e6c4034a684588824d57be7f8c79"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/formal_actor_assets/README.md": {
+      "bytes": 2478,
+      "sha256": "0ea7593ad913db6d0f428d46821dc66b6770fe3116714a800cff5a7a7e4507ed"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/formal_actor_assets/manifest.json": {
+      "bytes": 2614,
+      "sha256": "11949b12f17bbf6c968b2cc382f01c919c8ce0eaf0e5d0b6b4a3a64a5f723373"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/formal_actor_assets/scripts/create_initial_lora.py": {
+      "bytes": 9673,
+      "sha256": "95751ee33fb4f38a6486b2796e6b0046bed8dba2aff2928248ad9e1adc55a9a5"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/README.md": {
+      "bytes": 13531,
+      "sha256": "d00944949ab54f928d6d39e755b89ae74ef02f4f25e87ddf5e3857f45c3bb2da"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/docs/candidate_facts_presign_reconstruction_validation_20261005.md": {
+      "bytes": 2341,
+      "sha256": "62b2c4af021a2be7d11a77902f11cccb8b4d76fba9ea729879266324195e9c6c"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/docs/executor_candidate_facts_v1.md": {
+      "bytes": 11652,
+      "sha256": "68abc726c827fab4b6c2e6a85e09a058707cd639cf713006d94abdfbc0657248"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/docs/multi_request_envelope_validation_20261005.md": {
+      "bytes": 2340,
+      "sha256": "766c960a74b0f3676b14b03886040fbb059de9100f4a817751b1daa917b7a000"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/docs/remote_runtime_status_20261005.md": {
+      "bytes": 3861,
+      "sha256": "082dfb69bf1a5193798ae31e0c221a15101ded4aa87559d8bedb0bd2d6555ec5"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/docs/review_resolution.md": {
+      "bytes": 2589,
+      "sha256": "1c869221beda4aaa6f2225dc77f995b7cdd848b9e35ad7be9c18885f998a323a"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/docs/verifier_lock_v1.md": {
+      "bytes": 2041,
+      "sha256": "3a766937dd7aac95717eb946fd6e597fb7aa58b3597630de5b375508860fef76"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/runtime/ReapRuntime.lean": {
+      "bytes": 67,
+      "sha256": "5c30e7965753ee6b694f3bfd392bafae164e2db06b0953cebce5d9706fecd3c3"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/runtime/lakefile.toml": {
+      "bytes": 260,
+      "sha256": "8cbac4c4c3ac74c02f8aa95c615621bc5a57d4e24db424a117c5cd4769aee2a3"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/runtime/lean-toolchain": {
+      "bytes": 26,
+      "sha256": "3b89174da71eee61741cf38ac3db18cfab1cea56e64d70564d9f4fcae723fa0e"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/runtime/overlay/Reap/Training.lean": {
+      "bytes": 56,
+      "sha256": "ee49520ae295255982c2f9446e0ec6271d21a852ea54fd6aa7b591e4937e838c"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/runtime/overlay/Reap/Training/Observer.lean": {
+      "bytes": 8440,
+      "sha256": "b682d277d167c42cc8117d625df19b99fd5e5ae34486dbd077476d7e5c17522d"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/runtime/overlay/Reap/Training/RolloutSink.lean": {
+      "bytes": 5029,
+      "sha256": "3187fa9462d961afbd482364f4bc4aaa71fe72ff9892e10edc7b6e93b7bc0155"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/runtime/patches/0001-training-endpoints-and-value.patch": {
+      "bytes": 1952,
+      "sha256": "f907a9ae1ede1c45d1593b76b8519193dc1ae1d39b96bb3e4267308a8f2e4665"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/runtime/patches/0002-training-observer.patch": {
+      "bytes": 9641,
+      "sha256": "36c7ffeeb1aa1dfd50f814040482fc44bfd6a07f5f986116e1133c90e227a6ff"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/runtime/patches/0003-strict-value-errors.patch": {
+      "bytes": 1633,
+      "sha256": "e1fac622084af7c372b59d700c7ec1b5f6c530c8caa248870be5a135b3c21761"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/runtime/patches/0004-canonical-candidate-provenance.patch": {
+      "bytes": 19004,
+      "sha256": "df5c784d82f5e53e84552d40d20bd200bf51c8c60627ab67571cc8671c24cf78"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/runtime/patches/0005-canonical-selected-path-producer.patch": {
+      "bytes": 1768,
+      "sha256": "ac32e40186b0d3a7f9a9591c791207c9cc3998ee0e8bb13001dea8176c5baf00"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/runtime_path_resolution_report.json": {
+      "bytes": 2034,
+      "sha256": "9fc1fb0a79df9f34e6e03005755a3c746a21bd13df47a2b2dfc8a043199628df"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/scripts/collect_candidate_facts.py": {
+      "bytes": 211,
+      "sha256": "a1339d4b7a3ce7d3f5d7b0d8652681532a7b670c56a4c316a2d0a0cc4be79902"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/scripts/join_real_e2e_receipt.py": {
+      "bytes": 191,
+      "sha256": "324f022bc930b81597c81e01bdc8c4647e37045f22f357e4d0de1f0f03c968df"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/scripts/lib/resolve_lean_tools.sh": {
+      "bytes": 1520,
+      "sha256": "152215ca54c4d8f7a99dff95ed97bd2dcf048c8445acfb45fd7e651a2d47e597"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/scripts/mock_reap_openai.py": {
+      "bytes": 3874,
+      "sha256": "c63374566b7d50e9429e537df1b550475b3ef9bb4aa177d55a5f55899bc22b90"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/scripts/prepare_runtime.sh": {
+      "bytes": 4043,
+      "sha256": "db7f197f0252fe7c587c5965c9026b6a6da7983f4dc6abaeddb7befe7ce13cdb"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/scripts/run_mathlib_ephemeral.sh": {
+      "bytes": 4900,
+      "sha256": "fdc56f52e527f9ffd01e7cc89987c5e4308ddd5332e769308b50fb96130dc1a3"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/scripts/run_mock_wiring_remote.sh": {
+      "bytes": 3469,
+      "sha256": "4074c1fe0c818c20a3c34cdacba85694008ff1b842ed6338f7a50bca030ba038"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/scripts/run_reap_ephemeral.sh": {
+      "bytes": 4179,
+      "sha256": "a981ae732ca0ef2c25427bb2c9b2cf781c685e0704f1e5c6312975170695177b"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/src/fate_reap/__init__.py": {
+      "bytes": 169,
+      "sha256": "b60bc8bac91b100fd11f8f1538e1c7f618acad5ff99e1fa54285ef8adb76661b"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/src/fate_reap/candidate_facts.py": {
+      "bytes": 40938,
+      "sha256": "ef83a538ae77a26408e589d9ceb0d3d8e0ec3d4ffeb014891009ff937c7e9548"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/src/fate_reap/canonical_receipt.py": {
+      "bytes": 14087,
+      "sha256": "9f1d33d1df339189a3c6705b102999035b6cd01b3cda4db46c35e908fb7805f6"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/src/fate_reap/checkpoint.py": {
+      "bytes": 11813,
+      "sha256": "40625fb201883537756ba79d051e9776f0d27e57d0f45d6e89c1997cc876838a"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/src/fate_reap/e2e_receipt_join.py": {
+      "bytes": 39092,
+      "sha256": "06b34940f9d5861f1429f304b233fddb5a2c558fce70b6a3f4a6fc9ff007c0bd"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/src/fate_reap/evidence.py": {
+      "bytes": 17483,
+      "sha256": "0b25acef2ddb18dc5d063033ff98dc37cd77f442231d8ebcd1ec4c1ef0ad0348"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/src/fate_reap/runner.py": {
+      "bytes": 21585,
+      "sha256": "e148a474ed624f014f8b21f08003eee4cb21feeb1bc3c7e58f8e11bb72e811d2"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/src/fate_reap/runtime_provenance.py": {
+      "bytes": 3949,
+      "sha256": "4aab4e7b15becc14cf9ffa0a1f38fa69c2fc974d2853393f56d6ce6a25eb6543"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/src/fate_reap/service_receipt_proxy.py": {
+      "bytes": 8204,
+      "sha256": "d64fd8ab7c06f5f7ef8c55b12efc1e14945c213d98429073dfb4ce96bddf757a"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/src/fate_reap/service_receipts.py": {
+      "bytes": 4789,
+      "sha256": "f02a7e92f0ab4bce0b53e71ca980b9835962f7550b87dbcf2aef1b225836c3b5"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/src/fate_reap/session_builder.py": {
+      "bytes": 9422,
+      "sha256": "66af0811940b2e4b6891b74be1f0cacb8d653a10f9885b0419a247c83f6841f3"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/src/fate_reap/strict_replay.py": {
+      "bytes": 15393,
+      "sha256": "36f9bb691bdd7f82973ff5226f73fdad220e162d3c5ba8a578a45c09a6302e96"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/tests/fixtures/real_64_choice_action_spans.json": {
+      "bytes": 159740,
+      "sha256": "b81b164e61505200c257aec9e54e363517ba309de3238ed27b4abe7704651557"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/tests/test_bridge.py": {
+      "bytes": 35638,
+      "sha256": "8c4c5187c19ae5195fa305501a645fa288010eab752917772e151593310dca0c"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/tests/test_candidate_facts.py": {
+      "bytes": 31120,
+      "sha256": "271f03ec7146e244cb6dbb019a0e013362d0592d4081cfc3578357a7bb09c810"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/tests/test_e2e_receipt_join.py": {
+      "bytes": 22110,
+      "sha256": "fd23bc691f8df15e5a73992bf7a67ab80d5277682c1612c1d74a5690a49c3e72"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/tests/test_prepare_runtime.py": {
+      "bytes": 1088,
+      "sha256": "32cd140885ebdb4de4f67c383dc383f62a65e878bfc6d4ee4271f7b54e8f2cdf"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/tests/test_resolve_lean_tools.sh": {
+      "bytes": 1533,
+      "sha256": "8cb49eb375fd5f70e9fca2a5167b6630969006b9d36697c718878b61c68c0f66"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/lean_integration/tests/test_selected_path_producer_patch.py": {
+      "bytes": 4914,
+      "sha256": "b0dbc2f78a02b561c90abbf6e66aa47d472f06514f4a2d9d689055dd8a9b76c0"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/INTEGRATION.md": {
+      "bytes": 6655,
+      "sha256": "77e364acbc915a1e018caf6f83e57465059ce014ab4d2cd94e862e22c2470789"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/PF1_HASH_CHAIN_REPORT.md": {
+      "bytes": 1591,
+      "sha256": "52ade7f0e71c68063e12b78d7d1e0240703ab37fefe7393ab811b63a2986f363"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/PF2_TRANSACTION_REMEDIATION.md": {
+      "bytes": 2458,
+      "sha256": "28aa7012599f80474dea465fe46f45e417955b4943f49b877f8d8fa05e068da6"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/PF3_IDENTITY_CHAIN_REMEDIATION.md": {
+      "bytes": 1744,
+      "sha256": "9b950cc470989d11703f2fbfdbc75c7f45713cc8508ef5edae6deb5bef0ab396"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/README.md": {
+      "bytes": 8809,
+      "sha256": "41f0d409e66e5efcdd050877b777baf3bf949b9431ea4c75ef6645c2bd149ca6"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/RECEIPT_CONTRACT.md": {
+      "bytes": 4521,
+      "sha256": "8f79754b0da1af2037fc6c594368416a5bad73e3864532b4dd8b6af81d720408"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/REVIEW_REMEDIATION.md": {
+      "bytes": 3606,
+      "sha256": "685c62af7a9f3208a249c7f4540e9a0e86ef5e251259e5f9d61c6524c11da28f"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/SOURCE_AUDIT.md": {
+      "bytes": 2508,
+      "sha256": "619f0e1af29982a75d2c0d48e7b1cf42ea37545a3300cb9291c831d04ec43fc3"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/config/online_v2_arm.frozen.json": {
+      "bytes": 4494,
+      "sha256": "824fa548ce7a493f093ae794da75789b802b2867154d51c879eac73015ce1f54"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/config/real_one_update.smoke.template.json": {
+      "bytes": 2803,
+      "sha256": "9c6a4c63f7eb5fa245281b1041045cc0d130a623c1459943dd35fadbe4b028e0"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/scripts/prepare_real_one_update_config.py": {
+      "bytes": 1807,
+      "sha256": "c00dc221b34a48125926363437673ec4cfdaa2cf54e0f901f3d385bfb5d6abcc"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/scripts/run_real_one_update.py": {
+      "bytes": 389,
+      "sha256": "2929a1625f0b6b4f4ab12a6f3ef2902fc92fa7c080fd167e3b85a789b15d70ac"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/scripts/smoke.py": {
+      "bytes": 5366,
+      "sha256": "78278fe0e6ed06ed2fd279811ac8cb48059296e655deebaf65f21f92318eac65"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/src/alphaproof_online_v2_arm/__init__.py": {
+      "bytes": 1469,
+      "sha256": "05e34a46702d5873e8ab38851f36337304af561225b130fa5a696f3c76514ab6"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/src/alphaproof_online_v2_arm/adapter_reference.py": {
+      "bytes": 13614,
+      "sha256": "6b209d0e3e6f2ad47f04773d93a581fa28e155d62dd3d7f096ee26045afd9fe2"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/src/alphaproof_online_v2_arm/buffer.py": {
+      "bytes": 5448,
+      "sha256": "edde83ede54b118cbab528c0745eecd90d2611106bde7559c72153166ba8cc01"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/src/alphaproof_online_v2_arm/builder.py": {
+      "bytes": 24106,
+      "sha256": "f9e739c8677c5a1ab92062b3bbd382c7f9936797df4ea0c4ebc1f4dfd02d1741"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/src/alphaproof_online_v2_arm/learner.py": {
+      "bytes": 40039,
+      "sha256": "a2b7a618b6b604fcd6839b8cc82749574aa2a2cf8ff86f67da7284277c97fdd7"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/src/alphaproof_online_v2_arm/ledger.py": {
+      "bytes": 11733,
+      "sha256": "f9778a77a4ae007c828fccf7a7bf73ee54afa56d14811fd053b97d029db1dd0d"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/src/alphaproof_online_v2_arm/objectives.py": {
+      "bytes": 12921,
+      "sha256": "dc429d715cb56e4d1a1fad6cbb2868177098283614cad7687567993bf88292c7"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/src/alphaproof_online_v2_arm/real_runner.py": {
+      "bytes": 45942,
+      "sha256": "f606b08df9fb4fc79b89a0ff89af467868a53db57c25699c92340faf425e7f20"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/src/alphaproof_online_v2_arm/receipts.py": {
+      "bytes": 16846,
+      "sha256": "232ea7190a05853259d29d1670e25a53769c6567e53c6493e94e31cc3fbe6523"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/src/alphaproof_online_v2_arm/rewards.py": {
+      "bytes": 1401,
+      "sha256": "78026264908b8aabf5f6e57696932cf90fa237c24ce9f501fc9015b3599979d1"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/src/alphaproof_online_v2_arm/schema.py": {
+      "bytes": 9288,
+      "sha256": "f32324e2d65946777133ccfa4bb7422880539ab22c9fb8a852565ac1287d4b7d"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/tests/conftest.py": {
+      "bytes": 163,
+      "sha256": "e537b0ac52a0a3296c89a67367b436b843f62bdc4f8b374d24df92a6d67aa001"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/tests/helpers.py": {
+      "bytes": 9111,
+      "sha256": "912ec6e6eb95271353b5c8385bd076bcd36b40dae3a3a3e5aa0e7b648c2ac157"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/tests/test_adapter_learner_integration.py": {
+      "bytes": 7579,
+      "sha256": "f6f49a25a48b8ea59e4f351cd6521c81ab8866970353aa0afda5173f70386707"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/tests/test_adapter_reference.py": {
+      "bytes": 8536,
+      "sha256": "00d62fcdfd4b3fdc91a011c59271c418f9706e1658f6a88918420f84607b4a43"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/tests/test_buffer_rewards.py": {
+      "bytes": 2613,
+      "sha256": "4bd99eedd52aa527c4a5758f9b88b3c492ddce288faae9460b6280302fb3dd95"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/tests/test_learner.py": {
+      "bytes": 14072,
+      "sha256": "77b3cce86a2a003d3e6a4f8bb0da1d5d5558ba31dbc3d545877c7cf6203615a1"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/tests/test_ledger.py": {
+      "bytes": 1064,
+      "sha256": "9d22e389e6af3684f23a9d29785df462d37761a42a6b6efd44be213d9304e7d6"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/tests/test_objectives.py": {
+      "bytes": 6847,
+      "sha256": "bad482f0ad1b006174064e1fd9b6dafa21349946fa704ca52419b4e8b929bf3c"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/tests/test_real_runner.py": {
+      "bytes": 6975,
+      "sha256": "228334239e839e8fb46cc0f855b17622fdee6f10c9f4cf7e7586563d7289937d"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/tests/test_receipt_builder.py": {
+      "bytes": 21363,
+      "sha256": "ec17cec351bf06e0c0157fe905d028c2fbf79672eaec2bce9507ce9045f8205e"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/FORMAL_20X10_LAUNCH_RUNBOOK.md": {
+      "bytes": 7598,
+      "sha256": "84403b3dbae293960e7958bc7154060a55124f47c5091b113f0d89c1647be16d"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/PAIRED_TRAIN_WAVE_RUNBOOK.md": {
+      "bytes": 7542,
+      "sha256": "9167ec4ca3d473273c71152da3730fbbbf9d20edceecbf576cba0fe3a7c7acde"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/README.md": {
+      "bytes": 9461,
+      "sha256": "bad51acd731ead69b41d1d4446256187b245a732c22781e5a83409e044332693"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/SUBSET_WAVE_COMMANDS.md": {
+      "bytes": 3623,
+      "sha256": "591f30abbfb86a120c14c9eeb16a2c7c3bc1bdc2c583007975e7b7d17f6432f7"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/WAVE002_ROLLOUT_JOIN_RUNBOOK.md": {
+      "bytes": 3823,
+      "sha256": "716c67acdcea860b97b61a9ba568920d22a7ba931221df7d544067ed9fbbc0fe"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/config/formal_20x10.production.template.json": {
+      "bytes": 2233,
+      "sha256": "faa53ae0babbef48f28e286756ff9afe2bfe5c3b844b0f5587b6d36d49e9b048"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/config/orchestrator.example.json": {
+      "bytes": 1512,
+      "sha256": "dcaacd983eff7e2d4445c99aae309cfe962d84852c4633b160d7909a25494286"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/config/orchestrator.schema.v2.json": {
+      "bytes": 3836,
+      "sha256": "bcf7711ae49360ba8796a2065ef19df90e5984b9af0864b7b2e3749cc2e4aeb8"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/config/paired_protocol.production.template.json": {
+      "bytes": 4327,
+      "sha256": "3e0abbdcf4fed2a5759fbbaaa2d383a976f4db3521f1e0126c9a93ba7e88b516"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/scripts/prepare_formal_wave_plan.py": {
+      "bytes": 3720,
+      "sha256": "f3ed0973d1fbfcd53c2e49b23fd85cb996b9af7386dbd426dff3d7f4935be97d"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/scripts/run_formal_20x10.py": {
+      "bytes": 25108,
+      "sha256": "bcfe19438cbe008aa2583be9f9e766ea3e4117e9639851ec25ee56a4120ecbeb"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/scripts/run_paired_train_wave.py": {
+      "bytes": 26750,
+      "sha256": "9a3b9dd2c92190356a8045c6583072ad92602444e809c3d67d51ad896743b543"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/scripts/run_paired_wave_rollout_join.sh": {
+      "bytes": 5727,
+      "sha256": "1c2ad1f809bd4e30db92689ce2962367a347fbbf4298aa508a4f653c3673e567"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/src/experiment_orchestrator.py": {
+      "bytes": 63628,
+      "sha256": "d0122e942d362cb54dc7b93688f59f92e80b76714770366a60dacf739d665aa1"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/src/paired_experiment.py": {
+      "bytes": 19002,
+      "sha256": "48338ad80ef4c866ceba826594c47d90473a5bbfcdca5cad292606bfb2b9b47e"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/src/paired_stage_worker.py": {
+      "bytes": 13880,
+      "sha256": "1db9767e43d14a30acd6a31a27748b418890edec21698276fcdc4d1ed527291f"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/tests/TEST_REPORT.md": {
+      "bytes": 456,
+      "sha256": "445be4704a5aeeb923f89bf013a0dd863b1c5197936fab6b54981e551effe4ce"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/tests/test_orchestrator.py": {
+      "bytes": 23861,
+      "sha256": "04e3476ce9a93dfe92e4ea1a118506d69f488635c12aaabee18d69a4ff1698c3"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/tests/test_paired_experiment.py": {
+      "bytes": 11210,
+      "sha256": "0ffb37a09a9593eb69b7b3b1b96b0ba24d3e4e6aa38ba5e856a1064f3aa25d29"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/tests/test_run_formal_20x10.py": {
+      "bytes": 4290,
+      "sha256": "7ece39bd45f43c6db62e3e8895fa4ece48060a3919c8e2159b515506e585a4db"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/orchestration/tests/test_run_paired_train_wave.py": {
+      "bytes": 6084,
+      "sha256": "8e7015e5be87089303a6fcb354d540df06c695c4811d425722b6d3186ffd2037"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/ACTOR_ONLY_PROMPT_RECEIPT_SMOKE.md": {
+      "bytes": 3458,
+      "sha256": "1398aa8c69895c5eccbc35f33671f478e7a0a85b10ad21b4808b072d7ede9a2a"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/README.md": {
+      "bytes": 13521,
+      "sha256": "2f770f1114a9061161f1962d0f163af2594796b704b416cc895c5acea38ed88d"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/REPRESENTATIVE_SMOKE_PLAN.md": {
+      "bytes": 8796,
+      "sha256": "2d812b30d3df68b7d43f0df78310897820b5f6a3f7e419c1258bfbc95af8a9bb"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/VERIFICATION.md": {
+      "bytes": 5780,
+      "sha256": "eb001b284b5e811bfc1e2a0318d7f180fc4f024c6fc90e6cb89683b2db7f1e11"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/WAVE001_RUNBOOK.md": {
+      "bytes": 4154,
+      "sha256": "762c8d1afa9869eee8359a6186f3da4fc405c3d19ef538c495ebd7c9784bd694"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/config/fate_m_003_v001.real_reap_request.v1.json": {
+      "bytes": 1528,
+      "sha256": "a783287c11f1a0bb337811e1a1d056ffcaa173036eea2b958449c679bd552166"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/config/representative_smoke_plan.frozen.json": {
+      "bytes": 4029,
+      "sha256": "a875f54b40b92fde17322ef8177236bc33fe14c4d4aa9c6db79381621347469e"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/config/wave001_20family_plan.frozen.json": {
+      "bytes": 4914,
+      "sha256": "8f01e19649442b6a38cec0a11a0ceccf64d937ff2328ba5ff8518c6b65334a4c"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/scripts/actor_only_prompt_receipt_smoke.py": {
+      "bytes": 21324,
+      "sha256": "893def671b269b82603bf0a8e44c8da6da082a8af04e26a35a67a1f46be16ed9"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/scripts/assemble_wave_join_inputs.py": {
+      "bytes": 6136,
+      "sha256": "3c94cc3395eb2e32c216b1f3b8a6ce1bc8732b7c5dfab72f9a3c8c49011d1fe9"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/scripts/capture_representative_reap_prompts.py": {
+      "bytes": 30759,
+      "sha256": "4518a3d57a447b903781eadda749e76c1dbf74aa122f1c66997fa831a1752fdc"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/scripts/real_reap_e2e_smoke.py": {
+      "bytes": 30231,
+      "sha256": "bdb5ced4a87e1a359bc9059d03380ef59c3efbe3723b253e4d0999ec9d27a829"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/scripts/real_reap_wave_one_step.py": {
+      "bytes": 28066,
+      "sha256": "8becd7dcf42a70e83ae90940121138d6b0614866b0bcc9e9e56dc7eebab3eb14"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/scripts/run_wave_join_adapter.py": {
+      "bytes": 16086,
+      "sha256": "955f9929c3361e9af3053d359be79ad957cae09a42bad448035e9000f5b45376"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/src/policy_service_bridge/__init__.py": {
+      "bytes": 807,
+      "sha256": "10fbef160e74ad65d1dbba2bd40e4dc2912b90549e799a3aad9060d421635bbd"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/src/policy_service_bridge/bridge.py": {
+      "bytes": 4257,
+      "sha256": "73f0a79771aba218a33d0eb0df0615c896886e05ec32c3831b56462d8ece3a21"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/src/policy_service_bridge/prompting.py": {
+      "bytes": 1463,
+      "sha256": "6071339d6ef2873a917202ffe3045802f0a84c311d57a1b0146aff43b58f8abb"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/src/policy_service_bridge/receipts.py": {
+      "bytes": 14412,
+      "sha256": "6d65bfc3c61b7da79f29b8c34c9ab1d3939a3a521a5ab4428886b8174c79f598"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/src/policy_service_bridge/service.py": {
+      "bytes": 28919,
+      "sha256": "6700c8c89efe2a42d2900c379fb82e2f6acd8d16cc98706eecfcac47b88fc03c"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/tests/ReapDedupSemantics.lean": {
+      "bytes": 384,
+      "sha256": "95b7d05d22f966effa97875f6a832cc11b90cdf53a0bb1fd2b5057a611a19a57"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/tests/ReapResponseCompat.lean": {
+      "bytes": 955,
+      "sha256": "c5845971ecb2c35a81c321ad6b737af77a518af5199496c2055f55431b024392"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/tests/conftest.py": {
+      "bytes": 278,
+      "sha256": "40045e2dbc39824892e0f76a374f2c308c8a29783f7435576c22b746835c3663"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/tests/reap_response_fixture.json": {
+      "bytes": 876,
+      "sha256": "7dfe8a1a72bd76eaceebba5c5f5715e7b2451339ed0cae86898274defcba387e"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/tests/test_actor_only_prompt_receipt_smoke.py": {
+      "bytes": 6294,
+      "sha256": "fe2068480aea01b6900f98fee4984b55b947db2d64b6b3884252643d727e60db"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/tests/test_capture_representative_reap_prompts.py": {
+      "bytes": 7092,
+      "sha256": "4289307f87afa7d60f9c0891214827da3bd3eeaa9deb7cfb42b4cf7ebfa75093"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/tests/test_real_reap_wave_rollout.py": {
+      "bytes": 2788,
+      "sha256": "de2c0e6955ea425210c8951c2fae383a057ab635d0726911334d41939043b2e6"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/tests/test_representative_smoke_plan.py": {
+      "bytes": 3423,
+      "sha256": "ec1e75a6e89f04c2c3c889933491efc05cc7151be537d9ef3473aa74428213f7"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/tests/test_service.py": {
+      "bytes": 20322,
+      "sha256": "52dfc517589f60ae911ee8681df7c39f4c75435f69382524502c97eeba2c1613"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/policy_service_bridge/tests/test_wave_join_adapter.py": {
+      "bytes": 2997,
+      "sha256": "db2f869131fc1340d812f9868ad8b20576da2ed08f2504667e32d377246220ee"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/shared_actor_bridge/README.md": {
+      "bytes": 5887,
+      "sha256": "f71c6ffbff47c1c19e9b01c619a3192d7f1001def5c410a3edfd5aee18ec349d"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/shared_actor_bridge/VERIFICATION.md": {
+      "bytes": 3039,
+      "sha256": "880a48c512c25aaf343a79131d127e5fc2f61d2c2b101eb302f813c588f2dd97"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/shared_actor_bridge/scripts/formal_r16_actor_capture.py": {
+      "bytes": 14213,
+      "sha256": "ebc9dc9eccc735817bdb2111a970a24739a664a961e5d89aced8b295d0166fe2"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/shared_actor_bridge/scripts/remote_real_actor_capture.py": {
+      "bytes": 20926,
+      "sha256": "f583189e712aa7ec9e7e0e00e489ff0f3d1d893ff87ea2d0befc39a27b28e921"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/shared_actor_bridge/scripts/smoke_real_hf_capture.py": {
+      "bytes": 3747,
+      "sha256": "3e5b68c21cac139f4ecf001728c1839fe3cd203f3c3ccd6447caec4e2bcb69fa"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/shared_actor_bridge/src/shared_actor_bridge/__init__.py": {
+      "bytes": 1310,
+      "sha256": "bc08b447bb98d6e353b82e9380e04137b07eef6037c759fe0c79c55a25096323"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/shared_actor_bridge/src/shared_actor_bridge/attestation.py": {
+      "bytes": 5648,
+      "sha256": "c5645d3e14e3daa9c27acc569685544e426b733e19a44b677ce995d3f803856e"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/shared_actor_bridge/src/shared_actor_bridge/contract.py": {
+      "bytes": 28057,
+      "sha256": "4255954002794c0433f352df009d502540e187df56b6b55fe39c817d873a6ea4"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/shared_actor_bridge/src/shared_actor_bridge/converters.py": {
+      "bytes": 21221,
+      "sha256": "0008973f63476b9d5418b33dd21be6157d7a775431ede7b1723391c8df045b2d"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/shared_actor_bridge/src/shared_actor_bridge/hf_adapter.py": {
+      "bytes": 9070,
+      "sha256": "66aee074beb4c0e14839a5c8ca1ec3565c1bc16a0c49c350466b5fdacbf453a8"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/shared_actor_bridge/src/shared_actor_bridge/io.py": {
+      "bytes": 1489,
+      "sha256": "10f86d6f39289d7e2b14298e99823851587d6c217644051e0772b9ac65d3a6fe"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/shared_actor_bridge/tests/conftest.py": {
+      "bytes": 349,
+      "sha256": "7081cc357d2af7a783c2d760e8f3ac86c1431450120a541dab7b2b8f22cb20aa"
+    },
+    "code/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/shared_actor_bridge/tests/test_bridge.py": {
+      "bytes": 21837,
+      "sha256": "3249598a60ae07257d10fc9d5e45ded448deb0fd3aeb2ae5a0141cbefb00ef77"
+    },
+    "code/lean/README.md": {
+      "bytes": 1742,
+      "sha256": "f2bfe6fdd4840bc88a849c1a86bb0911766e3fe524ea6fcea7bbd5fa8ec60dae"
+    },
+    "code/lean/patches/0001-align-options.patch": {
+      "bytes": 1223,
+      "sha256": "867d4c41657f68c3e4fb0d3fd6716bc90399d9823151c13ddbfbd271cce0fa4d"
+    },
+    "code/lean/patches/0002-align-puct.patch": {
+      "bytes": 1961,
+      "sha256": "81580f719a55705b513900baa39ab26dbf01b71e6625aa337036b3fdd1b41194"
+    },
+    "code/lean/patches/0003-align-fallback.patch": {
+      "bytes": 455,
+      "sha256": "2105538cdf3b3135989d5032daca4f3ad30deb73e65a23f48632eda21663fdb3"
+    },
+    "code/lean/pell_smoke/PellInvariantSmoke.lean": {
+      "bytes": 1062,
+      "sha256": "d0466ef599bba2263ebba43cb09a950afdf67fa47901ab2c4bc948facb8d2f17"
+    },
+    "code/lean/pell_smoke/PellSmoke.lean": {
+      "bytes": 1107,
+      "sha256": "f5c6dea1b2cc3d217b67bc4ac6d6eea640659b61ca849bf3c1ebe338f1d0b17b"
+    },
+    "code/lean/pell_smoke/README.md": {
+      "bytes": 4657,
+      "sha256": "446b490cf38ef15d06707fd87877df8695986f165868ebe7caa3a554d8d223bd"
+    },
+    "code/lean/pell_smoke/manifest.example.jsonl": {
+      "bytes": 240,
+      "sha256": "f601225fd4640ccca1aaa6b5a72b6458d0d2060c105a9bf493354ad6f4d2ef8f"
+    },
+    "code/lean/pell_smoke/manifest.invariant.jsonl": {
+      "bytes": 261,
+      "sha256": "dd15ff67dde67efe0b570603ab76989fefd4e41c39fb93aa366453c6514f9124"
+    },
+    "code/requirements.txt": {
+      "bytes": 283,
+      "sha256": "e249e0a517e7656db4b77902ab739bf03f8c9d85680daa9bf107ab499f3e3748"
+    },
+    "code/scripts/check_secrets.sh": {
+      "bytes": 1546,
+      "sha256": "6fa896e2d7a878ee2f67c5c54cbcde9926d7d376e76a273bafafd16e3ee76749"
+    },
+    "code/scripts/cloud_real_smoke.py": {
+      "bytes": 7214,
+      "sha256": "f14b3f825e308ba278b9efa398afa3bc71b8cc01ede874582c39116276625722"
+    },
+    "code/scripts/deploy_cloud.sh": {
+      "bytes": 572,
+      "sha256": "0da9412b1fa3d2eb26ab24cbc1f003a2a6d58880fdab169bee96642077ffb34a"
+    },
+    "code/scripts/run_curriculum.py": {
+      "bytes": 4256,
+      "sha256": "a57544a53dfe7c5bf2c9f43ecdf258b428de51719fb75a18ca7cabe490942509"
+    },
+    "code/scripts/scripted_policy_server.py": {
+      "bytes": 2933,
+      "sha256": "e6e777c2b999f0718568f430004abb628f6d604faf8511f342e2167d33b4f7ed"
+    },
+    "code/scripts/smoke_one_pell.py": {
+      "bytes": 4731,
+      "sha256": "631c9b165d435f0ebee939726f15d8c8dcc4ccf2913d42e5749bfcf7367f61b4"
+    },
+    "code/tests/test_curriculum.py": {
+      "bytes": 6239,
+      "sha256": "276c0ec387ff7d90eaea154bb15499d180d3d49ebd1f2acb93fa586818decb1e"
+    },
+    "code/tests/test_mcts_parity.py": {
+      "bytes": 5192,
+      "sha256": "34546f40061702529cd5362d6107a6df6ad8794f9346db3a7de8d1bafd8ec331"
+    },
+    "code/tests/test_offline_learner.py": {
+      "bytes": 2403,
+      "sha256": "87660f27c2588d8f971ad834019fcae6ceea3b23f78edfd747811f44ae6de929"
+    },
+    "code/tests/test_online_learner.py": {
+      "bytes": 2657,
+      "sha256": "7380b674a6f69c37b99c1eea8b2ca4ca3658c4662f362db99d67aff47d8c77f5"
+    },
+    "code/tests/test_value_head64.py": {
+      "bytes": 2152,
+      "sha256": "e9489199ef3a8bb84fd152142f2a71cd19135f365547a69c9db2bbf3392469f5"
+    },
+    "code/tests/test_value_targets.py": {
+      "bytes": 2765,
+      "sha256": "3085857286eda69565d4615920968dac2156709b6117186335da1d2a32d0984e"
+    },
+    "code/update_offline/README.md": {
+      "bytes": 2521,
+      "sha256": "171bdb12a1dc3a7720b99000412847ae485df59343ac7c8b93ba48eae1d327ee"
+    },
+    "code/update_offline/__init__.py": {
+      "bytes": 205,
+      "sha256": "71275308c76d263cfa8738d515039aa76e8f99c71d478ed371064006a91d1e67"
+    },
+    "code/update_offline/learner.py": {
+      "bytes": 7528,
+      "sha256": "eb2dc1df477d66bb95c3fc943d6f62fa1c26368b561cf4747952853442bb9a90"
+    },
+    "code/update_offline/replay.py": {
+      "bytes": 2779,
+      "sha256": "8d5dba38f78bf9e83fd0aabcaf64ed5b970c454d29217e0f3a010c74775678e4"
+    },
+    "code/update_offline/run_expert_iteration.py": {
+      "bytes": 3549,
+      "sha256": "2793c9737e1d72d64a13f0669273dae12c07b2cd4abe1cc1fcf980b81782edc0"
+    },
+    "code/update_online/README.md": {
+      "bytes": 2273,
+      "sha256": "25bdc82854b93a7acc52362063d45fe42d0cc6eb03b33b20cff1ca1e20608b5d"
+    },
+    "code/update_online/__init__.py": {
+      "bytes": 107,
+      "sha256": "024ac73e3b66688590e3dfebbab151cee61dae00e27ef4616a33e09f4780a186"
+    },
+    "code/update_online/learner.py": {
+      "bytes": 7652,
+      "sha256": "76b6cc92e41f9340ed5cb4e2ffcb70850353d5db191c63a662179d4514893d38"
+    },
+    "code/update_online/run_online.py": {
+      "bytes": 4050,
+      "sha256": "f3586c970091dfaa606de6a287ddecdbde87b8771e34a6fec91d0b7ef2622d0f"
+    },
+    "evidence/corrected_final_evidence_20261006.zip": {
+      "bytes": 1735390,
+      "sha256": "b3e9514f179d18c1ab2beb5cf2316a7d6c029c2de369e04e52607148c3aa52d1"
+    },
+    "evidence/join_v2_evidence_20261006.zip": {
+      "bytes": 854506,
+      "sha256": "3924d9605d8b6578717eee0c9dd49f1643b3fa1d0872001dbf2e08130f27df3c"
+    },
+    "evidence/training_initial_evidence_20261006.zip": {
+      "bytes": 2863274,
+      "sha256": "c7909584eea2b643ea49aa8b21b512d9e19df61101bed391c997439e292bce73"
+    }
+  },
+  "omitted": "Model/checkpoint binaries and signing private keys; checkpoint hashes/remote paths retained in evidence.",
+  "pr": "https://github.com/wufuju2023-cell/10-4-alpha-proof/pull/1",
+  "schema": "fate.delivery.bundle.v1",
+  "scope": "20 training tasks/one wave; Online rejected and initial evidence reused; all40 heldout direct_target scaffolds"
+}

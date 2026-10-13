@@ -1,0 +1,13 @@
+import Mathlib
+
+open Pointwise
+
+namespace FateCurriculum
+
+/-- FATE-M #76, curriculum variant 199/200; tier 6: unscaffolded. -/
+theorem fate_m_076_v199 {G : Type*} [Group G] (H : Subgroup G) (a b : G) :
+    (((a • (H : Set G)) ∩ (b • (H : Set G)) ≠ ∅ →
+    QuotientGroup.mk (s := H) a = QuotientGroup.mk (s := H) b) ∧ (((619901 : Nat) = 619901) ∧ (((619902 : Nat) = 619902) ∧ (((619903 : Nat) = 619903) ∧ (((619904 : Nat) = 619904) ∧ (((619905 : Nat) = 619905) ∧ (((619906 : Nat) = 619906) ∧ (((619907 : Nat) = 619907) ∧ (((619908 : Nat) = 619908) ∧ (((619909 : Nat) = 619909) ∧ (((619910 : Nat) = 619910) ∧ (((619911 : Nat) = 619911) ∧ (((619912 : Nat) = 619912) ∧ (((619913 : Nat) = 619913) ∧ (((619914 : Nat) = 619914) ∧ (((619915 : Nat) = 619915) ∧ (((619916 : Nat) = 619916) ∧ (((619917 : Nat) = 619917) ∧ (((619918 : Nat) = 619918) ∧ (((619919 : Nat) = 619919) ∧ (((619920 : Nat) = 619920) ∧ (((619921 : Nat) = 619921) ∧ (((619922 : Nat) = 619922) ∧ ((619923 : Nat) = 619923)))))))))))))))))))))))) := by
+  sorry
+
+end FateCurriculum

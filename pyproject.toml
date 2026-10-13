@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alphaproof-gpu-serve"
+version = "0.1.0"
+description = "gpu-serve：GPU 侧参数化 CLI（base/LoRA/value head 可插拔；CE 更新逻辑冻结，只调用）"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+# 轻量兜底：不带 torch 也能跑 --help / versions / serve-eval --engine mock
+torch = ["torch"]
+hf = ["transformers>=4.40", "peft>=0.10", "safetensors"]
+
+[project.scripts]
+gpu-serve = "gpu_serve.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["alphaproof*", "update_offline*", "update_online*", "gpu_serve*"]

@@ -1,0 +1,26 @@
+{
+  "experiment_id": "fate_m_lean_curriculum_20x200_20261004",
+  "source": {
+    "benchmark": "FATE-M",
+    "repository": "https://github.com/frenzymath/FATE",
+    "repository_commit": "bb646ecb9b68942ebf4bac31ccf4218a58ef9771",
+    "submodule_repository": "https://github.com/frenzymath/FATE-M",
+    "submodule_commit": "4eb33c8ccd0ff058b461cd763cc406509129743f",
+    "json_sha256": "39c13a39f82bb2f39fc42d0a0efb41c6b0ef16b8194c8c8e0ae281c5cf0276fb",
+    "lean_version": "4.28.0",
+    "mathlib_revision": "v4.28.0",
+    "license": "MIT"
+  },
+  "selection_policy": "Twenty FATE-M textbook-level statements with compact, standard-Mathlib formalizations, chosen to cover groups, homomorphisms, rings, ideals, fields, integers, complex numbers, subgroups, and cosets while avoiding FATE-H/FATE-X difficulty.",
+  "selected_fate_ids": [3, 4, 9, 11, 14, 15, 18, 21, 35, 40, 48, 51, 52, 61, 64, 65, 66, 67, 68, 76],
+  "variants_per_family": 200,
+  "total_variants": 4000,
+  "difficulty_protocol": [
+    {"tier": 1, "range": [1, 40], "name": "direct_target", "description": "The target is provided directly; redundant true context grows with rank."},
+    {"tier": 2, "range": [41, 80], "name": "packed_target", "description": "The target is the final component of an increasingly deep conjunction."},
+    {"tier": 3, "range": [81, 120], "name": "implication_chain", "description": "The target follows after applying an increasingly long implication chain to supplied facts."},
+    {"tier": 4, "range": [121, 160], "name": "disjunction_elimination", "description": "The target must be recovered from a disjunction with an increasing number of impossible branches."},
+    {"tier": 5, "range": [161, 175], "name": "iff_bridge", "description": "The target is reached by traversing an increasingly long chain of equivalences."},
+    {"tier": 6, "range": [176, 200], "name": "unscaffolded", "description": "No proof of the FATE target is supplied; rank 176 is the original target, and later ranks add true conjunctive obligations."}
+  ]
+}

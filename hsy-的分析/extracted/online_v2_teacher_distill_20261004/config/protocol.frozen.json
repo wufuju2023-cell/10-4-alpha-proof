@@ -1,0 +1,69 @@
+{
+  "protocol_version": "online_v2_teacher_distill_v1",
+  "frozen": true,
+  "frozen_on": "2026-10-04",
+  "question": "Can verified, problem-grouped PPO and on-policy-state teacher distillation improve over the official CE baseline without regressions?",
+  "source_pins": {
+    "comparison_repository": {
+      "url": "https://github.com/wufuju2023-cell/10-4-alpha-proof",
+      "commit": "e1652d30e3ad36f0a46eb1bc73960c76bab41a62"
+    },
+    "teacher_candidate": {
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "revision": "2cba9e42aa026125f3ed06c6d98c1db82f7ca027",
+      "api_model": "deepseek-flash"
+    }
+  },
+  "rollout": {
+    "freeze_behavior_policy_per_wave": true,
+    "minimum_independent_problems": 8,
+    "attempts_per_problem": 4,
+    "maximum_events_per_problem": 32,
+    "reject_mixed_policy_versions": true,
+    "persist_every_started_request": true
+  },
+  "policy_update": {
+    "objective": "masked_token_clipped_ppo",
+    "clip_epsilon": 0.2,
+    "update_epochs": 2,
+    "initial_kl_beta": 0.02,
+    "target_exact_forward_kl": 0.02,
+    "hard_exact_forward_kl_limit": 0.08,
+    "max_grad_norm": 1.0,
+    "advantage_source": "same_state_search_q_standardization",
+    "unresolved_single_action_advantage": 0.0
+  },
+  "reward_and_credit": {
+    "verified_proof_or_disproof": 1.0,
+    "timeout_or_unresolved": 0.0,
+    "invalid_tactic_is_local_only": true,
+    "broadcast_terminal_failure_to_all_prior_actions": false
+  },
+  "value_head": {
+    "bins": 64,
+    "target": "remaining_steps_on_verified_solution_paths",
+    "terminal_reward_is_not_a_value_target": true
+  },
+  "teacher_distillation": {
+    "state_distribution": "current_student_search_states",
+    "teacher_candidates_per_state": 4,
+    "teacher_output": "json_array_of_tactic_strings_only",
+    "acceptance": "lean_accepted_and_on_verified_solution_path",
+    "cross_tokenizer_logit_kl": false,
+    "training_target": "sequence_cross_entropy",
+    "credential_environment_variable": "DEEPSEEK_API_KEY"
+  },
+  "comparison_arms": [
+    "official_ce",
+    "official_ce_plus_verified_teacher_distillation",
+    "online_v2",
+    "ce_plus_online_v2"
+  ],
+  "release_gates": [
+    "finite_parameters_and_gradients",
+    "exact_kl_within_hard_limit",
+    "fixed_canary_acceptance",
+    "strict_lean_verification",
+    "full_model_optimizer_rng_rollback"
+  ]
+}
