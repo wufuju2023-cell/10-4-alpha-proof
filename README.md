@@ -110,6 +110,10 @@ python3 scripts/run_curriculum.py --course curriculum/pell_course.json \
 - 佩尔题：来自用户已验收实验 `20260828-real7b-pell-success`，本仓库只含题面与来源说明；
 - 不复刻：3B enc-dec、300B 预训练、80M 课程、TTRL 变体生成、Matchmaker 全套自适应预算（列为后续里程碑）。
 
-## 许可
+## 许可证
 
-未指定开源许可证；如需引用请先联系仓库所有者。
+本仓库自有代码以 [Apache-2.0](LICENSE) 发布（Copyright 2026 wufuju2023-cell）。
+第三方组件与数据的许可与出处见 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。
+
+本仓库是独立实现（对 AlphaProof 论文语义的对齐复现），与 Google DeepMind 无关联；
+「AlphaProof」仅作为所对齐项目的名称引用。
