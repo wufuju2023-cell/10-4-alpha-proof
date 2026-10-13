@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fail-closed experiment orchestrator v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "experiment_id", "experiment_root", "run_root", "emergency_dir", "control_reserve_bytes", "heartbeat_seconds", "storage_guard", "immutable_inputs", "frozen_environment", "stages"],
+  "properties": {
+    "schema_version": {"const": 2},
+    "experiment_id": {"type": "string", "minLength": 1},
+    "experiment_root": {"type": "string", "minLength": 1},
+    "run_root": {"type": "string", "minLength": 1},
+    "emergency_dir": {"type": "string", "minLength": 1},
+    "control_reserve_bytes": {"type": "integer", "minimum": 65536, "maximum": 67108864},
+    "heartbeat_seconds": {"type": "integer", "minimum": 20, "maximum": 30},
+    "storage_guard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["observation_file", "required_source", "expected_capacity_gib", "max_age_seconds", "warn_used_gib", "stop_used_gib"],
+      "properties": {
+        "observation_file": {"type": "string", "minLength": 1},
+        "required_source": {"const": "modelscope_ui_top_right"},
+        "expected_capacity_gib": {"const": 100},
+        "max_age_seconds": {"type": "integer", "minimum": 20, "maximum": 60},
+        "warn_used_gib": {"const": 90},
+        "stop_used_gib": {"const": 95}
+      }
+    },
+    "immutable_inputs": {
+      "type": "array", "minItems": 1,
+      "items": {"type": "object", "additionalProperties": false, "required": ["id", "path", "sha256"],
+        "properties": {"id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+    },
+    "frozen_environment": {
+      "type": "object", "additionalProperties": false, "required": ["inherit", "set"],
+      "properties": {"inherit": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "set": {"type": "object", "additionalProperties": {"type": "string"}}}
+    },
+    "stages": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "command", "budget_seconds", "expensive", "cwd", "max_additional_gib", "resume_contract", "success_receipt", "required_outputs", "progress_file"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
+          "command": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "budget_seconds": {"type": "integer", "minimum": 1},
+          "expensive": {"type": "boolean"},
+          "cwd": {"type": "string"},
+          "max_additional_gib": {"type": "number", "minimum": 0},
+          "resume_contract": {
+            "oneOf": [
+              {"type": "object", "additionalProperties": false, "required": ["mode"], "properties": {"mode": {"const": "restart_idempotent"}}},
+              {"type": "object", "additionalProperties": false, "required": ["mode", "checkpoint_path", "receipt_path", "event_log_path", "resume_args", "idempotent"],
+                "properties": {"mode": {"const": "checkpoint"}, "checkpoint_path": {"type": "string"}, "receipt_path": {"type": "string"}, "event_log_path": {"type": "string"},
+                  "resume_args": {"type": "array", "items": {"type": "string"}}, "idempotent": {"const": true}}}
+            ]
+          },
+          "success_receipt": {"type": "string", "minLength": 1},
+          "required_outputs": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["id", "path"], "properties": {"id": {"type": "string"}, "path": {"type": "string"}}}},
+          "progress_file": {"type": "string"}
+        }
+      }
+    }
+  }
+}

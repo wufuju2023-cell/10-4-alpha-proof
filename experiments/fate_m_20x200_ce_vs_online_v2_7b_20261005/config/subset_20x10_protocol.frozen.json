@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_execution",
+  "protocol_id": "fate-m-20-family-10-variant-fast-ab-v1",
+  "experiment_id": "fate_m_20x200_ce_vs_online_v2_7b_20261005",
+  "frozen_on": "2026-10-05",
+  "purpose": "A complete, bounded CE-versus-Online-v2 comparison on a balanced 200-problem subset, sized for a 4-6 hour end-to-end run rather than the 4000-problem campaign.",
+  "estimand_limit": "Within-family transfer from variants v001-v008 to the immediately following v009-v010 variants. This is not evidence about unscaffolded variants, unseen theorem families, or the original 4000-problem protocol.",
+  "source": {
+    "path": "../data/problems.jsonl",
+    "sha256": "3f702d1e5add11721867735c369e5e4736dfe4e4ae28674220bc8bef6dc8152d",
+    "expected_rows": 4000,
+    "expected_families": 20,
+    "expected_variants_per_family": 200,
+    "family_key": "family_index",
+    "variant_key": "variant_index",
+    "id_key": "id",
+    "record_sha256_key": "sha256",
+    "id_pattern": "^fate_m_(?P<fate_id>[0-9]{3})_v(?P<variant>[0-9]{3})$"
+  },
+  "selection": {
+    "family_policy": "all source families, exactly once per selected variant",
+    "selected_variant_indices": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "train_variant_indices": [1, 2, 3, 4, 5, 6, 7, 8],
+    "heldout_variant_indices": [9, 10],
+    "expected_selected_rows": 200,
+    "expected_train_rows": 160,
+    "expected_heldout_rows": 40,
+    "order": ["variant_index_ascending", "family_index_ascending"],
+    "shuffle": false,
+    "train_wave": "one variant index across all 20 families; eight waves in v001-v008 order",
+    "heldout_policy": "v009-v010 may be read for execution only after both arms and all hyperparameters are locked; no replay, gradients, advantage, checkpoint selection, early stopping, or tuning may use them"
+  },
+  "arms": {
+    "ce": "official-style masked token CE on strictly Lean-verified selected search paths, retaining the CE64 value objective",
+    "online_v2": "fresh-wave problem-grouped clipped PPO with frozen rollout policy, behavior-distribution KL, verification-derived reward, and the same CE64 value objective",
+    "common_start": "byte-identical base model, value head, and initially zero-effect LoRA; cloned into independent optimizer, adapter, replay, and RNG state before either arm updates"
+  },
+  "randomness": {
+    "formal_seed_count": 1,
+    "base_seed": 20261005,
+    "problem_order_is_deterministic": true,
+    "generation_seed_rule": "20261005 + 100000*split_code + 1000*variant_index + 10*family_index + attempt_index; split_code is 1 for train and 2 for heldout; the same seed is used for the paired arm/task/attempt",
+    "learner_seed": 20261005,
+    "claim_limit": "one-seed result is a rapid paired comparison and must not be presented as a significance or robustness result"
+  },
+  "budget": {
+    "target_wall_hours": 5.0,
+    "expected_wall_hours_range": [4.0, 6.0],
+    "hard_end_to_end_wall_hours": 6.0,
+    "train_tasks_per_arm": 160,
+    "heldout_tasks_per_checkpoint": 40,
+    "checkpoints_evaluated": ["shared_pre_update_baseline", "ce_final", "online_v2_final"],
+    "max_attempts_per_task": 4,
+    "max_new_tokens_per_attempt": 512,
+    "train_generation_requests_per_arm_cap": 640,
+    "train_generated_tokens_per_arm_cap": 327680,
+    "heldout_generation_requests_per_checkpoint_cap": 160,
+    "heldout_generated_tokens_per_checkpoint_cap": 81920,
+    "primary_matching_units": ["generated_tokens", "lean_tactic_executions"],
+    "required_cost_reporting": ["started_requests", "generated_tokens", "lean_tactic_executions", "strict_lean_checks", "gpu_seconds", "wall_seconds", "optimizer_steps", "learner_tokens"],
+    "wall_time_role": "operational safety envelope only; it is not a substitute for matching generated-token and Lean-execution caps"
+  },
+  "stopping": {
+    "task": "stop launching attempts after the first strict Lean success or after four completed attempts; retain and charge every already-started request",
+    "wave": "finish all already-started requests in the current 20-family wave before applying task stopping or checkpointing",
+    "arm": "complete all eight train waves unless a frozen resource cap, numerical rollback guard, or hard failure fires",
+    "heldout": "run every one of the 40 heldout tasks under the same four-attempt cap for each locked checkpoint; do not stop because an aggregate result looks favorable",
+    "wall_clock": "at six end-to-end hours stop safely after persisting state and mark the comparison INCOMPLETE; do not calculate a final winner from unequal partial arms",
+    "infrastructure_error": "retry once without assigning reward; if the same task still has an infrastructure error, persist diagnostics and mark the experiment INCOMPLETE",
+    "truncation_gate": "if representative preflight truncation exceeds 5 percent, do not start the subset run; revise the declared token limit and create a new protocol revision",
+    "budget_exhaustion": "if either arm exhausts a primary cap before all 160 train tasks, stop both at the last common completed wave and mark the planned complete comparison INCOMPLETE"
+  },
+  "fairness": {
+    "same_problem_and_wave_order": true,
+    "same_generation_seeds_by_paired_attempt": true,
+    "same_prompt_generation_search_and_lean_limits": true,
+    "same_initial_actor_and_value_function": true,
+    "independent_trainable_and_optimizer_state": true,
+    "same_primary_budget_caps": true,
+    "all_started_work_is_counted": true,
+    "strict_lean_success_is_the_only_positive_reward": true,
+    "timeouts_and_infrastructure_errors_are_reported_separately": true,
+    "heldout_is_never_used_for_selection": true,
+    "external_sft_mix": "disabled_for_both_arms"
+  },
+  "reporting": {
+    "primary_metric": "strict Lean solve rate on the 40 heldout rows, macro-averaged across 20 families",
+    "paired_metric": "per-family CE-minus-Online-v2 solve-rate difference over v009-v010",
+    "secondary_metrics": [
+      "strict solve rate by variant",
+      "success versus generated-token and Lean-execution cost",
+      "first-success cost",
+      "invalid tactic, timeout, infrastructure-error, and truncation rates",
+      "KL, clip fraction, gradient norm, rollback count, and optimizer cost"
+    ],
+    "required_terminal_state": "DONE only if both arms finish all 160 train rows and every locked checkpoint finishes all 40 heldout rows; otherwise FAILED or INCOMPLETE with diagnostics"
+  },
+  "generated_artifacts": {
+    "manifest": "../data/subset_20x10_manifest.jsonl",
+    "train_records": "../data/subset_20x10_train.jsonl",
+    "heldout_records": "../data/subset_20x10_heldout.jsonl",
+    "selection_receipt": "../data/subset_20x10_selection_receipt.json"
+  },
+  "execution_started": false
+}

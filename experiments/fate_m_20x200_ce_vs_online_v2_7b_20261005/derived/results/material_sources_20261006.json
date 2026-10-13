@@ -1,0 +1,40 @@
+{
+  "schema": "fate.delivery.material_sources.v1",
+  "dataset": {
+    "upstream": "https://github.com/frenzymath/FATE-M",
+    "upstream_commit": "4eb33c8ccd0ff058b461cd763cc406509129743f",
+    "license": "MIT; data/provenance/docs/FATE-M-LICENSE.txt",
+    "derived_from": "experiments/fate_m_lean_curriculum_20x200_20261004/data/problems.jsonl",
+    "derived_rows": 4000,
+    "derived_source_sha256": "3f702d1e5add11721867735c369e5e4736dfe4e4ae28674220bc8bef6dc8152d",
+    "actual_training": "20 families v001, one shared rollout wave",
+    "heldout": "same20families v009/v010,40rows; alltier1/direct_target with supplied target assumption"
+  },
+  "model": {
+    "base_path": "/mnt/workspace/models/REAL-Prover-fe76f68d",
+    "base_revision": "fe76f68d9a88f342cb7b546307c20292fea9cced",
+    "value_head_path": "/mnt/workspace/new_value_head/heads-79efd240/train205628-full-v3/value-head.pt",
+    "initial_adapter": {
+      "path": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/assets/initial_lora_r16_a32_seed20261004",
+      "manifest_payload_sha256": "9496f7cacf0f3d552aeefde11471fed452c6f6555345387d141f902c7538f28d",
+      "adapter_model_sha256": "326e08d17a74eec08d52127c7e011462bf1d207266cf0ca9a3a84ddc0ddde2dd",
+      "adapter_config_sha256": "e3199444adcd863f95d1d98784114b6658ed1a90bcd9577777460a5ce25afdbe",
+      "trainable_state_sha256": "08115bfd89fc674b24238ea4aa7406d9e66fb8dd6daefc04826d1abbd6d1be66"
+    },
+    "hidden_size": 3584,
+    "value_bins": 64
+  },
+  "runtime_source": {
+    "target_repository": "https://github.com/wufuju2023-cell/10-4-alpha-proof",
+    "target_commit": "e1b7ffe6feba8cbdb590d42836d750504aa86b94",
+    "target_repo_root": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/src/10-4-alpha-proof",
+    "realprover_upstream_commit": "3e5987dc1009a7addc935bcd7b4ae777738a0848"
+  },
+  "verifier": "Real Lean4.28/Reap plus independent strict Lean compile; native evidence in evidence/*.zip",
+  "evidence_role": {
+    "corrected_final_evidence_20261006.zip": "final corrected training/rollback and two complete initial+CE heldout evaluations",
+    "join_v2_evidence_20261006.zip": "shared signed verifier join inputs and CE receipts",
+    "training_initial_evidence_20261006.zip": "shared raw rollout and initial/native training evidence; old one-sample CE/zero-advantage Online are superseded diagnostics, excluded from final comparison"
+  },
+  "not_in_bundle": "Base model, adapter/value/optimizer checkpoint binaries and signing private keys; binary hash inventories and remote locations retained."
+}

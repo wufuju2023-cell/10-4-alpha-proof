@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "experiment_id": "fate_m_20x200_ce_vs_online_v2_7b_20261005",
+  "experiment_root": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005",
+  "run_root": "runs/paired-production",
+  "emergency_dir": "/tmp/fate-m-paired-emergency",
+  "seed": 20261004,
+  "execution": "sequential_single_gpu",
+  "storage_guard": {
+    "observation_file": "runs/control/storage_observation.json",
+    "expected_capacity_gib": 100,
+    "max_age_seconds": 45,
+    "warn_used_gib": 90,
+    "stop_used_gib": 95
+  },
+  "shared_inputs": {
+    "course": {
+      "path": "workstreams/ce_arm/locks/course_manifest.json",
+      "sha256": "<COURSE_MANIFEST_SHA256>"
+    },
+    "initial_adapter": {
+      "path": "assets/initial_lora_r16_a32_seed20261004/formal_initial_adapter_manifest.json",
+      "sha256": "<INITIAL_ADAPTER_MANIFEST_FILE_SHA256>"
+    },
+    "live_receipts": {
+      "path": "runs/preflight/live-reap-join/<RUN_ID>/join/strict-replay/receipt.json",
+      "sha256": "<SIGNED_CANONICAL_RECEIPT_FILE_SHA256>"
+    },
+    "actor_config": {
+      "path": "workstreams/ce_arm/config/shared_actor.real_7b_smoke.json",
+      "sha256": "<CURRENT_ACTOR_CONFIG_FILE_SHA256>"
+    }
+  },
+  "frozen_environment": {
+    "inherit": ["PATH"],
+    "set": {
+      "PYTHONIOENCODING": "utf-8",
+      "PYTHONUNBUFFERED": "1",
+      "TOKENIZERS_PARALLELISM": "false",
+      "PYTHONPATH": "/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/ce_arm/src:/mnt/workspace/experiments/fate_m_20x200_ce_vs_online_v2_7b_20261005/workstreams/online_v2_arm/src"
+    }
+  },
+  "stages": [
+    {
+      "id": "smoke_w001_ce",
+      "arm": "ce",
+      "mode": "smoke",
+      "wave_index": 1,
+      "arm_config": {
+        "path": "workstreams/ce_arm/config/ce_arm.real_7b_one_update.json",
+        "sha256": "<FROZEN_CE_CONFIG_SHA256>"
+      },
+      "command": [
+        "python3", "-m", "ce_arm.smoke",
+        "--config", "{arm_config}",
+        "--expected-config-sha256", "{arm_config_sha256}",
+        "--receipt", "{shared_live_receipts_path}",
+        "--expected-receipt-sha256", "{shared_live_receipts_sha256}",
+        "--run-dir", "{native_output}",
+        "--wave-index", "{wave_index}"
+      ],
+      "cwd": ".",
+      "native_output_dir": "runs/paired-production/native/smoke_w001_ce",
+      "native_terminal": "runs/paired-production/native/smoke_w001_ce/SMOKE_DONE.json",
+      "native_checkpoint": "runs/paired-production/native/smoke_w001_ce/learner/latest.json",
+      "native_resume_pointer": {
+        "path": "runs/paired-production/native/smoke_w001_ce/learner/latest.json",
+        "json_key": "checkpoint"
+      },
+      "resume_command_append": [],
+      "budget_seconds": 1800,
+      "max_additional_gib": 0.4,
+      "control_dir": "runs/paired-production/control/smoke_w001_ce",
+      "progress_file": "runs/paired-production/control/smoke_w001_ce/progress.json",
+      "terminal_status_json_key": "status",
+      "terminal_success_values": ["complete"]
+    },
+    {
+      "id": "smoke_w001_online_v2",
+      "arm": "online_v2",
+      "mode": "smoke",
+      "wave_index": 1,
+      "arm_config": {
+        "path": "workstreams/online_v2_arm/config/real_one_update.smoke.json",
+        "sha256": "<FROZEN_ONLINE_V2_CONFIG_SHA256>"
+      },
+      "command": [
+        "python3", "workstreams/online_v2_arm/scripts/run_real_one_update.py",
+        "--config", "{arm_config}",
+        "--expected-config-sha256", "{arm_config_sha256}",
+        "--output", "{native_output}"
+      ],
+      "cwd": ".",
+      "native_output_dir": "runs/paired-production/native/smoke_w001_online_v2",
+      "native_terminal": "runs/paired-production/native/smoke_w001_online_v2/STATE.json",
+      "native_checkpoint": "runs/paired-production/native/smoke_w001_online_v2/checkpoint",
+      "native_resume_pointer": null,
+      "resume_command_append": ["--resume"],
+      "budget_seconds": 1800,
+      "max_additional_gib": 0.4,
+      "control_dir": "runs/paired-production/control/smoke_w001_online_v2",
+      "progress_file": "runs/paired-production/control/smoke_w001_online_v2/progress.json",
+      "terminal_status_json_key": "state",
+      "terminal_success_values": ["DONE"]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 2,
+  "experiment_id": "fate_m_20x200_ce_vs_online_v2_7b_20261005",
+  "experiment_root": "..",
+  "run_root": "runs/orchestrator-example",
+  "emergency_dir": "/tmp/fate-m-orchestrator-emergency",
+  "control_reserve_bytes": 1048576,
+  "heartbeat_seconds": 20,
+  "storage_guard": {
+    "observation_file": "runs/control/storage_observation.json",
+    "required_source": "modelscope_ui_top_right",
+    "expected_capacity_gib": 100,
+    "max_age_seconds": 45,
+    "warn_used_gib": 90,
+    "stop_used_gib": 95
+  },
+  "immutable_inputs": [
+    {
+      "id": "orchestrator_code",
+      "path": "src/experiment_orchestrator.py",
+      "sha256": "b92d2e55d5d5f69b9a5007261d5f46a3faaac3db28e39ec8d565a539d8c47e1e"
+    }
+  ],
+  "frozen_environment": {
+    "inherit": ["PATH"],
+    "set": {"PYTHONIOENCODING": "utf-8", "PYTHONUNBUFFERED": "1"}
+  },
+  "stages": [
+    {
+      "id": "preflight_example",
+      "command": ["python3", "scripts/replace_with_real_preflight.py"],
+      "budget_seconds": 120,
+      "expensive": false,
+      "cwd": ".",
+      "max_additional_gib": 0.1,
+      "resume_contract": {"mode": "restart_idempotent"},
+      "success_receipt": "runs/orchestrator-example/artifacts/preflight.success.json",
+      "required_outputs": [
+        {"id": "preflight_report", "path": "runs/orchestrator-example/artifacts/preflight.report.json"}
+      ],
+      "progress_file": "runs/orchestrator-example/progress/preflight_example.json"
+    }
+  ]
+}

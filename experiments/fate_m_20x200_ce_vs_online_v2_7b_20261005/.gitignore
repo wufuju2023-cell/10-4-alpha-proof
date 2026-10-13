@@ -1,0 +1,9 @@
+/data/problems.jsonl
+/runs/
+/build/
+/assets/
+/src/
+/runtime/
+__pycache__/
+.pytest_cache/
+*.pyc

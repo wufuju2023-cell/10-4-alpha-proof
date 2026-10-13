@@ -1,0 +1,19 @@
+交付：ModelScope / REAL-Prover 7B 搜索路径CE与Online-v2单波对照（2026-10-06）
+
+实验与来源：从FATE-M固定提交4eb33c8的20个代数母题派生20×200课程；本次只训练各family的v001共20题、一个共同搜索波，评测v009/v010共40题。模型固定REAL-Prover7B revision fe76f68d，复用相同初始LoRA与64桶value head；使用真实Lean4.28严格验证。来源快照、生成代码、许可和精确哈希均在包内。
+
+对比：同一初始模型、同一搜索/签名Lean证据下，CE学习严格成功的selected path；Online-v2用233个候选做问题分组clipped PPO+KL。评测相同prompt/参数/配对seed，每题最多4次，首次严格成功停止；heldout不参与调参或训练。
+
+数字（前1/2/4次内严格成功率）：
+initial：24/40=60%；25% / 50% / 60%；106次attempt。
+CE：25/40=62.5%；27.5% / 52.5% / 62.5%；103次attempt。
+Online回滚部署：24/40=60%，按精确策略同一性复用initial证据，未独立重跑，新增attempt为0。
+CE相对initial净增1题（+2.5个百分点）：24题共同成功、15题共同失败、CE独有1题、initial独有0题。两个独立评测截断/timeout均为0。
+
+训练与门禁：CE全量20条transition、137action token、1次更新（16.831秒）；Online尝试2epochs（746.408秒），behavior exact KL=0.087034超过冻结上限0.05，更新被拒绝并完整回滚，已提交更新0。回滚的policy/value/optimizer/RNG身份审计PASS；没有事后放宽门禁。initial/CE评测wall分别47.33/46.02分钟，主要耗时是Lean验证。
+
+结论边界：40题全部提供curriculum_target假设；新增题fate_m_068_v009仅用exact curriculum_target。因此CE多1题只说明本次目标假设脚手架利用表现，不能证明数学证明发现能力提升、统计显著或算法优劣。两臂有效暴露/算力不等；Online没有可接受学习更新，原40–160训练题/2–8波协议与双方接受更新门禁仍INCOMPLETE。
+
+PR已提出：https://github.com/wufuju2023-cell/10-4-alpha-proof/pull/1（开放、未合并）。重要代码修复、冻结配置/数据、报告和审计已提交；另补交本交付说明、材料来源及打包脚本。检查325passed、2skipped；最终1475成员哈希和24+25成功的原生Lean日志均核验。
+
+ZIP入口：DELIVERY.txt即本说明；code/是PR精确提交的完整仓库源码（含数据、测试、复现命令和报告）；evidence/是三个原样原始证据ZIP；MANIFEST.json记录所有成员哈希与PR提交。旧诊断材料只留作 provenance，不进入最终结论。大型模型/checkpoint不在包内，其哈希和远端路径在报告/清单中；包内不含私钥、凭据或缓存。
